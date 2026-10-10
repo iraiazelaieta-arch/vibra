@@ -1,0 +1,91 @@
+:root{--ink:#111;--paper:#faf7f2;--muted:#6b6b6b;--line:#e4ded4;--moda:#ff2e63;--musica:#7b2ff7;--cine:#f5a300;--serif:"Playfair Display",Georgia,serif;--sans:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;font-size:17px}
+a{color:inherit}
+img{max-width:100%;display:block}
+.masthead{text-align:center;border-bottom:3px double var(--ink);padding:0 16px 10px;background:#fff}
+.topbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--line)}
+.topbar nav a{margin-left:16px;text-decoration:none}
+.topbar nav a:hover{color:var(--ink)}
+.pill{background:var(--ink);color:#fff!important;padding:6px 14px;border-radius:99px;text-decoration:none;font-weight:700}
+.pill.big{display:inline-block;padding:14px 28px;font-size:17px;background:var(--moda)}
+.logo{display:inline-block;font-family:var(--serif);font-weight:900;font-size:clamp(56px,11vw,120px);letter-spacing:.06em;line-height:1;margin-top:18px;text-decoration:none}
+.logo em{color:var(--moda);font-style:normal}
+.logo.small{font-size:40px;margin:0}
+.tagline{font-family:var(--serif);font-style:italic;font-size:19px;margin:6px 0 14px;color:#333}
+.sections{display:flex;justify-content:center;gap:28px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:13px}
+.sections a{text-decoration:none;padding:6px 0;border-bottom:3px solid transparent}
+.sections a:nth-child(1):hover{border-color:var(--moda)}.sections a:nth-child(2):hover{border-color:var(--musica)}.sections a:nth-child(3):hover{border-color:var(--cine)}
+main{max-width:1180px;margin:0 auto;padding:0 20px}
+.cover{text-align:center;padding:48px 0 28px;max-width:900px;margin:0 auto}
+.kicker{text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:700;color:var(--moda);margin:0}
+.cover h1{font-family:var(--serif);font-size:clamp(34px,5.5vw,62px);line-height:1.08;margin:12px 0 18px}
+.intro{font-size:19px;color:#2a2a2a;max-width:720px;margin:0 auto}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:34px;text-align:left}
+.toc a{display:block;background:#fff;border:1px solid var(--line);border-top:5px solid;padding:14px 16px;text-decoration:none;font-family:var(--serif);font-weight:700;font-size:18px;line-height:1.25;transition:transform .15s}
+.toc a:hover{transform:translateY(-3px)}
+.toc span{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px;color:var(--muted)}
+.toc-moda{border-top-color:var(--moda)!important}.toc-musica{border-top-color:var(--musica)!important}.toc-cine{border-top-color:var(--cine)!important}
+.section{padding:40px 0 20px;border-top:1px solid var(--ink)}
+.section h2{font-family:var(--serif);font-size:clamp(36px,5vw,54px);margin:0 0 24px;display:flex;align-items:baseline;gap:14px}
+.section h2 span{font-family:var(--sans);font-size:15px;font-weight:700;color:#fff;padding:4px 10px;border-radius:4px}
+.moda h2 span{background:var(--moda)}.musica h2 span{background:var(--musica)}.cine h2 span{background:var(--cine)}
+.stories{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px}
+.story{background:#fff;border:1px solid var(--line);padding:22px;display:flex;flex-direction:column}
+.story:first-child{grid-column:1/-1;border-left:6px solid var(--ink)}
+.moda .story:first-child{border-left-color:var(--moda)}.musica .story:first-child{border-left-color:var(--musica)}.cine .story:first-child{border-left-color:var(--cine)}
+.story:first-child h3{font-size:30px}
+.story h3{font-family:var(--serif);font-size:22px;line-height:1.2;margin:0 0 10px}
+.story p{margin:0 0 10px}
+.why{font-size:15px;background:var(--paper);padding:8px 12px;border-radius:4px}
+.src{margin-top:auto!important;font-size:13px;color:var(--muted)}
+.src a{font-weight:700;color:var(--ink)}
+.sub{font-family:var(--serif);font-size:26px;margin:40px 0 14px}
+.chart{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.cd{text-decoration:none;position:relative;font-size:14px}
+.cd img{aspect-ratio:1;object-fit:cover;width:100%;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.cd b{position:absolute;top:8px;left:8px;background:var(--musica);color:#fff;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:13px}
+.cd span{display:block;font-weight:700;margin-top:8px;line-height:1.25}
+.cd small,.songs small{color:var(--muted);display:block}
+.songs{list-style:none;padding:0;margin:0;counter-reset:s;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:8px 24px}
+.songs li{counter-increment:s;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);padding:8px 12px 8px 8px;font-size:15px}
+.songs li::before{content:counter(s);font-family:var(--serif);font-weight:900;font-size:22px;width:28px;text-align:center;color:var(--musica)}
+.songs img{width:48px;height:48px;border-radius:4px}
+.songs div{flex:1;min-width:0}
+.songs a{font-size:13px;font-weight:700;color:var(--musica);text-decoration:none;white-space:nowrap}
+.posters{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px}
+.poster{position:relative;text-decoration:none;font-size:14px;display:flex;flex-direction:column}
+.poster img{aspect-ratio:2/3;object-fit:cover;width:100%;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.poster b{margin-top:8px;line-height:1.25}
+.poster small{color:var(--muted);font-size:12.5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.score{position:absolute;top:8px;right:8px;min-width:42px;padding:4px 8px;border-radius:99px;color:#fff;font-weight:700;text-align:center;font-size:14px}
+.verde{background:#1f9d55}.ambar{background:#e8a200}.rojo{background:#d93636}.gris{background:#8a8a8a}.rank{background:var(--ink)}
+.legend{font-size:13px;color:var(--muted)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 4px 0 12px;vertical-align:middle}.dot:first-child{margin-left:0}
+.shop{margin-top:24px;background:#fff0f4;border:1px dashed var(--moda);padding:18px 22px}
+.shop h4{margin:0 0 4px;font-family:var(--serif);font-size:20px}
+.shop a{display:inline-block;margin:6px 12px 0 0;font-weight:700;color:var(--moda)}
+.more{border-top:3px double var(--ink);margin-top:40px;padding:30px 0}
+.more h2{font-family:var(--serif);font-size:30px;margin:0 0 14px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.cols h4{text-transform:uppercase;letter-spacing:.14em;font-size:12px;margin:0 0 8px}
+.cols ul{list-style:none;padding:0;margin:0}
+.cols li{padding:8px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.35}
+.cols li a{text-decoration:none}.cols li a:hover{text-decoration:underline}
+.cols small{color:var(--muted);font-size:12px;margin-left:4px}
+.newsletter{background:var(--ink);color:#fff;text-align:center;padding:44px 20px;margin:20px 0;border-radius:6px}
+.newsletter h2{font-family:var(--serif);font-size:32px;margin:0 0 6px}
+.ad{margin:28px auto;text-align:center;min-height:100px}
+.ad span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+.updated{text-align:center;color:var(--muted);font-size:13px;margin:30px 0}
+.page{max-width:760px;margin:0 auto;padding:40px 0}
+.page h1{font-family:var(--serif);font-size:46px}
+.archive{list-style:none;padding:0}
+.archive li a{display:block;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.archive span{font-size:13px;color:var(--muted);display:block}
+.archive b{font-family:var(--serif);font-size:22px}
+footer{background:#111;color:#cfcfcf;text-align:center;padding:40px 20px;margin-top:50px;font-size:14px}
+footer .logo{color:#fff}
+footer nav a{margin:0 10px}
+footer .fine{max-width:760px;margin:10px auto;font-size:12px;color:#9a9a9a}
+@media(max-width:600px){.stories{grid-template-columns:1fr}.story:first-child h3{font-size:24px}.songs{grid-template-columns:1fr}.topbar{justify-content:center}.topbar nav a{margin:0 8px}}

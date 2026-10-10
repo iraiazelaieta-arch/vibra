@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Aviso legal · {{ site.name }}{% endblock %}
+{% block content %}
+<section class="page">
+  <h1>Aviso legal</h1>
+  <p>En cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información (LSSI), se informa de que este sitio web, {{ site.name }}, es un proyecto editorial independiente.{% if site.contact_email %} Puedes contactar en <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.{% endif %}</p>
+  <h2>Contenidos y propiedad intelectual</h2>
+  <p>{{ site.name }} publica resúmenes propios de noticias y enlaza a las fuentes originales. Los titulares, textos, marcas e imágenes de terceros pertenecen a sus respectivos titulares. Las portadas de discos proceden de Apple Music y los carteles y valoraciones de cine de TMDB, usados conforme a sus condiciones. Si eres titular de algún contenido y deseas que se retire, contacta con nosotros y lo haremos de inmediato.</p>
+  <h2>Enlaces</h2>
+  <p>{{ site.name }} no se responsabiliza del contenido de las webs enlazadas.</p>
+  <h2>Publicidad y afiliación</h2>
+  <p>Este sitio puede mostrar publicidad e incluir enlaces de afiliado, que se identifican como tales.</p>
+</section>
+{% endblock %}

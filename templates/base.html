@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site.name }} — {{ site.tagline }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.description() }}">
+<meta property="og:type" content="website">
+{% if base_url %}<link rel="canonical" href="{{ base_url }}/{{ path|replace('index.html','') }}">{% endif %}
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ root }}rss.xml">
+<link rel="icon" href="{{ root }}static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+{% if money.adsense_client %}<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ money.adsense_client }}" crossorigin="anonymous"></script>{% endif %}
+</head>
+<body>
+<header class="masthead">
+  <div class="topbar">
+    <span>{% block topdate %}{% endblock %}</span>
+    <nav><a href="{{ root }}">Esta semana</a><a href="{{ root }}archivo/">Archivo</a><a href="{{ root }}sobre-vibra/">Qué es VIBRA</a>{% if money.newsletter_url %}<a class="pill" href="{{ money.newsletter_url }}" rel="noopener" target="_blank">Suscríbete gratis</a>{% endif %}</nav>
+  </div>
+  <a class="logo" href="{{ root }}">{{ site.name[:-1] }}<em>{{ site.name[-1] }}</em></a>
+  <p class="tagline">{{ site.tagline }}</p>
+  <nav class="sections"><a href="{{ root }}#moda">Moda</a><a href="{{ root }}#musica">Música</a><a href="{{ root }}#cine">Cine y series</a></nav>
+</header>
+<main>{% block content %}{% endblock %}</main>
+<footer>
+  <div class="logo small">{{ site.name[:-1] }}<em>{{ site.name[-1] }}</em></div>
+  <p>{{ site.description }}</p>
+  <p class="fine">VIBRA resume y enlaza noticias publicadas por otros medios; todos los derechos de los contenidos originales pertenecen a sus autores. Datos de cine de <a href="https://www.themoviedb.org" rel="noopener">TMDB</a> (este producto usa la API de TMDB pero no está avalado ni certificado por TMDB). Listas de música de Apple Music.{% if money.amazon_tag or money.apple_affiliate_token %} Algunos enlaces son de afiliado: si compras a través de ellos, VIBRA recibe una pequeña comisión sin coste para ti.{% endif %}</p>
+  <nav><a href="{{ root }}aviso-legal/">Aviso legal</a><a href="{{ root }}privacidad/">Privacidad</a><a href="{{ root }}cookies/">Cookies</a><a href="{{ root }}rss.xml">RSS</a></nav>
+  <p class="fine">© {{ year }} {{ site.name }}</p>
+</footer>
+</body>
+</html>

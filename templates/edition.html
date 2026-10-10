@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% set secs = e.sections %}
+{% block title %}{% if latest %}{{ site.name }} — {{ site.tagline }}{% else %}{{ e.headline or ('Semana ' ~ e.week) }} · {{ site.name }} semana {{ e.week }}/{{ e.year }}{% endif %}{% endblock %}
+{% block description %}{{ e.intro or site.description }}{% endblock %}
+{% block topdate %}Edición semana {{ e.week }} · {{ e.date|date }}{% endblock %}
+{% block content %}
+<section class="cover">
+  <p class="kicker">{% if latest %}Esta semana{% else %}Edición archivada{% endif %} · {{ e.date|date }}</p>
+  <h1>{{ e.headline or "Lo que vibra esta semana en moda, música y cine" }}</h1>
+  {% if e.intro %}<p class="intro"><b>La semana en 30 segundos.</b> {{ e.intro }}</p>{% endif %}
+  <div class="toc">
+    {% for sid, sec in secs.items() %}<a href="#{{ sid }}" class="toc-{{ sid }}"><span>{{ sec.title }}</span>{% if sec.stories %}{{ sec.stories[0].title }}{% endif %}</a>{% endfor %}
+  </div>
+</section>
+{% include "_ad.html" %}
+
+{# ------------------------------------------------ MODA #}
+{% set sec = secs.moda %}
+<section id="moda" class="section moda">
+  <h2><span>01</span> {{ sec.title }}</h2>
+  <div class="stories">{% for s in sec.stories %}{% include "_story.html" %}{% endfor %}</div>
+  {% if money.amazon_tag %}
+  <div class="shop"><h4>Cómo llevar las tendencias de la semana</h4><p>Ideas para comprar inspiradas en lo que se ha visto esta semana:</p>
+    {% for s in sec.stories[:3] %}<a href="https://www.amazon.es/s?k={{ quote(s.title[:60]) }}&tag={{ money.amazon_tag }}" rel="sponsored noopener" target="_blank">{{ s.title[:60] }} →</a>{% endfor %}
+    <p class="fine">Enlaces de afiliado.</p></div>
+  {% endif %}
+</section>
+{% include "_ad.html" %}
+
+{# ------------------------------------------------ MÚSICA #}
+{% set sec = secs.musica %}
+<section id="musica" class="section musica">
+  <h2><span>02</span> {{ sec.title }}</h2>
+  <div class="stories">{% for s in sec.stories %}{% include "_story.html" %}{% endfor %}</div>
+  {% if sec.albums %}
+  <h3 class="sub">Los álbumes más escuchados en España</h3>
+  <div class="chart">{% for a in sec.albums %}<a class="cd" href="{{ a.url }}{% if money.apple_affiliate_token %}?at={{ money.apple_affiliate_token }}{% endif %}" target="_blank" rel="noopener"><img loading="lazy" src="{{ a.image }}" alt="Portada de {{ a.title }}"><b>{{ a.position }}</b><span>{{ a.title }}</span><small>{{ a.artist }}</small></a>{% endfor %}</div>
+  {% endif %}
+  {% if sec.songs %}
+  <h3 class="sub">Top 10 canciones de la semana</h3>
+  <ol class="songs">{% for a in sec.songs %}<li><img loading="lazy" src="{{ a.image }}" alt=""><div><b>{{ a.title }}</b><small>{{ a.artist }}</small></div><a href="{{ a.url }}{% if money.apple_affiliate_token %}?at={{ money.apple_affiliate_token }}{% endif %}" target="_blank" rel="noopener">Escuchar ↗</a></li>{% endfor %}</ol>
+  {% endif %}
+</section>
+{% include "_ad.html" %}
+
+{# ------------------------------------------------ CINE #}
+{% set sec = secs.cine %}
+<section id="cine" class="section cine">
+  <h2><span>03</span> {{ sec.title }}</h2>
+  <div class="stories">{% for s in sec.stories %}{% include "_story.html" %}{% endfor %}</div>
+  {% if sec.movies %}
+  <h3 class="sub">En cines: ¿merece la pena?</h3>
+  <p class="legend"><i class="dot verde"></i>Muy bien valorada <i class="dot ambar"></i>Opiniones divididas <i class="dot rojo"></i>Floja <i class="dot gris"></i>Aún sin suficientes votos · Nota media del público en TMDB</p>
+  <div class="posters">{% for m in sec.movies %}<a class="poster" href="{{ m.url }}" target="_blank" rel="noopener">{% if m.image %}<img loading="lazy" src="{{ m.image }}" alt="Cartel de {{ m.title }}">{% endif %}<span class="score {{ light(m.score, m.votes) }}">{{ m.score if m.votes >= 20 else "—" }}</span><b>{{ m.title }}</b><small>{{ m.overview }}</small></a>{% endfor %}</div>
+  {% endif %}
+  {% if sec.tv %}
+  <h3 class="sub">Las series de las que todo el mundo habla</h3>
+  <div class="posters">{% for m in sec.tv %}<a class="poster" href="{{ m.url }}" target="_blank" rel="noopener">{% if m.image %}<img loading="lazy" src="{{ m.image }}" alt="Cartel de {{ m.title }}">{% endif %}<span class="score {{ light(m.score, m.votes) }}">{{ m.score if m.votes >= 20 else "—" }}</span><b>{{ m.title }}</b><small>{{ m.overview }}</small></a>{% endfor %}</div>
+  {% endif %}
+  {% if sec.digital %}
+  <h3 class="sub">Las películas más vistas en alquiler y compra digital</h3>
+  <div class="posters">{% for m in sec.digital %}<a class="poster" href="{{ m.url }}{% if money.apple_affiliate_token %}{{ '&' if '?' in m.url else '?' }}at={{ money.apple_affiliate_token }}{% endif %}" target="_blank" rel="noopener">{% if m.image %}<img loading="lazy" src="{{ m.image }}" alt="Cartel de {{ m.title }}">{% endif %}<span class="score rank">#{{ m.position }}</span><b>{{ m.title }}</b><small>{{ m.genre }}</small></a>{% endfor %}</div>
+  {% endif %}
+</section>
+
+<section class="more">
+  <h2>También se ha hablado de…</h2>
+  <div class="cols">{% for sid, sec in secs.items() %}<div><h4>{{ sec.title }}</h4><ul>{% for h in sec.headlines[:6] %}<li><a href="{{ h.url }}" target="_blank" rel="noopener">{{ h.title }}</a> <small>{{ h.source }}</small></li>{% endfor %}</ul></div>{% endfor %}</div>
+</section>
+{% if money.newsletter_url %}
+<section class="newsletter"><h2>Recibe VIBRA cada lunes en tu email</h2><p>Gratis. 5 minutos de lectura. Te puedes dar de baja cuando quieras.</p><a class="pill big" href="{{ money.newsletter_url }}" target="_blank" rel="noopener">Quiero suscribirme</a></section>
+{% endif %}
+<p class="updated">Edición generada automáticamente el {{ e.generated_at|date }}. Próxima edición: el lunes que viene.</p>
+{% endblock %}

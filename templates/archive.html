@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Archivo de ediciones · {{ site.name }}{% endblock %}
+{% block content %}
+<section class="page">
+  <h1>Archivo</h1>
+  <p>Todas las ediciones semanales de {{ site.name }}.</p>
+  <ul class="archive">{% for e in editions %}<li><a href="{{ root }}semana/{{ e.id }}/"><span>Semana {{ e.week }} · {{ e.date|date }}</span><b>{{ e.headline or (e.sections.moda.stories[0].title if e.sections.moda.stories else "Edición " ~ e.id) }}</b></a></li>{% endfor %}</ul>
+</section>
+{% endblock %}

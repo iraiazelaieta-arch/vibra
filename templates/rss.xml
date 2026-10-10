@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+<title>{{ site.name }}</title><link>{{ base_url }}/</link><description>{{ site.description }}</description><language>es</language>
+{% for e in editions %}<item><title>{{ e.headline or ('Semana ' ~ e.week ~ ' de ' ~ e.year) }}</title><link>{{ base_url }}/semana/{{ e.id }}/</link><guid>{{ base_url }}/semana/{{ e.id }}/</guid><pubDate>{{ e.date }}</pubDate><description>{{ e.intro or site.description }}</description></item>
+{% endfor %}</channel></rss>

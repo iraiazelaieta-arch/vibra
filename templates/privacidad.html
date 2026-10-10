@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Política de privacidad · {{ site.name }}{% endblock %}
+{% block content %}
+<section class="page">
+  <h1>Política de privacidad</h1>
+  <p>{{ site.name }} no pide registro ni recoge datos personales directamente.</p>
+  {% if money.adsense_client %}<p>Este sitio usa Google AdSense para mostrar anuncios. Google y sus socios pueden usar cookies para mostrar anuncios basados en tus visitas a este y otros sitios. Puedes gestionar tu consentimiento en el mensaje de privacidad que aparece al entrar y desactivar la publicidad personalizada en <a href="https://adssettings.google.com" rel="noopener">la configuración de anuncios de Google</a>. Más información: <a href="https://policies.google.com/technologies/ads" rel="noopener">cómo usa Google las cookies en publicidad</a>.</p>{% endif %}
+  {% if money.newsletter_url %}<p>Si te suscribes a la newsletter, tu email lo gestiona el proveedor del servicio de envío con la única finalidad de mandarte la edición semanal. Puedes darte de baja en cualquier momento desde el enlace de cada email.</p>{% endif %}
+  <p>Tienes derecho a acceder, rectificar y suprimir tus datos{% if site.contact_email %} escribiendo a <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>{% endif %}, y a reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
+</section>
+{% endblock %}

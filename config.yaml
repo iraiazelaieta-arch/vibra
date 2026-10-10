@@ -1,0 +1,54 @@
+# ============================================================
+#  VIBRA — configuración principal
+#  Puedes editar este archivo directamente desde GitHub.
+# ============================================================
+site:
+  name: "VIBRA"
+  tagline: "Moda, música y cine: lo que vibra esta semana"
+  description: "Cada lunes, lo más importante de la semana en moda, música y cine, resumido en 5 minutos, con valoraciones de crítica y público."
+  language: "es"
+  # Dirección pública de la web (se rellena sola en GitHub; cámbiala cuando compres dominio)
+  base_url: ""
+  contact_email: ""
+
+# Dinero: déjalo vacío hasta tenerlo; la web se adapta sola
+monetization:
+  adsense_client: ""          # ej. "ca-pub-1234567890123456"
+  amazon_tag: ""              # ej. "vibra-21" (Amazon Afiliados España)
+  apple_affiliate_token: ""   # token de Apple Services Performance Partners
+  newsletter_url: ""          # enlace al formulario de suscripción (Beehiiv, Substack, Brevo...)
+
+ai:
+  # Modelos de Google Gemini a probar en orden (plan gratuito)
+  models: ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash"]
+  items_per_section: 6
+
+sections:
+  moda:
+    title: "Moda"
+    feeds:
+      - {name: "Vogue España", url: "https://www.vogue.es/feed/rss", lang: es}
+      - {name: "Elle España", url: "https://www.elle.com/es/rss/all.xml/", lang: es}
+      - {name: "Harper's Bazaar España", url: "https://www.harpersbazaar.com/es/rss/all.xml/", lang: es}
+      - {name: "Telva", url: "https://www.telva.com/rss/portada.xml", lang: es}
+      - {name: "Vogue", url: "https://www.vogue.com/feed/rss", lang: en}
+      - {name: "WWD", url: "https://wwd.com/feed/", lang: en}
+  musica:
+    title: "Música"
+    feeds:
+      - {name: "Jenesaispop", url: "https://jenesaispop.com/feed/", lang: es}
+      - {name: "Mondo Sonoro", url: "https://www.mondosonoro.com/feed/", lang: es}
+      - {name: "Rolling Stone", url: "https://www.rollingstone.com/music/feed/", lang: en}
+      - {name: "Billboard", url: "https://www.billboard.com/feed/", lang: en}
+      - {name: "Pitchfork (críticas)", url: "https://pitchfork.com/feed/feed-album-reviews/rss", lang: en}
+  cine:
+    title: "Cine y series"
+    feeds:
+      - {name: "Fotogramas", url: "https://www.fotogramas.es/rss/all.xml/", lang: es}
+      - {name: "Espinof", url: "https://www.espinof.com/feedburner.xml", lang: es}
+      - {name: "SensaCine", url: "https://www.sensacine.com/rss/noticias-cine.xml", lang: es}
+      - {name: "Variety", url: "https://variety.com/feed/", lang: en}
+      - {name: "IndieWire", url: "https://www.indiewire.com/feed/", lang: en}
+
+charts:
+  country: "es"

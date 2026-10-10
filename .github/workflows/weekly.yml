@@ -1,0 +1,63 @@
+name: Edición semanal
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"   # cada lunes a las 05:00 UTC (07:00 en España en verano, 06:00 en invierno)
+  workflow_dispatch:       # botón "Run workflow" para lanzarla a mano
+  push:
+    branches: [main]
+    paths: ["config.yaml", "templates/**", "static/**", "scripts/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Crear la edición de la semana
+        if: github.event_name != 'push'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: python scripts/build.py
+      - name: Regenerar la web (cambio de diseño o configuración)
+        if: github.event_name == 'push'
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: python scripts/build.py --render
+      - name: Guardar la edición en el historial
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "vibra-bot"
+          git config user.email "vibra-bot@users.noreply.github.com"
+          git add data/editions
+          git diff --cached --quiet || git commit -m "Edición semanal $(date -u +%G-S%V)"
+          git push
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
