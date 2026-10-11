@@ -293,9 +293,10 @@ Para cada una escribe con tus propias palabras (NUNCA copies frases de la fuente
 - "titulo": titular atractivo en español (máx. 90 caracteres)
 - "resumen": 2-3 frases originales en español (50-80 palabras) explicando qué ha pasado
 - "clave": una frase corta de por qué importa o qué significa (máx. 20 palabras)
+- "compra": búsqueda de 2-5 palabras para encontrar en Amazon un producto real relacionado (p. ej. "mocasines mujer piel", "Rosalía Lux vinilo", "Dune Blu-ray"); vacío si no hay nada lógico
 - "fuentes": lista de números [n] de las noticias en las que se basa (una o varias)
 No inventes datos que no estén en las noticias.
-Devuelve SOLO JSON: {{"historias": [{{"titulo": "", "resumen": "", "clave": "", "fuentes": [0]}}]}}
+Devuelve SOLO JSON: {{"historias": [{{"titulo": "", "resumen": "", "clave": "", "compra": "", "fuentes": [0]}}]}}
 
 NOTICIAS:
 {items}"""
@@ -322,6 +323,7 @@ def ai_section(name, candidates, n, key, models):
             "title": s["titulo"].strip(),
             "summary": s["resumen"].strip(),
             "why": (s.get("clave") or "").strip(),
+            "shop": (s.get("compra") or "").strip()[:60],
             "sources": [{"name": candidates[i]["source"], "url": candidates[i]["link"]} for i in dict.fromkeys(idxs)],
             "image": next((candidates[i]["image"] for i in idxs if candidates[i].get("image")), ""),
             "image_credit": next((candidates[i]["source"] for i in idxs if candidates[i].get("image")), ""),

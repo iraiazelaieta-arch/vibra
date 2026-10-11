@@ -22,6 +22,7 @@ site:
 # Dinero: déjalo vacío hasta tenerlo; la web se adapta sola
 monetization:
   adsense_client: "ca-pub-4375001471432617"   # ej. "ca-pub-1234567890123456"
+  adsense_slot: ""   # opcional: número de un bloque de anuncios de AdSense
   amazon_tag: "vibra05f-21"   # ej. "vibra-21" (Amazon Afiliados España)
   apple_affiliate_token: ""   # token de Apple Services Performance Partners
   newsletter_url: "https://vibrarevista.beehiiv.com"   # enlace al formulario de suscripción (Beehiiv, Substack, Brevo...)
