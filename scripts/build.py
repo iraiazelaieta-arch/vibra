@@ -115,10 +115,18 @@ def fetch_feed(feed, since):
     return items
 
 
-def get_json(url, **kw):
-    resp = requests.get(url, headers={"User-Agent": UA, **kw.pop("headers", {})}, timeout=20, **kw)
-    resp.raise_for_status()
-    return resp.json()
+def get_json(url, retries=3, **kw):
+    headers = {"User-Agent": UA, **kw.pop("headers", {})}
+    for attempt in range(retries):
+        try:
+            resp = requests.get(url, headers=headers, timeout=30, **kw)
+            resp.raise_for_status()
+            return resp.json()
+        except requests.RequestException as exc:
+            status = getattr(exc.response, "status_code", None)
+            if attempt == retries - 1 or (status and 400 <= status < 500 and status != 429):
+                raise
+            time.sleep(5 * (attempt + 1))
 
 
 def apple_music_chart(country, kind, limit=10):
