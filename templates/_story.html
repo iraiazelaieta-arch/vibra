@@ -1,13 +1,14 @@
+{% set href = root ~ 'semana/' ~ e.id ~ '/' ~ s.slug ~ '/' %}
 <article class="card{% if big %} big{% endif %}">
-  <a class="media" href="{{ s.sources[0].url }}" target="_blank" rel="noopener">
+  <a class="media" href="{{ href }}">
     {% if s.image %}<img loading="lazy" referrerpolicy="no-referrer" src="{{ s.image }}" alt="" onerror="this.remove()">{% endif %}
     <span class="tag">{{ s.sources[0].name }}</span>
     {% if s.image_credit %}<span class="credit">Foto: {{ s.image_credit }}</span>{% endif %}
   </a>
   <div class="body">
-    <h3><a href="{{ s.sources[0].url }}" target="_blank" rel="noopener">{{ s.title }}</a></h3>
+    <h3><a href="{{ href }}">{{ s.title }}</a></h3>
     {% if s.summary %}<p>{{ s.summary }}</p>{% endif %}
     {% if s.why %}<p class="why"><b>¿Por qué importa?</b> {{ s.why }}</p>{% endif %}
-    <p class="src">{% for f in s.sources %}<a href="{{ f.url }}" target="_blank" rel="noopener">{{ f.name }} ↗</a>{% endfor %}</p>
+    <p class="src"><a class="read" href="{{ href }}">{{ "Leer artículo" if s.body else "Leer más" }} →</a></p>
   </div>
 </article>

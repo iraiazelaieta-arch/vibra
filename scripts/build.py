@@ -16,6 +16,7 @@ import re
 import shutil
 import sys
 import time
+import unicodedata
 from pathlib import Path
 from urllib.parse import quote_plus
 
@@ -76,6 +77,24 @@ def og_image(url):
         return html.unescape(m.group(1)) if m else ""
     except Exception:
         return ""
+
+
+def page_text(url, limit=2500):
+    """Texto de los párrafos de la noticia original, solo como material de referencia para la IA."""
+    try:
+        r = requests.get(url, headers={"User-Agent": UA}, timeout=15)
+        r.raise_for_status()
+    except Exception:
+        return ""
+    raw = re.sub(r"(?is)<(script|style|noscript|figure|aside|nav|footer)[^>]*>.*?</\1>", " ", r.text)
+    out = ""
+    for m in re.finditer(r"(?is)<p[^>]*>(.*?)</p>", raw):
+        t = clean_text(m.group(1))
+        if len(t) > 60:
+            out += t + "\n"
+        if len(out) > limit:
+            break
+    return out[:limit]
 
 
 def fill_images(stories):
@@ -238,7 +257,7 @@ def gemini(prompt, key, models):
                 r = requests.post(
                     f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                     headers={"x-goog-api-key": key, "Content-Type": "application/json"},
-                    json=body, timeout=120)
+                    json=body, timeout=180)
                 if r.status_code == 429 or r.status_code >= 500:
                     log(f"  ! Gemini {model}: HTTP {r.status_code} {r.text[:300]!r}")
                     if "PerDay" in r.text:
@@ -298,8 +317,41 @@ def ai_section(name, candidates, n, key, models):
             "image": next((candidates[i]["image"] for i in idxs if candidates[i].get("image")), ""),
             "image_credit": next((candidates[i]["source"] for i in idxs if candidates[i].get("image")), ""),
             "ai": True,
+            "_ctx": [candidates[i] for i in dict.fromkeys(idxs)],
         })
     return stories
+
+
+ARTICLE_PROMPT = """Eres redactora de VIBRA, una revista digital en español de moda, música y cine para un público joven.
+Escribe un artículo propio para VIBRA sobre cada historia de la sección "{section}", usando SOLO los datos del material de referencia.
+Reglas:
+- 250-400 palabras por artículo, en 3-5 párrafos, con tono cercano y periodístico, en español de España.
+- Escribe con tus propias palabras: no copies ni traduzcas literalmente frases del material.
+- No inventes datos, fechas, cifras ni citas que no aparezcan en el material. Si hay poca información, escribe menos y aporta contexto general sin afirmar hechos nuevos.
+- Puedes atribuir datos al medio (por ejemplo, "según Vogue"). No hables de ti misma ni del "material".
+- Sin título, sin subtítulos y sin markdown: solo los párrafos.
+Devuelve SOLO JSON: {{"articulos": [{{"id": 0, "parrafos": ["", ""]}}]}}
+
+HISTORIAS:
+{items}"""
+
+
+def ai_articles(name, stories, key, models):
+    blocks = []
+    for i, s in enumerate(stories):
+        refs = "\n".join(f"Material de {c['source']}: {page_text(c['link']) or c['summary']}" for c in s.get("_ctx", []))
+        blocks.append(f"### [{i}] {s['title']}\nResumen: {s['summary']}\n{refs}")
+    data = gemini(ARTICLE_PROMPT.format(section=name, items="\n\n".join(blocks)), key, models) or {}
+    done = 0
+    for a in data.get("articulos", []):
+        i, paras = a.get("id"), a.get("parrafos")
+        if not isinstance(i, int) or not 0 <= i < len(stories) or not isinstance(paras, list):
+            continue
+        paras = [re.sub(r"\*\*|__", "", p).strip() for p in paras if isinstance(p, str) and p.strip()]
+        if sum(len(p.split()) for p in paras) >= 80:
+            stories[i]["body"] = paras
+            done += 1
+    log(f"  · artículos propios: {done}/{len(stories)}")
 
 
 def plain_section(candidates, n):
@@ -344,6 +396,10 @@ def make_edition(cfg):
             if gkey:
                 log("  ! IA no disponible: uso modo sin IA")
             stories = plain_section(candidates, n)
+        else:
+            ai_articles(sec["title"], stories, gkey, cfg["ai"]["models"])
+        for s in stories:
+            s.pop("_ctx", None)
         fill_images(stories)
         edition["sections"][sid] = {"title": sec["title"], "stories": stories, "headlines": [
             {"title": c["title"], "source": c["source"], "url": c["link"], "image": c.get("image", "")} for c in diverse_pick(ranked, 8, per_source=2)]}
@@ -381,10 +437,29 @@ def nice_date(iso):
     return f"{d.day} de {MONTHS[d.month - 1]} de {d.year}"
 
 
+def slugify(text):
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", text).strip("-")[:70].rstrip("-") or "articulo"
+
+
+def assign_slugs(edition):
+    seen = set()
+    for sec in edition["sections"].values():
+        for s in sec.get("stories", []):
+            slug = base = slugify(s["title"])
+            n = 2
+            while slug in seen:
+                slug, n = f"{base}-{n}", n + 1
+            seen.add(slug)
+            s["slug"] = slug
+
+
 def render(cfg):
     editions = sorted((json.loads(p.read_text()) for p in DATA.glob("*.json")), key=lambda e: e["date"], reverse=True)
     if not editions:
         sys.exit("No hay ediciones todavía. Ejecuta sin --render primero.")
+    for e in editions:
+        assign_slugs(e)
     base_url = (cfg["site"].get("base_url") or os.environ.get("SITE_URL") or "").rstrip("/")
     money = cfg.get("monetization", {})
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html", "xml", "webmanifest"]))
@@ -405,6 +480,11 @@ def render(cfg):
     write("index.html", "edition.html", 0, e=editions[0], latest=True)
     for e in editions:
         write(f"semana/{e['id']}/index.html", "edition.html", 2, e=e, latest=False)
+        flat = [(sid, sec, s) for sid, sec in e["sections"].items() for s in sec.get("stories", [])]
+        for sid, sec, s in flat:
+            related = [x for x in flat if x[0] == sid and x[2] is not s] + [x for x in flat if x[0] != sid]
+            write(f"semana/{e['id']}/{s['slug']}/index.html", "article.html", 3,
+                  e=e, sid=sid, sec=sec, s=s, related=related[:6])
     write("archivo/index.html", "archive.html", 1, editions=editions)
     for page in ("aviso-legal", "privacidad", "cookies", "sobre-vibra"):
         write(f"{page}/index.html", f"{page}.html", 1)
