@@ -3,94 +3,102 @@
  "week": 41,
  "year": 2026,
  "date": "2026-10-05",
- "generated_at": "2026-10-11T11:20:15+00:00",
+ "generated_at": "2026-10-11T13:44:05+00:00",
  "sections": {
   "moda": {
    "title": "Moda",
    "stories": [
     {
-     "title": "Los mejores zapatos de invitada para bodas de otoño-invierno los ha llevado Amal Clooney en The Albies 2026",
-     "summary": "Los zapatos dorados serán la sensación de los próximos eventos, palabra de Amal Clooney",
-     "why": "",
+     "title": "Taylor Swift rescata los zapatos masculinos como el básico infalible del otoño",
+     "summary": "La cantante ha vuelto a situar el calzado de inspiración masculina en el centro de las miradas para esta temporada de entretiempo. Taylor Swift demuestra que los diseños clásicos nunca pasan de moda y funcionan a la perfección a cualquier hora del día. Su propuesta confirma que la comodidad y la elegancia pueden fusionarse sin esfuerzo en el armario diario.",
+     "why": "El calzado clásico de corte masculino redefine el armario diario demostrando su absoluta vigencia atemporal.",
      "sources": [
       {
        "name": "Vogue España",
-       "url": "https://www.vogue.es/articulos/zapatos-dorados-invitada-boda-amal-clooney-tendencias-otono-invierno-2026-2027"
+       "url": "https://www.vogue.es/articulos/zapatos-masculinos-taylor-swift-otono-2026-2027"
       }
      ],
-     "image": "https://media.vogue.es/photos/6ac9f2ff70c657de11b491a4/master/pass/GettyImages-2299420407.jpg",
+     "image": "https://media.vogue.es/photos/6aca4ab9d4d09734da557530/master/pass/INSTAR56082014.jpg",
      "image_credit": "Vogue España",
-     "ai": false
+     "ai": true
     },
     {
-     "title": "El regreso del vestido blazer: los 6 diseños más bonitos de Mango, Zara y El Corte Inglés inspirados en Uma Thurman",
-     "summary": "Uma Thurman recuerda el poder del vestido blazer con un look elegante y sofisticado en Nueva York. Una prenda que combina la estructura de una americana con la feminidad de un vestido y que las firmas asequibles…",
-     "why": "",
+     "title": "Emily Ratajkowski e Ines De Ramon confirman el poder del vestido transparente",
+     "summary": "La alfombra roja de los premios Albies 2026 en Londres consagró las transparencias como la tendencia estelar de la noche. Emily Ratajkowski deslumbró con un diseño de Gucci repleto de bordados florales y lentejuelas, acompañada por Romain Gavras. Al mismo tiempo, Ines De Ramon apostó junto a Brad Pitt por un delicado vestido verde salvia con idéntico efecto translúcido.",
+     "why": "Las transparencias se reinventan con sofisticación y detalles joya en las grandes citas nocturnas.",
      "sources": [
       {
-       "name": "Harper's Bazaar España",
-       "url": "https://www.harpersbazaar.com/es/moda/compras/g74088861/regreso-vestido-blazer-disenos-bonitos-mango-zara-el-corte-ingles-inspirados-uma-thurman/"
+       "name": "WWD",
+       "url": "https://wwd.com/pop-culture/celebrity-news/emily-ratajkowski-sheer-gucci-dress-2026-albies-1239341785/"
+      },
+      {
+       "name": "WWD",
+       "url": "https://wwd.com/pop-culture/celebrity-news/ines-de-ramon-sheer-dress-brad-pitt-2026-albies-1239341757/"
       }
      ],
-     "image": "https://hips.hearstapps.com/hmg-prod/images/026795c1-3d84-4720-a9ca-c4aa9bb71b0f.jpeg",
-     "image_credit": "Harper's Bazaar España",
-     "ai": false
+     "image": "https://wwd.com/wp-content/uploads/2026/10/emily-ratajkowski-sheer-naked-gucci-dress-2026-albies.png?w=1000&h=563&crop=1",
+     "image_credit": "WWD",
+     "ai": true
     },
     {
-     "title": "Los 5 looks de street style que voy a copiar en bucle durante todo el otoño (son lo más cool que he visto y lanzan un mensaje que solo las expertas en moda entienden)",
-     "summary": "De todos los looks vistos en el street style de París, estos 5 son los que quiero copiar en bucle todo el otoño. Leer",
-     "why": "",
+     "title": "Florence Pugh y Finn Cole hacen oficial su relación en la alfombra roja",
+     "summary": "Durante el estreno de la película 'In the Shadows' en Londres, Florence Pugh y Finn Cole posaron juntos por primera vez como pareja ante las cámaras. La actriz acudió a respaldar a Cole mostrando una sincronía estilística sutil y sofisticada entre ambos. Su aparición desató el entusiasmo de sus seguidores al consagrar una de las alianzas de estilo más comentadas.",
+     "why": "Los estilismos coordinados en pareja conquistan los estrenos con una elegancia moderna y sin estridencias.",
+     "sources": [
+      {
+       "name": "Vogue",
+       "url": "https://www.vogue.com/article/florence-pugh-and-finn-cole-go-red-carpet-official"
+      }
+     ],
+     "image": "https://assets.vogue.com/photos/6acab32dec8e9cad95afb5d2/master/pass/2299441442",
+     "image_credit": "Vogue",
+     "ai": true
+    },
+    {
+     "title": "Elie Saab democratiza el lujo nupcial con su nueva colección para H&M",
+     "summary": "El modisto libanés Elie Saab se une a H&M para lanzar un vestido de novia que promete convertirse en un éxito de ventas. Esta propuesta nupcial destaca por su aire romántico, femenino y profusamente ornamentado, adaptado a presupuestos mucho más accesibles. Gracias a esta alianza, el universo de la alta costura se acerca al gran público para vestir ocasiones inolvidables.",
+     "why": "La alta costura nupcial se vuelve accesible sin perder el romanticismo ni los detalles ornamentales.",
      "sources": [
       {
        "name": "Telva",
-       "url": "https://www.telva.com/moda/looks/2026/10/11/6ac4b72102136e09338b458d.html"
+       "url": "https://www.telva.com/novias/2026/10/09/6ac8a7eb01a2f101248b456e.html"
       }
      ],
-     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/06/17912754385708.jpg",
+     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/09/17915354013846.jpg",
      "image_credit": "Telva",
-     "ai": false
+     "ai": true
     },
     {
-     "title": "Anne Carson, escritora y Premio Nobel de Literatura 2026, sobre Rosalía: \"Nadie puede sobrevivir a un grado de adoración tan intenso\"",
-     "summary": "La escritora canadiense Anne Carson, que ganó ayer el Nobel de Literatura 2026, se deshizo en elogios hacia Rosalía tras asistir a uno de sus conciertos en Chicago.",
-     "why": "",
+     "title": "Kim Kardashian desafía la estética del motor con un look rosa pastel en Singapur",
+     "summary": "En su visita al Gran Premio de Singapur para apoyar a Lewis Hamilton, Kim Kardashian rompió con el tradicional rojo de las carreras. La empresaria deslumbró en el paddock con un estilismo ajustado en tono rosa pastel que fusionó la ropa ceñida con un marcado espíritu deportivo. Esta llamativa elección demostró una vez más su habilidad para transformar cualquier entorno deportivo en una pasarela.",
+     "why": "Romper los códigos cromáticos tradicionales del automovilismo aporta un giro fresco a la moda deportiva.",
      "sources": [
       {
-       "name": "Elle España",
-       "url": "https://www.elle.com/es/living/ocio-cultura/a74088449/anne-carson-nobel-literatura-2026-rosalia/"
+       "name": "Vogue",
+       "url": "https://www.vogue.com/article/kim-kardashian-pulls-up-to-the-paddock-in-pastel-pink"
       }
      ],
-     "image": "https://hips.hearstapps.com/hmg-prod/images/031115ea-a548-40d2-b502-6bb423f63b70.jpg",
-     "image_credit": "Elle España",
-     "ai": false
+     "image": "https://assets.vogue.com/photos/6acab0f3a63cbbff7de546b7/master/pass/2299520226",
+     "image_credit": "Vogue",
+     "ai": true
     },
     {
-     "title": "Este perfume inpirado en el icónico abrigo camel de Max Mara será la fragancia del otoño porque es floral, amaderado, dura 24h en la ropa y hasta un mes en el recuerdo",
-     "summary": "En el año que Max Mara celebra su 75 aniversario la firma italiana se estrena en el mundo de los perfumes con Le Parfum . Un aroma cálido y atemporal (con nardo, madera de cedro y vainilla ) como su icónico abrigo…",
-     "why": "",
+     "title": "Emma Stone y Carlota Casiraghi imponen las uñas burdeos como la manicura del otoño",
+     "summary": "El esmalte burdeos se ha convertido oficialmente en la manicura predilecta de las prescriptoras de estilo para los meses fríos. Emma Stone lució este sofisticado tono otoñal que estiliza visualmente las manos, desbancando a opciones tradicionales como los colores neutros o el negro. Por su parte, Carlota Casiraghi reafirma esta tendencia combinándola con un corte de uñas corto y sumamente versátil.",
+     "why": "El esmalte vino oscuro desplaza a los neutros como la opción más elegante de la temporada.",
      "sources": [
       {
        "name": "Telva",
-       "url": "https://www.telva.com/belleza/perfumes/2026/10/10/6ac3a0e901a2f16e618b458c.html"
-      }
-     ],
-     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/07/17913795257965.jpg",
-     "image_credit": "Telva",
-     "ai": false
-    },
-    {
-     "title": "La boda en A Coruña de Marta y Pedro: un vestido de novia ‘dollcore’, unas zapatillas (azules) de Adidas y una verbena gallega",
-     "summary": "A continuación, todos los detalles de la boda en A Coruña de esta pareja:",
-     "why": "",
-     "sources": [
+       "url": "https://www.telva.com/belleza/maquillaje/2026/10/09/6ac8a56801a2f10d328b456f.html"
+      },
       {
-       "name": "Vogue España",
-       "url": "https://www.vogue.es/galerias/boda-a-coruna-pazo-andeade-vestido-novia-sara-lage"
+       "name": "Telva",
+       "url": "https://www.telva.com/belleza/maquillaje/2026/10/11/6acb429102136ef6558b4594.html"
       }
      ],
-     "image": "https://media.vogue.es/photos/6acb37455c3b8bd60704f6f9/master/pass/MARTA_&_PEDRO_ResWeb-470.jpg",
-     "image_credit": "Vogue España",
-     "ai": false
+     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/09/17915354396246.jpg",
+     "image_credit": "Telva",
+     "ai": true
     }
    ],
    "headlines": [
@@ -101,28 +109,28 @@
      "image": "https://media.vogue.es/photos/6ac9f2ff70c657de11b491a4/master/pass/GettyImages-2299420407.jpg"
     },
     {
-     "title": "Estos son los zapatos masculinos que llevaremos este otoño a todas horas (y así los defiende Taylor Swift)",
+     "title": "Por qué ‘American Hagwon’, de la surcoreana Min Jin Lee, es una de las novelas más esperadas del otoño 2026",
      "source": "Vogue España",
-     "url": "https://www.vogue.es/articulos/zapatos-masculinos-taylor-swift-otono-2026-2027",
-     "image": "https://media.vogue.es/photos/6aca4ab9d4d09734da557530/master/pass/INSTAR56082014.jpg"
+     "url": "https://www.vogue.es/articulos/american-hagwon-min-jin-lee-novelas-mas-esperadas-del-otono-2026",
+     "image": "https://media.vogue.es/photos/6ac8dd3cda4c5d1b5a7f11e3/master/pass/americanhagwon.png"
     },
     {
-     "title": "Los acolchados y plumíferos de tendencia más bonitos de otoño invierno ya están en Mango, Massimo Dutti, Stradivarius y Primark",
+     "title": "La colaboradora de moda de ELLE que se ha convertido en la primera invitada de boda de otoño más elegante de firma española",
      "source": "Elle España",
-     "url": "https://www.elle.com/es/moda/noticias/a74099476/chaquetas-acolchadas-plumiferos-tendencia-otono-invierno-2026-2027/",
-     "image": "https://hips.hearstapps.com/hmg-prod/images/8ff3162b-736e-4831-bfa1-84f34db80baf.jpg"
+     "url": "https://www.elle.com/es/moda/tendencias/a74099404/invitada-boda-otono-firma-espanola/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/bc41fbe1-761c-4412-a735-e76a84035328.png"
     },
     {
-     "title": "El regreso del vestido blazer: los 6 diseños más bonitos de Mango, Zara y El Corte Inglés inspirados en Uma Thurman",
+     "title": "De todos los pintalabios rojos que hay, estos son los tonos de tendencia que las expertas en labiales llevan este otoño",
+     "source": "Elle España",
+     "url": "https://www.elle.com/es/belleza/cara-cuerpo/a74010316/pintalabios-rojos-tonos-tendencia-expertas-en-labiales-llevan-este-otono/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/44bb240f-556a-4747-980b-066355844fc0.jpg"
+    },
+    {
+     "title": "Merceditas marrones: los 7 diseños más bonitos de Mango, Massimo Dutti y Zara inspirados en Carlota Casiraghi para lucir con todos los looks de otoño",
      "source": "Harper's Bazaar España",
-     "url": "https://www.harpersbazaar.com/es/moda/compras/g74088861/regreso-vestido-blazer-disenos-bonitos-mango-zara-el-corte-ingles-inspirados-uma-thurman/",
-     "image": "https://hips.hearstapps.com/hmg-prod/images/026795c1-3d84-4720-a9ca-c4aa9bb71b0f.jpeg"
-    },
-    {
-     "title": "Los 5 looks de street style que voy a copiar en bucle durante todo el otoño (son lo más cool que he visto y lanzan un mensaje que solo las expertas en moda entienden)",
-     "source": "Telva",
-     "url": "https://www.telva.com/moda/looks/2026/10/11/6ac4b72102136e09338b458d.html",
-     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/06/17912754385708.jpg"
+     "url": "https://www.harpersbazaar.com/es/famosas/el-estilo-de/a74076392/carlota-casiraghi-merceditas-marrones-zara-mango-massimo-dutti-tendencia-otono/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/abba48ea-c8b1-4ef1-a8c2-b4a9cb6384da.jpg"
     },
     {
      "title": "Olvida el vestido y el mono, dice Nieves Álvarez que el traje fucsia con chaqueta ajustada y falda de vuelo es la tendencia más favorecedora para las invitadas a bodas este otoño",
@@ -131,10 +139,10 @@
      "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/11/17917102372723.jpg"
     },
     {
-     "title": "Aparca la falda satinada: estas son las 9 faldas de cuero que más vamos a ver este otoño 2026 (y cómo llevarlas)",
-     "source": "Elle España",
-     "url": "https://www.elle.com/es/moda/tendencias/a74005195/faldas-cuero-otono-2026-como-llevarlas/",
-     "image": "https://hips.hearstapps.com/hmg-prod/images/2d6bc518-9141-4db4-a510-76be59a48a54.jpg"
+     "title": "Este perfume inpirado en el icónico abrigo camel de Max Mara será la fragancia del otoño porque es floral, amaderado, dura 24h en la ropa y hasta un mes en el recuerdo",
+     "source": "Telva",
+     "url": "https://www.telva.com/belleza/perfumes/2026/10/10/6ac3a0e901a2f16e618b458c.html",
+     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/07/17913795257965.jpg"
     },
     {
      "title": "Anne Carson, la poeta canadiense fan de Rosalía, gana el Premio Nobel de Literatura 2026",
@@ -148,65 +156,27 @@
    "title": "Música",
    "stories": [
     {
-     "title": "Rosalía en SNL: 3 minutos en puntas de ballet y virtuosismo vocal",
-     "summary": "Interpreta 'Reliquia' y 'Magnolias'.",
-     "why": "",
+     "title": "Rosalía deslumbra en Saturday Night Live con una hipnótica actuación en puntas",
+     "summary": "La artista española volvió a conquistar la televisión estadounidense con el repertorio de su aclamado proyecto discográfico 'Lux'. Subida a unas puntas de ballet y mostrando un control vocal impecable, interpretó 'Reliquia' y 'Magnolias' en directo. Su paso por el mítico programa confirma una vez más su estatus indiscutible de estrella global sin renunciar a la vanguardia.",
+     "why": "Afianza la proyección internacional y la estética visual de su etapa más ambiciosa.",
      "sources": [
       {
        "name": "Jenesaispop",
        "url": "https://jenesaispop.com/2026/10/11/532008/rosalia-snl-reliquia/"
+      },
+      {
+       "name": "Rolling Stone",
+       "url": "https://www.rollingstone.com/music/music-news/snl-watch-rosalia-performs-reliquia-magnolias-1235640806/"
       }
      ],
      "image": "https://jenesaispop.com/wp-content/uploads/2026/10/Captura-de-pantalla-2026-10-11-095912.png",
      "image_credit": "Jenesaispop",
-     "ai": false
+     "ai": true
     },
     {
-     "title": "Geordie Greep, acusado de violación en pleno concierto",
-     "summary": "Geordie Greep no va a olvidar el comienzo de su último concierto, celebrado en Vancouver. El exvocalista de black midi ha respondido en directo a las acusaciones realizadas antes del espectáculo por una persona que…",
-     "why": "",
-     "sources": [
-      {
-       "name": "Jenesaispop",
-       "url": "https://jenesaispop.com/2026/10/10/531985/geordie-greep-acusado-violacion/"
-      }
-     ],
-     "image": "https://jenesaispop.com/wp-content/uploads/2024/08/geordie-greep.jpg",
-     "image_credit": "Jenesaispop",
-     "ai": false
-    },
-    {
-     "title": "Más rabia en los barrios",
-     "summary": "El ciclo ‘Directos Vibra Mahou’ inauguraba temporada en La Cueva del Jazz en Vivo con la visita de las gallegas...",
-     "why": "",
-     "sources": [
-      {
-       "name": "Mondo Sonoro",
-       "url": "https://www.mondosonoro.com/criticas/conciertos-musica/bala-zamora/"
-      }
-     ],
-     "image": "",
-     "image_credit": "",
-     "ai": false
-    },
-    {
-     "title": "AFFRA desvela “Cuídame“, segundo adelanto de su álbum debut",
-     "summary": "AFFRA lanza “Cuídame”, una canción en la que encontramos el refugio sobre el que cantará en “Al trenzar mis penas”,...",
-     "why": "",
-     "sources": [
-      {
-       "name": "Mondo Sonoro",
-       "url": "https://www.mondosonoro.com/noticias-actualidad-musical/affra-desvela-cuidame-segundo-adelanto-de-su-album-debut/"
-      }
-     ],
-     "image": "https://www.mondosonoro.com/wp-content/uploads/2026/10/Cuidame-Definitivas-22.jpg",
-     "image_credit": "Mondo Sonoro",
-     "ai": false
-    },
-    {
-     "title": "See Charli XCX Bring Out Tinashe at ACL Festival",
-     "summary": "Tinashe performs \"Nobody Wanna Dance Anymore\" and \"Melatonin\" from her new LP Popstar during her friend Charli's headlining set",
-     "why": "",
+     "title": "Charli XCX desata la euforia al invitar a Tinashe en el festival Austin City Limits",
+     "summary": "Durante su concierto como cabeza de cartel en el festival tejano, Charli XCX sorprendió al público invitando a Tinashe a compartir escenario. Juntas interpretaron temas del recién estrenado trabajo de la estadounidense, incluyendo canciones como 'Melatonin'. La complicidad entre ambas confirmó el gran momento que atraviesa el pop alternativo ante una multitud entregada que celebró la inesperada colaboración.",
+     "why": "Une a dos referentes esenciales del pop electrónico y las pistas de baile actuales.",
      "sources": [
       {
        "name": "Rolling Stone",
@@ -215,21 +185,67 @@
      ],
      "image": "https://www.rollingstone.com/wp-content/uploads/2026/10/GettyImages-2288754233.jpg?w=1600&h=900&crop=1",
      "image_credit": "Rolling Stone",
-     "ai": false
+     "ai": true
     },
     {
-     "title": "NFL London Game Halftime Show 2026: Here’s Where to Watch Perform Ayra Starr Live Online Free",
-     "summary": "Livestream the Philadelphia Eagles take on the Jacksonville Jaguars live from London on Oct. 11.",
-     "why": "",
+     "title": "Ralphie Choo avanza hacia su nuevo disco con el lanzamiento de 'Amarillo nena'",
+     "summary": "Tras confesar la presión creativa que sintió para superar el impacto de 'SUPERNOVA', el productor español anunció que su esperado segundo álbum ya está terminado. Para amenizar la espera, ha compartido el tema 'Amarillo nena', donde continúa explorando melodías pegadizas y experimentales. El movimiento sitúa al artista en el centro de todas las miradas de la escena independiente nacional.",
+     "why": "Marca el inicio de la era definitiva para la voz más innovadora del panorama español.",
      "sources": [
       {
-       "name": "Billboard",
-       "url": "https://www.billboard.com/culture/product-recommendations/nfl-london-2026-ayra-starr-halftime-show-watch-live-free-1236358001/"
+       "name": "Jenesaispop",
+       "url": "https://jenesaispop.com/2026/10/10/531954/ralphie-choo-amarillo-nena/"
       }
      ],
-     "image": "https://www.billboard.com/wp-content/uploads/2024/11/directv-stream.png?w=512&h=512&crop=1",
-     "image_credit": "Billboard",
-     "ai": false
+     "image": "https://jenesaispop.com/wp-content/uploads/2026/10/41tVvj7ACTL._UXNaN_FMjpg_QL85_.jpg",
+     "image_credit": "Jenesaispop",
+     "ai": true
+    },
+    {
+     "title": "Ruslana estrena 'ANOMIA' apostando por la autenticidad frente al postureo pop",
+     "summary": "La joven cantante lanza su álbum debut bajo una clara premisa creativa y vital. En sus declaraciones, la artista defiende que el público joven necesita canciones sinceras y sonidos genuinos en lugar de figuras perfectas e inalcanzables. Con este trabajo, busca marcar distancias con las fórmulas más prefabricadas del pop actual y consolidar una propuesta propia llena de carácter.",
+     "why": "Reivindica un pop visceral y cercano para conectar con la juventud de su generación.",
+     "sources": [
+      {
+       "name": "Jenesaispop",
+       "url": "https://jenesaispop.com/2026/10/11/531892/ruslana-entrevista/"
+      }
+     ],
+     "image": "https://jenesaispop.com/wp-content/uploads/2026/10/012RUSLANA_ANOMIA_ZARZA_ALFONLOPZ-1-1.jpg",
+     "image_credit": "Jenesaispop",
+     "ai": true
+    },
+    {
+     "title": "El renacer viral de un tema inesperado de Taylor Swift sacude las redes sociales",
+     "summary": "La legión de seguidores de la cantante estadounidense ha rescatado masivamente la canción 'Chloe or Sam or Sophia or Marcus', perteneciente a su último álbum de estudio. El tema ha comenzado a escalar puestos de forma orgánica en tendencias globales gracias al entusiasmo colectivo de los oyentes. Este inesperado furor demuestra el magnetismo duradero de las composiciones menos comerciales de su catálogo.",
+     "why": "Demuestra el poder de su comunidad para transformar cualquier corte de disco en fenómeno.",
+     "sources": [
+      {
+       "name": "Rolling Stone",
+       "url": "https://www.rollingstone.com/music/music-features/taylor-swift-deep-cut-chloe-sam-sophia-marcus-song-1235640023/"
+      }
+     ],
+     "image": "https://www.rollingstone.com/wp-content/uploads/2026/10/taylor-swift-tortured-poets-song.jpg?crop=169px%2C0px%2C1629px%2C916px&resize=1600%2C900",
+     "image_credit": "Rolling Stone",
+     "ai": true
+    },
+    {
+     "title": "Remi Wolf canaliza el agotamiento de las giras en su nuevo trabajo discográfico",
+     "summary": "La compositora y cantante ha presentado 'Mud', un álbum nacido tras sufrir un fuerte desgaste emocional y físico debido a sus prolongadas giras. Para componerlo, decidió refugiarse con amigos en California con el objetivo de procesar sentimientos reprimidos y buscar su propia sanación. El resultado es un retrato musical honesto que resalta su gran carisma y potente voz.",
+     "why": "Pone sobre la mesa la salud mental y las secuelas del ritmo frenético de giras.",
+     "sources": [
+      {
+       "name": "Rolling Stone",
+       "url": "https://www.rollingstone.com/music/music-features/remi-wolf-interview-touring-album-mud-1235639076/"
+      },
+      {
+       "name": "Pitchfork (críticas)",
+       "url": "https://pitchfork.com/reviews/albums/remi-wolf-mud/"
+      }
+     ],
+     "image": "https://media.pitchfork.com/photos/6a846e7bf8d0edf80c0400c1/master/pass/MUD-cover.jpg",
+     "image_credit": "Pitchfork (críticas)",
+     "ai": true
     }
    ],
    "headlines": [
@@ -264,10 +280,10 @@
      "image": "https://www.billboard.com/wp-content/uploads/2024/11/directv-stream.png?w=512&h=512&crop=1"
     },
     {
-     "title": "Barry Manilow Walks Off Stage, Cancels Vegas Shows Due to Bronchitis",
+     "title": "Charli XCX Welcomes Tinashe for Surprise Performance at 2026 Austin City Limits Festival",
      "source": "Billboard",
-     "url": "https://www.billboard.com/music/music-news/barry-manilow-cuts-short-las-vegas-show-cancels-concerts-1236358635/",
-     "image": ""
+     "url": "https://www.billboard.com/music/music-news/charli-xcx-tinashe-2026-austin-city-limits-festival-1236358595/",
+     "image": "https://i.imgur.com/2HpFicp.png"
     },
     {
      "title": "Más rabia en los barrios",
@@ -357,11 +373,11 @@
     },
     {
      "position": 10,
-     "title": "POR SI MAÑANA NO ESTOY",
-     "artist": "Omar Courtz",
-     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0b/13/d6/0b13d6d1-d5b9-03f4-a7b8-29f00faad00f/820200317964.jpg/300x300bb.jpg",
-     "url": "https://music.apple.com/es/album/por-si-ma%C3%B1ana-no-estoy/1877481995",
-     "release_date": "2026-02-19"
+     "title": "DeBÍ TiRAR MáS FOToS",
+     "artist": "Bad Bunny",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/90/5e/7e/905e7ed5-a8fa-a8f3-cd06-0028fdf3afaa/199066342442.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/deb%C3%AD-tirar-m%C3%A1s-fotos/1787022393",
+     "release_date": "2025-01-05"
     }
    ],
    "songs": [
@@ -423,11 +439,11 @@
     },
     {
      "position": 8,
-     "title": "Yonaguni",
-     "artist": "Bad Bunny",
-     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b6/12/da/b612daba-6c68-c2ab-7492-fb2e079074d5/196006829308.jpg/300x300bb.jpg",
-     "url": "https://music.apple.com/es/album/yonaguni/1570323047?i=1570323056",
-     "release_date": "2021-06-04"
+     "title": "AGUA",
+     "artist": "Maluma & Shakira",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/51/30/88/51308852-2879-70b1-6028-a5a589a692c9/196874698495.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/agua/6810372456?i=6810372461",
+     "release_date": "2026-09-17"
     },
     {
      "position": 9,
@@ -439,11 +455,11 @@
     },
     {
      "position": 10,
-     "title": "AGUA",
-     "artist": "Maluma & Shakira",
-     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/51/30/88/51308852-2879-70b1-6028-a5a589a692c9/196874698495.jpg/300x300bb.jpg",
-     "url": "https://music.apple.com/es/album/agua/6810372456?i=6810372461",
-     "release_date": "2026-09-17"
+     "title": "Yonaguni",
+     "artist": "Bad Bunny",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b6/12/da/b612daba-6c68-c2ab-7492-fb2e079074d5/196006829308.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/yonaguni/1570323047?i=1570323056",
+     "release_date": "2021-06-04"
     }
    ]
   },
@@ -451,88 +467,122 @@
    "title": "Cine y series",
    "stories": [
     {
-     "title": "Alfred Hitchcock, hace 62 años: \"Veo la posibilidad de que, en el año 3000 o algo así, la gente entre en un gran auditorio a oscuras donde se les someta a una hipnosis colectiva\"",
-     "summary": "El director de origen inglés, famoso por sus películas de intriga y por sus contribuciones técnicas en el medio, imaginó cómo podría ser el cine en el futuro.",
-     "why": "",
+     "title": "Christopher Nolan bate récords históricos en Corea del Sur con su nueva obra maestra",
+     "summary": "La esperada película de Christopher Nolan ha superado a grandes éxitos anteriores para convertirse en la cinta internacional más taquillera de todos los tiempos en el mercado coreano. Este nuevo hito reafirma el imponente poder de convocatoria del aclamado director británico en la taquilla global.",
+     "why": "Demuestra la vigencia comercial y el fenómeno de masas global que genera el cine de Christopher Nolan.",
      "sources": [
       {
-       "name": "Fotogramas",
-       "url": "https://www.fotogramas.es/noticias-cine/a74033638/alfred-hitchcock-director-cine-prediccion-salas-de-cine-hipnosis-colectiva/"
+       "name": "Variety",
+       "url": "https://variety.com/2026/film/box-office/odyssey-passes-avatar-korea-top-international-film-ever-1236908100/"
       }
      ],
-     "image": "https://hips.hearstapps.com/hmg-prod/images/225341a1-e137-4dc6-9994-2ace02b8a24a.jpg",
-     "image_credit": "Fotogramas",
-     "ai": false
+     "image": "https://variety.com/wp-content/uploads/2026/10/The-Odyssey-Seoul-premiere.jpg",
+     "image_credit": "Variety",
+     "ai": true,
+     "body": [
+      "El aclamado director británico Christopher Nolan ha batido récords históricos en Corea del Sur con su nueva obra maestra, titulada The Odyssey. Según datos de Variety, la cinta distribuida por Universal se ha convertido en el estreno internacional más taquillero de todos los tiempos en el mercado coreano al superar a Avatar: The Way of Water.",
+      "A fecha de 11 de octubre, el largometraje ha alcanzado una recaudación acumulada impresionante de 139.200 millones de wones, equivalentes a 101,5 millones de dólares. Además, la película ha superado la marca de los doce millones de espectadores, lo que representa aproximadamente el veinticuatro por ciento de la población total del país asiático.",
+      "El fenómeno cinematográfico mantuvo el primer puesto en la taquilla durante siete fines de semana consecutivos y batió récords en formato IMAX y Dolby Cinema. Con este nuevo hito, Nolan se consagra como el primer director en colocar dos películas internacionales que no pertenecen a franquicias por encima de los diez millones de espectadores en territorio coreano."
+     ]
     },
     {
-     "title": "Anne Hathaway da su veredicto sobre 'Digger', la película de Tom Cruise que no convence en taquilla: \"Es brillante\"",
-     "summary": "No todas las películas necesitan convencer a la taquilla para encontrar defensores. 'Digger' , la comedia satírica protagonizada por Tom Cruise y dirigida por Alejandro González Iñárritu, ha recibido un respaldo…",
-     "why": "",
+     "title": "Keanu Reeves busca nuevo socio internacional para su ambiciosa película samurái",
+     "summary": "El proyecto animado en stop-motion protagonizado por la voz de Keanu Reeves se encuentra explorando nuevas alianzas estratégicas tras estancarse las negociaciones con una compañía estadounidense. Los productores buscan asegurar la financiación necesaria para sacar adelante este esperado filme de acción.",
+     "why": "El futuro del proyecto de animación depende de encontrar un estudio que respete su visión creativa.",
      "sources": [
       {
-       "name": "Espinof",
-       "url": "https://www.espinof.com/actores-y-actrices/anne-hathaway-da-su-veredicto-digger-pelicula-tom-cruise-que-no-convence-taquilla-brillante"
+       "name": "Variety",
+       "url": "https://variety.com/2026/film/markets-festivals/keanu-reeves-hidari-new-partner-us-talks-stall-1236908055/"
       }
      ],
-     "image": "https://i.blogs.es/ae307d/ane1/1024_2000.jpeg",
-     "image_credit": "Espinof",
-     "ai": false
+     "image": "https://variety.com/wp-content/uploads/2026/06/MixCollage-25-Jun-2026-07-18-PM-2123.jpg",
+     "image_credit": "Variety",
+     "ai": true,
+     "body": [
+      "El proyecto animado en stop-motion Hidari, que cuenta con la participación vocal de Keanu Reeves, se encuentra buscando un nuevo socio internacional tras estancarse las negociaciones con una compañía estadounidense. Así lo explicó la productora Matsumoto Noriko de Dwarf Studios durante su intervención en el Festival Internacional de Cine de Busan.",
+      "La oferta inicial de la empresa de Estados Unidos contemplaba la financiación completa del presupuesto a cambio de adquirir la totalidad de los derechos. Aunque existía un gran respeto por la creatividad del estudio nipón, los productores prefirieron no ceder el control total de una propuesta tan original y aspiraban a retener la mitad de los derechos.",
+      "No obstante, las conversaciones se interrumpieron definitivamente después de que los directivos con los que negociaban perdieran sus puestos de trabajo debido a los cambios estructurales en Hollywood. Ante esta situación, Dwarf Studios y sus colaboradores buscan asegurar nuevas vías de financiación para sacar adelante este esperado filme de acción samurái."
+     ]
     },
     {
-     "title": "Charlize Theron forzó tanto sus cuerdas vocales para esta película basada en un caso real que perdió la voz durante tres semanas",
-     "summary": "La actriz dio vida a la presentadora de televisión Megyn Kelly en 'El escándalo (Bombshell)'",
-     "why": "",
+     "title": "La secuela de una exitosa y sangrienta propuesta de terror fija su estreno en cines",
+     "summary": "Los estudios responsables han confirmado la fecha de lanzamiento para la esperada continuación de una de las propuestas de terror slasher más comentadas de los últimos tiempos. Su llegada a la gran pantalla coincidirá con un fin de semana fuertemente disputado en la cartelera.",
+     "why": "El cine de terror independiente consolida sus franquicias con secuelas muy esperadas por los fans del género.",
      "sources": [
       {
-       "name": "SensaCine",
-       "url": "https://www.sensacine.com/noticias/cine/noticia-1000226164/"
+       "name": "IndieWire",
+       "url": "https://www.indiewire.com/news/general-news/in-a-violent-nature-part-2-release-date-1235221201/"
       }
      ],
-     "image": "https://es.web.img3.acsta.net/img/95/3d/953d76865da31d501349230fd25778a6.jpg",
-     "image_credit": "SensaCine",
-     "ai": false
+     "image": "https://www.indiewire.com/wp-content/uploads/2026/10/IAVN-2-Still.png?w=650",
+     "image_credit": "IndieWire",
+     "ai": true,
+     "body": [
+      "Los estudios Shudder e Independent Film Company han confirmado la fecha de estreno para una de las secuelas de terror más esperadas. In a Violent Nature: Part 2 llegará a las salas de cine el fin de semana del Día de San Valentín, concretamente el doce de febrero de 2027, coincidiendo en la cartelera con el estreno de la película de Narnia dirigida por Greta Gerwig.",
+      "El anuncio se realizó de la mano de un invitado muy especial en la Comic Con de Nueva York, donde el actor Ry Barrett apareció por sorpresa para los seguidores del género slasher. Esta continuación retoma la historia exactamente en el punto donde terminó la primera entrega, trayendo de vuelta al enmascarado Johnny en una violenta persecución.",
+      "La primera parte logró recaudar cuatro millones y medio de dólares a nivel global con una propuesta singular narrada desde la perspectiva del propio asesino. En esta nueva entrega, la trama profundizará en la mitología del personaje y elevará la intensidad de las muertes mientras el protagonista llega a un campamento de verano."
+     ]
     },
     {
-     "title": "Catherine Zeta-Jones, sobre su marido Michael Douglas: \"Hay una regla fundamental para los dos. Si vamos a separarnos de la familia para rodar lejos de casa, el proyecto tiene que apasionarnos de verdad\"",
-     "summary": "La actriz galesa ha estrenado en HBO Max la serie de acción 'Kill Jackie', en la que huye de unos sicarios. Además, recuerda los momentos álgidos de su carrera, como 'Chicago'.",
-     "why": "",
+     "title": "La inteligencia artificial se abre paso en el cine como herramienta creativa en Busan",
+     "summary": "Durante un encuentro clave en la industria cinematográfica asiática, destacados directores y expertos en efectos visuales han debatido sobre el papel de la inteligencia artificial. Lejos de verla solo como una amenaza, algunos cineastas reconocen su utilidad para plasmar imágenes complejas de la imaginación.",
+     "why": "El debate sobre el uso de la IA en la producción audiovisual evoluciona hacia su integración en los procesos creativos.",
      "sources": [
       {
-       "name": "Fotogramas",
-       "url": "https://www.fotogramas.es/series-tv-noticias/a74090426/catherine-zeta-jones-actriz-kill-jackie-serie-entrevista-michael-douglas/"
+       "name": "Variety",
+       "url": "https://variety.com/2026/film/markets-festivals/ai-native-studios-create-original-ip-vfx-veteran-busan-1236908092/"
+      },
+      {
+       "name": "Variety",
+       "url": "https://variety.com/2026/film/markets-festivals/12-12-the-day-director-kim-sung-soo-ai-craft-1236908089/"
       }
      ],
-     "image": "https://hips.hearstapps.com/hmg-prod/images/6168dde7-79ff-4195-9a40-d8bfb15c6671.jpg",
-     "image_credit": "Fotogramas",
-     "ai": false
+     "image": "https://variety.com/wp-content/uploads/2026/10/InnoAsia1.jpg",
+     "image_credit": "Variety",
+     "ai": true,
+     "body": [
+      "La inteligencia artificial continúa ganando terreno en la industria cinematográfica como una herramienta creativa complementaria, tal y como se ha debatido en un encuentro clave celebrado en el marco del Festival Internacional de Cine de Busan. Lejos de ser vista únicamente como una amenaza para el sector, destacados cineastas y expertos en efectos visuales han puesto sobre la mesa las ventajas de integrar estas tecnologías en los procesos de producción.",
+      "Entre los participantes, el director coreano Kim Sung-soo compartió cómo su perspectiva sobre estas herramientas cambió radicalmente tras trabajar en el cortometraje Worm Train. Lo que en un principio parecía inviable debido a las limitaciones tecnológicas iniciales acabó convirtiéndose en una muestra de cómo los avances digitales permiten plasmar con mayor fidelidad las ideas complejas de la imaginación sin suplantar el talento humano.",
+      "Asimismo, profesionales de la industria como el veterano en efectos visuales Hong Jae Cheol defendieron un modelo híbrido. En esta visión colaborativa, los estudios tradicionales y los equipos especializados en efectos especiales se alían con la inteligencia artificial para generar entornos y elementos visuales mientras los artistas humanos se encargan de la integración y el acabado final en pantalla."
+     ]
     },
     {
-     "title": "Antes de ser Superman, Henry Cavill fue un semidiós en esta infravalorada película épica. Solo te quedan unos días para verla en Netflix",
-     "summary": "Por algún motivo que desconozco, existen largometrajes que, pese a dejarte plenamente satisfecho y hacerte perder amistades tras dar la tabarra recomendándolos hasta que, por hartazgo, terminan viéndolos —o no—, no…",
-     "why": "",
+     "title": "El animador Brad Bird estrena su esperado proyecto de detectives retrofuturistas",
+     "summary": "El legendario director de clásicos animados ha presentado finalmente su largamente acariciado filme de animación. La propuesta mezcla elementos de cine negro y estética retro con resultados visuales inmersivos aunque narrativamente complejos.",
+     "why": "Marca el regreso de un director de culto con una obra gestada durante décadas.",
      "sources": [
       {
-       "name": "Espinof",
-       "url": "https://www.espinof.com/netflix/antes-ser-superman-henry-cavill-fue-semidios-esta-infravalorada-pelicula-epica-solo-te-quedan-unos-dias-para-verla-netflix"
+       "name": "IndieWire",
+       "url": "https://www.indiewire.com/criticism/movies/ray-gunn-review-brad-bird-retro-detective-sam-rockwell-1235220330/"
       }
      ],
-     "image": "https://i.blogs.es/76f779/immortals-2011---imdb/1024_2000.jpeg",
-     "image_credit": "Espinof",
-     "ai": false
+     "image": "https://www.indiewire.com/wp-content/uploads/2026/10/Ray_Gunn_n_00_44_09_07.jpg?w=650",
+     "image_credit": "IndieWire",
+     "ai": true,
+     "body": [
+      "El legendario animador y director Brad Bird ha presentado finalmente su esperado y largamente acariciado proyecto titulado Ray Gunn. Esta propuesta de animación mezcla con gran creatividad elementos del cine negro clásico con una estética retrofuturista inmersiva, transportando al espectador a una gigantesca y vibrante ciudad.",
+      "La trama sitúa al público en un universo donde los humanos y los alienígenas conviven de manera pacífica mientras se desarrolla una compleja investigación detectivesca. A pesar de la riqueza visual del entorno diseñado por el cineasta, la crítica especializada ha señalado que la cinta presenta un mensaje algo confuso y desordenado en su fondo.",
+      "El estreno de este filme coincide además con una época convulsa marcada por la gran fusión empresarial entre Paramount y Warner Bros. Discovery, sirviendo de manera involuntaria como una dura crítica hacia el enorme poder que ejercen los conglomerados de la industria del entretenimiento sobre la clase creativa."
+     ]
     },
     {
-     "title": "Alejandro Amenábar, director de 'Mientras dure la guerra': \"Se cayó la financiación porque alguien dijo '¿Cómo que es esto de que sale Franco? Que haga 'Los Otros' y le deje en paz\"",
-     "summary": "El director ha reflexionado sobre su película bélica durante un encuentro en el marco de la XI edición de 'Letras en Sevilla'",
-     "why": "",
+     "title": "El Reino Unido selecciona un potente documental político para competir en los premios",
+     "summary": "La industria cinematográfica británica ha elegido una aclamada obra documental centrada en la vida en el exilio y los conflictos sociopolíticos de Irán como su representante oficial. La producción se perfila como una de las contendientes más fuertes de la temporada.",
+     "why": "El cine documental con fuerte carga política y social gana peso en las principales competiciones internacionales.",
      "sources": [
       {
-       "name": "SensaCine",
-       "url": "https://www.sensacine.com/noticias/cine/noticia-1000226734/"
+       "name": "IndieWire",
+       "url": "https://www.indiewire.com/awards/industry/rehearsals-for-a-revolution-iran-uk-best-international-oscar-1235221263/"
       }
      ],
-     "image": "https://es.web.img2.acsta.net/img/1f/d3/1fd336e6a40ff715c86fec44ab84095f.jpg",
-     "image_credit": "SensaCine",
-     "ai": false
+     "image": "https://www.indiewire.com/wp-content/uploads/2026/05/MAIN-STILL-REHEARSALS-1024x717-1.jpg?w=650",
+     "image_credit": "IndieWire",
+     "ai": true,
+     "body": [
+      "La industria cinematográfica británica ha escogido a Rehearsals for a Revolution como su representante oficial para competir en la categoría de mejor película internacional. Este aclamado documental, dirigido por Pegah Ahangarani, ofrece una profunda mirada a la vida en el exilio y al complejo contexto sociopolítico de Irán.",
+      "La producción ya se posicionaba con fuerza en la carrera hacia los galardones tras el respaldo de Sony Pictures Classics, lo que abre la puerta a que la obra pueda conseguir nominaciones simultáneas tanto en el apartado documental como en el de mejor película internacional. Este doble reconocimiento solo ha sido alcanzado anteriormente por un selecto grupo de títulos internacionales.",
+      "El camino hacia las nominaciones estará marcado por una intensa competencia debido a la amplia variedad de contendientes y a las modificaciones recientes introducidas por la Academia de Artes y Ciencias Cinematográficas en sus normativas de participación, consolidando al filme como uno de los documentales políticos más destacados de la temporada."
+     ]
     }
    ],
    "headlines": [
@@ -561,28 +611,28 @@
      "image": "https://es.web.img3.acsta.net/img/2e/55/2e55cdf7127d1356606043f32e0853ea.png"
     },
     {
-     "title": "Charlize Theron forzó tanto sus cuerdas vocales para esta película basada en un caso real que perdió la voz durante tres semanas",
-     "source": "SensaCine",
-     "url": "https://www.sensacine.com/noticias/cine/noticia-1000226164/",
-     "image": "https://es.web.img3.acsta.net/img/95/3d/953d76865da31d501349230fd25778a6.jpg"
-    },
-    {
      "title": "Catherine Zeta-Jones, sobre su marido Michael Douglas: \"Hay una regla fundamental para los dos. Si vamos a separarnos de la familia para rodar lejos de casa, el proyecto tiene que apasionarnos de verdad\"",
      "source": "Fotogramas",
      "url": "https://www.fotogramas.es/series-tv-noticias/a74090426/catherine-zeta-jones-actriz-kill-jackie-serie-entrevista-michael-douglas/",
      "image": "https://hips.hearstapps.com/hmg-prod/images/6168dde7-79ff-4195-9a40-d8bfb15c6671.jpg"
     },
     {
-     "title": "AI-Native Studios Can Create Original IP While Traditional Studios Keep Their Edge, VFX Veteran Hong Jae Cheol Says at Busan",
-     "source": "Variety",
-     "url": "https://variety.com/2026/film/markets-festivals/ai-native-studios-create-original-ip-vfx-veteran-busan-1236908092/",
-     "image": "https://variety.com/wp-content/uploads/2026/10/InnoAsia1.jpg"
+     "title": "Alejandro Amenábar, director de 'Mientras dure la guerra': \"Se cayó la financiación porque alguien dijo '¿Cómo que es esto de que sale Franco? Que haga 'Los Otros' y le deje en paz\"",
+     "source": "SensaCine",
+     "url": "https://www.sensacine.com/noticias/cine/noticia-1000226734/",
+     "image": "https://es.web.img2.acsta.net/img/1f/d3/1fd336e6a40ff715c86fec44ab84095f.jpg"
     },
     {
-     "title": "‘12.12: The Day’ Director Kim Sung-soo Says AI ‘Shows What’s in Your Imagination’",
+     "title": "‘Wildwood’ Review: Laika’s Most Ambitious Feature to Date Is a Richly Textured, Transportive Fairytale Epic",
      "source": "Variety",
-     "url": "https://variety.com/2026/film/markets-festivals/12-12-the-day-director-kim-sung-soo-ai-craft-1236908089/",
-     "image": "https://variety.com/wp-content/uploads/2026/10/Busan-AI-panel.jpg"
+     "url": "https://variety.com/2026/film/reviews/wildwood-review-1236908019/",
+     "image": "https://variety.com/wp-content/uploads/2026/08/1e795f68-9513-11f1-b569-1e077de57b30_WW_PrueGeneral_2048x858px_RGB_1909ed0a-2.jpg"
+    },
+    {
+     "title": "Keanu Reeves-Voiced Stop-Motion Samurai Film ‘Hidari’ Looks for New Partner After U.S. Talks Stall",
+     "source": "Variety",
+     "url": "https://variety.com/2026/film/markets-festivals/keanu-reeves-hidari-new-partner-us-talks-stall-1236908055/",
+     "image": "https://variety.com/wp-content/uploads/2026/06/MixCollage-25-Jun-2026-07-18-PM-2123.jpg"
     }
    ],
    "movies": [
@@ -590,7 +640,7 @@
      "title": "Resident Evil",
      "overview": "Película basada en la saga de videojuegos de Capcom del mismo nombre. En una reinvención totalmente nueva, el mensajero médico Bryan se ve inmerso en una carrera de acción sin descanso por la supervivencia, mientras el…",
      "score": 7.3,
-     "votes": 851,
+     "votes": 859,
      "date": "2026-09-18",
      "image": "https://image.tmdb.org/t/p/w342/vrLEVObLGbUinE4sC4Lqao2dK0E.jpg",
      "url": "https://www.themoviedb.org/movie/1423191",
@@ -610,7 +660,7 @@
      "title": "Fall 2: Deadpoint",
      "overview": "Tras perder a su intrépida hermana Shiloh, Jax, profundamente dolida, emprende una peligrosa escalada con Luce, una vieja amiga de Shiloh, para honrar su memoria. Mientras caminan sobre la cuerda floja por los…",
      "score": 7.3,
-     "votes": 365,
+     "votes": 383,
      "date": "2026-09-25",
      "image": "https://image.tmdb.org/t/p/w342/ccBIyg1ITvuCDr4eMeEH0ZgNh4t.jpg",
      "url": "https://www.themoviedb.org/movie/1101412",
@@ -630,7 +680,7 @@
      "title": "Digger",
      "overview": "El hombre más poderoso del mundo se embarca en una misión frenética para demostrar que es el salvador de la humanidad antes de que el desastre que ha desencadenado lo destruya todo.",
      "score": 7.5,
-     "votes": 281,
+     "votes": 285,
      "date": "2026-10-02",
      "image": "https://image.tmdb.org/t/p/w342/koqE0V2IgIPVy5o2vVkoGJvnB8b.jpg",
      "url": "https://www.themoviedb.org/movie/1248832",
@@ -639,8 +689,8 @@
     {
      "title": "La otra madre",
      "overview": "Una joven llamada Bela entabla una relación con una entidad siniestra que habita en su casa y que guarda un parecido asombroso con su propia madre.",
-     "score": 5.9,
-     "votes": 53,
+     "score": 5.8,
+     "votes": 58,
      "date": "2026-10-09",
      "image": "https://image.tmdb.org/t/p/w342/vsde9OnhjFMlJz8Wi6Z6drZ7GG5.jpg",
      "url": "https://www.themoviedb.org/movie/1400837",
@@ -650,7 +700,7 @@
      "title": "Verity. La sombra de un engaño",
      "overview": "Lowen Ashleigh es contratada como escritora fantasma por Jeremy Crawford para escribir las novelas de su esposa Verity, autora de bestsellers, impedida tras un accidente. Lowen descubre las inquietantes verdades de…",
      "score": 6.4,
-     "votes": 151,
+     "votes": 154,
      "date": "2026-10-02",
      "image": "https://image.tmdb.org/t/p/w342/t1rkXeUMJzsCS142ctqzbz4zGq7.jpg",
      "url": "https://www.themoviedb.org/movie/1283515",
@@ -660,7 +710,7 @@
      "title": "En el corazón de la bestia",
      "overview": "Tras sobrevivir a un brutal accidente aéreo, el oficial de las Fuerzas Especiales James Belmont y su perro de combate Odín intentan intentarán regresar a la civilización desde un remoto lugar en medio de los parajes…",
      "score": 7.4,
-     "votes": 264,
+     "votes": 266,
      "date": "2026-09-25",
      "image": "https://image.tmdb.org/t/p/w342/h9Ql2vsltCOuf44c28nInxjzL2m.jpg",
      "url": "https://www.themoviedb.org/movie/1263337",
@@ -670,7 +720,7 @@
      "title": "Dulce sabor a muerte",
      "overview": "Lo que comienza siendo un verano idílico, en un pequeño y tranquilo pueblo vacacional, se convierte en una auténtica pesadilla cuando los más pequeños comienzan a mostrar instintos asesinos y deseos insaciables por…",
      "score": 4.9,
-     "votes": 119,
+     "votes": 120,
      "date": "2026-09-04",
      "image": "https://image.tmdb.org/t/p/w342/uVuP2ZTYLn5hdL1aUOe4BiFD6d3.jpg",
      "url": "https://www.themoviedb.org/movie/1477712",
@@ -679,8 +729,8 @@
     {
      "title": "El Precio de la Red",
      "overview": "Explora las prácticas internas de Facebook, la difusión de información falsa, el impacto en la salud mental de los adolescentes y la conexión con los eventos del 6 de enero en el Capitolio.",
-     "score": 7.4,
-     "votes": 46,
+     "score": 7.3,
+     "votes": 48,
      "date": "2026-10-09",
      "image": "https://image.tmdb.org/t/p/w342/xT7yxocpGjqzalCUTr9IFDf8Oyb.jpg",
      "url": "https://www.themoviedb.org/movie/1281331",
@@ -688,26 +738,6 @@
     }
    ],
    "tv": [
-    {
-     "title": "Carrie",
-     "overview": "Tras la repentina y prematura muerte de su padre, Carrie se ve arrojada al despiadado ecosistema del instituto público. Tiene que enfrentarse a un escándalo de ciberacoso que sacude a toda la comunidad, la presión…",
-     "score": 8.4,
-     "votes": 146,
-     "date": "2026-10-07",
-     "image": "https://image.tmdb.org/t/p/w342/eXjk4W4robXs7l1YXwaXMv4f2qb.jpg",
-     "url": "https://www.themoviedb.org/tv/288673",
-     "popularity": 266.3439
-    },
-    {
-     "title": "Linternas",
-     "overview": "Sigue al nuevo recluta John Stewart y al legendario Linterna Hal Jordan, dos policías intergalácticos que se ven envueltos en un oscuro misterio terrestre mientras investigan un asesinato en el corazón de Estados…",
-     "score": 8.3,
-     "votes": 698,
-     "date": "2026-08-16",
-     "image": "https://image.tmdb.org/t/p/w342/20ZcwtRQ4zMczKg3eBcIpC3FAuW.jpg",
-     "url": "https://www.themoviedb.org/tv/95350",
-     "popularity": 264.0638
-    },
     {
      "title": "Link Click",
      "overview": "Se dice que una imagen vale más que mil palabras. En este caso, guarda una cantidad infinita de secretos. Estos son secretos que solo Cheng Xiaoshi y Lu Guang pueden encontrar. En una pequeña tienda llamada \"Time Photo…",
@@ -719,20 +749,30 @@
      "popularity": 47.3757
     },
     {
-     "title": "La isla del tesoro",
-     "overview": "Miniserie de TV (2026). 6 episodios. Cuando Jim se hace con un legendario mapa del tesoro, las acciones inteligentes y decididas de su madre, Bess, hacen que él acabe en posesión de una valiosa información que pone en…",
-     "score": 1.0,
-     "votes": 2,
-     "date": "2026-10-11",
-     "image": "https://image.tmdb.org/t/p/w342/o79kVEpMG6FSr5qyiBmVuc3IGWD.jpg",
-     "url": "https://www.themoviedb.org/tv/333101",
-     "popularity": 9.7795
+     "title": "Linternas",
+     "overview": "Sigue al nuevo recluta John Stewart y al legendario Linterna Hal Jordan, dos policías intergalácticos que se ven envueltos en un oscuro misterio terrestre mientras investigan un asesinato en el corazón de Estados…",
+     "score": 8.3,
+     "votes": 700,
+     "date": "2026-08-16",
+     "image": "https://image.tmdb.org/t/p/w342/20ZcwtRQ4zMczKg3eBcIpC3FAuW.jpg",
+     "url": "https://www.themoviedb.org/tv/95350",
+     "popularity": 264.0638
+    },
+    {
+     "title": "Carrie",
+     "overview": "Tras la repentina y prematura muerte de su padre, Carrie se ve arrojada al despiadado ecosistema del instituto público. Tiene que enfrentarse a un escándalo de ciberacoso que sacude a toda la comunidad, la presión…",
+     "score": 8.3,
+     "votes": 148,
+     "date": "2026-10-07",
+     "image": "https://image.tmdb.org/t/p/w342/eXjk4W4robXs7l1YXwaXMv4f2qb.jpg",
+     "url": "https://www.themoviedb.org/tv/288673",
+     "popularity": 266.3439
     },
     {
      "title": "Bajo la superficie",
      "overview": "Una misteriosa criatura marina siembra el terror en un pequeño pueblo de Terranova y un curtido pescador y su familia se convierten en la única esperanza de sus vecinos.",
      "score": 7.4,
-     "votes": 60,
+     "votes": 61,
      "date": "2026-10-08",
      "image": "https://image.tmdb.org/t/p/w342/mieCT53TaHGVVRdeq8Bx3VwtgIW.jpg",
      "url": "https://www.themoviedb.org/tv/285322",
@@ -749,48 +789,58 @@
      "popularity": 66.1079
     },
     {
-     "title": "现在就出发",
-     "overview": "",
-     "score": 7.5,
-     "votes": 6,
-     "date": "2023-08-13",
-     "image": "https://image.tmdb.org/t/p/w342/rYA8lb9XCfI0RRHUr4rQ6F44A3j.jpg",
-     "url": "https://www.themoviedb.org/tv/231620",
-     "popularity": 63.2035
-    },
-    {
-     "title": "Doctor X Mafia in White",
-     "overview": "En un hospital marcado por los egos y la corrupción, una enigmática y brillante cirujana asume casos que parecen imposibles pese a la férrea oposición.",
-     "score": 7.7,
-     "votes": 3,
-     "date": "2026-10-09",
-     "image": "https://image.tmdb.org/t/p/w342/yIJO1M4sbYLa1HlmurXikO9TQm2.jpg",
-     "url": "https://www.themoviedb.org/tv/293610",
-     "popularity": 95.7215
-    },
-    {
      "title": "Tierra de mafiosos",
      "overview": "El poder está en juego cuando los Harrigan y los Stevenson, dos familias criminales londinenses en guerra, se enfrentan en una batalla de matar o morir que amenaza con derribar imperios y arruinar vidas. Atrapado en el…",
      "score": 8.5,
-     "votes": 1009,
+     "votes": 1011,
      "date": "2025-03-30",
      "image": "https://image.tmdb.org/t/p/w342/xOBnonAeHiZuiTPOLBFMFSPI6jy.jpg",
      "url": "https://www.themoviedb.org/tv/247718",
      "popularity": 306.0673
     },
     {
-     "title": "100 días de engaño",
-     "overview": "La carterista más consumada de Gyeongseong anhela la libertad. Para lograrla, se infiltra en el Gobierno colonial japonés para robar secretos… y se enamora del hijo de su objetivo.",
-     "score": 0,
-     "votes": 0,
-     "date": "2026-10-10",
-     "image": "https://image.tmdb.org/t/p/w342/zOSAKuyQfj3HmnvH4HU6GLu9cU8.jpg",
-     "url": "https://www.themoviedb.org/tv/293607",
-     "popularity": 25.8424
+     "title": "Al este del Edén",
+     "overview": "A comienzos del siglo XX, una mujer de espíritu independiente separa a dos hermanos y desencadena una historia que marcará a dos generaciones.",
+     "score": 8.0,
+     "votes": 57,
+     "date": "2026-10-01",
+     "image": "https://image.tmdb.org/t/p/w342/pPVwSNnIHiSmNzGUHMPGLRqMxW0.jpg",
+     "url": "https://www.themoviedb.org/tv/258165",
+     "popularity": 87.0977
+    },
+    {
+     "title": "La chispa del amor",
+     "overview": "El heredero de una fortuna, cuyo corazón artificial funciona con una batería, llega a un acuerdo con una chica electrizante para que lo recargue. ¿Surgirán chispas?",
+     "score": 6.4,
+     "votes": 5,
+     "date": "2026-10-09",
+     "image": "https://image.tmdb.org/t/p/w342/2KLblBXNDX05ZqLwubCyjeokGvZ.jpg",
+     "url": "https://www.themoviedb.org/tv/289423",
+     "popularity": 117.8641
+    },
+    {
+     "title": "Ted Lasso",
+     "overview": "Un ingenuo entrenador de fútbol americano decide probar suerte en un club de fútbol inglés, pero su inexperiencia despierta recelo y desdén entre jugadores y aficionados. ¿Logrará conquistarlos con sus peculiares…",
+     "score": 8.4,
+     "votes": 2743,
+     "date": "2020-08-14",
+     "image": "https://image.tmdb.org/t/p/w342/6YUzArR2TElmGMj1HmnnfVlgunL.jpg",
+     "url": "https://www.themoviedb.org/tv/97546",
+     "popularity": 258.6392
+    },
+    {
+     "title": "Rompiendo el hielo",
+     "overview": "A Koyuki le cuesta relacionarse y le parece bien pasar sus años de instituto sola... hasta que aparece Minato, que se empeña en derretir su muro de hielo.",
+     "score": 8.7,
+     "votes": 68,
+     "date": "2026-04-02",
+     "image": "https://image.tmdb.org/t/p/w342/n2DMlpO3DPqSmW1r8atuhcIgl7A.jpg",
+     "url": "https://www.themoviedb.org/tv/283428",
+     "popularity": 41.304
     }
    ]
   }
  },
- "headline": "",
- "intro": ""
+ "headline": "Rosalía deslumbra, Taylor impone estilo y Nolan arrasa en cines",
+ "intro": "Esta semana, Taylor Swift rescata los zapatos masculinos mientras Emily Ratajkowski e Ines De Ramon confirman el vestido transparente. En la música, Rosalía deslumbra en puntas en Saturday Night Live y Charli XCX desata la euforia con Tinashe. Además, Florence Pugh y Finn Cole oficializan su relación en la alfombra roja, mientras Christopher Nolan bate récords históricos en Corea del Sur."
 }
