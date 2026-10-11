@@ -13,10 +13,10 @@ site:
 
 # Dinero: déjalo vacío hasta tenerlo; la web se adapta sola
 monetization:
-  adsense_client: ""          # ej. "ca-pub-1234567890123456"
-  amazon_tag: ""              # ej. "vibra-21" (Amazon Afiliados España)
+  adsense_client: "ca-pub-4375001471432617"   # ej. "ca-pub-1234567890123456"
+  amazon_tag: "vibra05f-21"   # ej. "vibra-21" (Amazon Afiliados España)
   apple_affiliate_token: ""   # token de Apple Services Performance Partners
-  newsletter_url: ""          # enlace al formulario de suscripción (Beehiiv, Substack, Brevo...)
+  newsletter_url: "https://vibrarevista.beehiiv.com"   # enlace al formulario de suscripción (Beehiiv, Substack, Brevo...)
 
 ai:
   # Modelos de Google Gemini a probar en orden (plan gratuito)
