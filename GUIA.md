@@ -1,7 +1,7 @@
 # VIBRA: guía sencilla
 
 ## Qué hace sola cada semana
-Cada **lunes a las 05:00 (hora UTC)**, GitHub ejecuta el programa de VIBRA, que:
+Cada **lunes a las 08:00 (hora UTC; 10:00 en España en verano, 09:00 en invierno)**, GitHub ejecuta el programa de VIBRA, que:
 1. Lee las últimas noticias de Vogue, Elle, Harper's Bazaar, Telva, WWD, Rolling Stone, Billboard, Pitchfork, Jenesaispop, Mondo Sonoro, Fotogramas, Espinof, SensaCine, Variety e IndieWire.
 2. Elige los temas de los que más se habla.
 3. Con Gemini (si hay clave) escribe resúmenes **propios** en español con enlace a la fuente.

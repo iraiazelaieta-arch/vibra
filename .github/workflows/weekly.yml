@@ -2,7 +2,7 @@ name: Edición semanal
 
 on:
   schedule:
-    - cron: "0 5 * * 1"   # cada lunes a las 05:00 UTC (07:00 en España en verano, 06:00 en invierno)
+    - cron: "0 8 * * 1"   # cada lunes a las 08:00 UTC (10:00 en España en verano, 09:00 en invierno), tras el reinicio diario de la cuota gratuita de Gemini
   workflow_dispatch:       # botón "Run workflow" para lanzarla a mano
   push:
     branches: [main]
