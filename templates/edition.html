@@ -26,7 +26,7 @@
   <div class="grid">{% for s in sec.stories %}{% set big = loop.first %}{% include "_story.html" %}{% endfor %}</div>
   {% if money.amazon_tag %}
   <div class="shop"><h4>Cómo llevar las tendencias de la semana</h4>
-    <div>{% for s in sec.stories[:4] %}<a href="https://www.amazon.es/s?k={{ quote(s.title[:60]) }}&tag={{ money.amazon_tag }}" rel="sponsored noopener" target="_blank">{{ s.title[:55] }} →</a>{% endfor %}</div>
+    <div>{% for s in sec.stories[:4] %}<a href="https://www.amazon.es/s?k={{ quote(s.shop or s.title[:60]) }}&tag={{ money.amazon_tag }}" rel="sponsored noopener" target="_blank">{{ s.shop or s.title[:55] }} →</a>{% endfor %}</div>
     <p class="fine">Enlaces de afiliado.</p></div>
   {% endif %}
 </section>
@@ -43,6 +43,11 @@
   {% if sec.songs %}
   <h3 class="sub">Top 10 canciones</h3>
   <ol class="songs">{% for a in sec.songs %}<li><span class="n">{{ a.position }}</span><img loading="lazy" src="{{ a.image }}" alt=""><div><b>{{ a.title }}</b><small>{{ a.artist }}</small></div><a href="{{ a.url }}{% if money.apple_affiliate_token %}?at={{ money.apple_affiliate_token }}{% endif %}" target="_blank" rel="noopener" aria-label="Escuchar {{ a.title }}">▶</a></li>{% endfor %}</ol>
+  {% endif %}
+  {% if money.amazon_tag and sec.albums %}
+  <div class="shop"><h4>Los discos de la semana, en vinilo y CD</h4>
+    <div>{% for a in sec.albums[:4] %}<a href="https://www.amazon.es/s?k={{ quote(a.artist ~ ' ' ~ a.title) }}&i=popular&tag={{ money.amazon_tag }}" rel="sponsored noopener" target="_blank">{{ a.artist }} · {{ a.title[:40] }} →</a>{% endfor %}</div>
+    <p class="fine">Enlaces de afiliado.</p></div>
   {% endif %}
 </section>
 {% include "_ad.html" %}
@@ -63,6 +68,11 @@
   {% if sec.digital %}
   <h3 class="sub">Lo más visto en alquiler y compra digital</h3>
   <div class="rail">{% for m in sec.digital %}<a class="poster" href="{{ m.url }}{% if money.apple_affiliate_token %}{{ '&' if '?' in m.url else '?' }}at={{ money.apple_affiliate_token }}{% endif %}" target="_blank" rel="noopener"><span class="art">{% if m.image %}<img loading="lazy" src="{{ m.image }}" alt="Cartel de {{ m.title }}">{% endif %}<span class="score rank">#{{ m.position }}</span></span><span class="t">{{ m.title }}</span><small>{{ m.genre }}</small></a>{% endfor %}</div>
+  {% endif %}
+  {% if money.amazon_tag and (sec.digital or sec.movies) %}
+  <div class="shop"><h4>Para verlas en casa</h4>
+    <div>{% for m in (sec.digital or sec.movies)[:4] %}<a href="https://www.amazon.es/s?k={{ quote(m.title) }}&i=dvd&tag={{ money.amazon_tag }}" rel="sponsored noopener" target="_blank">{{ m.title[:45] }} →</a>{% endfor %}</div>
+    <p class="fine">Enlaces de afiliado.</p></div>
   {% endif %}
 </section>
 

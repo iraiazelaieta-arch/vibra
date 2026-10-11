@@ -14,6 +14,7 @@
     {% for p in s.body or [] %}{% if p.startswith("## ") %}<h2>{{ p[3:] }}</h2>{% else %}<p>{{ p }}</p>{% endif %}{% if loop.index == 2 and s.highlight %}<blockquote class="pull">{{ s.highlight }}</blockquote>{% endif %}{% if loop.index == 5 and loop.length > 8 %}{% include "_ad.html" %}{% endif %}{% endfor %}
     {% if s.why %}<p class="why"><b>¿Por qué importa?</b> {{ s.why }}</p>{% endif %}
   </div>
+  {% if money.amazon_tag and s.shop %}<p class="shopline"><b>Encuéntralo en Amazon:</b> <a href="https://www.amazon.es/s?k={{ quote(s.shop) }}&tag={{ money.amazon_tag }}" rel="sponsored noopener" target="_blank">{{ s.shop }} →</a> <small>Enlace de afiliado</small></p>{% endif %}
   <aside class="origin">
     <b>{{ "Fuentes" if s.sources|length > 1 else "Fuente" }}</b>
     <p>{% if s.body %}Artículo de VIBRA elaborado a partir de la información publicada por{% else %}Resumen de VIBRA de la noticia publicada por{% endif %} {% for f in s.sources %}{{ f.name }}{{ ", " if not loop.last }}{% endfor %}.</p>

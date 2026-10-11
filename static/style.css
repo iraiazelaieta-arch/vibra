@@ -94,8 +94,9 @@ main{max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
 .shop div{display:flex;flex-wrap:wrap;gap:8px}
 .shop a{border:1px solid var(--ink);border-radius:99px;padding:8px 14px;font-weight:700;font-size:14px}
 .shop a:hover{background:var(--ink);color:#fff}
+.shopline{margin:28px 0 0;padding:16px 20px;border:1px solid var(--ink);border-radius:var(--r);font-size:15px}.shopline a{font-weight:800;text-decoration:underline}.shopline small{color:var(--muted);margin-left:6px}
 .fine{font-size:12px;color:var(--muted)}
-.ad{margin:40px 0;text-align:center}.ad span{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.ad{margin:40px 0;text-align:center}.ad:has(ins[data-ad-status="unfilled"]){display:none}.ad span{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 
 /* rails */
 .sub{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.2vw,42px);margin:54px 0 18px;line-height:1}
