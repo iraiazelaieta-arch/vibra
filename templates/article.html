@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ s.title }} · {{ site.name }}{% endblock %}
+{% block description %}{{ s.summary }}{% endblock %}
+{% block ogtype %}article{% endblock %}
+{% block ogimage %}{{ s.image or (base_url ~ '/static/img/og.png') }}{% endblock %}
+{% block content %}
+<article class="post p-{{ sid }}">
+  <nav class="crumbs"><a href="{{ root }}semana/{{ e.id }}/">Semana {{ e.week }}</a><span>›</span><a href="{{ root }}semana/{{ e.id }}/#{{ sid }}">{{ sec.title }}</a></nav>
+  <p class="sticker">{{ sec.title }} · Nº {{ e.week }} · {{ e.date|date }}</p>
+  <h1>{{ s.title }}</h1>
+  {% if s.summary %}<p class="lead">{{ s.summary }}</p>{% endif %}
+  {% if s.image %}<figure class="cover"><img referrerpolicy="no-referrer" src="{{ s.image }}" alt="" onerror="this.parentNode.remove()">{% if s.image_credit %}<figcaption>Foto: {{ s.image_credit }}</figcaption>{% endif %}</figure>{% endif %}
+  <div class="prose">
+    {% for p in s.body or [] %}<p>{{ p }}</p>{% if loop.index == 2 and loop.length > 3 %}{% include "_ad.html" %}{% endif %}{% endfor %}
+    {% if s.why %}<p class="why"><b>¿Por qué importa?</b> {{ s.why }}</p>{% endif %}
+  </div>
+  <aside class="origin">
+    <b>{{ "Fuentes" if s.sources|length > 1 else "Fuente" }}</b>
+    <p>{% if s.body %}Artículo de VIBRA elaborado a partir de la información publicada por{% else %}Resumen de VIBRA de la noticia publicada por{% endif %} {% for f in s.sources %}{{ f.name }}{{ ", " if not loop.last }}{% endfor %}.</p>
+    <div>{% for f in s.sources %}<a class="btn ghost" href="{{ f.url }}" target="_blank" rel="noopener">Leer la noticia original en {{ f.name }} ↗</a>{% endfor %}</div>
+  </aside>
+</article>
+{% include "_ad.html" %}
+{% if related %}
+<section class="related">
+  <h2>Sigue leyendo en VIBRA</h2>
+  <div class="rel">{% for rsid, rsec, o in related %}
+    <a class="relcard" href="{{ root }}semana/{{ e.id }}/{{ o.slug }}/">
+      <span class="art">{% if o.image %}<img loading="lazy" referrerpolicy="no-referrer" src="{{ o.image }}" alt="" onerror="this.remove()">{% endif %}</span>
+      <small>{{ rsec.title }}</small><b>{{ o.title }}</b>
+    </a>{% endfor %}
+  </div>
+</section>
+{% endif %}
+{% if money.newsletter_url %}
+<section class="newsletter"><h2>VIBRA en tu email cada lunes</h2><p>Gratis. 5 minutos. Te das de baja cuando quieras.</p><a class="btn big" href="{{ money.newsletter_url }}" target="_blank" rel="noopener">Me apunto</a></section>
+{% endif %}
+{% endblock %}

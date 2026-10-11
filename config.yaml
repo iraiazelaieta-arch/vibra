@@ -10,6 +10,14 @@ site:
   # Dirección pública de la web (si está vacía se usa la de GitHub Pages)
   base_url: "https://vibrarevista.com"
   contact_email: "vibrarevistaoficial@gmail.com"
+  # Redes sociales: pon el enlace completo (las vacías no se muestran en la web)
+  social:
+    Instagram: ""
+    TikTok: ""
+    X: ""
+    YouTube: ""
+    Pinterest: ""
+    Facebook: ""
 
 # Dinero: déjalo vacío hasta tenerlo; la web se adapta sola
 monetization:

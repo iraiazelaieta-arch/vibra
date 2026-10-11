@@ -7,8 +7,8 @@
 <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
 <meta property="og:title" content="{{ self.title() }}">
 <meta property="og:description" content="{{ self.description() }}">
-<meta property="og:type" content="website">
-<meta property="og:image" content="{{ base_url }}/static/img/og.png">
+<meta property="og:type" content="{% block ogtype %}website{% endblock %}">
+<meta property="og:image" content="{% block ogimage %}{{ base_url }}/static/img/og.png{% endblock %}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F5F3EE">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -39,8 +39,12 @@
 <footer>
   <img class="flogo" src="{{ root }}static/img/logo-white.svg" alt="{{ site.name }}">
   <p>{{ site.description }}</p>
+  <div class="social">
+    <h4>Escríbenos y síguenos</h4>
+    <nav>{% if site.contact_email %}<a href="mailto:{{ site.contact_email }}">✉ {{ site.contact_email }}</a>{% endif %}{% for name, url in (site.social or {}).items() if url %}<a href="{{ url }}" target="_blank" rel="noopener me">{{ name }}</a>{% endfor %}{% if money.newsletter_url %}<a href="{{ money.newsletter_url }}" target="_blank" rel="noopener">Newsletter</a>{% endif %}</nav>
+  </div>
   <nav><a href="{{ root }}sobre-vibra/">Qué es VIBRA</a><a href="{{ root }}archivo/">Archivo</a><a href="{{ root }}aviso-legal/">Aviso legal</a><a href="{{ root }}privacidad/">Privacidad</a><a href="{{ root }}cookies/">Cookies</a><a href="{{ root }}rss.xml">RSS</a></nav>
-  <p class="fine">VIBRA resume y enlaza noticias publicadas por otros medios. Textos originales, fotografías y marcas pertenecen a sus autores y se muestran con crédito y enlace a la fuente. Listas de música de Apple Music.{% if money.amazon_tag or money.apple_affiliate_token %} Algunos enlaces son de afiliado: si compras a través de ellos, VIBRA recibe una pequeña comisión sin coste para ti.{% endif %}</p>
+  <p class="fine">VIBRA elabora artículos propios a partir de noticias publicadas por otros medios, siempre con crédito y enlace a la fuente original. Fotografías y marcas pertenecen a sus autores. Listas de música de Apple Music.{% if money.amazon_tag or money.apple_affiliate_token %} Algunos enlaces son de afiliado: si compras a través de ellos, VIBRA recibe una pequeña comisión sin coste para ti.{% endif %}</p>
   <p class="fine">© {{ year }} {{ site.name }}</p>
 </footer>
 <nav class="tabbar">

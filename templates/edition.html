@@ -11,7 +11,7 @@
   </div>
   <div class="hero-cards">
     {% for sid, sec in secs.items() %}{% set s = sec.stories[0] if sec.stories else None %}{% if s %}
-    <a href="#{{ sid }}" class="hcard h-{{ sid }}">
+    <a href="{{ root }}semana/{{ e.id }}/{{ s.slug }}/" class="hcard h-{{ sid }}">
       {% if s.image %}<img referrerpolicy="no-referrer" src="{{ s.image }}" alt="" onerror="this.remove()">{% endif %}
       <span class="label">{{ sec.title }}</span><b>{{ s.title }}</b>
     </a>{% endif %}{% endfor %}

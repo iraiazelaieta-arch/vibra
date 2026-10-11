@@ -3,4 +3,5 @@
 <url><loc>{{ base_url }}/</loc><changefreq>weekly</changefreq></url>
 <url><loc>{{ base_url }}/archivo/</loc></url>
 {% for e in editions %}<url><loc>{{ base_url }}/semana/{{ e.id }}/</loc><lastmod>{{ e.date }}</lastmod></url>
-{% endfor %}</urlset>
+{% for sec in e.sections.values() %}{% for s in sec.stories %}<url><loc>{{ base_url }}/semana/{{ e.id }}/{{ s.slug }}/</loc><lastmod>{{ e.date }}</lastmod></url>
+{% endfor %}{% endfor %}{% endfor %}</urlset>
