@@ -79,7 +79,7 @@ def og_image(url):
         return ""
 
 
-def page_text(url, limit=2500):
+def page_text(url, limit=4000):
     """Texto de los párrafos de la noticia original, solo como material de referencia para la IA."""
     try:
         r = requests.get(url, headers={"User-Agent": UA}, timeout=15)
@@ -248,18 +248,27 @@ def diverse_pick(ranked, n, per_source=2, overlap=3):
 
 
 # ---------------------------------------------------------------- IA (Gemini, opcional)
-def gemini(prompt, key, models):
-    body = {"contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"responseMimeType": "application/json", "temperature": 0.5}}
+GEMINI_GAP = 13  # segundos entre llamadas: el plan gratuito limita las peticiones por minuto
+_last_call = [0.0]
+
+
+def gemini(prompt, key, models, schema=None):
+    config = {"responseMimeType": "application/json", "temperature": 0.7, "maxOutputTokens": 32768}
+    if schema:
+        config["responseSchema"] = schema
+    body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": config}
     for model in models:
         for attempt in range(3):
+            time.sleep(max(0, GEMINI_GAP - (time.time() - _last_call[0])))
+            _last_call[0] = time.time()
             try:
                 r = requests.post(
                     f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                     headers={"x-goog-api-key": key, "Content-Type": "application/json"},
-                    json=body, timeout=180)
+                    json=body, timeout=240)
                 if r.status_code == 429 or r.status_code >= 500:
-                    log(f"  ! Gemini {model}: HTTP {r.status_code} {r.text[:300]!r}")
+                    quota = re.findall(r'"quotaId":\s*"([^"]+)"', r.text)
+                    log(f"  ! Gemini {model}: HTTP {r.status_code} {', '.join(dict.fromkeys(quota)) or r.text[:300]!r}")
                     if "PerDay" in r.text:
                         break
                     time.sleep(20 * (attempt + 1))
@@ -322,49 +331,71 @@ def ai_section(name, candidates, n, key, models):
     return stories
 
 
-ARTICLE_PROMPT = """Eres redactora de VIBRA, una revista digital en español de moda, música y cine para un público joven.
-Escribe un artículo propio para VIBRA sobre cada historia de la sección "{section}", usando SOLO los datos del material de referencia.
-Reglas:
-- 250-400 palabras por artículo, en 3-5 párrafos, con tono cercano y periodístico, en español de España.
-- Escribe con tus propias palabras: no copies ni traduzcas literalmente frases del material.
-- No inventes datos, fechas, cifras ni citas que no aparezcan en el material. Si hay poca información, escribe menos y aporta contexto general sin afirmar hechos nuevos.
-- Puedes atribuir datos al medio (por ejemplo, "según Vogue"). No hables de ti misma ni del "material".
-- Sin título, sin subtítulos y sin markdown: solo los párrafos.
-Devuelve SOLO JSON: {{"articulos": [{{"id": 0, "parrafos": ["", ""]}}]}}
+ARTICLE_PROMPT = """Eres redactora jefa de VIBRA, una revista digital en español de moda, música y cine para un público joven (18-35 años).
+Escribe un artículo propio, largo y atractivo, sobre cada una de las historias de la sección "{section}" que tienes abajo.
+
+Cómo tiene que ser cada artículo:
+- Entre 600 y 900 palabras, en español de España, con tono cercano, vivo y periodístico, como en Vogue, Rolling Stone o Fotogramas.
+- Empieza con un primer párrafo gancho que atrape desde la primera frase.
+- Organízalo en 3 o 4 bloques, cada uno con un subtítulo corto y llamativo (máx. 8 palabras) y 2 o 3 párrafos.
+- Cuenta qué ha pasado con detalle, da contexto (trayectoria, antecedentes, tendencias relacionadas), explica por qué importa y qué se puede esperar a continuación.
+- Termina con un párrafo de cierre que invite a opinar o a seguir la historia.
+- "destacado": una frase potente del propio artículo para destacar (máx. 25 palabras). No pongas citas entre comillas atribuidas a nadie.
+
+Reglas de rigor:
+- Los hechos concretos (fechas, cifras, nombres, declaraciones) solo pueden salir del material de referencia. Como contexto puedes añadir datos de cultura general ampliamente conocidos y ciertos; si dudas de algo, no lo pongas.
+- No inventes citas. Escribe con tus propias palabras: no copies ni traduzcas literalmente frases del material.
+- Puedes atribuir información al medio original (p. ej., "según Variety"). No hables de ti misma ni del "material".
+- Sin markdown ni emojis.
 
 HISTORIAS:
 {items}"""
 
+ARTICLE_SCHEMA = {
+    "type": "OBJECT",
+    "properties": {"articulos": {"type": "ARRAY", "items": {
+        "type": "OBJECT",
+        "properties": {
+            "id": {"type": "INTEGER"},
+            "destacado": {"type": "STRING"},
+            "bloques": {"type": "ARRAY", "items": {
+                "type": "OBJECT",
+                "properties": {"subtitulo": {"type": "STRING"},
+                               "parrafos": {"type": "ARRAY", "items": {"type": "STRING"}}},
+                "required": ["parrafos"]}},
+        },
+        "required": ["id", "bloques"]}}},
+    "required": ["articulos"],
+}
 
-def ai_articles(name, stories, key, models):
-    blocks = []
-    for i, s in enumerate(stories):
-        refs = "\n".join(f"Material de {c['source']}: {page_text(c['link']) or c['summary']}" for c in s.get("_ctx", []))
-        blocks.append(f"### [{i}] {s['title']}\nResumen: {s['summary']}\n{refs}")
-    data = gemini(ARTICLE_PROMPT.format(section=name, items="\n\n".join(blocks)), key, models) or {}
+
+def ai_articles(name, stories, key, models, batch=2):
     done = 0
-    for a in data.get("articulos", []):
-        i, paras = a.get("id"), a.get("parrafos")
-        if not isinstance(i, int) or not 0 <= i < len(stories) or not isinstance(paras, list):
-            continue
-        paras = [re.sub(r"\*\*|__", "", p).strip() for p in paras if isinstance(p, str) and p.strip()]
-        if sum(len(p.split()) for p in paras) >= 80:
-            stories[i]["body"] = paras
-            done += 1
+    for start in range(0, len(stories), batch):
+        chunk = stories[start:start + batch]
+        blocks = []
+        for i, s in enumerate(chunk):
+            refs = "\n".join(f"Material de {c['source']}: {page_text(c['link']) or c['summary']}" for c in s.get("_ctx", []))
+            blocks.append(f"### [{i}] {s['title']}\nResumen: {s['summary']}\n{refs}")
+        data = gemini(ARTICLE_PROMPT.format(section=name, items="\n\n".join(blocks)), key, models, ARTICLE_SCHEMA) or {}
+        for a in data.get("articulos", []):
+            i = a.get("id")
+            if not isinstance(i, int) or not 0 <= i < len(chunk):
+                continue
+            body = []
+            for b in a.get("bloques") or []:
+                sub = re.sub(r"[*#_]+", "", b.get("subtitulo") or "").strip()
+                paras = [re.sub(r"\*\*|__", "", p).strip() for p in b.get("parrafos") or [] if isinstance(p, str) and p.strip()]
+                if paras:
+                    body += ([f"## {sub}"] if sub and body else []) + paras
+            words = sum(len(p.split()) for p in body if not p.startswith("## "))
+            if words >= 250:
+                chunk[i]["body"] = body
+                chunk[i]["highlight"] = (a.get("destacado") or "").strip().strip('"«»')
+                done += 1
+            else:
+                log(f"  ! artículo demasiado corto ({words} palabras): {chunk[i]['title'][:60]}")
     log(f"  · artículos propios: {done}/{len(stories)}")
-
-
-def plain_section(candidates, n):
-    pool = [c for c in candidates if c["lang"] == "es"] + [c for c in candidates if c["lang"] != "es"]
-    return [{
-        "title": c["title"],
-        "summary": clean_text(c["summary"], 220),
-        "why": "",
-        "sources": [{"name": c["source"], "url": c["link"]}],
-        "image": c.get("image", ""),
-        "image_credit": c["source"] if c.get("image") else "",
-        "ai": False,
-    } for c in diverse_pick(pool, n, overlap=2)]
 
 
 # ---------------------------------------------------------------- edición
