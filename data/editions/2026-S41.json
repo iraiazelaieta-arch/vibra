@@ -3,15 +3,15 @@
  "week": 41,
  "year": 2026,
  "date": "2026-10-05",
- "generated_at": "2026-10-11T00:02:36+00:00",
+ "generated_at": "2026-10-11T00:06:45+00:00",
  "sections": {
   "moda": {
    "title": "Moda",
    "stories": [
     {
-     "title": "Taylor Swift confirma que los zapatos masculinos son el básico del otoño",
-     "summary": "La cantante ha vuelto a demostrar que los clásicos nunca pasan de moda al incorporar calzado de inspiración masculina en sus estilismos de diario. Esta estética sofisticada y cómoda se posiciona como la opción predilecta para dejar a un lado los tacones y triunfar en cualquier plan otoñal sin perder un ápice de elegancia.",
-     "why": "El calzado clásico redefine el armario juvenil aunando comodidad y estilo.",
+     "title": "Taylor Swift confirma que los zapatos masculinos reinarán este otoño",
+     "summary": "La cantante ha vuelto a captar la atención de la moda al apostar por calzado de inspiración masculina como básico de la temporada otoñal. Este estilo clásico demuestra su versatilidad para llevarse a todas horas, alejándose de convencionalismos y posicionándose como una de las opciones más cómodas y elegantes para completar cualquier look diario.",
+     "why": "Taylor transforma el calzado tradicional en el accesorio imprescindible de la temporada.",
      "sources": [
       {
        "name": "Vogue España",
@@ -23,23 +23,37 @@
      "ai": true
     },
     {
-     "title": "El morado conquista el armario otoñal entre notas de rebeldía y vanguardia",
-     "summary": "Las pasarelas internacionales y las grandes firmas han dictado sentencia coronando al morado como el color imprescindible de los próximos meses. Lejos de ser una tonalidad discreta, su audaz presencia se combina incluso con prendas rojas para transmitir poder, misterio y una renovada energía en el circuito de la moda urbana.",
-     "why": "Una declaración de intenciones cromática que rompe la monotonía neutra de la temporada.",
+     "title": "El insólito elogio de Anne Carson a Rosalía tras verla en directo",
+     "summary": "La reconocida escritora canadiense Anne Carson, galardonada con el Premio Nobel de Literatura 2026, dedicó palabras de admiración a Rosalía tras disfrutar de su actuación en Chicago. La autora destacó el impresionante magnetismo de la estrella española y reflexionó abiertamente sobre la extraordinaria intensidad del fervor que despierta entre su devota legión de seguidores.",
+     "why": "Una eminencia literaria valida el descomunal impacto cultural y artístico de la cantante catalana.",
      "sources": [
       {
-       "name": "Harper's Bazaar España",
-       "url": "https://www.harpersbazaar.com/es/moda/tendencias/a73830593/morado-color-otono-invierno-2026-pasarela-street-style-mezcla-rojo/"
+       "name": "Elle España",
+       "url": "https://www.elle.com/es/living/ocio-cultura/a74088449/anne-carson-nobel-literatura-2026-rosalia/"
       }
      ],
-     "image": "https://hips.hearstapps.com/hmg-prod/images/f0f3dcc7-173c-4623-80b4-721a4fda67d8.jpg",
-     "image_credit": "Harper's Bazaar España",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/031115ea-a548-40d2-b502-6bb423f63b70.jpg",
+     "image_credit": "Elle España",
      "ai": true
     },
     {
-     "title": "Elie Saab democratiza el lujo nupcial con su colaboración junto a H&M",
-     "summary": "Casarse con un diseño de alta costura ya no es una fantasía inalcanzable gracias a la esperada alianza entre el modisto libanés y la cadena sueca. La propuesta presenta vestidos de novia románticos y detallados que trasladan la opulencia artesanal al gran público a precios asequibles para todos los bolsillos.",
-     "why": "Alta costura accesible que busca revolucionar las compras del sector nupcial.",
+     "title": "Florence Pugh y Finn Cole hacen oficial su relación en Londres",
+     "summary": "La actriz británica deslumbró durante el estreno londinense de la película 'In the Shadows' al posar junto a Finn Cole, confirmando públicamente su romance en la alfombra roja. Ambos acapararon las miradas con un estilo coordinado y sutil, consolidándose como una de las nuevas parejas más comentadas del panorama cinematográfico y de la cultura popular internacional.",
+     "why": "La complicidad y estilo de la pareja sellan el debut romántico del año en Hollywood.",
+     "sources": [
+      {
+       "name": "Vogue",
+       "url": "https://www.vogue.com/article/florence-pugh-and-finn-cole-go-red-carpet-official"
+      }
+     ],
+     "image": "https://assets.vogue.com/photos/6acab32dec8e9cad95afb5d2/master/pass/2299441442",
+     "image_credit": "Vogue",
+     "ai": true
+    },
+    {
+     "title": "Elie Saab diseña un vestido de novia accesible de la mano de H&M",
+     "summary": "El célebre diseñador libanés ha creado un modelo nupcial exclusivo dentro de su nueva colaboración con el gigante sueco. La propuesta mantiene la identidad hiperfemenina, romántica y detallista característica de su taller de alta costura, pero con un precio al alcance de muchas más personas. Así, cumplir el deseo de casarse vestida por la firma se convierte en una opción realista.",
+     "why": "La alta costura nupcial se abre a presupuestos jóvenes y reales sin perder sofisticación.",
      "sources": [
       {
        "name": "Telva",
@@ -51,9 +65,9 @@
      "ai": true
     },
     {
-     "title": "Emma Stone adelanta la manicura burdeos que dominará la temporada",
-     "summary": "La actriz ha dejado atrás los tonos nude y negros para apostar por unas uñas en color burdeos profundo. Este matiz clásico y favorecedor se consolida como la alternativa más sofisticada de los meses fríos, estilizando las manos con un toque sobrio que encaja a la perfección en cualquier ocasión diaria.",
-     "why": "El burdeos desbanca al negro como el tono rey de la manicura elegante.",
+     "title": "Emma Stone impone el esmalte burdeos como la manicura del otoño",
+     "summary": "La intérprete estadounidense ha desterrado los tonos neutros y el clásico negro luciendo una sofisticada manicura burdeos que estiliza las manos al instante. Su elección en los últimos eventos confirma que este tono profundo es la tendencia indiscutible de la temporada otoñal. Su versatilidad permite aportar un toque refinado a cualquier conjunto diario sin perder frescura ni modernidad.",
+     "why": "El burdeos destrona al negro y a los nudes como el esmalte más chic.",
      "sources": [
       {
        "name": "Telva",
@@ -65,31 +79,17 @@
      "ai": true
     },
     {
-     "title": "Emily Ratajkowski reinventa el vestido transparente con flores y brillo",
-     "summary": "La modelo deslumbró durante su paso por la gala benéfica The Albies luciendo una creación lencera repleta de detalles brillantes y transparencias de Gucci. Con mangas largas y una ligera cola, su elección actualiza el concepto del famoso vestido desnudo elevándolo hacia un registro mucho más glamuroso, pulido y festivo.",
-     "why": "La evolución del 'naked dress' hacia versiones sofisticadas para eventos de gala.",
+     "title": "El morado conquista el armario otoñal con dosis de poder y rebeldía",
+     "summary": "Grandes casas como Valentino, Balenciaga y Acne Studios han encumbrado al morado como la tonalidad protagonista de sus colecciones otoñales. Aunque históricamente se consideraba un matiz complejo, las apasionadas de la moda lo han acogido para proyectar fuerza y enigma en las calles. La fórmula más atrevida y viral para lucirlo consiste en combinarlo directamente con prendas en color rojo.",
+     "why": "Un color magnético que desafía la monotonía del entretiempo aliado con el rojo.",
      "sources": [
       {
-       "name": "WWD",
-       "url": "https://wwd.com/pop-culture/celebrity-news/emily-ratajkowski-sheer-gucci-dress-2026-albies-1239341785/"
+       "name": "Harper's Bazaar España",
+       "url": "https://www.harpersbazaar.com/es/moda/tendencias/a73830593/morado-color-otono-invierno-2026-pasarela-street-style-mezcla-rojo/"
       }
      ],
-     "image": "https://wwd.com/wp-content/uploads/2026/10/emily-ratajkowski-sheer-naked-gucci-dress-2026-albies.png?w=1000&h=563&crop=1",
-     "image_credit": "WWD",
-     "ai": true
-    },
-    {
-     "title": "Valentino reinventa el mítico bolso Rockstud con una mirada rompedora",
-     "summary": "La histórica casa italiana ha decidido dar una nueva vida a uno de sus accesorios más reconocibles mediante el lanzamiento del modelo Spike. Esta actualización abraza la audacia visual y los detalles metálicos, dejando atrás la sobriedad discreta para inaugurar una etapa cargada de personalidad y actitud frente a las tendencias actuales.",
-     "why": "El regreso de los accesorios llamativos marca el fin del minimalismo silencioso.",
-     "sources": [
-      {
-       "name": "Vogue España",
-       "url": "https://www.vogue.es/articulos/bolso-rockstud-valentino-garavani-spike-tendencia-otono-2026"
-      }
-     ],
-     "image": "https://media.vogue.es/photos/6ac348b5086babac2f849ada/master/pass/borsa%20Rockstud%20Valentino%20Garavani%20ALE02242.jpg",
-     "image_credit": "Vogue España",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/f0f3dcc7-173c-4623-80b4-721a4fda67d8.jpg",
+     "image_credit": "Harper's Bazaar España",
      "ai": true
     }
    ],
@@ -148,9 +148,37 @@
    "title": "Música",
    "stories": [
     {
-     "title": "Judeline estrena «La Falda» junto a Diego Calva y abraza el pop flamenco",
-     "summary": "La artista andaluza Judeline ha presentado su nuevo sencillo titulado «La Falda», una propuesta que mezcla raíces flamencas con sonidos urbanos modernos. El lanzamiento llega acompañado por un vídeo musical coprotagonizado por el actor mexicano Diego Calva. Este tema se posiciona como el cuarto adelanto del año para la cantante, consolidando su evolución musical tras su primer álbum y ratificando una marcada vocación de éxito comercial.",
-     "why": "Confirma a Judeline como una de las figuras más innovadoras y prometedoras del pop en español.",
+     "title": "Rosalía regresa al plató de ‘Saturday Night Live’ como invitada musical",
+     "summary": "Rosalía vuelve a brillar en la televisión estadounidense con una esperada actuación en el mítico programa ‘Saturday Night Live’, conducido en esta entrega por el cómico Shane Gillis. La artista española se sube de nuevo al plató de Nueva York para presentar su música ante millones de espectadores internacionales.",
+     "why": "Confirma su consolidado estatus global al regresar a uno de los mayores escaparates de la televisión mundial.",
+     "sources": [
+      {
+       "name": "Billboard",
+       "url": "https://www.billboard.com/culture/product-recommendations/snl-2026-shane-gillis-rosalia-watch-live-online-free-1236357933/"
+      }
+     ],
+     "image": "https://www.billboard.com/wp-content/uploads/2024/11/directv-stream.png?w=512&h=512&crop=1",
+     "image_credit": "Billboard",
+     "ai": true
+    },
+    {
+     "title": "Taylor Swift acude a Alicante para blindar los derechos de su voz en Europa",
+     "summary": "Taylor Swift ha dado un paso legal sin precedentes al recurrir a la Oficina de Propiedad Intelectual de la Unión Europea, ubicada en Alicante. La superestrella estadounidense ha registrado formalmente su voz para protegerla de usos no autorizados en todo el territorio europeo. Este movimiento busca salvaguardar su identidad vocal frente al avance de tecnologías no reguladas.",
+     "why": "Un movimiento clave para defender la identidad artística frente al auge descontrolado de la inteligencia artificial.",
+     "sources": [
+      {
+       "name": "Jenesaispop",
+       "url": "https://jenesaispop.com/2026/10/09/531925/taylor-swift-alicante/"
+      }
+     ],
+     "image": "https://jenesaispop.com/wp-content/uploads/2026/06/taylorswift-toystory.jpg",
+     "image_credit": "Jenesaispop",
+     "ai": true
+    },
+    {
+     "title": "Judeline estrena ‘La Falda’ junto al actor Diego Calva en su videoclip",
+     "summary": "La cantante gaditana Judeline presenta su nuevo sencillo titulado ‘La Falda’, una pieza que mezcla flamenco urbano con influencias pop. El lanzamiento llega acompañado de un cuidado videoclip oficial en el que comparte pantalla con el actor mexicano Diego Calva. Con este tema, la intérprete continúa afianzando su posición como una de las artistas más prometedoras de la escena.",
+     "why": "Una de las artistas más vanguardistas de la música urbana española sigue expandiendo su universo visual y sonoro.",
      "sources": [
       {
        "name": "Mondo Sonoro",
@@ -166,51 +194,9 @@
      "ai": true
     },
     {
-     "title": "Taylor Swift recurre a Alicante para blindar los derechos de su voz en Europa",
-     "summary": "Taylor Swift ha presentado una solicitud formal ante la Oficina de Propiedad Intelectual de la Unión Europea, cuya sede se encuentra en Alicante, para proteger legalmente su voz en todo el territorio comunitario. La estrella estadounidense busca asegurar el control exclusivo de sus registros vocales frente a posibles usos no autorizados. Este movimiento legal representa un paso crucial dentro del continente para salvaguardar la identidad artística y los derechos sonoros.",
-     "why": "Marca un precedente clave para salvaguardar la identidad de los cantantes ante nuevos desafíos tecnológicos.",
-     "sources": [
-      {
-       "name": "Jenesaispop",
-       "url": "https://jenesaispop.com/2026/10/09/531925/taylor-swift-alicante/"
-      }
-     ],
-     "image": "https://jenesaispop.com/wp-content/uploads/2026/06/taylorswift-toystory.jpg",
-     "image_credit": "Jenesaispop",
-     "ai": true
-    },
-    {
-     "title": "Ralphie Choo anticipa su nuevo disco con el lanzamiento de «Amarillo nena»",
-     "summary": "El músico Ralphie Choo ha compartido su tema «Amarillo nena», un paso más en su búsqueda de la composición pop ideal tras finalizar la producción de su próximo álbum de estudio. El intérprete confirmó recientemente que este esperado proyecto discográfico, provisionalmente llamado 'CHARMAIN', ya está completamente terminado. A pesar de haber manifestado cierta presión por superar el éxito obtenido con 'SUPERNOVA', el artista continúa mostrando su particular visión melódica y vanguardista.",
-     "why": "Representa el regreso de uno de los creadores más rompedores e influyentes de la vanguardia nacional.",
-     "sources": [
-      {
-       "name": "Jenesaispop",
-       "url": "https://jenesaispop.com/2026/10/10/531954/ralphie-choo-amarillo-nena/"
-      }
-     ],
-     "image": "https://jenesaispop.com/wp-content/uploads/2026/10/41tVvj7ACTL._UXNaN_FMjpg_QL85_.jpg",
-     "image_credit": "Jenesaispop",
-     "ai": true
-    },
-    {
-     "title": "Rosalía regresa a la televisión estadounidense en Saturday Night Live",
-     "summary": "Rosalía volverá a subirse al escenario de la televisión estadounidense como invitada musical del histórico programa Saturday Night Live. La cantante española actuará en la entrega conducida por el humorista Shane Gillis, programada para emitirse el sábado 10 de octubre. La cita televisiva se podrá seguir en directo a través de plataformas digitales gratuitas, ofreciendo a su audiencia global la oportunidad de disfrutar de una nueva actuación en vivo de la artista.",
-     "why": "Reafirma la enorme proyección e impacto de la música española en la cultura popular de masas internacional.",
-     "sources": [
-      {
-       "name": "Billboard",
-       "url": "https://www.billboard.com/culture/product-recommendations/snl-2026-shane-gillis-rosalia-watch-live-online-free-1236357933/"
-      }
-     ],
-     "image": "https://www.billboard.com/wp-content/uploads/2024/11/directv-stream.png?w=512&h=512&crop=1",
-     "image_credit": "Billboard",
-     "ai": true
-    },
-    {
-     "title": "Charli XCX sorprende en Austin invitando a Tinashe a subirse al escenario",
-     "summary": "Durante su actuación principal en el festival ACL, Charli XCX sorprendió a todos los asistentes al invitar al escenario a Tinashe. Ambas artistas compartieron el directo mientras Tinashe interpretó en vivo «Nobody Wanna Dance Anymore» y «Melatonin», dos temas pertenecientes a su reciente álbum titulado Popstar. La aparición conjunta demostró la química musical entre ambas figuras del pop internacional y se convirtió en uno de los momentos más destacados del fin de semana.",
-     "why": "Une en directo a dos de las mayores exponentes del pop alternativo actual en pleno festival.",
+     "title": "Charli XCX revoluciona el festival ACL invitando a Tinashe al escenario",
+     "summary": "Durante su actuación principal en el festival Austin City Limits, Charli XCX sorprendió al público invitando al escenario a su amiga y colaboradora Tinashe. Ambas artistas compartieron cartel y encendieron la pista en directo interpretando canciones de su recién estrenado proyecto discográfico 'Popstar'. La inesperada aparición desató el entusiasmo colectivo de los asistentes al emblemático evento estadounidense.",
+     "why": "Una cumbre del pop alternativo que reafirma el imparable momento creativo que ambas estrellas atraviesan este año.",
      "sources": [
       {
        "name": "Rolling Stone",
@@ -222,20 +208,30 @@
      "ai": true
     },
     {
-     "title": "Geordie Greep cancela fechas de su gira tras graves acusaciones en directo",
-     "summary": "Geordie Greep, antiguo vocalista de la banda británica black midi, canceló cuatro fechas de su gira tras verse involucrado en un incidente ocurrido en Vancouver. Durante su actuación, el músico se enfrentó en directo a acusaciones de violación que una persona había difundido previamente en panfletos entre el público. A pesar de haber rechazado rotundamente estas imputaciones durante el concierto, el cantante decidió suspender temporalmente sus siguientes presentaciones en vivo.",
-     "why": "Pone en jaque la carrera en solitario del músico en medio de una intensa polémica pública.",
+     "title": "La tensa y comentada entrevista de Shakira en ‘La Revuelta’ de Broncano",
+     "summary": "El paso de Shakira por el programa televisivo ‘La Revuelta’ de David Broncano se ha convertido en una de las entrevistas más comentadas y difíciles de la temporada. La interacción entre la estrella colombiana y el cómico estuvo marcada por momentos de tensión e incomodidad donde ninguno pareció conectar del todo. Las redes sociales no han tardado en debatir sobre este choque cultural en pantalla.",
+     "why": "El choque entre humor irreverente y megaestrellas globales no siempre sale redondo, pero garantiza conversación viral.",
      "sources": [
       {
        "name": "Jenesaispop",
-       "url": "https://jenesaispop.com/2026/10/10/531985/geordie-greep-acusado-violacion/"
-      },
-      {
-       "name": "Rolling Stone",
-       "url": "https://www.rollingstone.com/music/music-news/geordie-greep-cancel-tour-dates-sexual-misconduct-claim-1235640795/"
+       "url": "https://jenesaispop.com/2026/10/09/531970/shakira-revuelta-entrevista-2/"
       }
      ],
-     "image": "https://jenesaispop.com/wp-content/uploads/2024/08/geordie-greep.jpg",
+     "image": "https://jenesaispop.com/wp-content/uploads/2026/10/shakira-revuelta.jpg",
+     "image_credit": "Jenesaispop",
+     "ai": true
+    },
+    {
+     "title": "Ralphie Choo anticipa su nuevo disco con el estreno de ‘Amarillo nena’",
+     "summary": "Tras el éxito cosechado con su álbum debut 'SUPERNOVA', Ralphie Choo da inicio a una nueva etapa sonora con el tema ‘Amarillo nena’. El compositor y productor madrileño confirmó recientemente haber concluido la producción de su esperado segundo trabajo de estudio. En este nuevo corte, el músico continúa explorando melodías únicas y una marcada sensibilidad experimental.",
+     "why": "Marca el inicio de la era post-SUPERNOVA de uno de los productores más disruptivos del pop en español.",
+     "sources": [
+      {
+       "name": "Jenesaispop",
+       "url": "https://jenesaispop.com/2026/10/10/531954/ralphie-choo-amarillo-nena/"
+      }
+     ],
+     "image": "https://jenesaispop.com/wp-content/uploads/2026/10/41tVvj7ACTL._UXNaN_FMjpg_QL85_.jpg",
      "image_credit": "Jenesaispop",
      "ai": true
     }
@@ -459,23 +455,9 @@
    "title": "Cine y series",
    "stories": [
     {
-     "title": "El universo de 'Naruto' renace con un nuevo anime televisivo y el manga 'Shadow Rising'",
-     "summary": "La célebre franquicia japonesa prepara un inesperado regreso con una flamante producción televisiva que cruzará caminos con el manga de culto 'NINKŪ'. Asimismo, el autor Masashi Kishimoto supervisará esta aventura y deleitará a los lectores publicando una historia inédita en viñetas titulada 'Shadow Rising'. Este doble lanzamiento promete reavivar con enorme fuerza el fenómeno ninja internacional.",
-     "why": "Marca el regreso oficial del creador original al canon de una saga generacional indispensable.",
-     "sources": [
-      {
-       "name": "Variety",
-       "url": "https://variety.com/2026/tv/news/naruto-new-anime-series-shadow-rising-manga-1236907767/"
-      }
-     ],
-     "image": "https://variety.com/wp-content/uploads/2025/06/Naruto-the-Movie.jpg",
-     "image_credit": "Variety",
-     "ai": true
-    },
-    {
-     "title": "'Blade Runner 2099' estrena tráiler con Hunter Schafer y Michelle Yeoh en Prime Video",
-     "summary": "La Comic Con de Nueva York acogió el adelanto oficial de la ambiciosa miniserie que retomará la mítica saga futurista cincuenta años después de 'Blade Runner 2049'. En este renacido Los Ángeles, la actriz Hunter Schafer encarna a una fugitiva forzada a cooperar como cazadora de androides junto a Michelle Yeoh. La producción exclusiva para Prime Video busca deslumbrar a las nuevas generaciones.",
-     "why": "Amplía uno de los universos de ciencia ficción más influyentes del cine con estrellas contemporáneas.",
+     "title": "Hunter Schafer y Michelle Yeoh deslumbran en el tráiler de 'Blade Runner 2099'",
+     "summary": "Prime Video ha lanzado durante la Comic Con de Nueva York el primer adelanto oficial de 'Blade Runner 2099'. La miniserie traslada al público cincuenta años después de los acontecimientos de la secuela cinematográfica, situando la acción en una versión reconstruida de Los Ángeles. En esta historia distópica, el personaje fugitivo interpretado por Hunter Schafer debe asumir una nueva identidad como cazadora de androides y unir fuerzas con Michelle Yeoh.",
+     "why": "El regreso de una franquicia de culto de la ciencia ficción liderada por dos actrices icónicas.",
      "sources": [
       {
        "name": "Variety",
@@ -487,9 +469,23 @@
      "ai": true
     },
     {
-     "title": "'La bola negra' de Los Javis conquista Nueva York y emociona con sus historias personales",
-     "summary": "El nuevo proyecto cinematográfico respaldado por Javier Calvo y Javier Ambrossi continúa cosechando elogios internacionales y acaba de sumar un prestigioso galardón en Nueva York antes de su llegada a salas estadounidenses. Por su parte, el intérprete Milo Quifes reveló durante el Festival de San Sebastián cómo la llamada de la pareja de directores supuso un auténtico salvavidas personal y artístico en un momento de extrema precariedad económica.",
-     "why": "Consolida la proyección internacional de la factoría de Los Javis como referentes del cine independiente español.",
+     "title": "'Naruto' regresa por todo lo alto con un nuevo anime y el manga 'Shadow Rising'",
+     "summary": "La célebre franquicia creada por Masashi Kishimoto prepara un gran despliegue con dos novedades muy esperadas por sus seguidores. Por un lado, el autor lanzará un flamante manga titulado 'Shadow Rising', expandiendo aún más el universo ninja. Además, se ha confirmado una nueva serie de anime que funcionará como un cruce directo con la clásica obra 'NINKŪ', contando con la supervisión activa del propio mangaka.",
+     "why": "La mítica saga ninja reactiva su universo con material inédito supervisado por su creador original.",
+     "sources": [
+      {
+       "name": "Variety",
+       "url": "https://variety.com/2026/tv/news/naruto-new-anime-series-shadow-rising-manga-1236907767/"
+      }
+     ],
+     "image": "https://variety.com/wp-content/uploads/2025/06/Naruto-the-Movie.jpg",
+     "image_credit": "Variety",
+     "ai": true
+    },
+    {
+     "title": "'La bola negra' conquista Nueva York antes de su esperado estreno en cines de EE. UU.",
+     "summary": "La producción impulsada por Javier Calvo y Javier Ambrossi continúa acumulando éxitos internacionales tras ser galardonada en Nueva York por su gran ambición emocional. El proyecto, que prepara su inminente desembarco en las salas de cine estadounidenses, ha marcado también la vida de su elenco. El actor Milo Quifes reconoció recientemente cómo Los Javis cambiaron su trayectoria personal y profesional al brindarle esta gran oportunidad interpretativa.",
+     "why": "La ficción española reafirma su proyección global ganando prestigio crítico en la escena internacional.",
      "sources": [
       {
        "name": "Fotogramas",
@@ -505,9 +501,9 @@
      "ai": true
     },
     {
-     "title": "Anne Hathaway reivindica 'Digger', la cinta de Tom Cruise e Iñárritu ignorada en taquilla",
-     "summary": "A pesar de que el reciente estreno colaborativo entre Tom Cruise y el realizador mexicano Alejandro González Iñárritu no ha obtenido el respaldo esperado entre el gran público, la oscarizada actriz ha roto una lanza en su favor. Hathaway recurrió a la plataforma cinéfila Letterboxd para calificar esta sátira de brillante, desafiando la fría acogida financiera de las salas.",
-     "why": "Reabre el debate sobre el valor artístico frente a los fríos números de taquilla comercial.",
+     "title": "Anne Hathaway sale en defensa de Tom Cruise y su última sátira cinematográfica",
+     "summary": "A pesar de que 'Digger', la reciente comedia satírica protagonizada por Tom Cruise y dirigida por el cineasta Alejandro González Iñárritu, no ha logrado convencer a la taquilla comercial, la cinta ha sumado una defensora estelar. Anne Hathaway utilizó su perfil de la red social Letterboxd para respaldar con entusiasmo el proyecto, calificándolo sin rodeos como brillante frente a la frialdad del público en las salas.",
+     "why": "Una actriz de primera línea reivindica el cine de autor frente a los números de taquilla.",
      "sources": [
       {
        "name": "Espinof",
@@ -519,31 +515,31 @@
      "ai": true
     },
     {
-     "title": "Michael Douglas confiesa la insultante frase que dinamitó su amistad con Julia Roberts",
-     "summary": "En sus recién publicadas memorias, el veterano intérprete ha destapado diversos episodios turbulentos de su trayectoria, destacando un desagradable incidente ocurrido durante una ceremonia de los Globos de Oro. Douglas admite haberle dedicado un grosero desplante a la actriz Julia Roberts que terminó por quebrar definitivamente la relación cercana que mantenían hasta ese instante. El libro ofrece una mirada sin filtros a la cara oculta del estrellato hollywoodiense.",
-     "why": "Revela las tensiones y rupturas reales entre gigantes de Hollywood detrás del glamour de las galas.",
+     "title": "Keira Knightley revela el momento más humillante que vivió en el inicio de su carrera",
+     "summary": "La estrella británica ha rememorado uno de los tragos más amargos de su trayectoria cuando le aseguraron directamente que no sabía actuar ni la querían en un proyecto. Knightley, conocida por su absoluta sinceridad sobre las dificultades de la fama, reconoció en el pasado que necesitó ayuda psicológica tras el rodaje de 'Piratas del Caribe', demostrando la dureza que enfrentó ante la crítica y la opinión pública.",
+     "why": "Visibiliza la extrema presión psicológica y el rechazo que sufren las actrices en Hollywood.",
      "sources": [
       {
        "name": "Espinof",
-       "url": "https://www.espinof.com/actores-y-actrices/incomoda-confesion-michael-douglas-julia-roberts-sus-memorias-insulto-globos-oro"
+       "url": "https://www.espinof.com/actores-y-actrices/no-creo-que-sepas-actuar-no-te-quiero-mi-pelicula-keira-knightley-recuerda-momento-humillante-su-carrera"
       }
      ],
-     "image": "https://i.blogs.es/d77d22/ahr0chm6ly9tzwrpys5lzgl0b3i4mc5jb20vywrqdw50b3mv/1024_2000.jpeg",
+     "image": "https://i.blogs.es/7edf86/c9cteudfd3l71/1024_2000.jpeg",
      "image_credit": "Espinof",
      "ai": true
     },
     {
-     "title": "Diego Luna disecciona el drama migratorio con su conmovedora película 'Ceniza en la boca'",
-     "summary": "El reconocido artista mexicano regresa a la primera línea cinematográfica con un largometraje comprometido que retrata las duras complejidades humanas del éxodo y la migración contemporánea. La cinta destaca por canalizar el drama social desde una perspectiva íntima y transformadora que no rehúye la crudeza ni el compromiso político. Esta propuesta sitúa nuevamente la mirada crítica del cineasta en cuestiones urgentes para la comunidad hispanohablante.",
-     "why": "Reafirma a Diego Luna como una voz indispensable del cine latinoamericano con fuerte compromiso social.",
+     "title": "El elenco de 'Young Sheldon' se confiesa sobre lo complejo de rodar con Iain Armitage",
+     "summary": "Tras la conclusión de 'Young Sheldon', los integrantes del reparto de la popular precuela televisiva se han sincerado sobre el proceso de grabación a lo largo de los años. Los actores reconocieron que asumir una producción de semejante envergadura con un protagonista de apenas ocho años supuso un reto mayúsculo, admitiendo abiertamente que trabajar con el joven intérprete Iain Armitage resultó en ocasiones bastante complicado.",
+     "why": "Revela la cara oculta de liderar una serie de éxito masivo desde la infancia.",
      "sources": [
       {
-       "name": "Fotogramas",
-       "url": "https://www.fotogramas.es/peliculas-criticas/a71294519/ceniza-en-la-boca-pelicula-diego-luna-critica-opinion-estreno-cines/"
+       "name": "Variety",
+       "url": "https://variety.com/2026/tv/news/young-sheldon-iain-armitage-show-was-a-big-undertaking-1236907805/"
       }
      ],
-     "image": "https://hips.hearstapps.com/hmg-prod/images/93e19bb1-e360-4d96-9b8c-411ec5568f8e.jpg",
-     "image_credit": "Fotogramas",
+     "image": "https://variety.com/wp-content/uploads/2019/05/young-sheldon-season-2-ratings.jpg",
+     "image_credit": "Variety",
      "ai": true
     }
    ],
@@ -681,6 +677,6 @@
    ]
   }
  },
- "headline": "Taylor Swift, Judeline y Los Javis marcan el pulso de la semana",
- "intro": "El otoño se viste de morado y zapatos masculinos al estilo Taylor Swift, mientras Elie Saab y H&M democratizan el lujo nupcial. En la música, Judeline abraza el pop flamenco junto a Diego Calva y Ralphie Choo anticipa disco. En pantalla, 'Blade Runner 2099' estrena tráiler y Los Javis conquistan Nueva York con 'La bola negra'."
+ "headline": "Taylor Swift, Rosalía y 'Blade Runner 2099' marcan la semana",
+ "intro": "Taylor Swift confirma que los zapatos masculinos reinarán este otoño y acude a Alicante a blindar su voz. En música, Rosalía recibe el insólito elogio de Anne Carson y regresa a ‘Saturday Night Live’, mientras Judeline estrena videoclip junto a Diego Calva. Además, Hunter Schafer y Michelle Yeoh deslumbran en el tráiler de 'Blade Runner 2099'."
 }
