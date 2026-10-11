@@ -10,9 +10,9 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="{{ base_url }}/static/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0E0A18">
+<meta name="theme-color" content="#F5F3EE">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="{{ site.name }}">
 {% if base_url %}<link rel="canonical" href="{{ base_url }}/{{ path|replace('index.html','') }}">{% endif %}
 <link rel="manifest" href="{{ root }}manifest.webmanifest">
@@ -20,13 +20,13 @@
 <link rel="icon" href="{{ root }}static/img/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{ root }}static/img/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ root }}static/style.css">
 {% if money.adsense_client %}<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ money.adsense_client }}" crossorigin="anonymous"></script>{% endif %}
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="{{ root }}" aria-label="{{ site.name }} inicio"><img src="{{ root }}static/img/logo-white.svg" alt="{{ site.name }}"></a>
+  <a class="brand" href="{{ root }}" aria-label="{{ site.name }} inicio"><img src="{{ root }}static/img/logo.svg" alt="{{ site.name }}"></a>
   <nav class="chips">
     <a href="{{ root }}#moda" class="c-moda">Moda</a><a href="{{ root }}#musica" class="c-musica">Música</a><a href="{{ root }}#cine" class="c-cine">Cine</a><a href="{{ root }}archivo/">Archivo</a>
   </nav>
@@ -37,7 +37,7 @@
 </header>
 <main>{% block content %}{% endblock %}</main>
 <footer>
-  <img class="flogo" src="{{ root }}static/img/logo-gradient.svg" alt="{{ site.name }}">
+  <img class="flogo" src="{{ root }}static/img/logo-white.svg" alt="{{ site.name }}">
   <p>{{ site.description }}</p>
   <nav><a href="{{ root }}sobre-vibra/">Qué es VIBRA</a><a href="{{ root }}archivo/">Archivo</a><a href="{{ root }}aviso-legal/">Aviso legal</a><a href="{{ root }}privacidad/">Privacidad</a><a href="{{ root }}cookies/">Cookies</a><a href="{{ root }}rss.xml">RSS</a></nav>
   <p class="fine">VIBRA resume y enlaza noticias publicadas por otros medios. Textos originales, fotografías y marcas pertenecen a sus autores y se muestran con crédito y enlace a la fuente. Listas de música de Apple Music.{% if money.amazon_tag or money.apple_affiliate_token %} Algunos enlaces son de afiliado: si compras a través de ellos, VIBRA recibe una pequeña comisión sin coste para ti.{% endif %}</p>

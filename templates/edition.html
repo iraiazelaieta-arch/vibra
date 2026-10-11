@@ -5,7 +5,7 @@
 {% block content %}
 <section class="hero">
   <div class="hero-text">
-    <p class="sticker">{% if latest %}Nueva edición{% else %}Archivo{% endif %} · Semana {{ e.week }} · {{ e.date|date }}</p>
+    <p class="sticker">{% if latest %}Esta semana{% else %}Archivo{% endif %} · Nº {{ e.week }} · {{ e.date|date }}</p>
     <h1>{{ e.headline or "Lo que vibra esta semana en moda, música y cine" }}</h1>
     {% if e.intro %}<p class="intro"><b>La semana en 30 segundos</b>{{ e.intro }}</p>{% else %}<p class="intro">{{ site.description }}</p>{% endif %}
   </div>
