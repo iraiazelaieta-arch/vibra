@@ -240,6 +240,9 @@ def gemini(prompt, key, models):
                     headers={"x-goog-api-key": key, "Content-Type": "application/json"},
                     json=body, timeout=120)
                 if r.status_code == 429 or r.status_code >= 500:
+                    log(f"  ! Gemini {model}: HTTP {r.status_code} {r.text[:300]!r}")
+                    if "PerDay" in r.text:
+                        break
                     time.sleep(20 * (attempt + 1))
                     continue
                 if r.status_code == 404:
@@ -382,7 +385,7 @@ def render(cfg):
     editions = sorted((json.loads(p.read_text()) for p in DATA.glob("*.json")), key=lambda e: e["date"], reverse=True)
     if not editions:
         sys.exit("No hay ediciones todavía. Ejecuta sin --render primero.")
-    base_url = (os.environ.get("SITE_URL") or cfg["site"].get("base_url") or "").rstrip("/")
+    base_url = (cfg["site"].get("base_url") or os.environ.get("SITE_URL") or "").rstrip("/")
     money = cfg.get("monetization", {})
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html", "xml", "webmanifest"]))
     env.filters["date"] = nice_date
