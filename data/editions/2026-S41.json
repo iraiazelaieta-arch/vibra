@@ -3,124 +3,144 @@
  "week": 41,
  "year": 2026,
  "date": "2026-10-05",
- "generated_at": "2026-10-10T23:42:58+00:00",
+ "generated_at": "2026-10-11T00:02:36+00:00",
  "sections": {
   "moda": {
    "title": "Moda",
    "stories": [
     {
-     "title": "Los mejores zapatos de invitada para bodas de otoño-invierno los ha llevado Amal Clooney en The Albies 2026",
-     "summary": "Los zapatos dorados serán la sensación de los próximos eventos, palabra de Amal Clooney",
-     "why": "",
+     "title": "Taylor Swift confirma que los zapatos masculinos son el básico del otoño",
+     "summary": "La cantante ha vuelto a demostrar que los clásicos nunca pasan de moda al incorporar calzado de inspiración masculina en sus estilismos de diario. Esta estética sofisticada y cómoda se posiciona como la opción predilecta para dejar a un lado los tacones y triunfar en cualquier plan otoñal sin perder un ápice de elegancia.",
+     "why": "El calzado clásico redefine el armario juvenil aunando comodidad y estilo.",
      "sources": [
       {
        "name": "Vogue España",
-       "url": "https://www.vogue.es/articulos/zapatos-dorados-invitada-boda-amal-clooney-tendencias-otono-invierno-2026-2027"
+       "url": "https://www.vogue.es/articulos/zapatos-masculinos-taylor-swift-otono-2026-2027"
       }
      ],
-     "ai": false
+     "image": "https://media.vogue.es/photos/6aca4ab9d4d09734da557530/master/pass/INSTAR56082014.jpg",
+     "image_credit": "Vogue España",
+     "ai": true
     },
     {
-     "title": "El regreso del vestido blazer: los 6 diseños más bonitos de Mango, Zara y El Corte Inglés inspirados en Uma Thurman",
-     "summary": "Uma Thurman recuerda el poder del vestido blazer con un look elegante y sofisticado en Nueva York. Una prenda que combina la estructura de una americana con la feminidad de un vestido y que las firmas asequibles…",
-     "why": "",
+     "title": "El morado conquista el armario otoñal entre notas de rebeldía y vanguardia",
+     "summary": "Las pasarelas internacionales y las grandes firmas han dictado sentencia coronando al morado como el color imprescindible de los próximos meses. Lejos de ser una tonalidad discreta, su audaz presencia se combina incluso con prendas rojas para transmitir poder, misterio y una renovada energía en el circuito de la moda urbana.",
+     "why": "Una declaración de intenciones cromática que rompe la monotonía neutra de la temporada.",
      "sources": [
       {
        "name": "Harper's Bazaar España",
-       "url": "https://www.harpersbazaar.com/es/moda/compras/g74088861/regreso-vestido-blazer-disenos-bonitos-mango-zara-el-corte-ingles-inspirados-uma-thurman/"
+       "url": "https://www.harpersbazaar.com/es/moda/tendencias/a73830593/morado-color-otono-invierno-2026-pasarela-street-style-mezcla-rojo/"
       }
      ],
-     "ai": false
+     "image": "https://hips.hearstapps.com/hmg-prod/images/f0f3dcc7-173c-4623-80b4-721a4fda67d8.jpg",
+     "image_credit": "Harper's Bazaar España",
+     "ai": true
     },
     {
-     "title": "Zara tiene los pantalones rectos de estampado paisley que las editoras de moda están agotando: cuestan 39,95 euros",
-     "summary": "El estampado bandana se ha alzado como uno de los más relevantes de las últimas temporadas y estos pantalones son la compra definitiva para sumarse a la tendencia.",
-     "why": "",
-     "sources": [
-      {
-       "name": "Harper's Bazaar España",
-       "url": "https://www.harpersbazaar.com/es/moda/compras/a73897276/zara-pantalones-rectos-estampado-paisley-editoras-moda-agotando-40-euros/"
-      }
-     ],
-     "ai": false
-    },
-    {
-     "title": "Este perfume inpirado en el icónico abrigo camel de Max Mara será la fragancia del otoño porque es floral, amaderado, dura 24h en la ropa y hasta un mes en el recuerdo",
-     "summary": "En el año que Max Mara celebra su 75 aniversario la firma italiana se estrena en el mundo de los perfumes con Le Parfum . Un aroma cálido y atemporal (con nardo, madera de cedro y vainilla ) como su icónico abrigo…",
-     "why": "",
+     "title": "Elie Saab democratiza el lujo nupcial con su colaboración junto a H&M",
+     "summary": "Casarse con un diseño de alta costura ya no es una fantasía inalcanzable gracias a la esperada alianza entre el modisto libanés y la cadena sueca. La propuesta presenta vestidos de novia románticos y detallados que trasladan la opulencia artesanal al gran público a precios asequibles para todos los bolsillos.",
+     "why": "Alta costura accesible que busca revolucionar las compras del sector nupcial.",
      "sources": [
       {
        "name": "Telva",
-       "url": "https://www.telva.com/belleza/perfumes/2026/10/10/6ac3a0e901a2f16e618b458c.html"
+       "url": "https://www.telva.com/novias/2026/10/09/6ac8a7eb01a2f101248b456e.html"
       }
      ],
-     "ai": false
+     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/09/17915354013846.jpg",
+     "image_credit": "Telva",
+     "ai": true
     },
     {
-     "title": "De Nieves Álvarez a Blanca Suárez: las invitadas mejor vestidas de la fiesta de Bvlgari en el Teatro Real de Madrid",
-     "summary": "Bvlgari convirtió anoche el Teatro Real de Madrid en el escenario de una velada donde las joyas extraordinarias y los estilismos impecables fueron tan protagonistas como la Alta Joyería de la firma italiana.",
-     "why": "",
+     "title": "Emma Stone adelanta la manicura burdeos que dominará la temporada",
+     "summary": "La actriz ha dejado atrás los tonos nude y negros para apostar por unas uñas en color burdeos profundo. Este matiz clásico y favorecedor se consolida como la alternativa más sofisticada de los meses fríos, estilizando las manos con un toque sobrio que encaja a la perfección en cualquier ocasión diaria.",
+     "why": "El burdeos desbanca al negro como el tono rey de la manicura elegante.",
      "sources": [
       {
-       "name": "Elle España",
-       "url": "https://www.elle.com/es/moda/noticias/g74091709/nieves-alvarez-blanca-suarez-invitadas-mejor-vestidas-fiesta-de-bvlgari-teatro-real-madrid/"
+       "name": "Telva",
+       "url": "https://www.telva.com/belleza/maquillaje/2026/10/09/6ac8a56801a2f10d328b456f.html"
       }
      ],
-     "ai": false
+     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/09/17915354396246.jpg",
+     "image_credit": "Telva",
+     "ai": true
     },
     {
-     "title": "Anne Carson, escritora y Premio Nobel de Literatura 2026, sobre Rosalía: \"Nadie puede sobrevivir a un grado de adoración tan intenso\"",
-     "summary": "La escritora canadiense Anne Carson, que ganó ayer el Nobel de Literatura 2026, se deshizo en elogios hacia Rosalía tras asistir a uno de sus conciertos en Chicago.",
-     "why": "",
+     "title": "Emily Ratajkowski reinventa el vestido transparente con flores y brillo",
+     "summary": "La modelo deslumbró durante su paso por la gala benéfica The Albies luciendo una creación lencera repleta de detalles brillantes y transparencias de Gucci. Con mangas largas y una ligera cola, su elección actualiza el concepto del famoso vestido desnudo elevándolo hacia un registro mucho más glamuroso, pulido y festivo.",
+     "why": "La evolución del 'naked dress' hacia versiones sofisticadas para eventos de gala.",
      "sources": [
       {
-       "name": "Elle España",
-       "url": "https://www.elle.com/es/living/ocio-cultura/a74088449/anne-carson-nobel-literatura-2026-rosalia/"
+       "name": "WWD",
+       "url": "https://wwd.com/pop-culture/celebrity-news/emily-ratajkowski-sheer-gucci-dress-2026-albies-1239341785/"
       }
      ],
-     "ai": false
+     "image": "https://wwd.com/wp-content/uploads/2026/10/emily-ratajkowski-sheer-naked-gucci-dress-2026-albies.png?w=1000&h=563&crop=1",
+     "image_credit": "WWD",
+     "ai": true
+    },
+    {
+     "title": "Valentino reinventa el mítico bolso Rockstud con una mirada rompedora",
+     "summary": "La histórica casa italiana ha decidido dar una nueva vida a uno de sus accesorios más reconocibles mediante el lanzamiento del modelo Spike. Esta actualización abraza la audacia visual y los detalles metálicos, dejando atrás la sobriedad discreta para inaugurar una etapa cargada de personalidad y actitud frente a las tendencias actuales.",
+     "why": "El regreso de los accesorios llamativos marca el fin del minimalismo silencioso.",
+     "sources": [
+      {
+       "name": "Vogue España",
+       "url": "https://www.vogue.es/articulos/bolso-rockstud-valentino-garavani-spike-tendencia-otono-2026"
+      }
+     ],
+     "image": "https://media.vogue.es/photos/6ac348b5086babac2f849ada/master/pass/borsa%20Rockstud%20Valentino%20Garavani%20ALE02242.jpg",
+     "image_credit": "Vogue España",
+     "ai": true
     }
    ],
    "headlines": [
     {
      "title": "Los mejores zapatos de invitada para bodas de otoño-invierno los ha llevado Amal Clooney en The Albies 2026",
      "source": "Vogue España",
-     "url": "https://www.vogue.es/articulos/zapatos-dorados-invitada-boda-amal-clooney-tendencias-otono-invierno-2026-2027"
+     "url": "https://www.vogue.es/articulos/zapatos-dorados-invitada-boda-amal-clooney-tendencias-otono-invierno-2026-2027",
+     "image": "https://media.vogue.es/photos/6ac9f2ff70c657de11b491a4/master/pass/GettyImages-2299420407.jpg"
     },
     {
      "title": "Estos son los zapatos masculinos que llevaremos este otoño a todas horas (y así los defiende Taylor Swift)",
      "source": "Vogue España",
-     "url": "https://www.vogue.es/articulos/zapatos-masculinos-taylor-swift-otono-2026-2027"
+     "url": "https://www.vogue.es/articulos/zapatos-masculinos-taylor-swift-otono-2026-2027",
+     "image": "https://media.vogue.es/photos/6aca4ab9d4d09734da557530/master/pass/INSTAR56082014.jpg"
     },
     {
      "title": "Aparca la falda satinada: estas son las 9 faldas de cuero que más vamos a ver este otoño 2026 (y cómo llevarlas)",
      "source": "Elle España",
-     "url": "https://www.elle.com/es/moda/tendencias/a74005195/faldas-cuero-otono-2026-como-llevarlas/"
+     "url": "https://www.elle.com/es/moda/tendencias/a74005195/faldas-cuero-otono-2026-como-llevarlas/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/2d6bc518-9141-4db4-a510-76be59a48a54.jpg"
     },
     {
      "title": "Zara nos abriga este octubre con los 5 jerséis más calentitos de micro tendencia otoño 2026 que mejor quedan con vaqueros",
      "source": "Elle España",
-     "url": "https://www.elle.com/es/moda/noticias/a74087406/zara-octubre-5-jerseis-micro-tendencia-otono-2026/"
+     "url": "https://www.elle.com/es/moda/noticias/a74087406/zara-octubre-5-jerseis-micro-tendencia-otono-2026/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/0efcfaeb-d199-45c9-9e8e-1252ac560200.jpg"
     },
     {
      "title": "El regreso del vestido blazer: los 6 diseños más bonitos de Mango, Zara y El Corte Inglés inspirados en Uma Thurman",
      "source": "Harper's Bazaar España",
-     "url": "https://www.harpersbazaar.com/es/moda/compras/g74088861/regreso-vestido-blazer-disenos-bonitos-mango-zara-el-corte-ingles-inspirados-uma-thurman/"
+     "url": "https://www.harpersbazaar.com/es/moda/compras/g74088861/regreso-vestido-blazer-disenos-bonitos-mango-zara-el-corte-ingles-inspirados-uma-thurman/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/026795c1-3d84-4720-a9ca-c4aa9bb71b0f.jpeg"
     },
     {
      "title": "Zara tiene los pantalones rectos de estampado paisley que las editoras de moda están agotando: cuestan 39,95 euros",
      "source": "Harper's Bazaar España",
-     "url": "https://www.harpersbazaar.com/es/moda/compras/a73897276/zara-pantalones-rectos-estampado-paisley-editoras-moda-agotando-40-euros/"
+     "url": "https://www.harpersbazaar.com/es/moda/compras/a73897276/zara-pantalones-rectos-estampado-paisley-editoras-moda-agotando-40-euros/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/fca84ebd-055a-48a6-849e-ddbdc3d0b066.jpg"
     },
     {
      "title": "Este perfume inpirado en el icónico abrigo camel de Max Mara será la fragancia del otoño porque es floral, amaderado, dura 24h en la ropa y hasta un mes en el recuerdo",
      "source": "Telva",
-     "url": "https://www.telva.com/belleza/perfumes/2026/10/10/6ac3a0e901a2f16e618b458c.html"
+     "url": "https://www.telva.com/belleza/perfumes/2026/10/10/6ac3a0e901a2f16e618b458c.html",
+     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/07/17913795257965.jpg"
     },
     {
      "title": "¿Y si sólo pudieras comprar una prenda este otoño? Las expertas en moda de TELVA eligen las tendencias clave",
      "source": "Telva",
-     "url": "https://www.telva.com/moda/tendencias/2026/10/09/6ac8734001a2f126318b459c.html"
+     "url": "https://www.telva.com/moda/tendencias/2026/10/09/6ac8734001a2f126318b459c.html",
+     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/09/02/17883555492573.jpg"
     }
    ]
   },
@@ -128,118 +148,146 @@
    "title": "Música",
    "stories": [
     {
-     "title": "Geordie Greep, acusado de violación en pleno concierto",
-     "summary": "Geordie Greep no va a olvidar el comienzo de su último concierto, celebrado en Vancouver. El exvocalista de black midi ha respondido en directo a las acusaciones realizadas antes del espectáculo por una persona que…",
-     "why": "",
-     "sources": [
-      {
-       "name": "Jenesaispop",
-       "url": "https://jenesaispop.com/2026/10/10/531985/geordie-greep-acusado-violacion/"
-      }
-     ],
-     "ai": false
-    },
-    {
-     "title": "Nicolas Winding Refn y Pino Donaggio nos arrastran a ‘Su propio infierno’",
-     "summary": "El universo de Winding Refn, destilado.",
-     "why": "",
-     "sources": [
-      {
-       "name": "Jenesaispop",
-       "url": "https://jenesaispop.com/2026/10/10/532003/su-propio-infierno-resena/"
-      }
-     ],
-     "ai": false
-    },
-    {
-     "title": "Judeline explora el deseo en su nuevo single “La Falda”",
-     "summary": "\"La Falda\", el nuevo single de Judeline, viene acompañado de un videoclip oficial protagonizado por Diego Calva, con una aparición...",
-     "why": "",
+     "title": "Judeline estrena «La Falda» junto a Diego Calva y abraza el pop flamenco",
+     "summary": "La artista andaluza Judeline ha presentado su nuevo sencillo titulado «La Falda», una propuesta que mezcla raíces flamencas con sonidos urbanos modernos. El lanzamiento llega acompañado por un vídeo musical coprotagonizado por el actor mexicano Diego Calva. Este tema se posiciona como el cuarto adelanto del año para la cantante, consolidando su evolución musical tras su primer álbum y ratificando una marcada vocación de éxito comercial.",
+     "why": "Confirma a Judeline como una de las figuras más innovadoras y prometedoras del pop en español.",
      "sources": [
       {
        "name": "Mondo Sonoro",
        "url": "https://www.mondosonoro.com/noticias-actualidad-musical/judeline-la-falda/"
+      },
+      {
+       "name": "Jenesaispop",
+       "url": "https://jenesaispop.com/2026/10/09/531901/judeline-falda-critica/"
       }
      ],
-     "ai": false
+     "image": "https://www.mondosonoro.com/wp-content/uploads/2026/10/unnamed-3.jpg",
+     "image_credit": "Mondo Sonoro",
+     "ai": true
     },
     {
-     "title": "Critica de 'Do Not Dare To Dream', el nuevo trabajo de Teenage Fanclub",
-     "summary": "Duele. Solo un poco, no vamos a exagerar. Pero escuece que la carrera de Teenage Fanclub se vaya descoloriendo como...",
-     "why": "",
+     "title": "Taylor Swift recurre a Alicante para blindar los derechos de su voz en Europa",
+     "summary": "Taylor Swift ha presentado una solicitud formal ante la Oficina de Propiedad Intelectual de la Unión Europea, cuya sede se encuentra en Alicante, para proteger legalmente su voz en todo el territorio comunitario. La estrella estadounidense busca asegurar el control exclusivo de sus registros vocales frente a posibles usos no autorizados. Este movimiento legal representa un paso crucial dentro del continente para salvaguardar la identidad artística y los derechos sonoros.",
+     "why": "Marca un precedente clave para salvaguardar la identidad de los cantantes ante nuevos desafíos tecnológicos.",
      "sources": [
       {
-       "name": "Mondo Sonoro",
-       "url": "https://www.mondosonoro.com/criticas/discos-musica/teenage-fanclub-do-not-dare-to-dream/"
+       "name": "Jenesaispop",
+       "url": "https://jenesaispop.com/2026/10/09/531925/taylor-swift-alicante/"
       }
      ],
-     "ai": false
+     "image": "https://jenesaispop.com/wp-content/uploads/2026/06/taylorswift-toystory.jpg",
+     "image_credit": "Jenesaispop",
+     "ai": true
     },
     {
-     "title": "See Charli XCX Bring Out Tinashe at ACL Festival",
-     "summary": "Tinashe performs \"Nobody Wanna Dance Anymore\" and \"Melatonin\" from her new LP Popstar during her friend Charli's headlining set",
-     "why": "",
+     "title": "Ralphie Choo anticipa su nuevo disco con el lanzamiento de «Amarillo nena»",
+     "summary": "El músico Ralphie Choo ha compartido su tema «Amarillo nena», un paso más en su búsqueda de la composición pop ideal tras finalizar la producción de su próximo álbum de estudio. El intérprete confirmó recientemente que este esperado proyecto discográfico, provisionalmente llamado 'CHARMAIN', ya está completamente terminado. A pesar de haber manifestado cierta presión por superar el éxito obtenido con 'SUPERNOVA', el artista continúa mostrando su particular visión melódica y vanguardista.",
+     "why": "Representa el regreso de uno de los creadores más rompedores e influyentes de la vanguardia nacional.",
+     "sources": [
+      {
+       "name": "Jenesaispop",
+       "url": "https://jenesaispop.com/2026/10/10/531954/ralphie-choo-amarillo-nena/"
+      }
+     ],
+     "image": "https://jenesaispop.com/wp-content/uploads/2026/10/41tVvj7ACTL._UXNaN_FMjpg_QL85_.jpg",
+     "image_credit": "Jenesaispop",
+     "ai": true
+    },
+    {
+     "title": "Rosalía regresa a la televisión estadounidense en Saturday Night Live",
+     "summary": "Rosalía volverá a subirse al escenario de la televisión estadounidense como invitada musical del histórico programa Saturday Night Live. La cantante española actuará en la entrega conducida por el humorista Shane Gillis, programada para emitirse el sábado 10 de octubre. La cita televisiva se podrá seguir en directo a través de plataformas digitales gratuitas, ofreciendo a su audiencia global la oportunidad de disfrutar de una nueva actuación en vivo de la artista.",
+     "why": "Reafirma la enorme proyección e impacto de la música española en la cultura popular de masas internacional.",
+     "sources": [
+      {
+       "name": "Billboard",
+       "url": "https://www.billboard.com/culture/product-recommendations/snl-2026-shane-gillis-rosalia-watch-live-online-free-1236357933/"
+      }
+     ],
+     "image": "https://www.billboard.com/wp-content/uploads/2024/11/directv-stream.png?w=512&h=512&crop=1",
+     "image_credit": "Billboard",
+     "ai": true
+    },
+    {
+     "title": "Charli XCX sorprende en Austin invitando a Tinashe a subirse al escenario",
+     "summary": "Durante su actuación principal en el festival ACL, Charli XCX sorprendió a todos los asistentes al invitar al escenario a Tinashe. Ambas artistas compartieron el directo mientras Tinashe interpretó en vivo «Nobody Wanna Dance Anymore» y «Melatonin», dos temas pertenecientes a su reciente álbum titulado Popstar. La aparición conjunta demostró la química musical entre ambas figuras del pop internacional y se convirtió en uno de los momentos más destacados del fin de semana.",
+     "why": "Une en directo a dos de las mayores exponentes del pop alternativo actual en pleno festival.",
      "sources": [
       {
        "name": "Rolling Stone",
        "url": "https://www.rollingstone.com/music/music-news/charli-xcx-tinashe-acl-festival-1235640837/"
       }
      ],
-     "ai": false
+     "image": "https://www.rollingstone.com/wp-content/uploads/2026/10/GettyImages-2288754233.jpg?w=1600&h=900&crop=1",
+     "image_credit": "Rolling Stone",
+     "ai": true
     },
     {
-     "title": "Why Is This Surprising Taylor Swift Deep Cut Trending?",
-     "summary": "Fans can’t get enough of “Chloe or Sam or Sophia or Marcus” from the singer-songwriter’s The Tortured Poets Department",
-     "why": "",
+     "title": "Geordie Greep cancela fechas de su gira tras graves acusaciones en directo",
+     "summary": "Geordie Greep, antiguo vocalista de la banda británica black midi, canceló cuatro fechas de su gira tras verse involucrado en un incidente ocurrido en Vancouver. Durante su actuación, el músico se enfrentó en directo a acusaciones de violación que una persona había difundido previamente en panfletos entre el público. A pesar de haber rechazado rotundamente estas imputaciones durante el concierto, el cantante decidió suspender temporalmente sus siguientes presentaciones en vivo.",
+     "why": "Pone en jaque la carrera en solitario del músico en medio de una intensa polémica pública.",
      "sources": [
       {
+       "name": "Jenesaispop",
+       "url": "https://jenesaispop.com/2026/10/10/531985/geordie-greep-acusado-violacion/"
+      },
+      {
        "name": "Rolling Stone",
-       "url": "https://www.rollingstone.com/music/music-features/taylor-swift-deep-cut-chloe-sam-sophia-marcus-song-1235640023/"
+       "url": "https://www.rollingstone.com/music/music-news/geordie-greep-cancel-tour-dates-sexual-misconduct-claim-1235640795/"
       }
      ],
-     "ai": false
+     "image": "https://jenesaispop.com/wp-content/uploads/2024/08/geordie-greep.jpg",
+     "image_credit": "Jenesaispop",
+     "ai": true
     }
    ],
    "headlines": [
     {
      "title": "Geordie Greep, acusado de violación en pleno concierto",
      "source": "Jenesaispop",
-     "url": "https://jenesaispop.com/2026/10/10/531985/geordie-greep-acusado-violacion/"
+     "url": "https://jenesaispop.com/2026/10/10/531985/geordie-greep-acusado-violacion/",
+     "image": ""
     },
     {
      "title": "Geordie Greep Cancels Tour Dates Amid Sexual Misconduct Allegation",
      "source": "Rolling Stone",
-     "url": "https://www.rollingstone.com/music/music-news/geordie-greep-cancel-tour-dates-sexual-misconduct-claim-1235640795/"
+     "url": "https://www.rollingstone.com/music/music-news/geordie-greep-cancel-tour-dates-sexual-misconduct-claim-1235640795/",
+     "image": ""
     },
     {
      "title": "Nicolas Winding Refn y Pino Donaggio nos arrastran a ‘Su propio infierno’",
      "source": "Jenesaispop",
-     "url": "https://jenesaispop.com/2026/10/10/532003/su-propio-infierno-resena/"
+     "url": "https://jenesaispop.com/2026/10/10/532003/su-propio-infierno-resena/",
+     "image": ""
     },
     {
      "title": "Judeline explora el deseo en su nuevo single “La Falda”",
      "source": "Mondo Sonoro",
-     "url": "https://www.mondosonoro.com/noticias-actualidad-musical/judeline-la-falda/"
+     "url": "https://www.mondosonoro.com/noticias-actualidad-musical/judeline-la-falda/",
+     "image": ""
     },
     {
      "title": "See Charli XCX Bring Out Tinashe at ACL Festival",
      "source": "Rolling Stone",
-     "url": "https://www.rollingstone.com/music/music-news/charli-xcx-tinashe-acl-festival-1235640837/"
+     "url": "https://www.rollingstone.com/music/music-news/charli-xcx-tinashe-acl-festival-1235640837/",
+     "image": ""
     },
     {
      "title": "Critica de 'Do Not Dare To Dream', el nuevo trabajo de Teenage Fanclub",
      "source": "Mondo Sonoro",
-     "url": "https://www.mondosonoro.com/criticas/discos-musica/teenage-fanclub-do-not-dare-to-dream/"
+     "url": "https://www.mondosonoro.com/criticas/discos-musica/teenage-fanclub-do-not-dare-to-dream/",
+     "image": ""
     },
     {
      "title": "‘Golden’ Is Still Golden, Wins Best Song at 2026 World Soundtrack Awards (Full Winners List)",
      "source": "Billboard",
-     "url": "https://www.billboard.com/music/awards/2026-world-soundtrack-awards-winners-list-1236358619/"
+     "url": "https://www.billboard.com/music/awards/2026-world-soundtrack-awards-winners-list-1236358619/",
+     "image": "https://i.imgur.com/2HpFicp.png"
     },
     {
      "title": "Shane Gillis & Rosalía on ‘SNL’: Here’s Where to Watch ‘Saturday Night Live’ Online for Free",
      "source": "Billboard",
-     "url": "https://www.billboard.com/culture/product-recommendations/snl-2026-shane-gillis-rosalia-watch-live-online-free-1236357933/"
+     "url": "https://www.billboard.com/culture/product-recommendations/snl-2026-shane-gillis-rosalia-watch-live-online-free-1236357933/",
+     "image": "https://www.billboard.com/wp-content/uploads/2024/11/directv-stream.png?w=512&h=512&crop=1"
     }
    ],
    "albums": [
@@ -411,118 +459,142 @@
    "title": "Cine y series",
    "stories": [
     {
-     "title": "Catherine Zeta-Jones, sobre su marido Michael Douglas: \"Hay una regla fundamental para los dos. Si vamos a separarnos de la familia para rodar lejos de casa, el proyecto tiene que apasionarnos de verdad\"",
-     "summary": "La actriz galesa ha estrenado en HBO Max la serie de acción 'Kill Jackie', en la que huye de unos sicarios. Además, recuerda los momentos álgidos de su carrera, como 'Chicago'.",
-     "why": "",
+     "title": "El universo de 'Naruto' renace con un nuevo anime televisivo y el manga 'Shadow Rising'",
+     "summary": "La célebre franquicia japonesa prepara un inesperado regreso con una flamante producción televisiva que cruzará caminos con el manga de culto 'NINKŪ'. Asimismo, el autor Masashi Kishimoto supervisará esta aventura y deleitará a los lectores publicando una historia inédita en viñetas titulada 'Shadow Rising'. Este doble lanzamiento promete reavivar con enorme fuerza el fenómeno ninja internacional.",
+     "why": "Marca el regreso oficial del creador original al canon de una saga generacional indispensable.",
+     "sources": [
+      {
+       "name": "Variety",
+       "url": "https://variety.com/2026/tv/news/naruto-new-anime-series-shadow-rising-manga-1236907767/"
+      }
+     ],
+     "image": "https://variety.com/wp-content/uploads/2025/06/Naruto-the-Movie.jpg",
+     "image_credit": "Variety",
+     "ai": true
+    },
+    {
+     "title": "'Blade Runner 2099' estrena tráiler con Hunter Schafer y Michelle Yeoh en Prime Video",
+     "summary": "La Comic Con de Nueva York acogió el adelanto oficial de la ambiciosa miniserie que retomará la mítica saga futurista cincuenta años después de 'Blade Runner 2049'. En este renacido Los Ángeles, la actriz Hunter Schafer encarna a una fugitiva forzada a cooperar como cazadora de androides junto a Michelle Yeoh. La producción exclusiva para Prime Video busca deslumbrar a las nuevas generaciones.",
+     "why": "Amplía uno de los universos de ciencia ficción más influyentes del cine con estrellas contemporáneas.",
+     "sources": [
+      {
+       "name": "Variety",
+       "url": "https://variety.com/2026/tv/news/blade-runner-2099-michelle-yeoh-hunter-schafer-prime-video-1236907138/"
+      }
+     ],
+     "image": "https://variety.com/wp-content/uploads/2026/08/BladeRunner2099.1.jpg",
+     "image_credit": "Variety",
+     "ai": true
+    },
+    {
+     "title": "'La bola negra' de Los Javis conquista Nueva York y emociona con sus historias personales",
+     "summary": "El nuevo proyecto cinematográfico respaldado por Javier Calvo y Javier Ambrossi continúa cosechando elogios internacionales y acaba de sumar un prestigioso galardón en Nueva York antes de su llegada a salas estadounidenses. Por su parte, el intérprete Milo Quifes reveló durante el Festival de San Sebastián cómo la llamada de la pareja de directores supuso un auténtico salvavidas personal y artístico en un momento de extrema precariedad económica.",
+     "why": "Consolida la proyección internacional de la factoría de Los Javis como referentes del cine independiente español.",
      "sources": [
       {
        "name": "Fotogramas",
-       "url": "https://www.fotogramas.es/series-tv-noticias/a74090426/catherine-zeta-jones-actriz-kill-jackie-serie-entrevista-michael-douglas/"
-      }
-     ],
-     "ai": false
-    },
-    {
-     "title": "\"No creo que sepas actuar y no te quiero en mi película\". Keira Knightley recuerda el momento más humillante de su carrera",
-     "summary": "Keira Knightley es una actriz que nunca ha tenido en contar su opinión real sobre diversos temas, desde el hecho de necesitar terapia durante años tras las críticas recibidas por su trabajo en 'Piratas del Caribe' o de…",
-     "why": "",
-     "sources": [
+       "url": "https://www.fotogramas.es/noticias-cine/a73832934/milo-quifes-actor-la-bola-negra-pelicula-javis-entrevista-pasado-rescatado/"
+      },
       {
-       "name": "Espinof",
-       "url": "https://www.espinof.com/actores-y-actrices/no-creo-que-sepas-actuar-no-te-quiero-mi-pelicula-keira-knightley-recuerda-momento-humillante-su-carrera"
+       "name": "SensaCine",
+       "url": "https://www.sensacine.com/noticias/cine/noticia-1000226671/"
       }
      ],
-     "ai": false
+     "image": "https://hips.hearstapps.com/hmg-prod/images/7774a54c-424a-4b86-9430-336c237e4c11.jpg",
+     "image_credit": "Fotogramas",
+     "ai": true
     },
     {
-     "title": "Anne Hathaway da su veredicto sobre 'Digger', la película de Tom Cruise que no convence en taquilla: \"Es brillante\"",
-     "summary": "No todas las películas necesitan convencer a la taquilla para encontrar defensores. 'Digger' , la comedia satírica protagonizada por Tom Cruise y dirigida por Alejandro González Iñárritu, ha recibido un respaldo…",
-     "why": "",
+     "title": "Anne Hathaway reivindica 'Digger', la cinta de Tom Cruise e Iñárritu ignorada en taquilla",
+     "summary": "A pesar de que el reciente estreno colaborativo entre Tom Cruise y el realizador mexicano Alejandro González Iñárritu no ha obtenido el respaldo esperado entre el gran público, la oscarizada actriz ha roto una lanza en su favor. Hathaway recurrió a la plataforma cinéfila Letterboxd para calificar esta sátira de brillante, desafiando la fría acogida financiera de las salas.",
+     "why": "Reabre el debate sobre el valor artístico frente a los fríos números de taquilla comercial.",
      "sources": [
       {
        "name": "Espinof",
        "url": "https://www.espinof.com/actores-y-actrices/anne-hathaway-da-su-veredicto-digger-pelicula-tom-cruise-que-no-convence-taquilla-brillante"
       }
      ],
-     "ai": false
+     "image": "https://i.blogs.es/ae307d/ane1/1024_2000.jpeg",
+     "image_credit": "Espinof",
+     "ai": true
     },
     {
-     "title": "Charlize Theron forzó tanto sus cuerdas vocales para esta película basada en un caso real que perdió la voz durante tres semanas",
-     "summary": "La actriz dio vida a la presentadora de televisión Megyn Kelly en 'El escándalo (Bombshell)'",
-     "why": "",
+     "title": "Michael Douglas confiesa la insultante frase que dinamitó su amistad con Julia Roberts",
+     "summary": "En sus recién publicadas memorias, el veterano intérprete ha destapado diversos episodios turbulentos de su trayectoria, destacando un desagradable incidente ocurrido durante una ceremonia de los Globos de Oro. Douglas admite haberle dedicado un grosero desplante a la actriz Julia Roberts que terminó por quebrar definitivamente la relación cercana que mantenían hasta ese instante. El libro ofrece una mirada sin filtros a la cara oculta del estrellato hollywoodiense.",
+     "why": "Revela las tensiones y rupturas reales entre gigantes de Hollywood detrás del glamour de las galas.",
      "sources": [
       {
-       "name": "SensaCine",
-       "url": "https://www.sensacine.com/noticias/cine/noticia-1000226164/"
+       "name": "Espinof",
+       "url": "https://www.espinof.com/actores-y-actrices/incomoda-confesion-michael-douglas-julia-roberts-sus-memorias-insulto-globos-oro"
       }
      ],
-     "ai": false
+     "image": "https://i.blogs.es/d77d22/ahr0chm6ly9tzwrpys5lzgl0b3i4mc5jb20vywrqdw50b3mv/1024_2000.jpeg",
+     "image_credit": "Espinof",
+     "ai": true
     },
     {
-     "title": "Debutó hace 25 años en una película de las hermanas Olsen. Ahora es uno de los mayores sex symbols de la historia del cine, ¿la reconoces?",
-     "summary": "Mucho antes de que nadie pensara en hacer 'Transformers' con actores reales o de que 'Jennifer's Body' se convirtiera en una película de culto, esta actriz hizo un primer papel en una película familiar de la que se ha…",
-     "why": "",
-     "sources": [
-      {
-       "name": "SensaCine",
-       "url": "https://www.sensacine.com/noticias/cine/noticia-1000226814/"
-      }
-     ],
-     "ai": false
-    },
-    {
-     "title": "Ricardo Darín, sobre San Sebastián: \"Es una ciudad que cada vez está más cara, a lo mejor porque cada vez está más linda. Siempre es muy grato volver\"",
-     "summary": "Ricardo Darín y Hernán Goldfrid vuelven a trabajar juntos en ‘Lo dejamos acá’, una comedia negra que pone a prueba los límites de la terapia.",
-     "why": "",
+     "title": "Diego Luna disecciona el drama migratorio con su conmovedora película 'Ceniza en la boca'",
+     "summary": "El reconocido artista mexicano regresa a la primera línea cinematográfica con un largometraje comprometido que retrata las duras complejidades humanas del éxodo y la migración contemporánea. La cinta destaca por canalizar el drama social desde una perspectiva íntima y transformadora que no rehúye la crudeza ni el compromiso político. Esta propuesta sitúa nuevamente la mirada crítica del cineasta en cuestiones urgentes para la comunidad hispanohablante.",
+     "why": "Reafirma a Diego Luna como una voz indispensable del cine latinoamericano con fuerte compromiso social.",
      "sources": [
       {
        "name": "Fotogramas",
-       "url": "https://www.fotogramas.es/noticias-cine/a73831071/ricardo-darin-actor-lo-dejamos-aca-pelicula-netflix-entrevista-festival-san-sebastian-vivienda-cara/"
+       "url": "https://www.fotogramas.es/peliculas-criticas/a71294519/ceniza-en-la-boca-pelicula-diego-luna-critica-opinion-estreno-cines/"
       }
      ],
-     "ai": false
+     "image": "https://hips.hearstapps.com/hmg-prod/images/93e19bb1-e360-4d96-9b8c-411ec5568f8e.jpg",
+     "image_credit": "Fotogramas",
+     "ai": true
     }
    ],
    "headlines": [
     {
      "title": "Catherine Zeta-Jones, sobre su marido Michael Douglas: \"Hay una regla fundamental para los dos. Si vamos a separarnos de la familia para rodar lejos de casa, el proyecto tiene que apasionarnos de verdad\"",
      "source": "Fotogramas",
-     "url": "https://www.fotogramas.es/series-tv-noticias/a74090426/catherine-zeta-jones-actriz-kill-jackie-serie-entrevista-michael-douglas/"
+     "url": "https://www.fotogramas.es/series-tv-noticias/a74090426/catherine-zeta-jones-actriz-kill-jackie-serie-entrevista-michael-douglas/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/6168dde7-79ff-4195-9a40-d8bfb15c6671.jpg"
     },
     {
      "title": "\"No creo que sepas actuar y no te quiero en mi película\". Keira Knightley recuerda el momento más humillante de su carrera",
      "source": "Espinof",
-     "url": "https://www.espinof.com/actores-y-actrices/no-creo-que-sepas-actuar-no-te-quiero-mi-pelicula-keira-knightley-recuerda-momento-humillante-su-carrera"
+     "url": "https://www.espinof.com/actores-y-actrices/no-creo-que-sepas-actuar-no-te-quiero-mi-pelicula-keira-knightley-recuerda-momento-humillante-su-carrera",
+     "image": "https://i.blogs.es/7edf86/c9cteudfd3l71/1024_2000.jpeg"
     },
     {
      "title": "Anne Hathaway da su veredicto sobre 'Digger', la película de Tom Cruise que no convence en taquilla: \"Es brillante\"",
      "source": "Espinof",
-     "url": "https://www.espinof.com/actores-y-actrices/anne-hathaway-da-su-veredicto-digger-pelicula-tom-cruise-que-no-convence-taquilla-brillante"
+     "url": "https://www.espinof.com/actores-y-actrices/anne-hathaway-da-su-veredicto-digger-pelicula-tom-cruise-que-no-convence-taquilla-brillante",
+     "image": "https://i.blogs.es/ae307d/ane1/1024_2000.jpeg"
     },
     {
      "title": "97 minutos de duración y una potente historia real: Tom Hanks protagoniza esta estupenda película que está en Netflix",
      "source": "SensaCine",
-     "url": "https://www.sensacine.com/noticias/cine/noticia-1000226190/"
+     "url": "https://www.sensacine.com/noticias/cine/noticia-1000226190/",
+     "image": "https://es.web.img3.acsta.net/img/2e/55/2e55cdf7127d1356606043f32e0853ea.png"
     },
     {
      "title": "Charlize Theron forzó tanto sus cuerdas vocales para esta película basada en un caso real que perdió la voz durante tres semanas",
      "source": "SensaCine",
-     "url": "https://www.sensacine.com/noticias/cine/noticia-1000226164/"
+     "url": "https://www.sensacine.com/noticias/cine/noticia-1000226164/",
+     "image": "https://es.web.img3.acsta.net/img/95/3d/953d76865da31d501349230fd25778a6.jpg"
     },
     {
      "title": "Ricardo Darín, sobre San Sebastián: \"Es una ciudad que cada vez está más cara, a lo mejor porque cada vez está más linda. Siempre es muy grato volver\"",
      "source": "Fotogramas",
-     "url": "https://www.fotogramas.es/noticias-cine/a73831071/ricardo-darin-actor-lo-dejamos-aca-pelicula-netflix-entrevista-festival-san-sebastian-vivienda-cara/"
+     "url": "https://www.fotogramas.es/noticias-cine/a73831071/ricardo-darin-actor-lo-dejamos-aca-pelicula-netflix-entrevista-festival-san-sebastian-vivienda-cara/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/a17c6342-4355-4e1c-a9b4-6f2f8a28c3fd.jpg"
     },
     {
-     "title": "‘Other Mommy’ Star Arabella Olivia Clark on Working With Jessica Chastain and Being Mentored by Mckenna Grace",
+     "title": "‘The World of Love’ Producer Kim Sehun Backs Actor-Director Ryu Hyunkyung’s Dark Comedy ‘Dog Fight’ at Busan Asian Project Market",
      "source": "Variety",
-     "url": "https://variety.com/2026/film/news/other-mommy-arabella-olivia-jessica-chastain-mckenna-grace-1236907732/"
+     "url": "https://variety.com/2026/film/markets-festivals/world-of-love-producer-dog-fight-busan-asian-project-market-1236907823/",
+     "image": "https://variety.com/wp-content/uploads/2026/10/Dog-Fight-concept-art.jpg"
     },
     {
-     "title": "‘Star Trek: Starfleet Academy’ Season 2 Adds Bill Nighy, Rosemarie DeWitt in Guest Roles",
+     "title": "‘Blade Runner 2099’ Trailer: Michelle Yeoh, Hunter Schafer Are Fugitives in Amazon Limited Series",
      "source": "Variety",
-     "url": "https://variety.com/2026/tv/news/starfleet-academy-season-2-bill-nighy-rosemarie-dewitt-1236907534/"
+     "url": "https://variety.com/2026/tv/news/blade-runner-2099-michelle-yeoh-hunter-schafer-prime-video-1236907138/",
+     "image": "https://variety.com/wp-content/uploads/2026/08/BladeRunner2099.1.jpg"
     }
    ],
    "digital": [
@@ -608,5 +680,7 @@
     }
    ]
   }
- }
+ },
+ "headline": "Taylor Swift, Judeline y Los Javis marcan el pulso de la semana",
+ "intro": "El otoño se viste de morado y zapatos masculinos al estilo Taylor Swift, mientras Elie Saab y H&M democratizan el lujo nupcial. En la música, Judeline abraza el pop flamenco junto a Diego Calva y Ralphie Choo anticipa disco. En pantalla, 'Blade Runner 2099' estrena tráiler y Los Javis conquistan Nueva York con 'La bola negra'."
 }

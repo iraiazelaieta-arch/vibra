@@ -53,6 +53,38 @@ def tokens(text):
 
 
 # ---------------------------------------------------------------- recogida
+def feed_image(e):
+    for key in ("media_content", "media_thumbnail"):
+        for m in e.get(key) or []:
+            if m.get("url") and not m.get("url", "").endswith((".mp4", ".mp3")):
+                return m["url"]
+    for l in e.get("links", []):
+        if l.get("rel") == "enclosure" and l.get("type", "").startswith("image"):
+            return l["href"]
+    for blob in [e.get("summary", "")] + [c.get("value", "") for c in e.get("content", [])]:
+        m = re.search(r"<img[^>]+src=[\"']([^\"']+)", blob or "")
+        if m and not m.group(1).endswith(".gif"):
+            return html.unescape(m.group(1))
+    return ""
+
+
+def og_image(url):
+    try:
+        r = requests.get(url, headers={"User-Agent": UA}, timeout=15)
+        m = re.search(r'<meta[^>]+(?:property|name)=["\'](?:og:image|twitter:image)["\'][^>]+content=["\']([^"\']+)', r.text) or \
+            re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\'](?:og:image|twitter:image)', r.text)
+        return html.unescape(m.group(1)) if m else ""
+    except Exception:
+        return ""
+
+
+def fill_images(stories):
+    for s in stories:
+        if not s.get("image") and s.get("sources"):
+            s["image"] = og_image(s["sources"][0]["url"])
+            s["image_credit"] = s["sources"][0]["name"] if s["image"] else ""
+
+
 def fetch_feed(feed, since):
     try:
         resp = requests.get(feed["url"], headers={"User-Agent": UA}, timeout=20)
@@ -73,6 +105,7 @@ def fetch_feed(feed, since):
         items.append({
             "title": title,
             "link": e["link"],
+            "image": feed_image(e),
             "source": feed["name"],
             "lang": feed.get("lang", "es"),
             "published": when.isoformat() if when else None,
@@ -204,7 +237,9 @@ def gemini(prompt, key, models):
                 if r.status_code == 404:
                     break
                 r.raise_for_status()
-                text = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+                parts = r.json()["candidates"][0]["content"]["parts"]
+                text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
+                text = re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()
                 return json.loads(text)
             except Exception as exc:
                 log(f"  ! Gemini {model}: {exc}")
@@ -249,6 +284,8 @@ def ai_section(name, candidates, n, key, models):
             "summary": s["resumen"].strip(),
             "why": (s.get("clave") or "").strip(),
             "sources": [{"name": candidates[i]["source"], "url": candidates[i]["link"]} for i in dict.fromkeys(idxs)],
+            "image": next((candidates[i]["image"] for i in idxs if candidates[i].get("image")), ""),
+            "image_credit": next((candidates[i]["source"] for i in idxs if candidates[i].get("image")), ""),
             "ai": True,
         })
     return stories
@@ -261,6 +298,8 @@ def plain_section(candidates, n):
         "summary": clean_text(c["summary"], 220),
         "why": "",
         "sources": [{"name": c["source"], "url": c["link"]}],
+        "image": c.get("image", ""),
+        "image_credit": c["source"] if c.get("image") else "",
         "ai": False,
     } for c in diverse_pick(pool, n, overlap=2)]
 
@@ -294,8 +333,9 @@ def make_edition(cfg):
             if gkey:
                 log("  ! IA no disponible: uso modo sin IA")
             stories = plain_section(candidates, n)
+        fill_images(stories)
         edition["sections"][sid] = {"title": sec["title"], "stories": stories, "headlines": [
-            {"title": c["title"], "source": c["source"], "url": c["link"]} for c in diverse_pick(ranked, 8, per_source=2)]}
+            {"title": c["title"], "source": c["source"], "url": c["link"], "image": c.get("image", "")} for c in diverse_pick(ranked, 8, per_source=2)]}
 
     log("Listas y valoraciones")
     edition["sections"]["musica"]["albums"] = apple_music_chart(country, "albums")
@@ -336,7 +376,7 @@ def render(cfg):
         sys.exit("No hay ediciones todavía. Ejecuta sin --render primero.")
     base_url = (os.environ.get("SITE_URL") or cfg["site"].get("base_url") or "").rstrip("/")
     money = cfg.get("monetization", {})
-    env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html", "xml"]))
+    env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html", "xml", "webmanifest"]))
     env.filters["date"] = nice_date
     env.globals.update(site=cfg["site"], money=money, light=light, base_url=base_url,
                        year=dt.date.today().year, quote=quote_plus)
@@ -358,6 +398,8 @@ def render(cfg):
     for page in ("aviso-legal", "privacidad", "cookies", "sobre-vibra"):
         write(f"{page}/index.html", f"{page}.html", 1)
     write("rss.xml", "rss.xml", 0, editions=editions[:20])
+    write("manifest.webmanifest", "manifest.webmanifest", 0)
+    write("sw.js", "sw.js", 0, build_id=dt.datetime.now().strftime("%Y%m%d%H%M%S"))
     write("sitemap.xml", "sitemap.xml", 0, editions=editions)
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n" + (f"Sitemap: {base_url}/sitemap.xml\n" if base_url else ""))
     if money.get("adsense_client"):

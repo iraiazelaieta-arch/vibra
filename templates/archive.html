@@ -4,6 +4,6 @@
 <section class="page">
   <h1>Archivo</h1>
   <p>Todas las ediciones semanales de {{ site.name }}.</p>
-  <ul class="archive">{% for e in editions %}<li><a href="{{ root }}semana/{{ e.id }}/"><span>Semana {{ e.week }} · {{ e.date|date }}</span><b>{{ e.headline or (e.sections.moda.stories[0].title if e.sections.moda.stories else "Edición " ~ e.id) }}</b></a></li>{% endfor %}</ul>
+  <div class="archive">{% for e in editions %}{% set s = e.sections.moda.stories[0] if e.sections.moda.stories else None %}<a href="{{ root }}semana/{{ e.id }}/">{% if s and s.image %}<img loading="lazy" referrerpolicy="no-referrer" src="{{ s.image }}" alt="" onerror="this.remove()">{% endif %}<span>Semana {{ e.week }} · {{ e.date|date }}</span><b>{{ e.headline or (s.title if s else "Edición " ~ e.id) }}</b></a>{% endfor %}</div>
 </section>
 {% endblock %}

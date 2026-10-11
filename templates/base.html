@@ -2,37 +2,55 @@
 <html lang="{{ site.language }}">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{% block title %}{{ site.name }} — {{ site.tagline }}{% endblock %}</title>
 <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
 <meta property="og:title" content="{{ self.title() }}">
 <meta property="og:description" content="{{ self.description() }}">
 <meta property="og:type" content="website">
+<meta property="og:image" content="{{ base_url }}/static/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E0A18">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="{{ site.name }}">
 {% if base_url %}<link rel="canonical" href="{{ base_url }}/{{ path|replace('index.html','') }}">{% endif %}
+<link rel="manifest" href="{{ root }}manifest.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ root }}rss.xml">
-<link rel="icon" href="{{ root }}static/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ root }}static/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ root }}static/img/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ root }}static/style.css">
 {% if money.adsense_client %}<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ money.adsense_client }}" crossorigin="anonymous"></script>{% endif %}
 </head>
 <body>
-<header class="masthead">
-  <div class="topbar">
-    <span>{% block topdate %}{% endblock %}</span>
-    <nav><a href="{{ root }}">Esta semana</a><a href="{{ root }}archivo/">Archivo</a><a href="{{ root }}sobre-vibra/">Qué es VIBRA</a>{% if money.newsletter_url %}<a class="pill" href="{{ money.newsletter_url }}" rel="noopener" target="_blank">Suscríbete gratis</a>{% endif %}</nav>
+<header class="top">
+  <a class="brand" href="{{ root }}" aria-label="{{ site.name }} inicio"><img src="{{ root }}static/img/logo-white.svg" alt="{{ site.name }}"></a>
+  <nav class="chips">
+    <a href="{{ root }}#moda" class="c-moda">Moda</a><a href="{{ root }}#musica" class="c-musica">Música</a><a href="{{ root }}#cine" class="c-cine">Cine</a><a href="{{ root }}archivo/">Archivo</a>
+  </nav>
+  <div class="actions">
+    {% if money.newsletter_url %}<a class="btn ghost" href="{{ money.newsletter_url }}" target="_blank" rel="noopener">Newsletter</a>{% endif %}
+    <button class="btn" id="install" hidden>Instalar app</button>
   </div>
-  <a class="logo" href="{{ root }}">{{ site.name[:-1] }}<em>{{ site.name[-1] }}</em></a>
-  <p class="tagline">{{ site.tagline }}</p>
-  <nav class="sections"><a href="{{ root }}#moda">Moda</a><a href="{{ root }}#musica">Música</a><a href="{{ root }}#cine">Cine y series</a></nav>
 </header>
 <main>{% block content %}{% endblock %}</main>
 <footer>
-  <div class="logo small">{{ site.name[:-1] }}<em>{{ site.name[-1] }}</em></div>
+  <img class="flogo" src="{{ root }}static/img/logo-gradient.svg" alt="{{ site.name }}">
   <p>{{ site.description }}</p>
-  <p class="fine">VIBRA resume y enlaza noticias publicadas por otros medios; todos los derechos de los contenidos originales pertenecen a sus autores. Datos de cine de <a href="https://www.themoviedb.org" rel="noopener">TMDB</a> (este producto usa la API de TMDB pero no está avalado ni certificado por TMDB). Listas de música de Apple Music.{% if money.amazon_tag or money.apple_affiliate_token %} Algunos enlaces son de afiliado: si compras a través de ellos, VIBRA recibe una pequeña comisión sin coste para ti.{% endif %}</p>
-  <nav><a href="{{ root }}aviso-legal/">Aviso legal</a><a href="{{ root }}privacidad/">Privacidad</a><a href="{{ root }}cookies/">Cookies</a><a href="{{ root }}rss.xml">RSS</a></nav>
+  <nav><a href="{{ root }}sobre-vibra/">Qué es VIBRA</a><a href="{{ root }}archivo/">Archivo</a><a href="{{ root }}aviso-legal/">Aviso legal</a><a href="{{ root }}privacidad/">Privacidad</a><a href="{{ root }}cookies/">Cookies</a><a href="{{ root }}rss.xml">RSS</a></nav>
+  <p class="fine">VIBRA resume y enlaza noticias publicadas por otros medios. Textos originales, fotografías y marcas pertenecen a sus autores y se muestran con crédito y enlace a la fuente. Listas de música de Apple Music.{% if money.amazon_tag or money.apple_affiliate_token %} Algunos enlaces son de afiliado: si compras a través de ellos, VIBRA recibe una pequeña comisión sin coste para ti.{% endif %}</p>
   <p class="fine">© {{ year }} {{ site.name }}</p>
 </footer>
+<nav class="tabbar">
+  <a href="{{ root }}"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/></svg>Inicio</a>
+  <a href="{{ root }}#moda"><svg viewBox="0 0 24 24"><path d="M8 3l4 2 4-2 5 4-3 4-2-1v11H8V10l-2 1-3-4z"/></svg>Moda</a>
+  <a href="{{ root }}#musica"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 18a3 3 0 11-6 0 3 3 0 016 0zm12-2a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Música</a>
+  <a href="{{ root }}#cine"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 9h16M8 5v4m4-4v4m4-4v4"/></svg>Cine</a>
+  <a href="{{ root }}archivo/"><svg viewBox="0 0 24 24"><path d="M4 4h16v4H4zm1 4h14v12H5zm5 4h4"/></svg>Archivo</a>
+</nav>
+<div class="ios-hint" id="ioshint" hidden>Para instalar VIBRA: pulsa <b>Compartir</b> y luego <b>"Añadir a pantalla de inicio"</b>. <button onclick="this.parentNode.hidden=true">OK</button></div>
+<script src="{{ root }}static/app.js" defer></script>
 </body>
 </html>

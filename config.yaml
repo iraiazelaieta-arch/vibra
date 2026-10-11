@@ -20,7 +20,7 @@ monetization:
 
 ai:
   # Modelos de Google Gemini a probar en orden (plan gratuito)
-  models: ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash"]
+  models: ["gemini-flash-latest", "gemini-3.8-flash"]
   items_per_section: 6
 
 sections:
