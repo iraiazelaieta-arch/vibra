@@ -9,7 +9,7 @@ site:
   language: "es"
   # Dirección pública de la web (se rellena sola en GitHub; cámbiala cuando compres dominio)
   base_url: ""
-  contact_email: ""
+  contact_email: "vibrarevistaoficial@gmail.com"
 
 # Dinero: déjalo vacío hasta tenerlo; la web se adapta sola
 monetization:
