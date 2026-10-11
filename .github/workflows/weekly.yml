@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -48,7 +50,8 @@ jobs:
           git config user.email "vibra-bot@users.noreply.github.com"
           git add data/editions
           git diff --cached --quiet || git commit -m "Edición semanal $(date -u +%G-S%V)"
-          git push
+          git pull --rebase origin main
+          git push origin HEAD:main
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
