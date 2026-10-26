@@ -37,7 +37,7 @@ def log(*a):
     print(*a, file=sys.stderr, flush=True)
 
 
-BOILERPLATE = re.compile(r"(La entrada .{0,300}? se public[oó] primero en .*$|The post .{0,300}? appeared first on .*$|Leer m[aá]s.*$|Read more.*$|Continue reading.*$|\s\S[^.]{0,200}? es de [\w.-]+\.(com|es)\s*\.?$)", re.I)
+BOILERPLATE = re.compile(r"(La entrada .{0,300}? se public[oó] primero en .*$|The post .{0,300}? appeared first on .*$|Leer m[aá]s.*$|Read more.*$|Continue reading.*$|\s\S[^.]{0,200}? es de [\w.\-]+.*$|\s\S[^.]{0,200}? is from [\w.\-]+.*$)", re.I | re.M)
 
 
 def clean_text(raw, limit=None):
@@ -252,7 +252,19 @@ GEMINI_GAP = 13  # segundos entre llamadas: el plan gratuito limita las peticion
 _last_call = [0.0]
 
 
+def normalize_models(models):
+    out = []
+    for model in models or []:
+        value = str(model).strip().replace(" ", "")
+        if value:
+            out.append(value)
+    return out
+
+
 def gemini(prompt, key, models, schema=None):
+    models = normalize_models(models)
+    if not models:
+        return None
     config = {"responseMimeType": "application/json", "temperature": 0.7, "maxOutputTokens": 32768}
     if schema:
         config["responseSchema"] = schema
@@ -345,7 +357,7 @@ Cómo tiene que ser cada artículo:
 - "destacado": una frase potente del propio artículo para destacar (máx. 25 palabras). No pongas citas entre comillas atribuidas a nadie.
 
 Reglas de rigor:
-- Los hechos concretos (fechas, cifras, nombres, declaraciones) solo pueden salir del material de referencia. Como contexto puedes añadir datos de cultura general ampliamente conocidos y ciertos; si dudas de algo, no lo pongas.
+- Los hechos concretos (fechas, cifras, nombres, declaraciones) solo pueden salir del material de referencia. Como contexto puedes añadir datos de cultura general ampliamente conocidos y ciertos, sin inventar hechos.
 - No inventes citas. Escribe con tus propias palabras: no copies ni traduzcas literalmente frases del material.
 - Puedes atribuir información al medio original (p. ej., "según Variety"). No hables de ti misma ni del "material".
 - Sin markdown ni emojis.
@@ -400,6 +412,26 @@ def ai_articles(name, stories, key, models, batch=2):
     log(f"  · artículos propios: {done}/{len(stories)}")
 
 
+def plain_section(candidates, n):
+    stories = []
+    for c in (candidates or [])[:n]:
+        title = (c.get("title") or "").strip()
+        summary = (c.get("summary") or title).strip()
+        if not title:
+            continue
+        stories.append({
+            "title": title,
+            "summary": summary[:220],
+            "why": "",
+            "shop": "",
+            "sources": [{"name": c.get("source", "Fuente"), "url": c.get("link", "")}],
+            "image": c.get("image", ""),
+            "image_credit": c.get("source", ""),
+            "ai": False,
+        })
+    return stories
+
+
 # ---------------------------------------------------------------- edición
 def make_edition(cfg):
     now = dt.datetime.now(dt.timezone.utc)
@@ -418,19 +450,20 @@ def make_edition(cfg):
     tkey = os.environ.get("TMDB_API_KEY", "").strip()
     n = cfg["ai"]["items_per_section"]
     country = cfg["charts"]["country"]
+    models = normalize_models(cfg["ai"].get("models", []))
 
     for sid, sec in cfg["sections"].items():
         log(f"Sección {sec['title']}")
         items = [it for f in sec["feeds"] for it in fetch_feed(f, since)]
         ranked = rank_items(items)
         candidates = diverse_pick(ranked, 40, per_source=8)
-        stories = ai_section(sec["title"], candidates, n, gkey, cfg["ai"]["models"]) if gkey and candidates else []
+        stories = ai_section(sec["title"], candidates, n, gkey, models) if gkey and candidates and models else []
         if len(stories) < 3:
             if gkey:
                 log("  ! IA no disponible: uso modo sin IA")
             stories = plain_section(candidates, n)
         else:
-            ai_articles(sec["title"], stories, gkey, cfg["ai"]["models"])
+            ai_articles(sec["title"], stories, gkey, models)
         for s in stories:
             s.pop("_ctx", None)
         fill_images(stories)
@@ -447,9 +480,9 @@ def make_edition(cfg):
     else:
         edition["sections"]["cine"]["digital"] = itunes_movies(country)
 
-    if gkey:
+    if gkey and models:
         heads = "\n".join(f"- {s['title']}" for sec in edition["sections"].values() for s in sec["stories"][:3])
-        intro = gemini(INTRO_PROMPT.format(items=heads), gkey, cfg["ai"]["models"]) or {}
+        intro = gemini(INTRO_PROMPT.format(items=heads), gkey, models) or {}
         edition["headline"] = intro.get("titular", "")
         edition["intro"] = intro.get("intro", "")
     return edition
