@@ -29,15 +29,14 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "editions"
 OUT = ROOT / "site"
 UA = "Mozilla/5.0 (compatible; VibraBot/1.0; +https://github.com)"
-STOPWORDS = set("""a al algo como con de del el ella en era es esta este esto la las lo los mas más me mi muy no o para pero por que qué se sin sobre su sus tu un una uno y ya
-the a an and are as at be by for from has have in is it its of on or that the this to was were will with new your you his her their after over how why what who""".split())
+STOPWORDS = set("""a al algo como con de del el ella en era es esta este esto la las lo los mas más me mi muy no o para pero por que qué se sin sobre su sus tu un una uno y ya the a an and are as at be by for from has have in is it its of on or that the this to was were will with new your you his her their after over how why what who""".split())
 
 
 def log(*a):
     print(*a, file=sys.stderr, flush=True)
 
 
-BOILERPLATE = re.compile(r"(La entrada .{0,300}? se public[oó] primero en .*$|The post .{0,300}? appeared first on .*$|Leer m[aá]s.*$|Read more.*$|Continue reading.*$|\s\S[^.]{0,200}? es de [\w.\s-]+\.$|\s\S[^.]{0,200}? is from [\w.\s-]+\.$)", re.IGNORECASE)
+BOILERPLATE = re.compile(r"(La entrada .{0,300}? se public[oó] primero en .*$|The post .{0,300}? appeared first on .*$|Leer m[aá]s.*$|Read more.*$|Continue reading.*$|\s\S[^.]{0,200}? es de [\w.\s-]+\.$|\s\S[^.]{0,200}? is from [\w.\s-]+\.$)", re.I)
 
 
 def clean_text(raw, limit=None):
@@ -247,8 +246,8 @@ def diverse_pick(ranked, n, per_source=2, overlap=3):
     return picked
 
 
-# ---------------------------------------------------------------- IA (Gemini, opcional)
-GEMINI_GAP = 13  # segundos entre llamadas: el plan gratuito limita las peticiones por minuto
+# ---------------------------------------------------------------- IA (Gemini, obligatoria)
+GEMINI_GAP = 13
 _last_call = [0.0]
 
 
@@ -264,11 +263,12 @@ def normalize_models(models):
 def gemini(prompt, key, models, schema=None):
     models = normalize_models(models)
     if not models:
-        return None
+        raise ValueError("No hay modelos de Gemini configurados")
     config = {"responseMimeType": "application/json", "temperature": 0.7, "maxOutputTokens": 32768}
     if schema:
         config["responseSchema"] = schema
     body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": config}
+    last_error = None
     for model in models:
         for attempt in range(3):
             time.sleep(max(0, GEMINI_GAP - (time.time() - _last_call[0])))
@@ -277,25 +277,34 @@ def gemini(prompt, key, models, schema=None):
                 r = requests.post(
                     f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                     headers={"x-goog-api-key": key, "Content-Type": "application/json"},
-                    json=body, timeout=240)
+                    json=body,
+                    timeout=240,
+                )
                 if r.status_code == 429 or r.status_code >= 500:
                     quota = re.findall(r'"quotaId":\s*"([^"]+)"', r.text)
-                    log(f"  ! Gemini {model}: HTTP {r.status_code} {', '.join(dict.fromkeys(quota)) or r.text[:300]!r}")
+                    last_error = f"Gemini {model}: HTTP {r.status_code} {', '.join(dict.fromkeys(quota)) or r.text[:300]}"
+                    log(f"  ! {last_error}")
                     if "PerDay" in r.text:
                         break
                     time.sleep(20 * (attempt + 1))
                     continue
                 if r.status_code == 404:
+                    last_error = f"Gemini {model}: modelo no encontrado"
+                    log(f"  ! {last_error}")
                     break
                 r.raise_for_status()
-                parts = r.json()["candidates"][0]["content"]["parts"]
+                data = r.json()
+                parts = data["candidates"][0]["content"]["parts"]
                 text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
                 text = re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()
                 return json.loads(text)
             except Exception as exc:
-                log(f"  ! Gemini {model}: {exc}")
+                last_error = f"Gemini {model}: {exc}"
+                log(f"  ! {last_error}")
                 break
-    return None
+    if last_error:
+        raise RuntimeError(last_error)
+    raise RuntimeError("Gemini no devolvió respuesta válida")
 
 
 SECTION_PROMPT = """Eres editora de VIBRA, una revista digital en español de cultura pop (moda, música y cine).
@@ -342,6 +351,8 @@ def ai_section(name, candidates, n, key, models):
             "ai": True,
             "_ctx": [candidates[i] for i in dict.fromkeys(idxs)],
         })
+    if not stories:
+        raise RuntimeError(f"Gemini no devolvió historias válidas para la sección {name}")
     return stories
 
 
@@ -401,38 +412,21 @@ def ai_articles(name, stories, key, models, batch=2):
                 sub = re.sub(r"[*#_]+", "", b.get("subtitulo") or "").strip()
                 paras = [re.sub(r"\*\*|__", "", p).strip() for p in b.get("parrafos") or [] if isinstance(p, str) and p.strip()]
                 if paras:
-                    body += ([f"## {sub}"] if sub and body else []) + paras
+                    if sub:
+                        body.append(f"## {sub}")
+                    body.extend(paras)
             words = sum(len(p.split()) for p in body if not p.startswith("## "))
             if words >= 250:
                 chunk[i]["body"] = body
                 chunk[i]["highlight"] = (a.get("destacado") or "").strip().strip('"«»')
                 done += 1
             else:
-                log(f"  ! artículo demasiado corto ({words} palabras): {chunk[i]['title'][:60]}")
+                raise RuntimeError(f"Gemini generó un artículo demasiado corto para: {chunk[i]['title'][:80]}")
+    if done == 0:
+        raise RuntimeError(f"Gemini no generó ningún artículo válido para la sección {name}")
     log(f"  · artículos propios: {done}/{len(stories)}")
 
 
-def plain_section(candidates, n):
-    stories = []
-    for c in (candidates or [])[:n]:
-        title = (c.get("title") or "").strip()
-        summary = (c.get("summary") or title).strip()
-        if not title:
-            continue
-        stories.append({
-            "title": title,
-            "summary": summary[:220],
-            "why": "",
-            "shop": "",
-            "sources": [{"name": c.get("source", "Fuente"), "url": c.get("link", "")}],
-            "image": c.get("image", ""),
-            "image_credit": c.get("source", ""),
-            "ai": False,
-        })
-    return stories
-
-
-# ---------------------------------------------------------------- edición
 def make_edition(cfg):
     now = dt.datetime.now(dt.timezone.utc)
     since = now - dt.timedelta(days=8)
@@ -447,25 +441,22 @@ def make_edition(cfg):
         "sections": {},
     }
     gkey = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not gkey:
+        raise RuntimeError("Falta GEMINI_API_KEY: no se puede generar la edición con artículos de IA")
     tkey = os.environ.get("TMDB_API_KEY", "").strip()
     n = cfg["ai"]["items_per_section"]
     country = cfg["charts"]["country"]
     models = normalize_models(cfg["ai"].get("models", []))
+    if not models:
+        raise RuntimeError("No hay modelos de Gemini configurados")
 
     for sid, sec in cfg["sections"].items():
         log(f"Sección {sec['title']}")
         items = [it for f in sec["feeds"] for it in fetch_feed(f, since)]
         ranked = rank_items(items)
         candidates = diverse_pick(ranked, 40, per_source=8)
-        stories = []
-        if gkey and candidates and models:
-            stories = ai_section(sec["title"], candidates, n, gkey, models)
-        if not stories:
-            if gkey:
-                log("  ! IA no disponible: uso modo sin IA")
-            stories = plain_section(candidates, n)
-        elif gkey and models:
-            ai_articles(sec["title"], stories, gkey, models)
+        stories = ai_section(sec["title"], candidates, n, gkey, models)
+        ai_articles(sec["title"], stories, gkey, models)
         for s in stories:
             s.pop("_ctx", None)
         fill_images(stories)
@@ -482,11 +473,10 @@ def make_edition(cfg):
     else:
         edition["sections"]["cine"]["digital"] = itunes_movies(country)
 
-    if gkey and models:
-        heads = "\n".join(f"- {s['title']}" for sec in edition["sections"].values() for s in sec["stories"][:3])
-        intro = gemini(INTRO_PROMPT.format(items=heads), gkey, models) or {}
-        edition["headline"] = intro.get("titular", "")
-        edition["intro"] = intro.get("intro", "")
+    heads = "\n".join(f"- {s['title']}" for sec in edition["sections"].values() for s in sec["stories"][:3])
+    intro = gemini(INTRO_PROMPT.format(items=heads), gkey, models) or {}
+    edition["headline"] = intro.get("titular", "")
+    edition["intro"] = intro.get("intro", "")
     return edition
 
 
@@ -517,7 +507,8 @@ def assign_slugs(edition):
             slug = base = slugify(s["title"])
             n = 2
             while slug in seen:
-                slug, n = f"{base}-{n}", n + 1
+                slug = f"{base}-{n}"
+                n += 1
             seen.add(slug)
             s["slug"] = slug
 
@@ -554,16 +545,14 @@ def render(cfg):
             write(f"semana/{e['id']}/{s['slug']}/index.html", "article.html", 3,
                   e=e, sid=sid, sec=sec, s=s, related=related[:6])
     write("archivo/index.html", "archive.html", 1, editions=editions)
-    for page in ("aviso-legal", "privacidad", "cookies", "sobre-vibra"):
+    for page in ("sobre-vibra", "aviso-legal", "privacidad", "cookies"):
         write(f"{page}/index.html", f"{page}.html", 1)
     write("rss.xml", "rss.xml", 0, editions=editions[:20])
     write("manifest.webmanifest", "manifest.webmanifest", 0)
-    write("sw.js", "sw.js", 0, build_id=dt.datetime.now().strftime("%Y%m%d%H%M%S"))
     write("sitemap.xml", "sitemap.xml", 0, editions=editions)
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n" + (f"Sitemap: {base_url}/sitemap.xml\n" if base_url else ""))
     if money.get("adsense_client"):
-        pub = money["adsense_client"].replace("ca-", "")
-        (OUT / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n")
+        (OUT / "ads.txt").write_text(f"google.com, {money['adsense_client'].replace('ca-', '')}, DIRECT, f08c47fec0942fa0\n")
     (OUT / ".nojekyll").write_text("")
     if (ROOT / "CNAME").exists():
         shutil.copy(ROOT / "CNAME", OUT / "CNAME")
