@@ -3,7 +3,7 @@
  "week": 44,
  "year": 2026,
  "date": "2026-10-26",
- "generated_at": "2026-10-26T07:51:20+00:00",
+ "generated_at": "2026-10-26T08:25:11+00:00",
  "sections": {
   "moda": {
    "title": "Moda",
@@ -276,15 +276,15 @@
      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/10/8c/24108c9c-845b-40f3-6175-9effb95e1d5c/191404167373.png/432x432bb.jpg"
     },
     {
-     "title": "Plato Combinado",
+     "title": "Rango vocal identitario",
      "source": "Mondo Sonoro",
-     "url": "https://www.mondosonoro.com/criticas/discos-musica/morreo-plato-combinado/",
+     "url": "https://www.mondosonoro.com/criticas/conciertos-musica/anastacia-donostia/",
      "image": ""
     },
     {
-     "title": "Crítica de 'Mientras el Guadalquivir fluye y fluye y fluye' de Viva Belgrado",
+     "title": "PALCO comienza a desvelar su programa",
      "source": "Mondo Sonoro",
-     "url": "https://www.mondosonoro.com/criticas/discos-musica/viva-belgrado-mientras-el-guadalquivir/",
+     "url": "https://www.mondosonoro.com/noticias-actualidad-musical/palco-programa/",
      "image": ""
     },
     {
@@ -523,32 +523,32 @@
      "ai": false
     },
     {
-     "title": "Las 4 mejores películas nuevas de Amazon Prime Video en octubre de 2026. Una joya indiscutible de Peter Jackson, un entretenidísimo thriller de acción y más",
-     "summary": "En Espinos hemos iniciado la tradición mensual de repasar el mejor cine que llega a Prime Video y ahora es el momento de centrar nuestra atención en las 4 mejores películas nuevas que han llegado al servicio de streaming",
+     "title": "Hoy en Prime Video: Una de las mejores películas de ciencia ficción de todos los tiempos",
+     "summary": "En 2017, Denis Villeneuve ('Dune') asumió la titánica tarea de llevar a los cines la secuela del clásico de ciencia ficción 'Blade Runner'",
      "why": "",
      "shop": "",
      "sources": [
       {
-       "name": "Espinof",
-       "url": "https://www.espinof.com/listas/4-mejores-peliculas-nuevas-amazon-prime-video-octubre-2026-joya-indiscutible-peter-jackson-entretenidisimo-thriller-accion"
+       "name": "SensaCine",
+       "url": "https://www.sensacine.com/noticias/cine/noticia-1000228887/"
       }
      ],
-     "image": "https://i.blogs.es/70109e/normal_ver2_xxlg/1024_2000.jpeg",
-     "image_credit": "Espinof",
+     "image": "https://es.web.img3.acsta.net/img/d6/a4/d6a4d14de02d25aca4e3f51527096f7f.jpg",
+     "image_credit": "SensaCine",
      "ai": false
     },
     {
-     "title": "'Wildwood' es monumental. La nueva película de Travis Knight es una revolución visual a la altura de las grandes épicas de fantasía",
-     "summary": "Este 22 de octubre ha llegado a cines ' Wildwood ', la nueva película de LAIKA con la que el estudio de animación se lo juega todo a una carta muy ambiciosa. No es para menos, porque Travis Knight se ha tirado dieciséis ",
+     "title": "Las 7 mejores películas de Hirokazu Koreeda y dónde verlas en streaming",
+     "summary": "Durante largo tiempo se le ha considerado uno de los herederos más directos de Yasujirō Ozu gracias a su estilo de drama más intimista y observacional . Pero hay muchos más detalles fascinantes en el cine de Hirokazu Kor",
      "why": "",
      "shop": "",
      "sources": [
       {
        "name": "Espinof",
-       "url": "https://www.espinof.com/criticas/wildwood-monumental-nueva-pelicula-travis-knight-revolucion-visual-a-altura-grandes-epicas-fantasia"
+       "url": "https://www.espinof.com/listas/mejores-peliculas-hirokazu-koreeda"
       }
      ],
-     "image": "https://i.blogs.es/96e55b/wildwood/1024_2000.jpeg",
+     "image": "https://i.blogs.es/7941cc/hirokazu-koreeda/1024_2000.jpeg",
      "image_credit": "Espinof",
      "ai": false
     }
@@ -579,16 +579,16 @@
      "image": "https://i.blogs.es/12b833/captura-de-pantalla-2026-10-23-a-las-10.50.33/1024_2000.jpeg"
     },
     {
+     "title": "Hoy en Prime Video: Una de las mejores películas de ciencia ficción de todos los tiempos",
+     "source": "SensaCine",
+     "url": "https://www.sensacine.com/noticias/cine/noticia-1000228887/",
+     "image": "https://es.web.img3.acsta.net/img/d6/a4/d6a4d14de02d25aca4e3f51527096f7f.jpg"
+    },
+    {
      "title": "Hace 41 años, nadie entendía que el título de esta película de Star Wars en realidad estaba revelando el final",
      "source": "SensaCine",
      "url": "https://www.sensacine.com/noticias/cine/noticia-1000228443/",
      "image": "https://es.web.img2.acsta.net/img/94/44/94448ec22564db56e4428b834a6299cc.jpg"
-    },
-    {
-     "title": "14 estrenos en Prime Video, Disney+, HBO Max, Movistar Plus y Filmin: Esta semana de Halloween la secuela de una película española de zombis y un thriller sobrenatural",
-     "source": "SensaCine",
-     "url": "https://www.sensacine.com/noticias/cine/noticia-1000228895/",
-     "image": "https://es.web.img3.acsta.net/img/f7/20/f7202461825fae1967005a99fe071005.jpg"
     },
     {
      "title": "Tokyo Film Festival to Reassess Its Global Standing Ahead of 40th Edition, Says Director Hisamatsu Takeo",
