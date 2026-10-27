@@ -3,15 +3,15 @@
  "week": 44,
  "year": 2026,
  "date": "2026-10-26",
- "generated_at": "2026-10-27T10:21:50+00:00",
+ "generated_at": "2026-10-27T11:23:30+00:00",
  "sections": {
   "moda": {
    "title": "Moda",
    "stories": [
     {
-     "title": "Por sus manos han pasado Dakota Johnson o Jennifer Lawrence. Hablamos con el peluquero…",
-     "summary": "Por sus manos han pasado desde Kate Middleton a Dakota Johnson o Jennifer Lawrence . Hablamos de Rossano Ferretti , uno de los peluqueros italianos más icónicos. El experto nos desvela cuál es la clave de un buen corte…",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "title": "Por sus manos han pasado Dakota Johnson o Jennifer Lawrence. Hablamos con el peluquero italiano Rossano Ferretti (que nos desvela cuál es la clave de un buen corte de pelo y un color a la italiana)",
+     "summary": "Por sus manos han pasado desde Kate Middleton a Dakota Johnson o Jennifer Lawrence . Hablamos de Rossano Ferretti , uno de los peluqueros italianos más icónicos. El experto nos desvela cuál es la clave de un buen corte de pelo y un color a la italiana además de cómo debemos cuidarnos el cabello evitando algunos errores frecuentes.  Leer",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -19,44 +19,14 @@
        "url": "https://www.telva.com/belleza/pelo/2026/10/26/6adb593802136ea6308b4590.html"
       }
      ],
-     "image": "http://secure-uk.imrworldwide.com/cgi-bin/m?cid=es-widgetueditorial&cg=rss-telva&ci=es-widgetueditorial&si=https://e00-telva.uecdn.es/rss/portada.xml",
+     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/23/17927735921226.jpg",
      "image_credit": "Telva",
      "ai": false
     },
     {
-     "title": "La luna llena del cazador del 26 de octubre de 2026 nos invita a hacernos una pregunta…",
-     "summary": "A las 5:12 de la madrugada, el plenilunio iluminó el cielo en el signo de Tauro. Estos son sus mensajes clave para los próximos días",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "Vogue España",
-       "url": "https://www.vogue.es/articulos/luna-llena-del-cazador-26-octubre-2026-mensajes-clave"
-      }
-     ],
-     "image": "",
-     "image_credit": "",
-     "ai": false
-    },
-    {
-     "title": "Botas marrones: la tendencia del otoño-invierno de 2026/2027",
-     "summary": "De piel color chocolate negro, de ante o estilo motero: los modelos en los que invertir esta temporada",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "Vogue España",
-       "url": "https://www.vogue.es/articulos/botas-marrones-tendencia-otono-invierno-2026-2027"
-      }
-     ],
-     "image": "",
-     "image_credit": "",
-     "ai": false
-    },
-    {
-     "title": "Basta una camisa para resolver todos tus looks de otoño 2026: así la llevan las expertas…",
+     "title": "Basta una camisa para resolver todos tus looks de otoño 2026: así la llevan las expertas en moda",
      "summary": "Ya no es estrictamente una prenda de oficina ni se confecciona únicamente en popelín. Te cuento las razones (y los trucos de las insiders ) por las que querrás llevar una camisa toda la temporada.",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -64,14 +34,14 @@
        "url": "https://www.elle.com/es/moda/tendencias/a74228911/ideas-looks-con-camisa-otono/"
       }
      ],
-     "image": "",
-     "image_credit": "",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/b816d9a3-f0cf-449a-af9d-75d3a50ba317.jpg",
+     "image_credit": "Elle España",
      "ai": false
     },
     {
-     "title": "Mujeres de más de 50: los vestidos bonitos de punto del otoño ya han llegado a las…",
+     "title": "Mujeres de más de 50: los vestidos bonitos de punto del otoño ya han llegado a las tiendas y estos son nuestros 6 favoritos",
      "summary": "Te lo advertimos: no querrás quitártelos en toda la temporada.",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -79,14 +49,44 @@
        "url": "https://www.elle.com/es/moda/compras-elle/a74206658/mujeres-mas-50-vestidos-bonitos-punto-otono-llegado-tiendas-nuestros-6-favoritos/"
       }
      ],
-     "image": "",
-     "image_credit": "",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/ad5f0cc1-9f6c-4e8a-89c2-088f93ef6fb0.jpg",
+     "image_credit": "Elle España",
+     "ai": false
+    },
+    {
+     "title": "Por fin llegan a Zara las botas de hípica más populares del otoño 2026",
+     "summary": "Se trata de uno de los estilos más elegantes y atemporales que se adapta igual de bien al campo que a la ciudad. Hablamos de la tendencia ecuestre que arrasa entre las pijas clásicas y conquista pasarelas como la de Gucci el pasado mes de septiembre.",
+     "why": "Noticia destacada de la semana.",
+     "shop": "",
+     "sources": [
+      {
+       "name": "Elle España",
+       "url": "https://www.elle.com/es/moda/noticias/a74246005/zara-botas-de-hipica-mas-populares-otono-2026/"
+      }
+     ],
+     "image": "https://hips.hearstapps.com/hmg-prod/images/0a4eaf69-916d-4a39-b357-30bbad85a53d.jpg",
+     "image_credit": "Elle España",
+     "ai": false
+    },
+    {
+     "title": "Mango estrena sus 7 americanas más bonitas y especiales para vestir bien minimalista con vaqueros, camisa blanca y mocasines",
+     "summary": "Mango acaba de poner a la venta sus 7 americanas más bonitas y especiales para vestir bien minimalista con vaqueros, camisa blanca y mocasines. Con un precio bastante asumible, estas americanas son clave para llevar con elegancia los estilismos básicos y vestir bien todo el otoño e invierno.",
+     "why": "Noticia destacada de la semana.",
+     "shop": "",
+     "sources": [
+      {
+       "name": "Elle España",
+       "url": "https://www.elle.com/es/moda/noticias/a74246507/americanas-mujer-mango-vaqueros/"
+      }
+     ],
+     "image": "https://hips.hearstapps.com/hmg-prod/images/6482c14f-956b-4000-bb91-8fe6adfb2fb9.jpg",
+     "image_credit": "Elle España",
      "ai": false
     },
     {
      "title": "'Mirror' y 'Glazed Nails', las dos manicuras que serán tendencia en octubre de 2026",
      "summary": "Se alejan de los tonos vibrantes propios de la época estival y ofrecen un resultado versátil y atemporal que combina a la perfección con los primeros looks otoñales.",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -94,8 +94,8 @@
        "url": "https://www.harpersbazaar.com/es/belleza/tendencias-belleza/a73935417/tendencias-unas-glazed-nails-manicuras-tendencia-octubre/"
       }
      ],
-     "image": "",
-     "image_credit": "",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/c40831bb-e191-4a75-88b1-2e840cb5515b.jpg",
+     "image_credit": "Harper's Bazaar España",
      "ai": false
     }
    ],
@@ -104,49 +104,49 @@
      "title": "Por sus manos han pasado Dakota Johnson o Jennifer Lawrence. Hablamos con el peluquero italiano Rossano Ferretti (que nos desvela cuál es la clave de un buen corte de pelo y un color a la italiana)",
      "source": "Telva",
      "url": "https://www.telva.com/belleza/pelo/2026/10/26/6adb593802136ea6308b4590.html",
-     "image": "http://secure-uk.imrworldwide.com/cgi-bin/m?cid=es-widgetueditorial&cg=rss-telva&ci=es-widgetueditorial&si=https://e00-telva.uecdn.es/rss/portada.xml"
-    },
-    {
-     "title": "La luna llena del cazador del 26 de octubre de 2026 nos invita a hacernos una pregunta (que afectará especialmente a estos cuatro signos del zodiaco)",
-     "source": "Vogue España",
-     "url": "https://www.vogue.es/articulos/luna-llena-del-cazador-26-octubre-2026-mensajes-clave",
-     "image": ""
-    },
-    {
-     "title": "Botas marrones: la tendencia del otoño-invierno de 2026/2027",
-     "source": "Vogue España",
-     "url": "https://www.vogue.es/articulos/botas-marrones-tendencia-otono-invierno-2026-2027",
-     "image": ""
+     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/23/17927735921226.jpg"
     },
     {
      "title": "Basta una camisa para resolver todos tus looks de otoño 2026: así la llevan las expertas en moda",
      "source": "Elle España",
      "url": "https://www.elle.com/es/moda/tendencias/a74228911/ideas-looks-con-camisa-otono/",
-     "image": ""
+     "image": "https://hips.hearstapps.com/hmg-prod/images/b816d9a3-f0cf-449a-af9d-75d3a50ba317.jpg"
     },
     {
      "title": "Mujeres de más de 50: los vestidos bonitos de punto del otoño ya han llegado a las tiendas y estos son nuestros 6 favoritos",
      "source": "Elle España",
      "url": "https://www.elle.com/es/moda/compras-elle/a74206658/mujeres-mas-50-vestidos-bonitos-punto-otono-llegado-tiendas-nuestros-6-favoritos/",
-     "image": ""
-    },
-    {
-     "title": "Por fin llegan a Zara las botas de hípica más populares del otoño 2026",
-     "source": "Elle España",
-     "url": "https://www.elle.com/es/moda/noticias/a74246005/zara-botas-de-hipica-mas-populares-otono-2026/",
-     "image": ""
-    },
-    {
-     "title": "Mango estrena sus 7 americanas más bonitas y especiales para vestir bien minimalista con vaqueros, camisa blanca y mocasines",
-     "source": "Elle España",
-     "url": "https://www.elle.com/es/moda/noticias/a74246507/americanas-mujer-mango-vaqueros/",
-     "image": ""
+     "image": "https://hips.hearstapps.com/hmg-prod/images/ad5f0cc1-9f6c-4e8a-89c2-088f93ef6fb0.jpg"
     },
     {
      "title": "'Mirror' y 'Glazed Nails', las dos manicuras que serán tendencia en octubre de 2026",
      "source": "Harper's Bazaar España",
      "url": "https://www.harpersbazaar.com/es/belleza/tendencias-belleza/a73935417/tendencias-unas-glazed-nails-manicuras-tendencia-octubre/",
-     "image": ""
+     "image": "https://hips.hearstapps.com/hmg-prod/images/c40831bb-e191-4a75-88b1-2e840cb5515b.jpg"
+    },
+    {
+     "title": "Abrigo de cuadros: la alternativa al clásico negro que ha defendido la princesa Alexandra de Hannover y los 10 más bonitos de Zara, Massimo Dutti y El Corte Inglés",
+     "source": "Harper's Bazaar España",
+     "url": "https://www.harpersbazaar.com/es/famosas/el-estilo-de/g74248936/abrigo-cuadros-princesa-alexandra-hannover-zara-massimo-dutti-el-corte-ingles/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/7f19f5b6-c472-402b-8ed6-757b85b0218f.jpeg"
+    },
+    {
+     "title": "Vestir para nosotras: 9 tendencias del otoño 2026 que a nosotras nos encantan y a ellos... no tanto",
+     "source": "Telva",
+     "url": "https://www.telva.com/moda/tendencias/2026/10/27/6ad732aa02136e3b498b4582.html",
+     "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/10/26/17930289277184.jpg"
+    },
+    {
+     "title": "La luna llena del cazador del 26 de octubre de 2026 nos invita a hacernos una pregunta (que afectará especialmente a estos cuatro signos del zodiaco)",
+     "source": "Vogue España",
+     "url": "https://www.vogue.es/articulos/luna-llena-del-cazador-26-octubre-2026-mensajes-clave",
+     "image": "https://media.vogue.es/photos/6adf153d8a162d132c587b9a/master/pass/1471150192"
+    },
+    {
+     "title": "Botas marrones: la tendencia del otoño-invierno de 2026/2027",
+     "source": "Vogue España",
+     "url": "https://www.vogue.es/articulos/botas-marrones-tendencia-otono-invierno-2026-2027",
+     "image": "https://media.vogue.es/photos/6ad1d1240e2c3653f68f3f4f/master/pass/stivali%20marroniNew%20York%20str%20F26%200569.jpg"
     }
    ]
   },
@@ -155,8 +155,8 @@
    "stories": [
     {
      "title": "Jay-Z, confirmado para la Super Bowl 2027",
-     "summary": "Jay-Z ha acabado eligiéndose a sí mismo para actuar en el intermedio de la Super Bowl 2027. El legendario rapero estadounidense, fundador de Roc Nation, lleva desde 2019 ayudando a determinar los artistas elegidos para…",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "summary": "Jay-Z ha acabado eligiéndose a sí mismo para actuar en el intermedio de la Super Bowl 2027. El legendario rapero estadounidense, fundador de Roc Nation, lleva desde 2019 ayudando a determinar los artistas elegidos para la mediática actuación. Esta vez, sin embargo, ha decidido que él es la mejor opción.",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -171,7 +171,7 @@
     {
      "title": "Tate McRae Beats Taylor Swift, Olivia Rodrigo in Billboard Hot 100 Race for … Number Two",
      "summary": "The pop star’s “Housewife” takes the second spot on the chart after Ella Langley’s “Choosin’ Texas”",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -179,14 +179,14 @@
        "url": "https://www.rollingstone.com/music/music-news/tate-mcrae-billboard-hot-100-number-two-olivia-rodrigo-1235645932/"
       }
      ],
-     "image": "",
-     "image_credit": "",
+     "image": "https://www.rollingstone.com/wp-content/uploads/2026/10/tate-mcrae-number-2-hot-100.jpg?w=1600&h=900&crop=1",
+     "image_credit": "Rolling Stone",
      "ai": false
     },
     {
      "title": "Tate McRae arrasa con ‘Housewife’",
-     "summary": "‘Housewife’ de Tate McRae es uno de los mayores éxitos en todo el globo en este momento. Ha conseguido liderar varios días el Global de Spotify, donde permanece una semana después de su edición; ha conseguido llegar al…",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "summary": "‘Housewife’ de Tate McRae es uno de los mayores éxitos en todo el globo en este momento. Ha conseguido liderar varios días el Global de Spotify, donde permanece una",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -194,14 +194,14 @@
        "url": "https://jenesaispop.com/2026/10/26/532914/tate-mcrae-housewife-listas/"
       }
      ],
-     "image": "",
-     "image_credit": "",
+     "image": "https://jenesaispop.com/wp-content/uploads/2026/10/tate-mcrae.jpg",
+     "image_credit": "Jenesaispop",
      "ai": false
     },
     {
      "title": "Neil Young Sues Trump Committee for $10 Million Over Use of ‘Rockin’ in the Free World’",
      "summary": "The fundraising committee played the anthem at a rally this month despite a prior settlement barring such use without permission from Young himself, the lawsuit claims",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -209,38 +209,38 @@
        "url": "https://www.rollingstone.com/music/music-news/neil-young-sues-trump-pac-rockin-in-the-free-world-rally-1235648258/"
       }
      ],
-     "image": "",
-     "image_credit": "",
+     "image": "https://www.rollingstone.com/wp-content/uploads/2026/10/neil-young-sues-trump.jpg?w=1600&h=900&crop=1",
+     "image_credit": "Rolling Stone",
      "ai": false
     },
     {
-     "title": "Taylor Swift, George Strait, Lee Thomas Miller & More Celebrated During Nashville…",
-     "summary": "The event was held Oct. 26 in Nashville.",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "title": "Taylor Swift Says ‘There Is No Music Community Like This’ at Nashville Songwriters Hall of Fame Speech",
+     "summary": "The superstar was inducted by Brad Paisley on Monday night, marking her second Songwriters Hall of Fame induction of the year",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
-       "name": "Billboard",
-       "url": "https://www.billboard.com/music/awards/taylor-swift-george-strait-nashville-songwriters-hall-fame-1236368579/"
+       "name": "Rolling Stone",
+       "url": "https://www.rollingstone.com/music/music-news/taylor-swift-nashville-songwriters-hall-of-fame-speech-1235648096/"
       }
      ],
-     "image": "",
-     "image_credit": "",
+     "image": "https://www.rollingstone.com/wp-content/uploads/2026/10/GettyImages-2302161100-2.jpg?crop=0px%2C32px%2C1800px%2C1014px&resize=1600%2C900",
+     "image_credit": "Rolling Stone",
      "ai": false
     },
     {
-     "title": "Macklemore, Hozier and Kneecap Play Sold-Out Free Palestine Benefit Concert in Dublin",
-     "summary": "The show at Dublin’s 3Arena opened a three-city series raising money for Palestinian aid organizations, with Paris and London to follow this week.",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "title": "Macklemore Launches ‘Free Palestine’ Tour With Hozier and Kneecap in Dublin",
+     "summary": "The show kicked off the rapper's series of charity concerts after he was removed from Ed Sheeran's tour for \"free Palestine\" statements — and it featured Sheeran's own backing band",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
-       "name": "Billboard",
-       "url": "https://www.billboard.com/music/music-news/macklemore-hozier-kneecap-free-palestine-benefit-concert-dublin-1236368558/"
+       "name": "Rolling Stone",
+       "url": "https://www.rollingstone.com/music/music-news/macklemore-free-palestine-tour-dublin-performers-1235648074/"
       }
      ],
-     "image": "",
-     "image_credit": "",
+     "image": "https://www.rollingstone.com/wp-content/uploads/2026/10/macklemore-free-palestine-zoe-rain-261026-zoe-rain-2605.jpg?w=1600&h=900&crop=1",
+     "image_credit": "Rolling Stone",
      "ai": false
     }
    ],
@@ -252,21 +252,9 @@
      "image": "https://s.w.org/images/core/emoji/15.0.3/72x72/1f6a8.png"
     },
     {
-     "title": "Jay-Z to Headline Super Bowl LXI Halftime Show: ‘A Dream Come True’",
-     "source": "Rolling Stone",
-     "url": "https://www.rollingstone.com/music/music-news/jay-z-headline-2027-super-bowl-halftime-show-1235648064/",
-     "image": ""
-    },
-    {
      "title": "Tate McRae Beats Taylor Swift, Olivia Rodrigo in Billboard Hot 100 Race for … Number Two",
      "source": "Rolling Stone",
      "url": "https://www.rollingstone.com/music/music-news/tate-mcrae-billboard-hot-100-number-two-olivia-rodrigo-1235645932/",
-     "image": ""
-    },
-    {
-     "title": "Jay-Z to Headline 2027 Super Bowl Halftime Show: ‘GOAT’s Out of the Bag’",
-     "source": "Billboard",
-     "url": "https://www.billboard.com/music/rb-hip-hop/jay-z-super-bowl-halftime-2027-headliner-1236368561/",
      "image": ""
     },
     {
@@ -282,26 +270,121 @@
      "image": ""
     },
     {
-     "title": "Taylor Swift Says ‘There Is No Music Community Like This’ at Nashville Songwriters Hall of Fame Speech",
-     "source": "Rolling Stone",
-     "url": "https://www.rollingstone.com/music/music-news/taylor-swift-nashville-songwriters-hall-of-fame-speech-1235648096/",
+     "title": "Taylor Swift, George Strait, Lee Thomas Miller & More Celebrated During Nashville Songwriters Hall of Fame Gala",
+     "source": "Billboard",
+     "url": "https://www.billboard.com/music/awards/taylor-swift-george-strait-nashville-songwriters-hall-fame-1236368579/",
      "image": ""
     },
     {
-     "title": "Taylor Swift Inducted Into Nashville Songwriters Hall of Fame: ‘Not Lost on Me How Crazy This Is’",
-     "source": "Rolling Stone",
-     "url": "https://www.rollingstone.com/music/music-news/taylor-swift-inducted-nashville-songwriters-hall-of-fame-1235648093/",
+     "title": "Macklemore, Hozier and Kneecap Play Sold-Out Free Palestine Benefit Concert in Dublin",
+     "source": "Billboard",
+     "url": "https://www.billboard.com/music/music-news/macklemore-hozier-kneecap-free-palestine-benefit-concert-dublin-1236368558/",
+     "image": ""
+    },
+    {
+     "title": "Quentin Gas & Los Zíngaros anuncian “El sur soy yo” y estrenan “Gitano andalú”",
+     "source": "Mondo Sonoro",
+     "url": "https://www.mondosonoro.com/noticias-actualidad-musical/quentin-gas-los-zingaros-gitano-andalu-el-sur-soy-yo/",
+     "image": ""
+    },
+    {
+     "title": "La experiencia “The Beatles Story” cambiará su sede en Liverpool",
+     "source": "Mondo Sonoro",
+     "url": "https://www.mondosonoro.com/noticias-actualidad-musical/apple-corps-the-beatles-story/",
      "image": ""
     }
-   ]
+   ],
+   "albums": [
+    {
+     "position": 1,
+     "title": "SORDO DE UN PIE",
+     "artist": "Lucho RK",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1b/ca/0d/1bca0dcb-fa2d-df63-46c5-5accb98d45b3/1200220209156.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/sordo-de-un-pie/6817338538",
+     "release_date": "2026-10-09"
+    },
+    {
+     "position": 2,
+     "title": "Manufacturas del Club de la Gente Sola (MCGS)",
+     "artist": "Arde Bogotá",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6a/2b/32/6a2b32b8-e8c9-a8a4-be4d-fdfec8de8c17/196874547014.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/manufacturas-del-club-de-la-gente-sola-mcgs/6803932365",
+     "release_date": "2026-10-02"
+    },
+    {
+     "position": 3,
+     "title": "Relicario",
+     "artist": "El Barrio",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/94/a0/4c/94a04c8c-507e-28e3-d59a-a26d1be52697/8445775410098.png/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/relicario/6815044985",
+     "release_date": "2026-10-23"
+    },
+    {
+     "position": 4,
+     "title": "Dopamine Chamber",
+     "artist": "Fontaines D.C.",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/10/8c/24108c9c-845b-40f3-6175-9effb95e1d5c/191404167373.png/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/dopamine-chamber/6792085051",
+     "release_date": "2026-10-16"
+    },
+    {
+     "position": 5,
+     "title": "NO PASA NADA HOMBRE",
+     "artist": "Clarent",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9d/f4/4e/9df44ed8-2e05-2da4-a4c4-e93be35104dc/1200220208883.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/no-pasa-nada-hombre/6816297798",
+     "release_date": "2026-10-01"
+    },
+    {
+     "position": 6,
+     "title": "NO ME ARREPIENTO DE SENTIR TANTO",
+     "artist": "KAROL G",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2b/66/b2/2b66b26c-ab23-faa1-c4ee-06fa2cce8f76/26UM1IM00558.rgb.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/no-me-arrepiento-de-sentir-tanto/6796864741",
+     "release_date": "2026-08-07"
+    },
+    {
+     "position": 7,
+     "title": "EL BAIFO",
+     "artist": "Quevedo",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/56/e5/bf/56e5bfea-2071-1224-1c62-f6119195a949/8718521173821.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/el-baifo/1894271358",
+     "release_date": "2026-04-23"
+    },
+    {
+     "position": 8,
+     "title": "Spanish Leather",
+     "artist": "Guitarricadelafuente",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/79/2e/97792e51-4107-bf59-6260-33fd8c7d28f7/196873008608.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/spanish-leather/1804329771",
+     "release_date": "2025-05-16"
+    },
+    {
+     "position": 9,
+     "title": "you seem pretty sad for a girl so in love",
+     "artist": "Olivia Rodrigo",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1d/1b/f9/1d1bf9b1-44c6-9a6c-6ffb-c158488c06ce/26UMGIM39303.rgb.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/you-seem-pretty-sad-for-a-girl-so-in-love/1889992111",
+     "release_date": "2026-06-12"
+    },
+    {
+     "position": 10,
+     "title": "CUARTO AZUL",
+     "artist": "Aitana",
+     "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/43/08/06/430806b8-3b40-649f-37e9-37ff2ab702df/25UMGIM52016.rgb.jpg/300x300bb.jpg",
+     "url": "https://music.apple.com/es/album/cuarto-azul/1814146266",
+     "release_date": "2025-05-29"
+    }
+   ],
+   "songs": []
   },
   "cine": {
    "title": "Cine y series",
    "stories": [
     {
-     "title": "Travis Knight se ha tirado 16 años para hacer 'Wildwood'. Iba a ser la siguiente película…",
-     "summary": "Se dice rápido, pero ' Wildwood ' ha llegado por fin a los cines después de 16 años en desarrollo. La épica de fantasía de Travis Knight ha desafiado por completo los límites de la animación stop-motion, dejándonos una…",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "title": "Travis Knight se ha tirado 16 años para hacer 'Wildwood'. Iba a ser la siguiente película de LAIKA tras 'Coraline', pero la fantasía se les fue de las manos",
+     "summary": "Se dice rápido, pero ' Wildwood ' ha llegado por fin a los cines después de 16 años en desarrollo. La épica de fantasía de Travis Knight ha desafiado por completo los límites de la animación stop-motion, dejándonos una bellísima reivindicación del arte humano por encima del generado con IA. Aunque, claro, llegar hasta aquí no ha sido nada fácil par",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -316,7 +399,7 @@
     {
      "title": "Las 25 mejores películas de terror en Netflix para pasar miedo este fin de semana",
      "summary": "Repasamos los títulos más aterradores de la plataforma, desde clásicos modernos como 'El orfanato' a 'Déjame salir' a éxitos como 'Expediente Warren'.",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -324,14 +407,14 @@
        "url": "https://www.fotogramas.es/noticias-cine/g69186972/peliculas-terror-netflix-mejores-recomendadas-buenas-miedo/"
       }
      ],
-     "image": "",
-     "image_credit": "",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/fear-street-netflix-6904a263666bf.jpg",
+     "image_credit": "Fotogramas",
      "ai": false
     },
     {
-     "title": "\"Suena con fuerza para los Premios Oscar\": Esta película ya es uno de los fenómenos…",
-     "summary": "La ópera prima de Jordan Firstman ha conmocionado en la 71ª Seminci de Valladolid y ya suena como posible candidata para los próximos Premios Oscar. Repasamos las claves de un debut que combina humor, ternura y una…",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "title": "\"Suena con fuerza para los Premios Oscar\": Esta película ya es uno de los fenómenos cinéfilos del año y está emocionando a la crítica por todos los festivales de cine del mundo",
+     "summary": "La ópera prima de Jordan Firstman ha conmocionado en la 71ª Seminci de Valladolid y ya suena como posible candidata para los próximos Premios Oscar. Repasamos las claves de un debut que combina humor, ternura y una mirada distinta sobre el significado de pertenecer a una familia.",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -339,14 +422,44 @@
        "url": "https://www.fotogramas.es/noticias-cine/a74235410/club-kid-leccion-amor-pelicula-seminci-valladolid-premios-oscar/"
       }
      ],
-     "image": "",
-     "image_credit": "",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/fd99b057-36b8-46ec-ab55-ad51ff3f4e75.jpg",
+     "image_credit": "Fotogramas",
      "ai": false
     },
     {
-     "title": "James Gunn defiende el modelo del nuevo DCU y carga contra la fórmula Marvel: \"No me…",
-     "summary": "Hace unos días, escribiendo un texto reflexionado sobre 'Clayface' y cómo la película centrada en el villano de Batman, pese a no brillar con especial intensidad, se las apaña para ofrecer una experiencia sólida y con…",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
+     "title": "Mucho mejor una película cutre pero con encanto que otra hecha totalmente con inteligencia artificial: China da una valiosa lección a los productores de cine",
+     "summary": "Vivimos tiempos marcados por el auge de la inteligencia artificial, transmitiéndose el mensaje de que poco menos de que te estás quedando atrás si no la utilizas de forma intensa. Ya veremos qué nos depara el futuro, pero ahora en China han dado una valiosa lección a los productores de cine actualmente: mucho mejor una película muy cutre pero hecha",
+     "why": "Noticia destacada de la semana.",
+     "shop": "",
+     "sources": [
+      {
+       "name": "Espinof",
+       "url": "https://www.espinof.com/estrenos/mucho-mejor-pelicula-cutre-encanto-que-otra-hecha-totalmente-inteligencia-artificial-china-da-valiosa-leccion-a-productores-cine"
+      }
+     ],
+     "image": "https://i.blogs.es/e0f71a/sanxingdui-niu-lai/1024_2000.jpeg",
+     "image_credit": "Espinof",
+     "ai": false
+    },
+    {
+     "title": "El live action de 'Naruto' quiere apostar por el realismo. La guionista de la película desvela el mayor desafío para traer el anime a Hollywood: \"Tiene que ser creíble\"",
+     "summary": "Este año ' Naruto ' prepara su regreso en varios frentes. Porque por un lado tiene un anime crossover con otra legendaria serie de ninjas, Masashi Kishimoto anda trabajando en un nuevo manga secuela y, además, la película en acción real ha comenzado a moverse por fin. Destin Daniel Cretton está al frente como director, pero la guionista Tasha Huo y",
+     "why": "Noticia destacada de la semana.",
+     "shop": "",
+     "sources": [
+      {
+       "name": "Espinof",
+       "url": "https://www.espinof.com/anime/live-action-naruto-quiere-apostar-realismo-guionista-pelicula-desvela-mayor-desafio-para-traer-anime-a-hollywood-tiene-que-ser-creible"
+      }
+     ],
+     "image": "https://i.blogs.es/70c810/naruto/1024_2000.jpeg",
+     "image_credit": "Espinof",
+     "ai": false
+    },
+    {
+     "title": "James Gunn defiende el modelo del nuevo DCU y carga contra la fórmula Marvel: \"No me gusta que las historias tengan que conducir a algo más\"",
+     "summary": "Hace unos días, escribiendo un texto reflexionado sobre 'Clayface' y cómo la película centrada en el villano de Batman, pese a no brillar con especial intensidad, se las apaña para ofrecer una experiencia sólida y con personalidad propia, no dudé en destacar como su principal virtud el hecho de no tener que rendir cuentas a ningún universo comparti",
+     "why": "Noticia destacada de la semana.",
      "shop": "",
      "sources": [
       {
@@ -356,36 +469,6 @@
      ],
      "image": "https://i.blogs.es/1ed56e/james-gunn/1024_2000.jpeg",
      "image_credit": "Espinof",
-     "ai": false
-    },
-    {
-     "title": "Javier Calvo (35 años): \"Los fascistas dicen que el arte no es importante, pero aún así…",
-     "summary": "Los Javis, directores de 'La bola negra', tienen claro que las palabras pueden ser \"un arma contra la intolerancia, el fascismo y el odio\" y esta es su contribución",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "SensaCine",
-       "url": "https://www.sensacine.com/noticias/cine/noticia-1000229137/"
-      }
-     ],
-     "image": "",
-     "image_credit": "",
-     "ai": false
-    },
-    {
-     "title": "Debutó hace 47 años en una película basada en el caso de Gay Future. Ahora ha sido James…",
-     "summary": "Aunque ahora es más conocido por otros papeles, en 1979 el mundo vio su cara por primera vez en la televisión. No le fue tan mal: la película fue nominada a mejor sonido en los BAFTA, algo que ahora le daría igual pero…",
-     "why": "Tema recurrente con gran interés editorial y seguimiento en la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "SensaCine",
-       "url": "https://www.sensacine.com/noticias/cine/noticia-1000229139/"
-      }
-     ],
-     "image": "",
-     "image_credit": "",
      "ai": false
     }
    ],
@@ -397,50 +480,254 @@
      "image": "https://i.blogs.es/9aeae0/wildwood/1024_2000.jpeg"
     },
     {
-     "title": "Travis Knight, director de la aclamada 'Wildwood': \"La hice en 'stop motion' porque soy idiota. Es la peor manera de hacer una película, la que más te hace sufrir\"",
-     "source": "Fotogramas",
-     "url": "https://www.fotogramas.es/noticias-cine/a74206458/travis-knight-director-wildwood-pelicula-entrevista/",
-     "image": ""
-    },
-    {
      "title": "Las 25 mejores películas de terror en Netflix para pasar miedo este fin de semana",
      "source": "Fotogramas",
      "url": "https://www.fotogramas.es/noticias-cine/g69186972/peliculas-terror-netflix-mejores-recomendadas-buenas-miedo/",
-     "image": ""
+     "image": "https://hips.hearstapps.com/hmg-prod/images/fear-street-netflix-6904a263666bf.jpg"
     },
     {
      "title": "\"Suena con fuerza para los Premios Oscar\": Esta película ya es uno de los fenómenos cinéfilos del año y está emocionando a la crítica por todos los festivales de cine del mundo",
      "source": "Fotogramas",
      "url": "https://www.fotogramas.es/noticias-cine/a74235410/club-kid-leccion-amor-pelicula-seminci-valladolid-premios-oscar/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/fd99b057-36b8-46ec-ab55-ad51ff3f4e75.jpg"
+    },
+    {
+     "title": "Mucho mejor una película cutre pero con encanto que otra hecha totalmente con inteligencia artificial: China da una valiosa lección a los productores de cine",
+     "source": "Espinof",
+     "url": "https://www.espinof.com/estrenos/mucho-mejor-pelicula-cutre-encanto-que-otra-hecha-totalmente-inteligencia-artificial-china-da-valiosa-leccion-a-productores-cine",
+     "image": "https://i.blogs.es/e0f71a/sanxingdui-niu-lai/1024_2000.jpeg"
+    },
+    {
+     "title": "James Gunn responde a las críticas contra el Universo DC: \"Star Wars' lleva haciendo esto durante 50 años\"",
+     "source": "SensaCine",
+     "url": "https://www.sensacine.com/noticias/cine/noticia-1000229087/",
+     "image": "https://es.web.img2.acsta.net/img/13/f3/13f3a23535dbc754c93f81d9f67b902d.jpg"
+    },
+    {
+     "title": "Dura 96 minutos, está en Prime Video y es puro terror directo y sin cortar que no hace prisioneros",
+     "source": "SensaCine",
+     "url": "https://www.sensacine.com/noticias/cine/noticia-1000229198/",
+     "image": "https://es.web.img3.acsta.net/img/8e/54/8e54970e903c2e8babb2dc7fd6091ae0.png"
+    },
+    {
+     "title": "‘Wildwood’ Sparked a Much-Needed Comeback for Laika at the Box Office",
+     "source": "IndieWire",
+     "url": "https://www.indiewire.com/news/box-office/wildwood-box-office-laika-analysis-1235223778/",
      "image": ""
     },
     {
-     "title": "La película que lleva al cine una de las mayores gestas del deporte olímpico español con \"todos los ingredientes clave de la épica\"",
-     "source": "Fotogramas",
-     "url": "https://www.fotogramas.es/peliculas-criticas/a74244688/karateka-critica-pelicula-opinion/",
+     "title": "James Gunn and Peter Safran’s DC Experiment: What’s Working, What Isn’t, and What’s Next",
+     "source": "IndieWire",
+     "url": "https://www.indiewire.com/features/commentary/james-gunn-dc-studios-report-card-1235223600/",
      "image": ""
+    }
+   ],
+   "movies": [
+    {
+     "title": "Fall 2: Deadpoint",
+     "overview": "Tras perder a su intrépida hermana Shiloh, Jax, profundamente dolida, emprende una peligrosa escalada con Luce, una vieja amiga de Shiloh, para honrar su memoria. Mientras caminan sobre la cuerda floja por los…",
+     "score": 7.3,
+     "votes": 678,
+     "date": "2026-09-25",
+     "image": "https://image.tmdb.org/t/p/w342/ccBIyg1ITvuCDr4eMeEH0ZgNh4t.jpg",
+     "url": "https://www.themoviedb.org/movie/1101412",
+     "popularity": 286.5341
     },
     {
-     "title": "James Gunn defiende el modelo del nuevo DCU y carga contra la fórmula Marvel: \"No me gusta que las historias tengan que conducir a algo más\"",
-     "source": "Espinof",
-     "url": "https://www.espinof.com/directores-y-guionistas/james-gunn-defiende-modelo-nuevo-dcu-carga-formula-marvel-no-me-gusta-que-historias-tengan-que-conducir-a-algo",
-     "image": "https://i.blogs.es/1ed56e/james-gunn/1024_2000.jpeg"
+     "title": "Clayface",
+     "overview": "Una criatura cambiante hecha de arcilla mágica acecha Ciudad Gótica, alternando entre villano y aliado de Batman. Varias figuras trágicas han asumido el manto de Cara de Barro a lo largo de los años.",
+     "score": 7.5,
+     "votes": 211,
+     "date": "2026-10-23",
+     "image": "https://image.tmdb.org/t/p/w342/6ihSDJlBNcvoTWzSA0jonZyOXTs.jpg",
+     "url": "https://www.themoviedb.org/movie/1400940",
+     "popularity": 237.9795
     },
     {
-     "title": "La película nueva de Netflix número 1 en 52 países. Su último gran éxito es un thriller de supervivencia basado en una increíble historia real",
-     "source": "Espinof",
-     "url": "https://www.espinof.com/netflix/pelicula-nueva-netflix-numero-1-52-paises-su-ultimo-gran-exito-thriller-supervivencia-basado-increible-historia-real",
-     "image": "https://i.blogs.es/e07a66/mv5bytyznzc5njctzjg5oc00nzrmlwfkodatzdu2ndbhnmrk/1024_2000.jpeg"
+     "title": "Resident Evil",
+     "overview": "Película basada en la saga de videojuegos de Capcom del mismo nombre. En una reinvención totalmente nueva, el mensajero médico Bryan se ve inmerso en una carrera de acción sin descanso por la supervivencia, mientras el…",
+     "score": 7.3,
+     "votes": 1079,
+     "date": "2026-09-17",
+     "image": "https://image.tmdb.org/t/p/w342/vrLEVObLGbUinE4sC4Lqao2dK0E.jpg",
+     "url": "https://www.themoviedb.org/movie/1423191",
+     "popularity": 165.0494
     },
     {
-     "title": "Javier Ambrossi (42 años), sobre el éxito de su hermana Macarena García: \"A ella le empezó a ir fenomenal y yo no avanzaba”",
-     "source": "Espinof",
-     "url": "https://www.espinof.com/directores-y-guionistas/javier-ambrossi-42-anos-exito-su-hermana-macarena-garcia-a-ella-le-empezo-a-ir-fenomenal-yo-no-avanzaba",
-     "image": "https://i.blogs.es/0af3e4/macarena-garcia-javier-ambrossi/1024_2000.jpeg"
+     "title": "Operación Teherán",
+     "overview": "Tras el final de la guerra en Afganistán, un grupo de exoperadores de la CIA se han quedado marcados por la violencia, el abandono y la culpa. Sin patria ni propósitos a corto plazo, aceptan una última misión y viajan a…",
+     "score": 6.1,
+     "votes": 79,
+     "date": "2026-09-18",
+     "image": "https://image.tmdb.org/t/p/w342/5uB1PWP3QHEcgMXKChsaYmtTUkQ.jpg",
+     "url": "https://www.themoviedb.org/movie/1228834",
+     "popularity": 152.2175
+    },
+    {
+     "title": "Street Fighter",
+     "overview": "En 1993, los distanciados luchadores callejeros Ryu y Ken Masters se ven arrastrados de nuevo al combate cuando la misteriosa Chun-Li los recluta para el próximo Torneo World Warrior: un enfrentamiento brutal de puños…",
+     "score": 6.4,
+     "votes": 184,
+     "date": "2026-10-16",
+     "image": "https://image.tmdb.org/t/p/w342/2kdEEUkbkJe08kTDMCUbBrZ71Aw.jpg",
+     "url": "https://www.themoviedb.org/movie/1153576",
+     "popularity": 151.1143
+    },
+    {
+     "title": "Wildwood: El Bosque Salvaje",
+     "overview": "Prue y su compañero de clase Curtis se ven arrastrados a un bosque mágico poblado por criaturas encantadas, aliados leales y adversarios formidables, mientras emprenden una misión desesperada para rescatar al hermano…",
+     "score": 8.6,
+     "votes": 70,
+     "date": "2026-10-23",
+     "image": "https://image.tmdb.org/t/p/w342/sJ1uZ4DKsjs2iqLtCX46TifxqoE.jpg",
+     "url": "https://www.themoviedb.org/movie/791523",
+     "popularity": 148.2322
+    },
+    {
+     "title": "La otra madre",
+     "overview": "Bela, una niña de 8 años que vive en un hogar con problemas matrimoniales, enfrenta a una entidad siniestra que sale de su armario. La presencia, a quien llama \"Otra mamá\", se vuelve cada vez más amenazante para ella y…",
+     "score": 5.8,
+     "votes": 164,
+     "date": "2026-10-09",
+     "image": "https://image.tmdb.org/t/p/w342/vsde9OnhjFMlJz8Wi6Z6drZ7GG5.jpg",
+     "url": "https://www.themoviedb.org/movie/1400837",
+     "popularity": 112.1858
+    },
+    {
+     "title": "Whalefall",
+     "overview": "Tras la muerte de su padre, Jay Gardiner se sumerge en la costa central de California en busca de sus restos, pero es tragado por una ballena. Atrapado en su interior con solo una hora de oxígeno restante, Jay se da…",
+     "score": 6.6,
+     "votes": 119,
+     "date": "2026-10-16",
+     "image": "https://image.tmdb.org/t/p/w342/jmGVSLOrH9IxtcffbldrEHX4IfB.jpg",
+     "url": "https://www.themoviedb.org/movie/1255833",
+     "popularity": 94.2277
+    },
+    {
+     "title": "Digger",
+     "overview": "El hombre más poderoso del mundo se embarca en una misión frenética para demostrar que es el salvador de la humanidad antes de que el desastre que ha desencadenado lo destruya todo.",
+     "score": 7.5,
+     "votes": 471,
+     "date": "2026-10-02",
+     "image": "https://image.tmdb.org/t/p/w342/koqE0V2IgIPVy5o2vVkoGJvnB8b.jpg",
+     "url": "https://www.themoviedb.org/movie/1248832",
+     "popularity": 88.9653
+    },
+    {
+     "title": "Coyote vs. Acme",
+     "overview": "Después de que todos los productos fabricados por ACME Corporation le salgan mal a Wile E. Coyote, en su persecución del Correcaminos, contrata a un abogado humano igualmente desafortunado para demandar a la empresa…",
+     "score": 7.5,
+     "votes": 796,
+     "date": "2026-09-18",
+     "image": "https://image.tmdb.org/t/p/w342/vWFz9spZFBkJvForuYrKK2ntOLB.jpg",
+     "url": "https://www.themoviedb.org/movie/1204680",
+     "popularity": 83.919
+    }
+   ],
+   "tv": [
+    {
+     "title": "Los diarios de la boticaria",
+     "overview": "Maomao llevaba una vida tranquila ayudando a su padre, un boticario. Todo cambia el día que la venden como sirvienta al palacio del emperador, pero la vida entre nobles y realeza no es para ella. Cuando la familia…",
+     "score": 8.7,
+     "votes": 689,
+     "date": "2023-10-22",
+     "image": "https://image.tmdb.org/t/p/w342/bYPACmBf5Nomw3I2IEGGTNwgvWj.jpg",
+     "url": "https://www.themoviedb.org/tv/220542",
+     "popularity": 150.4485
+    },
+    {
+     "title": "Lupin",
+     "overview": "Inspirado por las aventuras de Arsène Lupin, el ladrón de guante blanco Assane Diop se propone vengar la injusticia sufrida por su padre a manos de una familia rica.",
+     "score": 7.7,
+     "votes": 2734,
+     "date": "2021-01-08",
+     "image": "https://image.tmdb.org/t/p/w342/gZ2ocZUwqVetPz9AvVVhzrFrpPA.jpg",
+     "url": "https://www.themoviedb.org/tv/96677",
+     "popularity": 192.8313
+    },
+    {
+     "title": "Cyberpunk: Edgerunners",
+     "overview": "En una distopía plagada de corrupción e implantes cibernéticos, un chico prodigioso pero temerario trata de convertirse en un mercenario proscrito: un ‘edgerunner’.",
+     "score": 8.5,
+     "votes": 2096,
+     "date": "2022-09-13",
+     "image": "https://image.tmdb.org/t/p/w342/v3JuB15WybKmxDeT1hWdK3j6eSJ.jpg",
+     "url": "https://www.themoviedb.org/tv/105248",
+     "popularity": 160.4693
+    },
+    {
+     "title": "LA LISTA FINAL",
+     "overview": "El comandante James Reece quiere venganza, mientras investiga las misteriosas fuerzas que hay tras la muerte de todo su pelotón. Ya lejos de la estructura jerárquica del ejército, Reece aplica las lecciones que aprendió…",
+     "score": 8.0,
+     "votes": 1284,
+     "date": "2022-06-30",
+     "image": "https://image.tmdb.org/t/p/w342/mrdpavkKMA5tySLaYk1UplTvQQp.jpg",
+     "url": "https://www.themoviedb.org/tv/120911",
+     "popularity": 196.4904
+    },
+    {
+     "title": "VisionQuest",
+     "overview": "Tras reiniciarse, Visión ha estado huyendo de quienes pretenden convertirlo en un arma y ahora se encuentra escondido. Buscando un nuevo propósito, pide consejo a las distintas IA que están integradas en su…",
+     "score": 8.7,
+     "votes": 184,
+     "date": "2026-10-13",
+     "image": "https://image.tmdb.org/t/p/w342/hXlvDq98VMg3WJWTDzwcPeMk39A.jpg",
+     "url": "https://www.themoviedb.org/tv/213375",
+     "popularity": 279.086
+    },
+    {
+     "title": "Link Click",
+     "overview": "Se dice que una imagen vale más que mil palabras. En este caso, guarda una cantidad infinita de secretos. Estos son secretos que solo Cheng Xiaoshi y Lu Guang pueden encontrar. En una pequeña tienda llamada \"Time Photo…",
+     "score": 8.0,
+     "votes": 151,
+     "date": "2021-04-30",
+     "image": "https://image.tmdb.org/t/p/w342/44cNZ5PmLOwTIOkYwlAewgzn8Bl.jpg",
+     "url": "https://www.themoviedb.org/tv/123542",
+     "popularity": 40.8919
+    },
+    {
+     "title": "Tierra de mafiosos",
+     "overview": "El poder está en juego cuando los Harrigan y los Stevenson, dos familias criminales londinenses en guerra, se enfrentan en una batalla de matar o morir que amenaza con derribar imperios y arruinar vidas. Atrapado en el…",
+     "score": 8.6,
+     "votes": 1105,
+     "date": "2025-03-30",
+     "image": "https://image.tmdb.org/t/p/w342/xOBnonAeHiZuiTPOLBFMFSPI6jy.jpg",
+     "url": "https://www.themoviedb.org/tv/247718",
+     "popularity": 302.0168
+    },
+    {
+     "title": "Bleach",
+     "overview": "La serie narra las aventuras de Ichigo Kurosaki, un adolescente que tiene la facultad de interactuar con los espíritus. Una noche, Ichigo se encuentra con una shinigami —personificación japonesa del Dios de la muerte—…",
+     "score": 8.4,
+     "votes": 2318,
+     "date": "2004-10-05",
+     "image": "https://image.tmdb.org/t/p/w342/rsv116o9M983WvInXztEiwc6WRD.jpg",
+     "url": "https://www.themoviedb.org/tv/30984",
+     "popularity": 174.2026
+    },
+    {
+     "title": "Crystal Lake",
+     "overview": "Cuando dos desconocidos llegan a la puerta de Pam indagando en su pasado, se desencadenan inquietantes acontecimientos que lleva a los habitantes de Crystal Lake a preguntarse: ¿Quién es realmente Pam Voorhees?",
+     "score": 8.7,
+     "votes": 265,
+     "date": "2026-10-15",
+     "image": "https://image.tmdb.org/t/p/w342/3ENhExiD2fcjk5FX0AcAXcvLu9N.jpg",
+     "url": "https://www.themoviedb.org/tv/213562",
+     "popularity": 170.0899
+    },
+    {
+     "title": "Carrie",
+     "overview": "Tras la repentina y prematura muerte de su padre, Carrie se ve arrojada al despiadado ecosistema del instituto público. Tiene que enfrentarse a un escándalo de ciberacoso que sacude a toda la comunidad, la presión…",
+     "score": 8.3,
+     "votes": 478,
+     "date": "2026-10-07",
+     "image": "https://image.tmdb.org/t/p/w342/6mUMquPQBFJGqTACS3Azkwwrx8d.jpg",
+     "url": "https://www.themoviedb.org/tv/288673",
+     "popularity": 137.0645
     }
    ]
   }
  },
- "headline": "Moda, música y cine: lo que vibra esta semana",
- "intro": "La semana en 30 segundos: lo más destacado de moda, música y cine, con un flujo editorial seguro y equivalente a la IA cuando no está disponible."
+ "headline": "",
+ "intro": ""
 }
