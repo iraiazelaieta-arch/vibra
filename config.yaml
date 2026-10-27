@@ -25,11 +25,11 @@ monetization:
   adsense_slot: ""   # opcional: número de un bloque de anuncios de AdSense
   amazon_tag: "vibra05f-21"   # ej. "vibra-21" (Amazon Afiliados España)
   apple_affiliate_token: ""   # token de Apple Services Performance Partners
-  newsletter_url: "https://83db6566.sibforms.com/serve/MUIFANVm6EpaZ3-D3wWGbpGuc9iQTujcC4bfz_3r1_B11QgScb4_YYhRwHkpzl3Ua0jdgB06Z-Im1_n-4cuBJlgPDbbIxmS_HLZuV-7faha_0NAcqseYptf501vlkKg6Gs5USc0C3X2TH"
+  newsletter_url: "https://83db6566.sibforms.com/serve/MUIFANVm6EpaZ3-D3wWGbpGuc9iQTujcC4bfz_3r1_B11QgScb4_YYhRwHkpzl3Ua0jdgB06Z-Im1_n-4cuBJlgPDbbIxmS_HLZuV-7faha_0NAcqseYptf501vlkKg6Gs5USc0C3X2THMIc9ifq1GQPHBEjkVW_CRLMVAj7tl2Z6eWEBIkxSkp7QPWzNI5x8kbQV818eOf9BdTzKg=="   # enlace al formulario de suscripción de Brevo
 
 ai:
   # Modelos de Google Gemini a probar en orden (plan gratuito)
-  models: ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-2.0-flash-lite"]
+  models: ["gemini-flash-latest", "gemini-3.8-flash", "gemini-flash-lite- latest"]
   items_per_section: 6
 
 sections:
