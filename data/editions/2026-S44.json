@@ -3,7 +3,7 @@
  "week": 44,
  "year": 2026,
  "date": "2026-10-26",
- "generated_at": "2026-10-27T10:10:13+00:00",
+ "generated_at": "2026-10-27T10:21:50+00:00",
  "sections": {
   "moda": {
    "title": "Moda",
@@ -421,12 +421,6 @@
      "image": ""
     },
     {
-     "title": "\"La primera hora es deslumbrante\": La inclasificable película que están comparando con 'Mad Max: Furia en la carretera' y que ha sorprendido como el thriller de acción más efervescente del año",
-     "source": "Fotogramas",
-     "url": "https://www.fotogramas.es/peliculas-criticas/a71336990/hope-pelicula-na-hong-jin-critica-opinion-thriller-accion-estreno-cines/",
-     "image": ""
-    },
-    {
      "title": "James Gunn defiende el modelo del nuevo DCU y carga contra la fórmula Marvel: \"No me gusta que las historias tengan que conducir a algo más\"",
      "source": "Espinof",
      "url": "https://www.espinof.com/directores-y-guionistas/james-gunn-defiende-modelo-nuevo-dcu-carga-formula-marvel-no-me-gusta-que-historias-tengan-que-conducir-a-algo",
@@ -437,6 +431,12 @@
      "source": "Espinof",
      "url": "https://www.espinof.com/netflix/pelicula-nueva-netflix-numero-1-52-paises-su-ultimo-gran-exito-thriller-supervivencia-basado-increible-historia-real",
      "image": "https://i.blogs.es/e07a66/mv5bytyznzc5njctzjg5oc00nzrmlwfkodatzdu2ndbhnmrk/1024_2000.jpeg"
+    },
+    {
+     "title": "Javier Ambrossi (42 años), sobre el éxito de su hermana Macarena García: \"A ella le empezó a ir fenomenal y yo no avanzaba”",
+     "source": "Espinof",
+     "url": "https://www.espinof.com/directores-y-guionistas/javier-ambrossi-42-anos-exito-su-hermana-macarena-garcia-a-ella-le-empezo-a-ir-fenomenal-yo-no-avanzaba",
+     "image": "https://i.blogs.es/0af3e4/macarena-garcia-javier-ambrossi/1024_2000.jpeg"
     }
    ]
   }
