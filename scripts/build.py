@@ -401,6 +401,28 @@ def ai_articles(name, stories, key, models, batch=2):
 
 
 # ---------------------------------------------------------------- edición
+def plain_section(candidates, n):
+    stories = []
+    for c in candidates[:n]:
+        title = (c.get("title") or "").strip()
+        if not title:
+            continue
+        summary = (c.get("summary") or title).strip()
+        source_name = c.get("source") or ""
+        source_url = c.get("link") or ""
+        stories.append({
+            "title": title,
+            "summary": summary[:350],
+            "why": "Noticia destacada de la semana.",
+            "shop": "",
+            "sources": [{"name": source_name, "url": source_url}] if source_name or source_url else [],
+            "image": c.get("image", ""),
+            "image_credit": source_name,
+            "ai": False,
+        })
+    return stories
+
+
 def make_edition(cfg):
     now = dt.datetime.now(dt.timezone.utc)
     since = now - dt.timedelta(days=8)
@@ -453,7 +475,6 @@ def make_edition(cfg):
         edition["headline"] = intro.get("titular", "")
         edition["intro"] = intro.get("intro", "")
     return edition
-
 
 # ---------------------------------------------------------------- web
 def light(score, votes):
