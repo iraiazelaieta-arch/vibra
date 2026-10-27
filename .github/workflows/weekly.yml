@@ -6,7 +6,11 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["config.yaml", "templates/**", "static/**", "scripts/**"]
+    paths:
+      - "config.yaml"
+      - "templates/**"
+      - "static/**"
+      - "scripts/**"
 
 permissions:
   contents: write
@@ -20,23 +24,30 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: main
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
 
-      - run: pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      - id: pages
+      - name: Configure Pages
+        id: pages
         uses: actions/configure-pages@v5
 
-      - name: Crear la edición de la semana
+      - name: Crear la edición semanal
         if: github.event_name != 'push'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -62,15 +73,17 @@ jobs:
           git config user.name "vibra-bot"
           git config user.email "vibra-bot@users.noreply.github.com"
 
-          if git status --porcelain -- data/editions | grep .; then
-            git add data/editions
-            git commit -m "Edición semanal $(date -u +%G-S%V)" || true
+          git add data/editions
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Edición semanal $(date -u +%G-S%V)"
             git push origin HEAD:main
           else
-            echo "No hay cambios nuevos en la edición."
+            echo "No hay cambios nuevos para guardar."
           fi
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
@@ -81,5 +94,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
