@@ -2,8 +2,8 @@ name: Edición semanal
 
 on:
   schedule:
-    - cron: "0 8 * * 1"   # cada lunes a las 08:00 UTC (10:00 en España en verano, 09:00 en invierno), tras el reinicio diario de la cuota gratuita de Gemini
-  workflow_dispatch:       # botón "Run workflow" para lanzarla a mano
+    - cron: "0 8 * * 1"
+  workflow_dispatch:
   push:
     branches: [main]
     paths: ["config.yaml", "templates/**", "static/**", "scripts/**"]
@@ -23,38 +23,57 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           ref: main
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
+
       - run: pip install -r requirements.txt
+
       - id: pages
         uses: actions/configure-pages@v5
+
       - name: Crear la edición de la semana
         if: github.event_name != 'push'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           SITE_URL: ${{ steps.pages.outputs.base_url }}
-        run: python scripts/build.py
-      - name: Regenerar la web (cambio de diseño o configuración)
+        run: |
+          mkdir -p data/editions
+          python scripts/build.py
+
+      - name: Regenerar la web
         if: github.event_name == 'push'
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}
-        run: python scripts/build.py --render
+        run: |
+          mkdir -p data/editions
+          python scripts/build.py --render
+
       - name: Guardar la edición en el historial
         if: github.event_name != 'push'
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "vibra-bot"
           git config user.email "vibra-bot@users.noreply.github.com"
-          git add data/editions
-          git diff --cached --quiet || git commit -m "Edición semanal $(date -u +%G-S%V)"
-          git pull --rebase origin main
-          git push origin HEAD:main
+
+          if git status --porcelain -- data/editions | grep .; then
+            git add data/editions
+            git commit -m "Edición semanal $(date -u +%G-S%V)" || true
+            git push origin HEAD:main
+          else
+            echo "No hay cambios nuevos en la edición."
+          fi
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
