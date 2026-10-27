@@ -223,7 +223,6 @@ def make_edition(cfg):
     if gkey and models:
         log("  · GEMINI_API_KEY detectada; se intenta producir versión enriquecida")
         try:
-            # Mantener la edición funcionando aunque la IA falle: si no responde bien, queda el fallback.
             pass
         except Exception as exc:
             log(f"  ! Gemini falló, usando fallback editorial: {exc}")
@@ -262,10 +261,20 @@ def light(score, votes):
 
 
 def render(cfg):
-    editions = sorted((json.loads(path.read_text(encoding="utf-8")) for path in DATA.glob("*.json")), key=lambda e: e["date"], reverse=True)
+    DATA.mkdir(parents=True, exist_ok=True)
+
+    editions = []
+    for path in sorted(DATA.glob("*.json")):
+        try:
+            editions.append(json.loads(path.read_text(encoding="utf-8")))
+        except Exception as exc:
+            log(f"  ! Ignorando edición corrupta {path.name}: {exc}")
+
     if not editions:
         log("No hay ediciones guardadas; renderizando una vista mínima para mantener la web operativa.")
         editions = [build_minimal_edition(cfg)]
+
+    editions = sorted(editions, key=lambda e: e["date"], reverse=True)
     for edition in editions:
         assign_slugs(edition)
 
@@ -321,8 +330,8 @@ def main():
     cfg = yaml.safe_load((ROOT / "config.yaml").read_text(encoding="utf-8"))
 
     if not args.render:
-        edition = make_edition(cfg)
         DATA.mkdir(parents=True, exist_ok=True)
+        edition = make_edition(cfg)
         (DATA / f"{edition['id']}.json").write_text(json.dumps(edition, ensure_ascii=False, indent=1), encoding="utf-8")
         log(f"Edición {edition['id']} guardada")
 
