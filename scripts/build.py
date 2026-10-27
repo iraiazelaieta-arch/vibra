@@ -2,11 +2,8 @@
 """VIBRA: genera la edición semanal y la web estática.
 
 Uso:
-  python scripts/build.py            # genera la edición semanal con fallback seguro
-  python scripts/build.py --render   # solo regenerar la web con ediciones guardadas
-
-Claves opcionales:
-  GEMINI_API_KEY, TMDB_API_KEY, SITE_URL
+  python scripts/build.py            # genera una edición semanal segura
+  python scripts/build.py --render   # solo regenera la web con ediciones guardadas
 """
 
 import argparse
@@ -30,7 +27,6 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "editions"
 OUT = ROOT / "site"
 UA = "Mozilla/5.0 (compatible; VibraBot/1.0; +https://github.com)"
-
 STOPWORDS = set(
     """a al algo como con de del el ella en era es esta este esto la las lo los mas más me mi muy no o para pero por que qué se sin sobre su sus tu un una uno y ya the a an and are as at be by for from had has have he her his how i in is it its me my new no not of on or she that the this to was we were what when who why will with you your""".split()
 )
@@ -54,7 +50,7 @@ def tokens(text):
 
 def fetch_feed(feed, since):
     try:
-        resp = requests.get(feed["url"], headers={"User-Agent": UA}, timeout=20)
+        resp = requests.get(feed["url"], headers={"User-Agent": UA}, timeout=18)
         resp.raise_for_status()
         parsed = feedparser.parse(resp.content)
     except Exception as exc:
@@ -106,8 +102,7 @@ def rank_items(items):
             and len(toks[idx] & toks[j]) >= 2
         }
         age_days = (now - dt.datetime.fromisoformat(item["published"])).days if item.get("published") else 7
-        item["score"] = len(echores) * 3 + max(0, 7 - age_days) * 0.4 + (1 if item.get("lang") == "es" else 0)
-
+        item["score"] = len(echoes) * 3 + max(0, 7 - age_days) * 0.4 + (1 if item.get("lang") == "es" else 0)
     return sorted(items, key=lambda x: -x["score"])
 
 def diverse_pick(ranked, n, per_source=2, overlap=3):
@@ -319,7 +314,6 @@ def render(cfg):
             )
 
     write("archivo/index.html", "archive.html", 1, editions=editions)
-
     for page in ("sobre-vibra", "aviso-legal", "privacidad", "cookies"):
         write(f"{page}/index.html", f"{page}.html", 1)
 
