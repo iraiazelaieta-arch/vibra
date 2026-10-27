@@ -1,6 +1,5 @@
-# Add dotenv support so local runs can read a repository .env file
-python-dotenv==1.0.1
 feedparser==6.0.11
 requests==2.32.3
 PyYAML==6.0.2
 Jinja2==3.1.4
+python-dotenv==1.0.1
