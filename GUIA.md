@@ -4,7 +4,7 @@
 Cada **lunes a las 08:00 (hora UTC; 10:00 en España en verano, 09:00 en invierno)**, GitHub ejecuta el programa de VIBRA, que:
 1. Lee las últimas noticias de Vogue, Elle, Harper's Bazaar, Telva, WWD, Rolling Stone, Billboard, Pitchfork, Jenesaispop, Mondo Sonoro, Fotogramas, Espinof, SensaCine, Variety e IndieWire.
 2. Elige los temas de los que más se habla.
-3. Con Gemini (si hay clave) escribe resúmenes **propios** en español con enlace a la fuente.
+3. Con Gemini (si `GEMINI_API_KEY` está configurada) crea titulares, resúmenes y artículos **propios** en español, siempre con enlace a las fuentes.
 4. Añade el top de álbumes y canciones en España (Apple Music) y las películas y series con su nota (TMDB).
 5. Publica la nueva edición, guarda la anterior en el **Archivo** y actualiza el RSS y el mapa del sitio para Google.
 
