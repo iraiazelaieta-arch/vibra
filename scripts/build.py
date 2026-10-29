@@ -39,10 +39,7 @@ def log(*a):
     print(*a, file=sys.stderr, flush=True)
 
 
-BOILERPLATE = re.compile(r"(La entrada .{0,300}? se public[oó] primero en .*$|The post .{0,300}? appeared first on .*$|Leer m[aá]s.*$|Read more.*$|Continue reading.*$|\s\S[^.]{0,200}? es de [\w.[...]
-# NOTE: the original file has a regex literal intentionally shortened here for readability; use the exact project file from your repo if you want raw bytes.
-# The following full file is functionally complete and valid.
-# If you want, I can also give you a version with the exact original regex unchanged and all lines preserved.
+BOILERPLATE = re.compile(r"(La entrada .{0,300}? se public[oó] primero en .*$|The post .{0,300}? appeared first on .*$|Leer m[aá]s.*$|Read more.*$|Continue reading.*$)", re.I | re.M)
 
 
 def clean_text(raw, limit=None):
@@ -456,11 +453,12 @@ def make_edition(cfg):
         ranked = rank_items(items)
         candidates = diverse_pick(ranked, 40, per_source=8)
         stories = ai_section(sec["title"], candidates, n, gkey, cfg["ai"]["models"]) if gkey and candidates else []
-        if len(stories) < 3:
+        if not stories:
             if gkey:
-                log("  ! IA no disponible: uso modo sin IA")
+                log("  ! Gemini no devolvió historias válidas: uso modo sin IA")
             stories = plain_section(candidates, n)
-        else:
+        elif gkey:
+            # Genera el artículo de cada historia aunque Gemini devuelva menos de las solicitadas.
             ai_articles(sec["title"], stories, gkey, cfg["ai"]["models"])
         for s in stories:
             s.pop("_ctx", None)
