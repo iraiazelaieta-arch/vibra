@@ -51,8 +51,23 @@ def clean_text(raw, limit=None):
     return text
 
 
+# Palabras que aparecen en casi todos los titulares de moda/belleza: NO identifican un tema.
+GENERIC = set("""otoño invierno primavera verano 2024 2025 2026 2027 tendencia tendencias looks look moda estilo estilos
+mejores mejor nuevo nueva nuevos nuevas ahora estos estas todos todas son hace hacen vuelve vuelven regreso clave
+imprescindibles imprescindible compra compras ideas modelos diseños diseño más bonitos favoritos favorito
+zara mango massimo dutti cortefiel stradivarius bershka lefties primark inditex corte inglés
+season fall winter spring summer best new trend trends style outfit outfits fashion week""".split())
+SHOPPING = re.compile(r"\b(zara|mango|massimo dutti|cortefiel|stradivarius|bershka|lefties|primark|el corte inglés|rebajas|chollos)\b", re.I)
+SHOPPING_URL = re.compile(r"/(compras|shopping|chollos|ofertas)", re.I)
+
+
 def tokens(text):
     return {w for w in re.findall(r"[a-záéíóúñü0-9]{3,}", text.lower()) if w not in STOPWORDS}
+
+
+def topic_tokens(text):
+    """Palabras que sí identifican el tema de un titular (nombres, marcas de lujo, eventos...)."""
+    return tokens(text) - GENERIC
 
 
 # ---------------------------------------------------------------- recogida
@@ -225,21 +240,29 @@ def itunes_movies(country, limit=10):
 # ---------------------------------------------------------------- selección
 def rank_items(items):
     """Puntúa cada noticia: cuántas otras fuentes hablan de lo mismo + novedad + idioma."""
-    toks = [tokens(i["title"]) for i in items]
+    toks = [topic_tokens(i["title"]) for i in items]
     now = dt.datetime.now(dt.timezone.utc)
     for idx, it in enumerate(items):
         echoes = {items[j]["source"] for j in range(len(items))
                   if j != idx and items[j]["source"] != it["source"] and len(toks[idx] & toks[j]) >= 2}
         age_days = (now - dt.datetime.fromisoformat(it["published"])).days if it["published"] else 7
         it["score"] = len(echoes) * 3 + max(0, 7 - age_days) * 0.4 + (1 if it["lang"] == "es" else 0)
+        # las guías de compras (“5 vestidos de Zara…”) son menos noticia que un desfile o una campaña
+        if SHOPPING.search(it["title"]) or SHOPPING_URL.search(it["link"]):
+            it["score"] -= 2.5
     return sorted(items, key=lambda x: -x["score"])
 
 
-def diverse_pick(ranked, n, per_source=2, overlap=3):
+def diverse_pick(ranked, n, per_source=2, overlap=2, avoid_tokens=(), avoid_urls=()):
+    """Elige n noticias de temas distintos. Descarta las que repiten tema (o URL) de otra ya elegida
+    o de las listas avoid_*, que sirven para no repetir lo ya publicado."""
     picked, count, seen = [], {}, []
+    avoid_urls = set(avoid_urls)
     for it in ranked:
-        t = tokens(it["title"])
-        if count.get(it["source"], 0) >= per_source or any(len(t & s) >= overlap for s in seen):
+        t = topic_tokens(it["title"])
+        if it["link"] in avoid_urls or count.get(it["source"], 0) >= per_source:
+            continue
+        if any(len(t & s) >= overlap for s in seen) or any(len(t & s) >= overlap + 1 for s in avoid_tokens):
             continue
         picked.append(it)
         seen.append(t)
@@ -247,6 +270,66 @@ def diverse_pick(ranked, n, per_source=2, overlap=3):
         if len(picked) == n:
             break
     return picked
+
+
+def norm_title(text):
+    return re.sub(r"[^a-z0-9]+", " ", unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()).strip()
+
+
+def previous_used(current_id, editions=4):
+    """URLs y temas ya publicados en las últimas ediciones, para no repetirlos esta semana."""
+    urls, titles = set(), []
+    files = sorted(DATA.glob("*.json"), reverse=True)
+    for p in [f for f in files if f.stem != current_id][:editions]:
+        try:
+            ed = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for sec in ed.get("sections", {}).values():
+            for st in sec.get("stories", []):
+                urls.update(x.get("url", "") for x in st.get("sources", []))
+                titles.append(topic_tokens(st.get("title", "")))
+            for h in sec.get("headlines", []):
+                urls.add(h.get("url", ""))
+    return urls, titles
+
+
+def previous_titles(current_id, sid, limit):
+    """Titulares de esta sección en ediciones anteriores (para decirle a Gemini que no los repita)."""
+    out = []
+    for p in sorted(DATA.glob("*.json"), reverse=True):
+        if p.stem == current_id:
+            continue
+        try:
+            ed = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        out += [st["title"] for st in ed.get("sections", {}).get(sid, {}).get("stories", [])]
+        if len(out) >= limit:
+            break
+    return out[:limit]
+
+
+def filter_items(items, exclude_keywords, used_urls, used_titles):
+    """Quita duplicados, temas ajenos a la sección y noticias ya publicadas en ediciones anteriores."""
+    out, seen_urls, seen_titles = [], set(), set()
+    kws = [k.lower() for k in exclude_keywords or []]
+    for it in items:
+        key = norm_title(it["title"])
+        hay = f"{it['title']} {it['link']}".lower()
+        if it["link"] in seen_urls or key in seen_titles:
+            continue
+        if any(k in hay for k in kws):
+            continue
+        if it["link"] in used_urls:
+            continue
+        t = topic_tokens(it["title"])
+        if any(len(t & u) >= 3 for u in used_titles):
+            continue
+        seen_urls.add(it["link"])
+        seen_titles.add(key)
+        out.append(it)
+    return out
 
 
 # ---------------------------------------------------------------- IA (Gemini, opcional)
@@ -407,7 +490,12 @@ def gemini(prompt, key, models, schema=None):
 
 SECTION_PROMPT = """Eres editora de VIBRA, una revista digital en español de cultura pop (moda, música y cine).
 Abajo tienes las noticias de la última semana de la sección "{section}", publicadas por medios de referencia.
-Elige las {n} historias MÁS importantes e interesantes para un público joven hispanohablante (evita repetir el mismo tema).
+Elige las {n} historias MÁS importantes e interesantes para un público joven hispanohablante.
+REGLAS DE SELECCIÓN:
+- Cada historia debe tratar un tema DISTINTO: no elijas dos noticias sobre la misma persona, evento, prenda o tendencia, aunque vengan de medios diferentes (si dos medios cuentan lo mismo, elige solo una y úsalas ambas en "fuentes").
+- Prioriza noticias reales (desfiles, campañas, colecciones, lanzamientos, polémicas, premios, estrenos, famosos) frente a guías de compras o listas de prendas de tiendas.
+- Descarta lo que no pertenezca a la sección (recetas, restaurantes, libros, viajes, horóscopos...).
+{avoid}
 Para cada una escribe con tus propias palabras, con una opinión editorial clara y un tono de crítica cultural:
 - "titulo": titular atractivo en español (máx. 90 caracteres)
 - "resumen": 2-3 frases originales en español (50-80 palabras) explicando qué ha pasado y por qué importa
@@ -432,9 +520,13 @@ TITULARES:
 {items}"""
 
 
-def ai_section(name, candidates, n, key, models):
+def ai_section(name, candidates, n, key, models, avoid_titles=()):
     listing = "\n".join(f"[{i}] ({c['source']}) {c['title']} — {c['summary'][:280]}" for i, c in enumerate(candidates))
-    prompt = SECTION_PROMPT.format(section=name, n=n, items=listing)
+    avoid = ""
+    if avoid_titles:
+        avoid = "- YA PUBLICADAS en ediciones anteriores (no repitas estos temas):\n" + "\n".join(f"  · {t}" for t in avoid_titles[:30])
+    ask = n + 3  # se piden algunas de más para poder descartar repetidas y quedarse con n distintas
+    prompt = SECTION_PROMPT.format(section=name, n=ask, items=listing, avoid=avoid)
     data = None
     for _ in range(2):  # un segundo intento si la respuesta llega vacía o mal formada
         data = gemini(prompt, key, models)
@@ -445,7 +537,10 @@ def ai_section(name, candidates, n, key, models):
     if not isinstance(raw_stories, list):
         log(f"  ! Gemini {name}: 'historias' no es una lista")
         return []
-    for s in raw_stories[:n]:
+    accepted = []  # temas ya aceptados en esta sección
+    for s in raw_stories:
+        if len(stories) >= n:
+            break
         if not isinstance(s, dict):
             continue
         raw_sources = s.get("fuentes", [])
@@ -470,12 +565,19 @@ def ai_section(name, candidates, n, key, models):
         summary = str(s.get("resumen") or "").strip()
         if not title or not summary:
             continue
+        # descarta historias que repiten el tema (o la noticia) de otra ya aceptada
+        ttoks = topic_tokens(title)
+        urls = {candidates[i]["link"] for i in idxs}
+        if any(len(ttoks & a_t) >= 2 or urls & a_u for a_t, a_u in accepted):
+            log(f"  · historia repetida descartada: {title[:70]}")
+            continue
+        accepted.append((ttoks, urls))
         stories.append({
             "title": title,
             "summary": summary,
             "why": (s.get("clave") or "").strip(),
             "shop": (s.get("compra") or "").strip()[:60],
-            "sources": [{"name": candidates[i]["source"], "url": candidates[i]["link"]} for i in dict.fromkeys(idxs)],
+            "sources": list({candidates[i]["source"]: {"name": candidates[i]["source"], "url": candidates[i]["link"]} for i in reversed(list(dict.fromkeys(idxs)))}.values()),
             "image": next((candidates[i]["image"] for i in idxs if candidates[i].get("image")), ""),
             "image_credit": next((candidates[i]["source"] for i in idxs if candidates[i].get("image")), ""),
             "ai": True,
@@ -597,12 +699,17 @@ def make_edition(cfg):
     n = cfg["ai"]["items_per_section"]
     country = cfg["charts"]["country"]
 
+    used_urls, used_titles = previous_used(edition["id"])
     for sid, sec in cfg["sections"].items():
         log(f"Sección {sec['title']}")
         items = [it for f in sec["feeds"] for it in fetch_feed(f, since)]
+        total = len(items)
+        items = filter_items(items, sec.get("exclude_keywords"), used_urls, used_titles)
+        log(f"  · {len(items)} noticias válidas de {total} (sin duplicados, sin temas ajenos, sin repetir ediciones anteriores)")
         ranked = rank_items(items)
         candidates = diverse_pick(ranked, 40, per_source=8)
-        stories = ai_section(sec["title"], candidates, n, gkey, cfg["ai"]["models"]) if gkey and candidates else []
+        stories = ai_section(sec["title"], candidates, n, gkey, cfg["ai"]["models"],
+                             avoid_titles=previous_titles(edition["id"], sid, n * 2)) if gkey and candidates else []
         if not stories:
             if candidates:
                 raise RuntimeError(
@@ -613,11 +720,15 @@ def make_edition(cfg):
         else:
             # Genera el artículo de cada historia aunque Gemini devuelva menos de las solicitadas.
             ai_articles(sec["title"], stories, gkey, cfg["ai"]["models"])
+        # lo ya usado en las historias no se vuelve a mostrar en "También se ha hablado de…"
+        taken_urls = {c["link"] for s in stories for c in s.get("_ctx", [])} | {x["url"] for s in stories for x in s["sources"]}
+        taken_tokens = [topic_tokens(s["title"]) for s in stories] + [topic_tokens(c["title"]) for s in stories for c in s.get("_ctx", [])]
         for s in stories:
             s.pop("_ctx", None)
         fill_images(stories)
+        heads = diverse_pick(ranked, 8, per_source=2, avoid_tokens=taken_tokens, avoid_urls=taken_urls)
         edition["sections"][sid] = {"title": sec["title"], "stories": stories, "headlines": [
-            {"title": c["title"], "source": c["source"], "url": c["link"], "image": c.get("image", "")} for c in diverse_pick(ranked, 8, per_source=2)]}
+            {"title": c["title"], "source": c["source"], "url": c["link"], "image": c.get("image", "")} for c in heads]}
 
     log("Listas y valoraciones")
     edition["sections"]["musica"]["albums"] = apple_music_chart(country, "albums")
