@@ -254,6 +254,16 @@ GEMINI_GAP = 13  # segundos entre llamadas: el plan gratuito limita las peticion
 _last_call = [0.0]
 
 
+def parse_gemini_json(text):
+    cleaned = re.sub(r"^```(?:json)?\\s*|\\s*```$", "", (text or "").strip(), flags=re.I | re.S)
+    match = re.search(r"\\{.*\\}", cleaned, re.S)
+    if match:
+        cleaned = match.group(0)
+    if not cleaned:
+        raise ValueError("Gemini devolvió una respuesta vacía")
+    return json.loads(cleaned)
+
+
 def gemini(prompt, key, models, schema=None):
     config = {"responseMimeType": "application/json", "temperature": 0.7, "maxOutputTokens": 32768}
     if schema:
@@ -289,8 +299,7 @@ def gemini(prompt, key, models, schema=None):
                 if not text:
                     log(f"  ! Gemini {model}: respuesta sin texto JSON")
                     break
-                text = re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()
-                return json.loads(text)
+                return parse_gemini_json(text)
             except Exception as exc:
                 log(f"  ! Gemini {model}: {exc}")
                 break
@@ -305,9 +314,10 @@ Para cada una escribe con tus propias palabras, con una opinión editorial clara
 - "resumen": 2-3 frases originales en español (50-80 palabras) explicando qué ha pasado y por qué importa
 - "clave": una frase corta con valor editorial, qué significado tiene para la cultura actual (máx. 20 palabras)
 - "compra": búsqueda de 2-5 palabras para encontrar en Amazon un producto real relacionado; vacío si no hay nada lógico
-- "fuentes": lista de números [n] de las noticias en las que se basa (una o varias)
+- "fuentes": lista de índices enteros basados en cero, por ejemplo [0, 2], de las noticias en las que se basa
 No inventes datos que no estén en las noticias.
-Devuelve SOLO JSON: {{"historias": [{{"titulo": "", "resumen": "", "clave": "", "compra": "", "fuentes": [0]}}]}}
+Devuelve SOLO JSON válido, sin Markdown. En "fuentes" usa índices enteros basados en cero: 0 es la primera noticia, 1 la segunda, etc.
+Formato exacto: {{"historias": [{{"titulo": "", "resumen": "", "clave": "", "compra": "", "fuentes": [0]}}]}}
  
 NOTICIAS:
 {items}"""
@@ -327,9 +337,34 @@ def ai_section(name, candidates, n, key, models):
     listing = "\n".join(f"[{i}] ({c['source']}) {c['title']} — {c['summary'][:280]}" for i, c in enumerate(candidates))
     data = gemini(SECTION_PROMPT.format(section=name, n=n, items=listing), key, models)
     stories = []
-    for s in (data or {}).get("historias", [])[:n]:
-        idxs = [i for i in s.get("fuentes", []) if isinstance(i, int) and 0 <= i < len(candidates)]
-        if not idxs or not s.get("titulo") or not s.get("resumen"):
+    raw_stories = (data or {}).get("historias", [])
+    if not isinstance(raw_stories, list):
+        log(f"  ! Gemini {name}: 'historias' no es una lista")
+        return []
+    for s in raw_stories[:n]:
+        if not isinstance(s, dict):
+            continue
+        raw_sources = s.get("fuentes", [])
+        if not isinstance(raw_sources, list):
+            raw_sources = [raw_sources]
+        source_numbers = []
+        for value in raw_sources:
+            try:
+                if isinstance(value, str) and value.strip().isdigit():
+                    value = int(value.strip())
+                if isinstance(value, int):
+                    source_numbers.append(value)
+            except (TypeError, ValueError):
+                continue
+        # Gemini puede devolver referencias humanas 1..N aunque se le pida 0..N-1.
+        if source_numbers and 0 not in source_numbers and max(source_numbers) <= len(candidates):
+            source_numbers = [value - 1 for value in source_numbers]
+        idxs = [i for i in dict.fromkeys(source_numbers) if 0 <= i < len(candidates)]
+        if not idxs and candidates:
+            idxs = [0]
+        title = str(s.get("titulo") or "").strip()
+        summary = str(s.get("resumen") or "").strip()
+        if not title or not summary:
             continue
         stories.append({
             "title": s["titulo"].strip(),
@@ -465,10 +500,13 @@ def make_edition(cfg):
         candidates = diverse_pick(ranked, 40, per_source=8)
         stories = ai_section(sec["title"], candidates, n, gkey, cfg["ai"]["models"]) if gkey and candidates else []
         if not stories:
-            if gkey:
-                log("  ! Gemini no devolvió historias válidas: uso modo sin IA")
+            if candidates:
+                raise RuntimeError(
+                    f"Gemini no generó historias válidas para {sec['title']}; "
+                    "revisa la respuesta anterior y la cuota de la API"
+                )
             stories = plain_section(candidates, n)
-        elif gkey:
+        else:
             # Genera el artículo de cada historia aunque Gemini devuelva menos de las solicitadas.
             ai_articles(sec["title"], stories, gkey, cfg["ai"]["models"])
         for s in stories:
