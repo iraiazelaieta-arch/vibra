@@ -34,6 +34,8 @@ ai:
 sections:
   moda:
     title: "Moda"
+    # Noticias cuyo título o enlace contenga alguna de estas palabras se descartan (no son de moda)
+    exclude_keywords: [receta, gourmet, restaurante, horóscopo, horoscopo, dieta, novela, decoración, decoracion, viajes, "/living/", "/gourmet/"]
     feeds:
       - {name: "Vogue España", url: "https://www.vogue.es/feed/rss", lang: es}
       - {name: "Elle España", url: "https://www.elle.com/es/rss/all.xml/", lang: es}
@@ -41,6 +43,8 @@ sections:
       - {name: "Telva", url: "https://www.telva.com/rss/portada.xml", lang: es}
       - {name: "Vogue", url: "https://www.vogue.com/feed/rss", lang: en}
       - {name: "WWD", url: "https://wwd.com/feed/", lang: en}
+      - {name: "Fashionista", url: "https://fashionista.com/.rss/full/", lang: en}
+      - {name: "Harper's Bazaar", url: "https://www.harpersbazaar.com/rss/all.xml/", lang: en}
   musica:
     title: "Música"
     feeds:
