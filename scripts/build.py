@@ -276,10 +276,19 @@ def gemini(prompt, key, models, schema=None):
                     time.sleep(20 * (attempt + 1))
                     continue
                 if r.status_code == 404:
+                    log(f"  ! Gemini {model}: modelo no encontrado")
                     break
                 r.raise_for_status()
-                parts = r.json()["candidates"][0]["content"]["parts"]
-                text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
+                payload = r.json()
+                candidates = payload.get("candidates") or []
+                if not candidates:
+                    log(f"  ! Gemini {model}: respuesta sin candidatos: {r.text[:500]}")
+                    break
+                parts = candidates[0].get("content", {}).get("parts", [])
+                text = "".join(p.get("text", "") for p in parts if p.get("text") and not p.get("thought"))
+                if not text:
+                    log(f"  ! Gemini {model}: respuesta sin texto JSON")
+                    break
                 text = re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()
                 return json.loads(text)
             except Exception as exc:
@@ -444,6 +453,8 @@ def make_edition(cfg):
     }
     gkey = os.environ.get("GEMINI_API_KEY", "").strip()
     tkey = os.environ.get("TMDB_API_KEY", "").strip()
+    if not gkey:
+        raise RuntimeError("Falta GEMINI_API_KEY: no se pueden crear titulares ni artículos propios")
     n = cfg["ai"]["items_per_section"]
     country = cfg["charts"]["country"]
 
