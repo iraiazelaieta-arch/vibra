@@ -3,16 +3,16 @@
  "week": 45,
  "year": 2026,
  "date": "2026-11-02",
- "generated_at": "2026-11-02T07:18:57+00:00",
+ "generated_at": "2026-11-02T08:14:46+00:00",
  "sections": {
   "moda": {
    "title": "Moda",
    "stories": [
     {
-     "title": "Pantalones marrones: todos los modelos que se llevarán este otoño-invierno 2026-2027",
-     "summary": "Desde los vaqueros en este tono hasta los pantalones efecto piel pasando por las versiones más calentitas para el invierno en tejido de pana, los modelos que más verás en los próximos meses",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
+     "title": "Rosalía y Schiaparelli: el nuevo canon de la elegancia teatral",
+     "summary": "Rosalía ha consolidado su estatus como icono de estilo global tras su reciente aparición en Nueva York. Su apuesta por un dos piezas de Schiaparelli marca un giro hacia una sofisticación más depurada y escultórica, alejándose de estéticas más informales para abrazar una teatralidad medida que redefine su imagen pública en la industria de la moda.",
+     "why": "La moda como herramienta de construcción de identidad para las nuevas estrellas globales.",
+     "shop": "falda satinada negra",
      "sources": [
       {
        "name": "Vogue España",
@@ -21,82 +21,150 @@
      ],
      "image": "https://media.vogue.es/photos/6ae72315c240e1dd82fec543/master/pass/ParisFashionweek_SS27_streetstyle_day!_philoh_08.jpg",
      "image_credit": "Vogue España",
-     "ai": false
+     "ai": true,
+     "body": [
+      "Rosalía no solo canta; Rosalía construye universos visuales que nos obligan a detenernos y observar. Su reciente aparición en Nueva York ha supuesto un antes y un después en su trayectoria estética, marcando una distancia clara con los códigos urbanos que definieron su etapa anterior. Al elegir a Schiaparelli para este despliegue, la artista no ha buscado simplemente vestir una prenda de lujo, sino habitar una pieza de arquitectura textil que desafía los límites de lo convencional.",
+      "Este giro hacia una sofisticación depurada y profundamente escultórica nos demuestra que la catalana ha dejado de ser una promesa del estilo para convertirse en un icono global de peso. Ya no se trata solo de la tendencia del momento, sino de una curaduría consciente que busca la atemporalidad. La apuesta por este dos piezas subraya una madurez artística que se traduce en una imagen pública mucho más controlada, teatral y, sobre todo, cerebral.",
+      "## El arte de vestir con intención",
+      "Lo que vemos aquí es el triunfo de la teatralidad medida. Mientras que otras figuras del pop optan por el exceso decorativo, Rosalía abraza el rigor de Schiaparelli, una casa que entiende el cuerpo como un lienzo para la experimentación. Esta elección es un mensaje contundente para la industria: la elegancia ya no reside en lo predecible, sino en la capacidad de transformar el diseño en una declaración de intenciones.",
+      "Esta evolución encaja perfectamente en la conversación cultural actual, donde el público joven demanda autenticidad pero también una estética aspiracional que se sienta elevada. La artista ha comprendido que la moda es una extensión de su narrativa musical; si su último trabajo exploraba nuevos ritmos, su armario ahora explora nuevas formas. Es un ejercicio de poder silencioso que redefine su papel en la moda internacional.",
+      "## Un futuro marcado por la sofisticación",
+      "¿Qué podemos esperar a continuación? Todo apunta a que Rosalía seguirá explorando este camino donde la moda se siente como una performance constante. No sería extraño verla profundizar en colaboraciones que fusionen la artesanía de alta costura con elementos inesperados, manteniendo siempre ese equilibrio entre lo vanguardista y lo icónico que tanto la caracteriza.",
+      "Como redactora, creo que estamos ante el nacimiento de un canon propio. La capacidad de Rosalía para mutar sin perder su esencia es lo que la mantiene en la cima. Es fascinante ver cómo una figura de su calibre es capaz de elevar la conversación estilística a niveles de museo. ¿Qué opináis vosotras? ¿Creéis que este cambio hacia lo escultórico es el camino definitivo para la artista o echáis de menos su versión más informal?"
+     ],
+     "highlight": "Rosalía ha dejado de ser una promesa del estilo para convertirse en un icono global que redefine la elegancia mediante una sofisticación escultórica."
     },
     {
-     "title": "Alice Reydet, chef y fundadora de Lava: “Siempre se puede ganar más en hostelería. Podría estudiar el mercado, contratar más personal y abrir siete días a la semana. Pero no me interesa\"",
-     "summary": "Con raíces francesas y alma madrileña, la chef Alice Reydet regenta una taberna en La Latina que dibuja un nuevo paradigma en la hostelería: vinos naturales y comida deliciosa",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
+     "title": "El regreso de la estética 'preppy' y la nostalgia setentera",
+     "summary": "La moda vuelve a mirar al pasado con la recuperación de las chaquetas de inspiración 'niña pija' y los pantalones de pana. Estas prendas, que nuestras madres lucieron en los 70, regresan a las estanterías de gigantes como Zara y Mango, demostrando que el ciclo de las tendencias es implacable y que la nostalgia es el motor principal del consumo actual.",
+     "why": "El ciclo eterno de la moda: reciclar el pasado para vestir el presente.",
+     "shop": "pantalones pana mujer",
      "sources": [
       {
        "name": "Vogue España",
-       "url": "https://www.vogue.es/articulos/lava-restaurante-madrid-la-latina-alice-reydet-chef"
+       "url": "https://www.vogue.es/articulos/pantalones-marrones-modelos-tendencias-otono-invierno-2026-2027"
       }
      ],
-     "image": "https://media.vogue.es/photos/6ae4949db3e8c61ad528ee51/master/pass/vogue_living_lava_alta_silviadelarosa_rgb_04.jpg",
+     "image": "https://media.vogue.es/photos/6ae72315c240e1dd82fec543/master/pass/ParisFashionweek_SS27_streetstyle_day!_philoh_08.jpg",
      "image_credit": "Vogue España",
-     "ai": false
+     "ai": true,
+     "body": [
+      "Hay algo profundamente reconfortante en ver cómo la moda insiste en dar vueltas sobre sí misma. Esta temporada, la nostalgia no es solo una opción, es el motor que mueve los escaparates de nuestras tiendas favoritas. El regreso de la estética preppy, mezclado con ese poso setentero que nuestras madres inmortalizaron en sus fotos de juventud, ha llegado para invadir nuestro armario de otoño-invierno con una calidez que ya estábamos tardando en recuperar.",
+      "Las chaquetas de corte clásico y los pantalones de pana, que antes asociábamos exclusivamente a un estilo académico o retro, vuelven a ser las piezas clave. Marcas como Zara o Mango han captado el mensaje a la perfección, democratizando un estilo que durante años estuvo reservado para el archivo fotográfico familiar. La moda, implacable, nos recuerda que todo lo que fue tendencia, eventualmente, vuelve a ser el objeto de deseo absoluto.",
+      "## La pana como nuevo básico cotidiano",
+      "El pantalón de pana se erige como el protagonista indiscutible de esta narrativa. Lejos de ser la prenda aburrida de nuestra infancia, el tejido vuelve con cortes renovados que piden a gritos ser combinados con jerséis de punto grueso o camisas de seda. Es un ejercicio de contraste interesante: lo rústico se encuentra con lo refinado, creando estilismos que funcionan tanto en la oficina como en un plan de fin de semana.",
+      "Desde una perspectiva editorial, este fenómeno es fascinante porque demuestra que la moda actual busca refugio en el pasado para afrontar la incertidumbre del presente. La vuelta a lo preppy no es solo una cuestión de estética; es una búsqueda de orden y elegancia clásica en un mundo saturado de microtendencias de usar y tirar. Adoptar estas prendas es, en cierto modo, una forma de reivindicar una calidad que parecía perdida.",
+      "## Más allá de una simple tendencia",
+      "La pregunta que queda en el aire es si este estilo se quedará con nosotros o si es solo un guiño pasajero a la década de los setenta. Mi apuesta es que, al tratarse de prendas tan funcionales y versátiles, el estilo preppy ha llegado para quedarse como un nuevo pilar de nuestro armario cápsula. La clave estará en cómo sepamos mezclar estas piezas vintage con elementos modernos para no caer en el disfraz.",
+      "Estamos ante una oportunidad perfecta para rebuscar en los armarios de nuestros padres y encontrar tesoros reales antes de que la tendencia se convierta en una plaga. ¿Os apuntáis al regreso de la pana y las chaquetas estructuradas o preferís mantener el estilo urbano que ha dominado los últimos años? Contadnos cómo pensáis combinar estas piezas para darle vuestro toque personal."
+     ],
+     "highlight": "La moda actual busca refugio en el pasado para afrontar la incertidumbre del presente, rescatando la elegancia clásica de la estética preppy y setentera."
     },
     {
-     "title": "Las camisetas nostálgicas de los 80 y 90 que las clásicas combinan con traje para sumar tendencia a sus looks de otoño",
-     "summary": "Es una de las grandes claves de la nueva manera de vestir en este momento. Las mezclas se han convertido en la fórmula para rejuvenecer los looks a partir de los 40 y 50. Para eso, pocas prendas más adaptables que una camiseta de algodón, las básicas y las menos básicas. En este caso, las de estilo retro nostalgia de los 80 y 90 que ahora las clási",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
+     "title": "Gigi Hadid y la reinvención del armario de la abuela",
+     "summary": "Gigi Hadid ha logrado que los cuadros nostálgicos y las faldas midi vuelvan a ser objeto de deseo. Al combinar prendas con sabor antiguo, como su falda de cuadros, con botas cowboy y cuero, la modelo propone una reconciliación con la tradición sin perder un ápice de modernidad. Es la prueba de que el estilo personal reside en el contraste.",
+     "why": "La estética vintage es la nueva vanguardia para la generación Z.",
+     "shop": "falda midi cuadros",
      "sources": [
       {
-       "name": "Elle España",
-       "url": "https://www.elle.com/es/moda/noticias/a74260911/camisetas-bonitas-de-los-80-y-90/"
+       "name": "Vogue España",
+       "url": "https://www.vogue.es/articulos/pantalones-marrones-modelos-tendencias-otono-invierno-2026-2027"
       }
      ],
-     "image": "https://hips.hearstapps.com/hmg-prod/images/0a1d2d49-d036-4723-ba54-6077dd50a03c.jpg",
-     "image_credit": "Elle España",
-     "ai": false
+     "image": "https://media.vogue.es/photos/6ae72315c240e1dd82fec543/master/pass/ParisFashionweek_SS27_streetstyle_day!_philoh_08.jpg",
+     "image_credit": "Vogue España",
+     "ai": true,
+     "body": [
+      "Olvídate de las reglas estéticas que dictan que el negro es el único refugio seguro cuando bajan las temperaturas. Esta temporada, la pasarela de la calle, liderada por iconos de estilo como Gigi Hadid, ha dictado sentencia: el armario de la abuela no solo vuelve, sino que se corona como la tendencia más sofisticada del invierno 2026-2027.",
+      "La clave de esta revolución no reside en la nostalgia pura, sino en la capacidad de reconciliar texturas tradicionales con una actitud radicalmente moderna. Hadid ha demostrado que una falda de cuadros, pieza que antaño asociábamos a uniformes escolares o a la estética clásica de los años setenta, puede adquirir una nueva dimensión cuando se fusiona con elementos inesperados.",
+      "## El triunfo del marrón en el armario",
+      "La propuesta de estilo que inunda las redes sociales y el street style este otoño es clara: el contraste es el nuevo lenguaje del lujo. Al combinar tejidos de toda la vida, como la lana de cuadros o la pana, con botas cowboy de estética western o piezas de cuero técnico, el resultado es un look que rompe con la monotonía.",
+      "Según Vogue España, el marrón ha dejado de ser un invitado discreto para convertirse en el protagonista absoluto de nuestros pantalones. Desde el tono chocolate intenso hasta el caramelo más sutil, esta paleta cromática se está posicionando como la alternativa definitiva al eterno vaquero azul o al pantalón de sastre negro, ofreciendo una versatilidad que nos permite transitar de la oficina al fin de semana sin esfuerzo.",
+      "## Un giro necesario hacia la tradición",
+      "¿Por qué importa este giro cromático y estilístico? Porque refleja nuestra necesidad actual de encontrar confort sin sacrificar la identidad. Recuperar prendas de aire retro no es un paso atrás, sino una forma de experimentar con la textura y la profundidad del color, demostrando que la moda es, ante todo, un juego de equilibrios.",
+      "Desde nuestra perspectiva, apostar por estos tonos es una invitación a salir de la zona de confort cromática. Es un ejercicio de estilo que demuestra que, a veces, la modernidad no consiste en inventar algo nuevo, sino en saber leer el pasado con ojos frescos. ¿Te atreverás a darle un descanso a tus vaqueros de siempre?"
+     ],
+     "highlight": "La modernidad no consiste en inventar algo nuevo, sino en saber leer el pasado con ojos frescos."
     },
     {
-     "title": "Alicia San Román, la madre de bautizo más elegante del otoño 2026 con poncho de punto y el tocado favorito de Jackie Kennedy",
-     "summary": "La profesional de la comunicación de moda se coronó con el mejor look de madre de bautizo de la temporada, apostando por la elegancia de los conjuntos monocolor.",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
+     "title": "Halloween 2026: cuando la imitación se convierte en arte",
+     "summary": "La fiesta de Halloween de las celebridades ha mutado este año hacia un ejercicio de meta-cultura: desde el despliegue de Heidi Klum hasta la tendencia masiva de vestirse como Dolly Parton en Nueva York. La cultura pop ya no solo celebra el disfraz, sino el homenaje irónico y la representación de otros iconos, consolidando Halloween como la fecha más importante para la performance visual.",
+     "why": "Halloween como el escaparate definitivo de la cultura pop y la identidad performativa.",
+     "shop": "disfraz halloween creativo",
      "sources": [
       {
-       "name": "Elle España",
-       "url": "https://www.elle.com/es/moda/noticias/a74305441/alicia-san-roman-madre-de-bautizo-mas-elegante-otono-2026/"
+       "name": "Vogue España",
+       "url": "https://www.vogue.es/articulos/pantalones-marrones-modelos-tendencias-otono-invierno-2026-2027"
       }
      ],
-     "image": "https://hips.hearstapps.com/hmg-prod/images/8fd22bef-3ade-42a1-8220-53193bfef0b7.jpg",
-     "image_credit": "Elle España",
-     "ai": false
+     "image": "https://media.vogue.es/photos/6ae72315c240e1dd82fec543/master/pass/ParisFashionweek_SS27_streetstyle_day!_philoh_08.jpg",
+     "image_credit": "Vogue España",
+     "ai": true,
+     "body": [
+      "Halloween ha dejado de ser una simple excusa para ponerse una máscara de látex y ha mutado ante nuestros ojos en el evento de performance visual más relevante del calendario cultural. Este 2026, la noche de los muertos se ha convertido en un sofisticado ejercicio de meta-cultura donde la imitación roza la genialidad artística.",
+      "Ya no basta con dar miedo; ahora se trata de ser un icono que homenajea a otro icono. La tendencia de este año en ciudades como Nueva York ha sido clara: el disfraz se ha transformado en una declaración de principios donde la cultura pop se autoconstruye y se celebra a sí misma.",
+      "## Iconos que homenajean a otros iconos",
+      "El despliegue mediático que rodea a figuras como Heidi Klum, cuya capacidad para elevar el disfraz a niveles de superproducción cinematográfica es ya un ritual, marca el tono de lo que esperamos de esta fecha. Es un fenómeno donde la ironía juega un papel fundamental; el espectador ya no solo reconoce al personaje, sino que aprecia la ejecución, el detalle y la capa de significado que se añade al homenaje.",
+      "Este tipo de Halloween nos dice mucho sobre cómo consumimos cultura hoy. Estamos obsesionados con la representación de nuestra propia identidad a través de figuras que ya existen, creando una suerte de espejo infinito donde la realidad y la ficción se confunden para generar contenido viral, pero también, en muchos casos, un arte efímero digno de estudio.",
+      "## El futuro de la fantasía pop",
+      "¿Estamos ante el fin de la originalidad o ante una nueva forma de expresión colectiva? Creemos que Halloween se ha consolidado como el espacio donde la moda, el cine y la música colapsan para crear un lenguaje común. La capacidad de convertir la imitación en una forma de arte es, probablemente, el mayor logro de la Generación Z y los Millennials en la construcción de su propia mitología pop.",
+      "Lo que vendrá a continuación promete ser aún más ambicioso, con la tecnología y el diseño trabajando al servicio de la fantasía. ¿Cuál ha sido el disfraz que más te ha impactado este año? La conversación está abierta y, visto lo visto, el listón para 2027 ya está por las nubes."
+     ],
+     "highlight": "Halloween se ha consolidado como el espacio donde la moda, el cine y la música colapsan para crear un lenguaje común."
     },
     {
-     "title": "Los vaqueros acampanados de Mango, Massimo Dutti, Stradivarius, Lefties y Bershka que hacen tipazo y son tendencia este otoño 2026",
-     "summary": "Es una de las siluetas más favorecedoras y este otoño viene para quedarse hasta el año que viene en el tejido denim que tanto nos fascina últimamente, desde los barrel hasta, ahora, los flare que mejor estilizan.",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
+     "title": "El color burdeos: la apuesta monárquica que domina el invierno",
+     "summary": "Inspirado por figuras como Máxima de Holanda, el color burdeos se ha convertido en el tono obligatorio de la temporada. Zara y Mango han democratizado este lujo cromático, permitiendo que el estilo 'royal' sea accesible. Es una tendencia que aporta sobriedad y elegancia inmediata, perfecta para quienes buscan un look elevado sin complicaciones excesivas durante los meses de frío.",
+     "why": "La influencia de la realeza como motor de tendencias en el fast fashion.",
+     "shop": "vestido burdeos elegante",
      "sources": [
       {
-       "name": "Elle España",
-       "url": "https://www.elle.com/es/moda/noticias/a74292410/vaqueros-acampanados-mango-dutti-stradivarius-lefties-bershka-otono-2026/"
+       "name": "Vogue España",
+       "url": "https://www.vogue.es/articulos/pantalones-marrones-modelos-tendencias-otono-invierno-2026-2027"
       }
      ],
-     "image": "https://hips.hearstapps.com/hmg-prod/images/59e4d148-38d1-4664-bd6a-8e36379c832d.jpg",
-     "image_credit": "Elle España",
-     "ai": false
+     "image": "https://media.vogue.es/photos/6ae72315c240e1dd82fec543/master/pass/ParisFashionweek_SS27_streetstyle_day!_philoh_08.jpg",
+     "image_credit": "Vogue España",
+     "ai": true,
+     "body": [
+      "Olvida por un momento el eterno negro que domina tu armario invernal. Este año, el termómetro estilístico tiene un claro ganador y responde a un nombre con ecos de realeza: el burdeos. Si has visto a figuras como Máxima de Holanda lucir este tono con una maestría absoluta, sabrás que no es una coincidencia, sino la confirmación de que estamos ante el color que define la temporada.",
+      "Lo que antes reservábamos para ocasiones contadas o accesorios discretos, hoy reclama el protagonismo absoluto en nuestros looks diarios. Es un tono que respira sofisticación, aportando esa sobriedad necesaria cuando el frío aprieta, pero sin caer en la monotonía. Es la apuesta ganadora para quienes buscan un estilo elevado sin complicaciones.",
+      "## Democratizando el estilo royal",
+      "La gran noticia para la generación que busca calidad sin dejarse el sueldo en el intento es la respuesta de las grandes cadenas. Zara y Mango han tomado nota de esta obsesión cromática y han democratizado el burdeos, llevándolo a prendas de corte impecable que parecen sacadas de un vestidor real.",
+      "Esta democratización es clave, porque permite que el estilo royal se sienta cercano y accesible. Ya no se trata de vestir como alguien inalcanzable, sino de incorporar una pincelada de elegancia clásica a tu día a día, ya sea con un abrigo estructurado o con piezas de punto que invitan a refugiarse del invierno.",
+      "## Más que una tendencia, una actitud",
+      "¿Por qué importa tanto este color ahora? Porque el burdeos actúa como el punto de equilibrio perfecto entre la intensidad del rojo y la profundidad del marrón. Es un color que favorece, que combina sorprendentemente bien con neutros y que, editorialmente hablando, marca el fin de una era de colores neutros aburridos.",
+      "En VIBRA creemos que el burdeos no es solo una moda pasajera, sino una declaración de intenciones. Es el color de la madurez estilística, de quien sabe que la elegancia no necesita gritar para hacerse notar. Esperamos que esta tendencia se consolide como el nuevo básico invernal frente al cansancio de los tonos oscuros tradicionales.",
+      "¿Te atreves a cambiar el negro por el burdeos esta temporada o prefieres mantenerte fiel a tus clásicos de siempre? Cuéntanos cómo piensas integrar este tono en tus looks de invierno en nuestras redes sociales."
+     ],
+     "highlight": "El burdeos es el color de la madurez estilística, de quien sabe que la elegancia no necesita gritar para hacerse notar."
     },
     {
-     "title": "Estos 5 vestidos largos de Cortefiel son los que las mujeres boho de más de 40 llevarán con botas altas",
-     "summary": "Se trata de cinco opciones diferentes para quienes aman los vestidos bohemios y buscan prendas que puedan llevar tanto para salir a comer con amigas como para una cena especial.",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
+     "title": "El fin de la dictadura del vaquero: el poder de la falda midi",
+     "summary": "Las redactoras de moda han dictado sentencia: es momento de dar un respiro al denim. La falda midi emerge como la alternativa definitiva para elevar cualquier estilismo de noviembre. Su versatilidad permite transformar un look básico en uno sofisticado con solo añadir una camisa y una chaqueta, confirmando que la elegancia reside en la elección de cortes atemporales.",
+     "why": "La sofisticación como resistencia frente a la comodidad excesiva del denim.",
+     "shop": "falda midi elegante",
      "sources": [
       {
-       "name": "Elle España",
-       "url": "https://www.elle.com/es/moda/compras-elle/a74287222/vestidos-largos-stradivarius-mujeres-boho-mas-de-40-con-botas-altas/"
+       "name": "Vogue España",
+       "url": "https://www.vogue.es/articulos/pantalones-marrones-modelos-tendencias-otono-invierno-2026-2027"
       }
      ],
-     "image": "https://hips.hearstapps.com/hmg-prod/images/76585993-2d20-40f0-9158-5cc7e3cd84de.jpg",
-     "image_credit": "Elle España",
-     "ai": false
+     "image": "https://media.vogue.es/photos/6ae72315c240e1dd82fec543/master/pass/ParisFashionweek_SS27_streetstyle_day!_philoh_08.jpg",
+     "image_credit": "Vogue España",
+     "ai": true,
+     "body": [
+      "Si sientes que tu armario vive en un bucle infinito de vaqueros y más vaqueros, tenemos una noticia que te va a liberar: la dictadura del denim ha llegado a su fin. Noviembre nos trae un aire de cambio, y la protagonista absoluta de esta transición es la falda midi, una pieza que ha vuelto para recordarnos que la elegancia no siempre tiene que ir de la mano de la comodidad extrema de un pantalón.",
+      "Es el momento de dar un respiro a tus jeans desgastados y abrazar una silueta que, históricamente, ha definido los momentos de mayor sofisticación en la moda. La falda midi no es solo una prenda, es una declaración de intenciones que pide a gritos ser redescubierta por una nueva generación.",
+      "## El arte de la versatilidad",
+      "La versatilidad de la falda midi es, posiblemente, su mayor superpoder. ¿Tienes una reunión de trabajo o una cena improvisada? No hay problema. Con solo añadir una camisa bien estructurada y una chaqueta que aporte contraste, consigues transformar un look básico en uno que parece pensado durante horas.",
+      "Esta pieza permite jugar con las proporciones y los volúmenes, algo que el vaquero rara vez nos concede. Al elegir cortes atemporales, la falda midi se convierte en esa inversión que no pasa de moda, demostrando que, a veces, menos es definitivamente más cuando hablamos de estilo personal.",
+      "## Un giro necesario en tu armario",
+      "Desde nuestra perspectiva editorial, este giro hacia la falda midi es una respuesta natural al cansancio colectivo de la moda utilitaria. Nos estamos moviendo hacia un terreno donde la feminidad y la estructura vuelven a tener peso. Es una tendencia que encaja perfectamente en la conversación actual sobre el consumo responsable: comprar menos, pero comprar mejor.",
+      "Esperamos ver cómo esta prenda evoluciona en las próximas semanas, combinada con botas altas o incluso con zapatillas deportivas, rompiendo las reglas tradicionales de su uso. La falda midi ha llegado para quedarse y para demostrarnos que, a veces, cambiar de registro es la mejor forma de renovar nuestra propia identidad.",
+      "¿Eres de las que ya ha caído rendida ante la falda midi o todavía te sientes más cómoda con el vaquero de siempre? Queremos conocer tu postura, así que déjanos tus comentarios y comparte tus mejores combinaciones con nosotros."
+     ],
+     "highlight": "La falda midi no es solo una prenda, es una declaración de intenciones que pide a gritos ser redescubierta por una nueva generación."
     }
    ],
    "headlines": [
@@ -105,12 +173,6 @@
      "source": "Vogue España",
      "url": "https://www.vogue.es/articulos/pantalones-marrones-modelos-tendencias-otono-invierno-2026-2027",
      "image": "https://media.vogue.es/photos/6ae72315c240e1dd82fec543/master/pass/ParisFashionweek_SS27_streetstyle_day!_philoh_08.jpg"
-    },
-    {
-     "title": "Alice Reydet, chef y fundadora de Lava: “Siempre se puede ganar más en hostelería. Podría estudiar el mercado, contratar más personal y abrir siete días a la semana. Pero no me interesa\"",
-     "source": "Vogue España",
-     "url": "https://www.vogue.es/articulos/lava-restaurante-madrid-la-latina-alice-reydet-chef",
-     "image": "https://media.vogue.es/photos/6ae4949db3e8c61ad528ee51/master/pass/vogue_living_lava_alta_silviadelarosa_rgb_04.jpg"
     },
     {
      "title": "Las camisetas nostálgicas de los 80 y 90 que las clásicas combinan con traje para sumar tendencia a sus looks de otoño",
@@ -143,6 +205,12 @@
      "image": "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2026/11/01/17935269892811.jpg"
     },
     {
+     "title": "Alice Reydet, chef y fundadora de Lava: “Siempre se puede ganar más en hostelería. Podría estudiar el mercado, contratar más personal y abrir siete días a la semana. Pero no me interesa\"",
+     "source": "Vogue España",
+     "url": "https://www.vogue.es/articulos/lava-restaurante-madrid-la-latina-alice-reydet-chef",
+     "image": "https://media.vogue.es/photos/6ae4949db3e8c61ad528ee51/master/pass/vogue_living_lava_alta_silviadelarosa_rgb_04.jpg"
+    },
+    {
      "title": "Estos son los restaurantes que elige la redacción de TELVA para celebrar el otoño",
      "source": "Telva",
      "url": "https://www.telva.com/cultura/2026/11/01/6abf90de02136ee0298b4598.html",
@@ -154,10 +222,10 @@
    "title": "Música",
    "stories": [
     {
-     "title": "Harry Styles Ended His Historic Madison Square Garden Run — And This Song Captured It All",
-     "summary": "The bass-filled record \"Season 2 Weight Loss\" became an essential part of how we understand the singer, especially across his 30-night New York residency",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
+     "title": "My Chemical Romance: 20 años después, el emo sigue siendo rey",
+     "summary": "La reedición del legendario 'The Black Parade' ha catapultado a MCR de nuevo al número uno, superando incluso a titanes del pop actual como Olivia Rodrigo. Es la prueba definitiva de que la nostalgia emo no es una fase, sino una cultura que sigue moviendo masas y definiendo el gusto generacional.",
+     "why": "El triunfo de lo nostálgico sobre la inmediatez del pop moderno.",
+     "shop": "My Chemical Romance vinilo",
      "sources": [
       {
        "name": "Rolling Stone",
@@ -166,28 +234,26 @@
      ],
      "image": "https://www.rollingstone.com/wp-content/uploads/2026/10/harry-msg-essay.jpg?crop=0px%2C28px%2C1800px%2C1014px&resize=1600%2C900",
      "image_credit": "Rolling Stone",
-     "ai": false
-    },
-    {
-     "title": "My Chemical Romance Tops the Billboard 200 With 20-Year-Old Album",
-     "summary": "The rock band's The Black Parade reached the top slot with its 20th anniversary reissue, beating out Olivia Rodrigo",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "Rolling Stone",
-       "url": "https://www.rollingstone.com/music/music-news/my-chemical-romance-black-parade-billboard-200-number-one-1235650097/"
-      }
+     "ai": true,
+     "body": [
+      "Si alguien pensaba que el delineador negro y las sudaderas con capucha eran una reliquia de un pasado adolescente, las listas de éxitos han llegado para darle una lección de humildad. My Chemical Romance no solo ha vuelto, sino que ha reclamado su trono con una contundencia que deja temblando a las actuales estrellas del pop global.",
+      "La reciente reedición de The Black Parade ha provocado un terremoto en las plataformas de streaming, catapultando a la banda de Gerard Way a lo más alto. Superar en cifras a artistas que dominan el mercado actual, como Olivia Rodrigo, no es una anécdota estadística; es un síntoma claro de que el emo nunca se fue, simplemente estaba esperando el momento perfecto para volver a rugir.",
+      "## Más que nostalgia, un movimiento cultural",
+      "Este fenómeno nos obliga a mirar más allá de la nostalgia. Lo que estamos viviendo es la validación de una cultura que marcó a toda una generación y que ahora es redescubierta por los más jóvenes, quienes encuentran en las letras de MCR una honestidad brutal que a menudo falta en el panorama mainstream actual.",
+      "La clave de este éxito reside en que The Black Parade no es solo un álbum, es una ópera rock que capturó la angustia existencial de una época. Su sonido, cargado de dramatismo y ambición, ha envejecido sorprendentemente bien, demostrando que la autenticidad siempre acaba imponiéndose sobre las tendencias pasajeras.",
+      "## La lealtad que desafía al tiempo",
+      "Desde una perspectiva editorial, este resurgir es fascinante. La industria musical suele subestimar el poder de las comunidades de fans que crecieron con esta música, pero el regreso de My Chemical Romance demuestra que la lealtad de este público es inquebrantable y, sobre todo, increíblemente activa.",
+      "Estamos ante la prueba definitiva de que la conexión emocional que se forjó hace dos décadas sigue intacta. ¿Estamos preparados para una nueva era de bandas de estadio que recuperen la intensidad del emo, o es esto un recordatorio de que los clásicos son irrepetibles?",
+      "## Queremos saber tu opinión",
+      "¿Crees que este éxito es un hecho aislado o estamos ante el inicio de un revival emo permanente en la cultura popular? Queremos conocer vuestra opinión sobre si esta música sigue resonando igual que el primer día o si la estamos escuchando con gafas de nostalgia."
      ],
-     "image": "https://www.rollingstone.com/wp-content/uploads/2026/10/MCR-black-parade-number-1-20-years-later-2.jpg?w=1600&h=900&crop=1",
-     "image_credit": "Rolling Stone",
-     "ai": false
+     "highlight": "Superar a las estrellas del pop actual no es una anécdota, es la prueba definitiva de que el emo no es una fase, es cultura."
     },
     {
-     "title": "Harryween: The Best Photos From Harry Styles’ Final MSG Show",
-     "summary": "The singer brought his record-breaking Together, Together residency to a close after 30 nights — and fans went all out.",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
+     "title": "El legado de Juan Atkins: la voz del techno que cambió el futuro",
+     "summary": "La muerte de Juan Atkins, pionero de Detroit techno y fundador de Cybotron, nos obliga a recordar que la música electrónica actual no existiría sin su visión futurista. Su trabajo bajo Model 500 no fue solo música, fue un manifiesto de cómo la tecnología y el alma humana podían fusionarse en la pista de baile.",
+     "why": "La pérdida de una arquitectura sonora fundamental para la electrónica global.",
+     "shop": "Detroit techno vinilo",
      "sources": [
       {
        "name": "Rolling Stone",
@@ -196,43 +262,26 @@
      ],
      "image": "https://www.rollingstone.com/wp-content/uploads/2026/11/HARRY-STYLES-fans-night-30_Sacha-Lecca-51.jpg?w=1600&h=900&crop=1",
      "image_credit": "Rolling Stone",
-     "ai": false
-    },
-    {
-     "title": "Juan Atkins, Techno Music Pioneer, Dead at 64",
-     "summary": "The originator of Detroit techno, Atkins was a founding member of the pioneering electronic music duo Cybotron and released the influential \"No UFO's\" under his Model 500 moniker",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "Rolling Stone",
-       "url": "https://www.rollingstone.com/music/music-news/juan-atkins-techno-music-pioneer-cybotron-dead-obituary-1235651028/"
-      }
+     "ai": true,
+     "body": [
+      "El mundo de la música electrónica está de luto, pero más allá de la tristeza, lo que prevalece es una sensación de asombro ante el legado dejado por Juan Atkins. Cuando pensamos en los cimientos del techno, el nombre de Atkins no es solo un pilar; es el arquitecto que trazó el plano original.",
+      "Desde sus inicios con Cybotron hasta su visionaria etapa como Model 500, su trabajo fue mucho más que música de club. Fue un manifiesto tecnológico que nos enseñó que las máquinas también pueden tener alma, una lección que todavía resuena en cada beat que escuchamos en la pista de baile hoy en día.",
+      "## Tecnología con alma humana",
+      "Atkins no se limitó a seguir tendencias; las creó. Su capacidad para fusionar la frialdad sintética de los sintetizadores con una calidez humana genuina fue su gran aportación. En un momento donde la música electrónica corría el riesgo de convertirse en algo puramente funcional, él le devolvió la profundidad, la historia y, sobre todo, el futuro.",
+      "Su influencia es incalculable. Si hoy disfrutamos de producciones complejas y texturizadas es porque alguien, hace décadas, decidió que el techno podía ser un vehículo para la exploración existencial. Juan Atkins no solo hizo música; creó el lenguaje con el que hoy se comunican los DJs y productores de medio mundo.",
+      "## Un legado eterno en la pista",
+      "¿Por qué importa tanto su figura ahora? Porque en un momento donde la Inteligencia Artificial empieza a cuestionar la autoría artística, el legado de Atkins cobra una relevancia renovada. Él nos demostró que la tecnología es simplemente un instrumento, y que es la intención del artista lo que realmente le otorga valor.",
+      "Su pérdida es un recordatorio de que los pioneros son los que nos permiten imaginar futuros distintos. Mientras el techno siga siendo la banda sonora de nuestras noches, el espíritu de Juan Atkins seguirá vibrando en cada sintetizador.",
+      "## Tu turno para recordar",
+      "¿Cómo ha influido la figura de Juan Atkins en vuestra forma de entender la música electrónica actual? Os invitamos a compartir vuestros temas favoritos y a reflexionar sobre cómo su visión sigue presente en los sonidos que bailamos hoy."
      ],
-     "image": "https://www.rollingstone.com/wp-content/uploads/2026/11/GettyImages-851234656.jpg?w=1600&h=900&crop=1",
-     "image_credit": "Rolling Stone",
-     "ai": false
+     "highlight": "Juan Atkins no solo hizo música; creó el lenguaje con el que hoy se comunican los productores y DJs de medio mundo."
     },
     {
-     "title": "ear / Rumspringa",
-     "summary": "Escuchando el segundo disco de ear es imposible no pensar en la música de Dntel, cuyo debut ‘Life Is Full of Possibilities‘ acaba de cumplir 25 años. Pero mientras la propuesta de James Scott Tamborello sonaba tan bonita como clínica, la de ear transmite una sensación mucho más casera, deslavazada e infantil, como si Jonah […] La noticia ear / Rums",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "Jenesaispop",
-       "url": "https://jenesaispop.com/2026/11/01/533134/ear-rumspringa/"
-      }
-     ],
-     "image": "https://jenesaispop.com/wp-content/uploads/2026/10/ear-rumspringa.jpg",
-     "image_credit": "Jenesaispop",
-     "ai": false
-    },
-    {
-     "title": "Marcelo Criminal es más que ‘El tío que riega el campo de golf’",
-     "summary": "Marcelo Criminal nos ha vuelto a deleitar con un nuevo disco lleno de magia, sencillez y un título con el que sentirnos identificados, ‘Falto de Consuelo y Oro’. Después del gran ‘La última casa de apuestas’, el artista murciano deja claro que aunque él solo es ‘El tío que riega el campo de golf’, su […] La noticia Marcelo Criminal es más que ‘El t",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
+     "title": "Fontaines D.C. y la nueva era del post-punk",
+     "summary": "Los irlandeses siguen dominando las listas de lo más votado, consolidándose como la banda que mejor captura la urgencia de nuestros tiempos. Su capacidad para conectar con el público joven demuestra que el post-punk no necesita mirar al pasado, sino usar su rabia para diseccionar el presente.",
+     "why": "El post-punk como el lenguaje más honesto de la juventud actual.",
+     "shop": "Fontaines DC vinilo",
      "sources": [
       {
        "name": "Jenesaispop",
@@ -241,7 +290,96 @@
      ],
      "image": "https://jenesaispop.com/wp-content/uploads/2026/11/Captura-de-pantalla-2026-11-01-135314.png",
      "image_credit": "Jenesaispop",
-     "ai": false
+     "ai": true,
+     "body": [
+      "Si sientes que el mundo avanza a una velocidad que roza el colapso, probablemente hayas encontrado en Fontaines D.C. la banda sonora de tu propia ansiedad colectiva. Los irlandeses han dejado de ser una promesa del circuito underground para convertirse en el espejo donde toda una generación se mira, reconociendo en sus guitarras afiladas la urgencia de unos tiempos donde la calma parece un lujo inalcanzable.",
+      "La banda ha logrado consolidarse en lo más alto de las listas de éxitos, un fenómeno que va mucho más allá de la simple cifra de ventas. Su capacidad para capturar el desencanto contemporáneo sin caer en la nostalgia barata es lo que los distingue. Mientras otros grupos miran al pasado buscando una estética desgastada, ellos utilizan la rabia propia del post-punk como un bisturí para diseccionar la realidad actual.",
+      "## Más que música, un estado mental",
+      "Lo que Fontaines D.C. propone no es un ejercicio de estilo, sino un acto de honestidad brutal. En una industria a menudo obsesionada con lo pulido y lo predecible, su música irrumpe como un recordatorio de que el conflicto, la duda y la aspereza son materias primas necesarias para la creación cultural. No intentan rescatar un género muerto, sino insuflarle nueva vida a través de una lírica que se siente tan cercana como una conversación en una noche de insomnio.",
+      "Esta conexión con el público joven no es casual. La banda ha sabido trasladar la desazón de los veintitantos a canciones que funcionan como himnos de resistencia. Es esa capacidad de convertir el malestar individual en una experiencia colectiva lo que les permite llenar recintos y dominar la conversación cultural, demostrando que la autenticidad sigue siendo el activo más valioso en un mercado saturado de algoritmos.",
+      "## El futuro es ahora",
+      "¿Qué podemos esperar a continuación? Si la trayectoria de los irlandeses sirve de guía, no veremos un acomodamiento en el éxito. La evolución constante de su sonido sugiere que están lejos de haber agotado su capacidad de asombro. Su impacto ya es profundo, pero su papel como catalizadores de una nueva escena post-punk apenas está consolidándose.",
+      "Nos encantaría saber qué opinas de este ascenso meteórico: ¿Crees que Fontaines D.C. han logrado definir el sonido de nuestra década o es solo el principio de algo mucho más grande? Únete a la conversación en nuestras redes y dinos qué canción de la banda te ha hecho sentir más identificado este año."
+     ],
+     "highlight": "Su capacidad para conectar con el público joven demuestra que el post-punk no necesita mirar al pasado, sino usar su rabia para diseccionar el presente."
+    },
+    {
+     "title": "Marcelo Criminal: la magia de lo sencillo en la era del exceso",
+     "summary": "Con 'Falto de Consuelo y Oro', el artista murciano reafirma que no hace falta una gran producción para conectar con la audiencia. Su propuesta es un recordatorio necesario de que la música pop puede ser cotidiana, mágica y profundamente identificable sin necesidad de artificios de industria.",
+     "why": "La autenticidad como el activo más valioso frente a la sobreproducción.",
+     "shop": "Marcelo Criminal camiseta",
+     "sources": [
+      {
+       "name": "Jenesaispop",
+       "url": "https://jenesaispop.com/2026/11/01/533134/ear-rumspringa/"
+      }
+     ],
+     "image": "https://jenesaispop.com/wp-content/uploads/2026/10/ear-rumspringa.jpg",
+     "image_credit": "Jenesaispop",
+     "ai": true,
+     "body": [
+      "En un mundo donde la producción musical parece una carrera armamentística por ver quién utiliza más sintetizadores y quién logra la mezcla más limpia, llega Marcelo Criminal para recordarnos que la magia reside en lo que dejamos fuera. Con su nuevo trabajo, Falto de Consuelo y Oro, el artista murciano se consolida como el maestro de la sencillez en una era que se ahoga en el exceso.",
+      "Tras el éxito de La última casa de apuestas, Marcelo vuelve a demostrar que no necesita grandes presupuestos para construir mundos inmensos. Su propuesta se siente como una bocanada de aire fresco; una invitación a detenerse y observar los detalles más cotidianos de la existencia, esos que a menudo ignoramos mientras corremos tras objetivos que, en el fondo, no nos definen.",
+      "## La resistencia desde la sencillez",
+      "La pieza central de esta entrega nos presenta a un personaje, el tío que riega el campo de golf, que sirve como excusa perfecta para reflexionar sobre lo que realmente importa. Marcelo despoja al arte de cualquier pretensión de divinidad y lo devuelve a la tierra: a las últimas gotas de sol, a la gestión del tiempo y a la idea, casi revolucionaria, de que el trabajo no es lo que nos define como personas.",
+      "Esta filosofía, tan sencilla como potente, resuena con fuerza en una generación que cuestiona constantemente la cultura del esfuerzo y el agotamiento. Al poner el foco en lo anodino y elevarlo a la categoría de poético, el músico murciano logra una conexión emocional que es, en esencia, profundamente política. Nos dice, sin levantar la voz, que nuestra sensibilidad es válida aunque no estemos creando grandes obras maestras.",
+      "## Un refugio para los tiempos modernos",
+      "La propuesta de Marcelo Criminal no es solo un disco, es un recordatorio necesario de que el pop puede ser un refugio. En una industria que nos empuja a ser siempre productivos, él nos invita a ser, simplemente, humanos. Su éxito demuestra que el público joven está ávido de honestidad, de propuestas que no intenten vender una vida perfecta, sino que acepten la falta de consuelo como parte natural del proceso.",
+      "¿Cómo encaja esta propuesta en tu lista de reproducción diaria? ¿Sientes que necesitamos más artistas que se atrevan a ser tan honestos y poco pretenciosos? Cuéntanos qué te ha parecido el nuevo disco y si, como nosotros, crees que Marcelo Criminal ha encontrado el antídoto contra el exceso del siglo XXI."
+     ],
+     "highlight": "Marcelo Criminal reafirma que no hace falta una gran producción para conectar con la audiencia, recordándonos que el pop puede ser profundamente identificable sin artificios."
+    },
+    {
+     "title": "La lucha por la accesibilidad en los conciertos es una urgencia",
+     "summary": "Aunque la ley ha mejorado, los fans con discapacidad denuncian que la industria sigue tratándolos como un estorbo en lugar de como público real. Es inaceptable que en 2024 la experiencia en vivo siga siendo un privilegio excluyente; la música debe ser un refugio accesible para todos sin excepciones.",
+     "why": "La industria musical tiene una deuda pendiente con la inclusión real.",
+     "shop": "",
+     "sources": [
+      {
+       "name": "Rolling Stone",
+       "url": "https://www.rollingstone.com/music/music-features/parker-mccollum-interview-quitting-music-1235650478/"
+      }
+     ],
+     "image": "https://www.rollingstone.com/wp-content/uploads/2026/10/GettyImages-2291206103-2.jpg?crop=0px%2C77px%2C1800px%2C1015px&resize=1600%2C900",
+     "image_credit": "Rolling Stone",
+     "ai": true,
+     "body": [
+      "A veces, el éxito en la industria musical se mide en estadios llenos y premios brillantes, pero hay una realidad mucho menos glamurosa que sigue siendo la asignatura pendiente del sector: la accesibilidad. Mientras los artistas celebran sus hitos en las listas, miles de fans con discapacidad se enfrentan a una barrera invisible pero infranqueable cada vez que intentan disfrutar de un directo. La música, que debería ser el refugio más inclusivo, se convierte a menudo en un laberinto de exclusión.",
+      "La ley ha avanzado, es cierto, pero la actitud de la industria sigue anclada en el pasado. Tratar a los asistentes con discapacidad como un estorbo logístico o un mero trámite administrativo es, en pleno 2024, una falta de respeto absoluta. No hablamos de privilegios, sino de derechos fundamentales. La experiencia en vivo no puede seguir siendo un club exclusivo donde solo entra quien no tiene problemas de movilidad o sensoriales.",
+      "## Un problema de diseño y actitud",
+      "El problema reside en la concepción misma del evento. Muchos promotores diseñan los espacios priorizando el aforo y las zonas VIP, relegando las áreas de accesibilidad a lugares con visibilidad nula o lejos de la acción principal. Este enfoque no es solo una negligencia técnica, es una declaración de intenciones: el fan con discapacidad es visto como un problema que resolver, no como un público real al que cuidar.",
+      "Cuando la música se vive desde la periferia, se pierde la esencia del directo. La conexión emocional entre artista y fan se fragmenta si el entorno te recuerda constantemente que no eres bienvenido. La industria debe entender que la accesibilidad no es un extra, sino un pilar sobre el que debe construirse cualquier espectáculo moderno que aspire a la relevancia cultural.",
+      "## El futuro debe ser inclusivo",
+      "¿Qué podemos esperar a continuación? La presión social es cada vez mayor y las redes sociales se han convertido en el altavoz donde los fans exigen lo que es justo. Ya no basta con instalar una rampa básica; el sector necesita una transformación profunda que integre la accesibilidad desde la fase creativa del diseño de las giras.",
+      "Si la música es un lenguaje universal, no tiene sentido que su puesta en escena sea discriminatoria. Es hora de que los artistas se involucren y exijan que sus equipos de producción aseguren espacios dignos para todos. La verdadera revolución en los conciertos no será tecnológica, sino humana: hacer que cada persona, sin excepciones, pueda sentir el bajo en el pecho en igualdad de condiciones. ¿Seguiremos permitiendo que la exclusión sea el telón de fondo de nuestros eventos favoritos?"
+     ],
+     "highlight": "La música, que debería ser el refugio más inclusivo, se convierte a menudo en un laberinto de exclusión para miles de personas."
+    },
+    {
+     "title": "Rawayana: el sabor venezolano toma Nueva York",
+     "summary": "La banda ha transformado el Barclays Center en una fiesta de Halloween con alma caribeña, demostrando que el trippy-pop latino es una fuerza imparable en el mercado estadounidense. Su éxito global no es casualidad, es la conquista natural de una identidad sonora que se siente libre y sin fronteras.",
+     "why": "La expansión imparable del pop alternativo latino en circuitos internacionales.",
+     "shop": "Rawayana vinilo",
+     "sources": [
+      {
+       "name": "Billboard",
+       "url": "https://www.billboard.com/lists/top-country-albums-number-ones-biggest/"
+      }
+     ],
+     "image": "https://www.billboard.com/wp-content/uploads/2024/05/051624-Most-Weeks-at-No.-1-on-Top-Country-Albums-Chart-billboard-1548.jpg?w=1024",
+     "image_credit": "Billboard",
+     "ai": true,
+     "body": [
+      "Imagínate entrar en el Barclays Center de Nueva York y sentir, de repente, que el aire se ha vuelto más cálido, más tropical y, sobre todo, mucho más divertido. Eso es exactamente lo que ha logrado Rawayana. La banda venezolana no solo ha dado un concierto; ha transformado uno de los recintos más icónicos de Estados Unidos en una fiesta de Halloween con alma caribeña, demostrando que su trippy-pop no es una moda pasajera, sino un fenómeno cultural imparable.",
+      "Lo de Rawayana en Nueva York no es casualidad, es la culminación de una identidad sonora que ha sabido cruzar fronteras sin perder ni un ápice de su esencia. En un mercado estadounidense a menudo cerrado a lo que no viene etiquetado bajo el estándar anglo, ellos han entrado por la puerta grande, a base de ritmos orgánicos y una actitud que se siente libre, fresca y, sobre todo, necesaria.",
+      "## Más allá de las etiquetas",
+      "¿Por qué importa tanto este hito? Porque Rawayana representa a una generación de artistas latinos que ya no piden permiso. Han construido su propio lenguaje, mezclando el funk, el reggae y los sonidos urbanos con una lírica que conecta con la diáspora y, a la vez, seduce a cualquier oyente desprevenido. Su éxito es la victoria de la autenticidad frente a la estandarización de la industria.",
+      "Más allá de las cifras, lo que se respira en sus directos es comunidad. Al ver a miles de personas vibrando con su música en un entorno cosmopolita como Nueva York, queda claro que la barrera del idioma es un mito cuando el mensaje es honesto. Rawayana ha demostrado que el pop latino tiene muchas más capas de las que nos han querido vender hasta ahora.",
+      "## Un fenómeno que no tiene techo",
+      "La pregunta ahora es hasta dónde llegará esta ola. Con este paso firme en Estados Unidos, la banda se posiciona como una de las fuerzas creativas más interesantes de la escena actual. Su capacidad para mantener la frescura mientras escalan en grandes escenarios es una lección de coherencia artística que muchos deberían observar con atención.",
+      "Rawayana ha dejado claro que el trippy-pop ha llegado para quedarse. Estamos ante una banda que sabe quién es y hacia dónde va, y eso es lo que realmente engancha a una audiencia joven que busca referentes reales. ¿Qué te parece el ascenso meteórico de los venezolanos? ¿Crees que estamos ante el nuevo sonido global del pop? Déjanos tu opinión en los comentarios y sigue la pista a lo que viene."
+     ],
+     "highlight": "Rawayana ha demostrado que el pop latino tiene muchas más capas de las que nos han querido vender hasta ahora."
     }
    ],
    "headlines": [
@@ -282,15 +420,15 @@
      "image": ""
     },
     {
-     "title": "Famesick. Unas memorias",
+     "title": "¿puede Martí bajar a jugar?",
      "source": "Mondo Sonoro",
-     "url": "https://www.mondosonoro.com/criticas/libros-novedades/famesick-unas-memorias/",
+     "url": "https://www.mondosonoro.com/criticas/discos-musica/mucho-puede-marti-bajar-a-jugar/",
      "image": ""
     },
     {
-     "title": "Curtidos",
+     "title": "“Lo que estamos consiguiendo no lo esperábamos tener hace un año”",
      "source": "Mondo Sonoro",
-     "url": "https://www.mondosonoro.com/criticas/conciertos-musica/exsonvaldes-santiago/",
+     "url": "https://www.mondosonoro.com/entrevistas/nepal-nepal/",
      "image": ""
     }
    ],
@@ -463,25 +601,152 @@
    "title": "Cine y series",
    "stories": [
     {
-     "title": "La nueva película número 1 de Netflix en 64 países también es muy buena: un thriller de menos de dos horas que engancha y entretiene",
-     "summary": "En Netflix se apostó desde hace tiempo porque su producción cinematográfica abarcase países de todo el mundo. Es cierto que luego sus mayores éxitos llegan desde Hollywood, pero a veces hay títulos realizados fuera de Estados Unidos que se convierten en todo un pelotazo mundial. Ese es ahora el caso de 'Colisión' , pues el thriller español ya es nú",
-     "why": "Noticia destacada de la semana.",
+     "title": "Elizabeth Olsen: de joya oculta a estrella del MCU",
+     "summary": "Antes de conquistar el mundo como Wanda Maximoff, Elizabeth Olsen protagonizó un filme crudo y aclamado que solo costó 600.000 dólares. Es un recordatorio fascinante de que el talento real siempre encuentra su lugar, incluso antes de los grandes presupuestos de superhéroes.",
+     "why": "El talento interpretativo brilla antes de la fama masiva de las franquicias.",
+     "shop": "Martha Marcy May Marlene",
+     "sources": [
+      {
+       "name": "IndieWire",
+       "url": "https://www.indiewire.com/features/craft/scad-savannah-film-festival-artisans-ruth-de-jong-amy-roth-1235224897/"
+      }
+     ],
+     "image": "https://www.indiewire.com/wp-content/uploads/2026/10/2302264273.jpg?w=650",
+     "image_credit": "IndieWire",
+     "ai": true,
+     "body": [
+      "Antes de que el mundo entero aprendiera a deletrear Maximoff y de que el Multiverso se convirtiera en su patio de recreo, Elizabeth Olsen ya era una fuerza de la naturaleza. Mientras la maquinaria de Marvel la ha convertido en un icono global, existe un rincón en su filmografía que nos recuerda que el talento real no necesita capas, sino una cámara y un guion que se atreva a mirar a los ojos.",
+      "Mucho antes de los presupuestos millonarios y los efectos digitales, Olsen protagonizó una joya oculta que se rodó con apenas 600.000 dólares. Esta pieza, cruda y visceral, es el testimonio perfecto de que, cuando la infraestructura es mínima, la interpretación se vuelve el único refugio posible. Es fascinante mirar atrás y ver cómo esa chispa ya estaba ahí, esperando a ser descubierta por las audiencias masivas.",
+      "## Talento frente al artificio",
+      "La industria cinematográfica suele obsesionarse con la escala, con los rodajes que exigen mover montañas o construir caballos de Troya a tamaño real para satisfacer la ambición de un director. Sin embargo, este recordatorio sobre los inicios de Olsen nos sirve para cuestionar qué valoramos realmente en el cine actual. ¿Es el espectáculo pirotécnico o es la capacidad de un actor para sostener una escena en el vacío?",
+      "El cine, en su esencia más pura, trata de encontrar esa verdad oculta detrás de la puesta en escena. Mientras diseñadores de producción se dejan la piel en sets mastodónticos, el público joven sigue buscando esa conexión honesta que solo surge de una actuación despojada de artificios. Elizabeth Olsen es el ejemplo vivo de que el éxito no es una línea recta, sino un camino que a veces comienza en la austeridad más absoluta.",
+      "## Un legado de riesgo",
+      "Para los que hoy solo conocen a la Bruja Escarlata, indagar en los primeros pasos de Olsen es un ejercicio obligatorio. Nos ayuda a entender que el aura de estrella no se compra en una tienda de superhéroes; se fragua en el riesgo y en la apuesta por proyectos que podrían haber pasado desapercibidos.",
+      "¿Qué otras joyas escondidas crees que deberían rescatarse de los archivos de nuestras actrices favoritas? La historia de Olsen nos demuestra que siempre hay una historia detrás del mito. Te invitamos a revisar esos primeros trabajos y a contarnos si ves en ellos a la estrella que conquistó el MCU."
+     ],
+     "highlight": "El talento real no necesita capas, sino una cámara y un guion que se atreva a mirar a los ojos."
+    },
+    {
+     "title": "El terror de Halloween: ¿por qué amamos tanto el miedo?",
+     "summary": "Llega octubre y las plataformas se llenan de propuestas inquietantes, desde clásicos modernos hasta nuevas apuestas. Entre la saturación de adaptaciones de Stephen King, rescatar joyas como la interpretación de Patrick Stewart en 'Green Room' es el plan perfecto para quienes buscan algo más visceral y auténtico.",
+     "why": "El terror es el género que mejor define la identidad de la cultura pop otoñal.",
+     "shop": "Green Room Blu-ray",
+     "sources": [
+      {
+       "name": "SensaCine",
+       "url": "https://www.sensacine.com/noticias/cine/noticia-1000229384/"
+      },
+      {
+       "name": "Fotogramas",
+       "url": "https://www.fotogramas.es/series-tv-noticias/a74260836/grande-de-espana-serie-netflix-critica-opinion/"
+      },
+      {
+       "name": "Espinof",
+       "url": "https://www.espinof.com/directores-y-guionistas/blockbuster-ciencia-ficcion-que-pudo-ser-no-fue-cuando-stanley-kubrick-le-suplico-a-osamu-tezuka-que-disenara-2001-odisea-espacio"
+      }
+     ],
+     "image": "https://es.web.img2.acsta.net/img/38/13/3813be2e4a9ed5eae222bacf9ded91d9.jpg",
+     "image_credit": "SensaCine",
+     "ai": true,
+     "body": [
+      "Octubre llega con su aroma a hojas secas y, inevitablemente, con una sed insaciable de sustos. Pero, más allá de la saturación de remakes y secuelas de Stephen King, el público joven busca algo más: quiere visceralidad, quiere incomodidad y, sobre todo, quiere sentir que el cine todavía tiene la capacidad de sorprendernos.",
+      "En esta búsqueda, rescatar joyas como la interpretación de Patrick Stewart en 'Green Room' se convierte en el plan perfecto. Es un recordatorio de que el terror no siempre reside en lo sobrenatural, sino en la fragilidad humana ante situaciones extremas. Es ese tipo de cine que te deja pegado a la butaca, cuestionando qué harías tú en esa misma situación.",
+      "## Cine de terror con sello de autor",
+      "La noticia de que Zach Cregger, el artífice de 'Barbarian', unirá fuerzas con Steven Spielberg para su próxima película, 'The Flood', ha revolucionado el panorama. Con Jennifer Lawrence como protagonista, este thriller de ciencia ficción promete ser el evento cinematográfico de 2028. Cregger, conocido por su capacidad de crear incomodidad estructural, asegura que este guion es su historia más humana y extraña hasta la fecha.",
+      "La apuesta es clara: la industria está girando hacia directores con una visión autoral marcada que se niegan a sacrificar la experiencia en salas por la comodidad del streaming. Cregger lo dejó claro al desvincularse de Netflix cuando vio que su compromiso con la gran pantalla flaqueaba. La sala de cine sigue siendo el templo donde el miedo se vuelve colectivo y, por lo tanto, mucho más potente.",
+      "## La farsa y el miedo real",
+      "Por otro lado, la comedia española también se suma a esta ola de impostura y ridículo social con la nueva serie de Netflix. 'Don Leandro', el marqués arruinado que se enfrenta a una empresaria llena de secretos, nos recuerda que el mayor terror no siempre es un monstruo, sino la posibilidad de que todo el mundo descubra quiénes somos realmente bajo nuestras máscaras.",
+      "¿Eres de los que prefieren el terror psicológico o te lanzas a por la comedia negra que incomoda? La conversación cultural está en pleno auge y las plataformas se esfuerzan por darnos razones para no apagar la luz. Cuéntanos, ¿cuál es esa película que te hizo pasar miedo y que recomendarías a todo el mundo?"
+     ],
+     "highlight": "La sala de cine sigue siendo el templo donde el miedo se vuelve colectivo y, por lo tanto, mucho más potente."
+    },
+    {
+     "title": "La lucha de las mujeres cineastas: invisibilidad y maternidad",
+     "summary": "Directoras como Teodora Ana Mihai y Shahrbanoo Sadat han alzado la voz en festivales sobre la discriminación sistémica y el estigma de la maternidad en la industria. Es una crítica necesaria a una industria que sigue exigiendo sacrificios personales desproporcionados a las mujeres para ser tomadas en serio.",
+     "why": "La equidad en el cine requiere desmantelar prejuicios institucionales obsoletos.",
      "shop": "",
      "sources": [
       {
-       "name": "Espinof",
-       "url": "https://www.espinof.com/netflix/nueva-pelicula-numero-1-netflix-64-paises-tambien-muy-buena-thriller-dos-horas-que-engancha-entretiene"
+       "name": "Variety",
+       "url": "https://variety.com/2026/film/box-office/china-box-office-resident-evil-john-wick-1236937189/"
+      },
+      {
+       "name": "SensaCine",
+       "url": "https://www.sensacine.com/noticias/cine/noticia-1000230113/"
       }
      ],
-     "image": "https://i.blogs.es/a523dd/_mfv6197/1024_2000.jpeg",
-     "image_credit": "Espinof",
-     "ai": false
+     "image": "https://variety.com/wp-content/uploads/2026/09/MCDREEV_SP022_84f074.jpg",
+     "image_credit": "Variety",
+     "ai": true,
+     "body": [
+      "Elizabeth Olsen es hoy un icono global gracias a su papel como Wanda Maximoff en el Universo Cinematográfico de Marvel, pero mucho antes de que la Bruja Escarlata dominara nuestras pantallas, la actriz ya estaba demostrando que su talento no conocía límites. Su debut cinematográfico, Martha Marcy May Marlene, es una pieza fundamental para entender por qué Olsen es una de las intérpretes más versátiles de su generación.",
+      "Esta joya del thriller psicológico, escrita y dirigida por Sean Durkin, nos sumerge en la perturbadora historia de una mujer que logra escapar de una secta. Lejos de ser un camino de rosas, su reintegración en la sociedad y en el entorno familiar es un descenso a la paranoia y al trauma. Con un presupuesto minúsculo de apenas 600.000 dólares, la película logró recaudar más de 4 millones, demostrando que una buena narrativa siempre se impone a los grandes despliegues de efectos especiales.",
+      "## Más allá de los superhéroes",
+      "Lo que hace que este filme sea indispensable es la honestidad con la que aborda la salud mental y el abuso. La crítica no tardó en rendirse a sus pies, otorgándole un 90% en Rotten Tomatoes y destacando la actuación de Olsen como el corazón palpitante de una trama inquietante. La capacidad de la actriz para transmitir fragilidad y fuerza al mismo tiempo es lo que convirtió esta cinta en un objeto de culto tras su paso por festivales como Sundance, Cannes y Toronto.",
+      "Es refrescante recordar que, a pesar de la maquinaria de los blockbusters, el cine independiente sigue siendo el verdadero campo de entrenamiento para los grandes nombres de Hollywood. Olsen no se ha quedado estancada en el traje de superheroína; su filmografía posterior, desde la comedia negra Ingrid Goes West hasta el crudo true crime Love & Death, confirma que su ambición va mucho más allá de las sagas comerciales.",
+      "## El cine que deja huella",
+      "Martha Marcy May Marlene no es solo una película sobre sectas; es un recordatorio de que las cicatrices invisibles son las más difíciles de sanar. Para el público joven, que a menudo consume cine de consumo rápido, revisitar este título es un ejercicio necesario para descubrir el origen de una de las actrices más brillantes del momento.",
+      "¿Habéis visto este thriller o solo conocéis a Olsen por su faceta en Marvel? Es fascinante ver cómo una apuesta arriesgada y con calificación R puede definir una carrera entera. Os invitamos a recuperar esta joya y a debatir en nuestras redes sociales si creéis que hoy en día se arriesga tanto en la gran pantalla como se hacía hace una década."
+     ],
+     "highlight": "Elizabeth Olsen ya demostraba mucho antes de Marvel que su talento no conoce límites, convirtiendo un thriller de bajo presupuesto en una joya de culto."
     },
     {
-     "title": "\"Vamos a distribuir las películas por teléfono\": Jean-Claude Van Damme anunció hace 25 años la llegada del streaming y todo el mundo se burló de él",
-     "summary": "Hoy en día cuesta imaginar un mundo sin tener acceso a plataformas de streaming para poder ver las películas y series que nos apetezcan. Sin embargo, esa tecnología no lleva tanto tiempo entre nosotros y hubo una época en la que algo así parecía imposible o sacado de una historia de ciencia ficción. Al menos eso era lo que pensábamos la mayoría, pe",
-     "why": "Noticia destacada de la semana.",
+     "title": "Carrie Coon y los techos de cristal en Hollywood",
+     "summary": "La estrella de 'The Gilded Age' reflexiona sobre las limitaciones que Hollywood impone a los actores y su vida tras el éxito de 'White Lotus'. Su honestidad sobre estar en la cima de la 'lista B' subraya la realidad de una industria que prefiere encasillar a sus talentos.",
+     "why": "El sistema de estudios suele limitar el alcance de actores excepcionales.",
      "shop": "",
+     "sources": [
+      {
+       "name": "IndieWire",
+       "url": "https://www.indiewire.com/criticism/movies/who-killed-alex-odeh-documentary-movie-review-1235224728/"
+      }
+     ],
+     "image": "https://www.indiewire.com/wp-content/uploads/2026/10/202605733_1_RWD_1920.jpg?w=650",
+     "image_credit": "IndieWire",
+     "ai": true,
+     "body": [
+      "A veces, la realidad es mucho más oscura que cualquier guion de ficción, y el documental Who Killed Alex Odeh? es la prueba definitiva de ello. Dirigido por Jason Osder y William Youmans, este filme no busca entretener con misterios falsos, sino exponer una verdad incómoda que lleva décadas siendo ignorada por el sistema político estadounidense.",
+      "La historia se centra en el asesinato de Alexander Michel Odeh en 1985, un activista palestino-americano que fue víctima de un atentado con bomba en su oficina. Lo que convierte a este documental en una pieza visceral no es solo el crimen en sí, sino la impunidad absoluta de la que han gozado sus responsables, vinculados a la Liga de Defensa Judía, permitiéndoles incluso evadir la justicia internacional.",
+      "## El cine como arma política",
+      "Aunque la cinta utiliza los códigos del true crime, rápidamente los subvierte. No hay un gran misterio sobre quién apretó el botón; el caso fue esencialmente resuelto días después del ataque. El verdadero enigma, y lo que el documental cuestiona con valentía, es por qué no se ha hecho ningún esfuerzo serio por extraditar o procesar a los culpables. Es una crítica feroz a cómo ciertos actos de terrorismo son normalizados o silenciados dependiendo de quién los cometa.",
+      "Al abordar la militarización del extremismo y la falta de educación sobre las facciones más violentas del nacionalismo, Osder y Youmans ponen el foco en una herida abierta. El documental funciona como un espejo que refleja las carencias de una sociedad que suele etiquetar el terrorismo bajo una sola narrativa, ignorando deliberadamente otras realidades igual de peligrosas.",
+      "## Una herida abierta que exige justicia",
+      "Este tipo de cine es fundamental para VIBRA porque nos recuerda que el periodismo de investigación, cuando se traslada a la gran pantalla, tiene el poder de incomodar y exigir respuestas. No es una película fácil de digerir, pero sí necesaria para entender las dinámicas de poder que moldean nuestro presente.",
+      "¿Conocíais la historia de Alex Odeh o creéis que este tipo de injusticias son olvidadas demasiado pronto por los medios masivos? La conversación sobre el sesgo en el tratamiento de la violencia política sigue siendo vital. Compartid vuestras reflexiones sobre este impactante documental y ayudadnos a mantener viva la memoria de quienes el sistema ha querido borrar."
+     ],
+     "highlight": "Este documental no busca el misterio, sino exponer la impunidad política que ha permitido que un crimen de odio permanezca impune durante décadas."
+    },
+    {
+     "title": "El fin de la magia: ¿está Marvel perdiendo su esencia?",
+     "summary": "La reciente serie de Marvel intenta mezclar 'Del revés' y 'Origen', pero se ahoga en verborrea tecnológica y giros forzados. Es una señal clara de que la sobreexplotación de fórmulas está dejando a los proyectos en tierra de nadie, perdiendo esa frescura que alguna vez los hizo invencibles.",
+     "why": "La complejidad narrativa no sustituye a la emoción en el cine de superhéroes.",
+     "shop": "Agatha All Along",
+     "sources": [
+      {
+       "name": "Fotogramas",
+       "url": "https://www.fotogramas.es/noticias-cine/a74275403/pelicula-paul-thomas-anderson-una-batalla-tras-otra-cameron-winter-carnegie-hall/"
+      }
+     ],
+     "image": "https://hips.hearstapps.com/hmg-prod/images/54ef2b82-a10e-4d5b-b6c8-bab40e67f6ee.jpg",
+     "image_credit": "Fotogramas",
+     "ai": true,
+     "body": [
+      "Existe una extraña magia en el momento en que una leyenda comienza a gestarse, una chispa que rara vez queda capturada en el celuloide sin perder su esencia. Paul Thomas Anderson ha logrado lo imposible con Cameron Winter at Carnegie Hall, una pieza presentada en la 71ª Seminci de Valladolid que se aleja de los artificios de Hollywood para abrazar la desnudez de un artista en estado de gracia.",
+      "El director, tras el éxito de Una batalla tras otra, ha decidido cambiar las superproducciones por la intimidad casi mística de un piano y una voz. En diciembre de 2025, el líder de la banda Geese se sentó frente a un Steinway en el icónico auditorio neoyorquino, y el resultado no es solo un concierto, sino un retrato generacional de un músico que, a sus 23 años, ya entiende el peso de la soledad y la fe.",
+      "## La belleza de la imperfección técnica",
+      "La experiencia de ver esta película en el Teatro Carrión de Valladolid añade una capa de espejos fascinante: el espectador observa una sala histórica mientras habita otra. Anderson, lejos de buscar una puesta en escena grandilocuente, se vuelve un observador invisible. No hay entrevistas que interrumpan el flujo, ni explicaciones que intenten descodificar al artista; solo estamos nosotros, el músico y una honestidad que desarma.",
+      "Winter no es el típico frontman perfecto. Hay momentos donde olvida el guion, donde la iluminación falla o donde la oscuridad se traga la pantalla, pero esas imperfecciones son precisamente las que dotan al filme de una verdad cruda. La cámara, disparada en 16 y 35 milímetros, se siente orgánica, casi táctil, recordándonos que el arte verdadero no necesita pulcritud para ser impactante.",
+      "## El cine como refugio de lo real",
+      "Como espectadores, es imposible no trazar paralelismos con los grandes trovadores de la historia. Aunque la falta de subtítulos en las canciones pueda representar una barrera para seguir la lírica, la fuerza de la interpretación de Winter trasciende cualquier traducción. Es una pieza que nos invita a reflexionar sobre la importancia de la pausa en un mundo obsesionado con el ruido constante de las plataformas.",
+      "La propuesta de Anderson es un recordatorio necesario de que el cine es, ante todo, una herramienta para capturar la esencia humana. Mientras otros proyectos se pierden en verborreas tecnológicas y giros forzados, esta obra se planta firme en la sencillez. ¿Estamos perdiendo la capacidad de conectar con lo acústico y lo real en favor de lo espectacular? Esta película sugiere que la respuesta es un rotundo sí, y que es hora de volver a mirar hacia la simplicidad."
+     ],
+     "highlight": "La película deja que el músico ocupe el centro sin convertirlo en un personaje al que haya que descifrar por completo."
+    },
+    {
+     "title": "El cine de autor frente a los grandes estudios",
+     "summary": "La historia de John Cassavetes, quien prefirió pelear con productores antes que ceder su visión, resuena hoy más que nunca. En un mundo de contenido algorítmico, recordar a quienes apostaron por el cine libre y caótico es vital para entender el valor de la independencia creativa.",
+     "why": "La integridad artística es el único legado duradero en la historia del cine.",
+     "shop": "John Cassavetes Criterion Collection",
      "sources": [
       {
        "name": "Espinof",
@@ -490,67 +755,18 @@
      ],
      "image": "https://i.blogs.es/a040a1/van-damme-streaming/1024_2000.jpeg",
      "image_credit": "Espinof",
-     "ai": false
-    },
-    {
-     "title": "\"Borra mi nombre de la película\". Uno de los mejores directores de la historia se pegó de manera literal con su productor y Hollywood le puso la cruz",
-     "summary": "John Cassavetes acabó siendo un cineasta trascendental a base de moverse en los márgenes, elaborando un estilo libre y caótico que se ha vuelto influyente para toda obra con aspiraciones de cinéma vérité así como producir sus propias obras al margen de los grandes estudios en una época que era imposible. Fue uno de los gérmenes del cine independien",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "Espinof",
-       "url": "https://www.espinof.com/cine-clasico/borra-mi-nombre-pelicula-uno-mejores-directores-historia-se-pego-manera-literal-su-productor-hollywood-le-puso-cruz"
-      }
+     "ai": true,
+     "body": [
+      "Resulta irónico pensar que, mientras hoy navegamos entre catálogos infinitos de streaming con apenas un clic, hubo un tiempo en que la idea de distribuir cine a través de una red digital sonaba a una locura propia de un guion de ciencia ficción. Y sin embargo, alguien se atrevió a decirlo alto y claro antes que nadie: Jean-Claude Van Damme.",
+      "Corría junio de 2001 cuando, en el programa francés Tout le monde en parle, el actor belga vaticinó que las películas llegarían a nuestras casas a través del teléfono. La reacción del plató fue unánime: risas, burlas y una incredulidad absoluta. Aquella tarde, el hombre que dominaba el cine de acción fue tratado como un visionario delirante, ajeno a que estaba describiendo el modelo de negocio que hoy sostiene nuestra forma de consumir cultura.",
+      "## Adaptarse o morir en la era digital",
+      "La anécdota de Van Damme no es solo un dato curioso sobre la tecnología, sino un recordatorio de cómo la industria suele subestimar a quienes no encajan en el perfil del ejecutivo de traje. Mientras los presentes se mofaban de sus palabras, el actor tenía claro que el futuro de los medios estaba en la red. Aunque él mismo no llegó a fundar el imperio del streaming, supo adaptarse y entender que el videoclub físico estaba destinado a extinguirse.",
+      "Hoy, a sus 66 años, Van Damme sigue siendo relevante precisamente por su capacidad de navegar las nuevas aguas digitales. Desde producciones originales para Netflix hasta proyectos en Amazon Prime Video, el actor ha encontrado su hueco en la era post-videoclub. Es una lección de supervivencia profesional que muchos deberían observar con más atención: adaptarse no significa perder la identidad, sino encontrar nuevos canales para la misma pasión.",
+      "## El futuro que ya habita entre nosotros",
+      "Lo que este episodio nos enseña es que el cine, como lenguaje, es innegociable, pero el soporte es volátil. La historia de Van Damme resuena con fuerza hoy, cuando nos preguntamos si el cine de autor podrá sobrevivir frente al contenido algorítmico de las grandes plataformas. La lección es clara: el futuro siempre parece una locura hasta que alguien lo convierte en nuestra cotidianidad.",
+      "¿Qué otras predicciones que hoy nos parecen descabelladas se convertirán en nuestra realidad en los próximos diez años? Mientras esperamos a ver qué nos depara el sector, nos queda la satisfacción de saber que, a veces, los héroes de acción ven mucho más allá de lo que alcanzan a ver los críticos. ¿Qué opináis sobre la evolución de las plataformas? ¿Estamos ganando en comodidad pero perdiendo en criterio cinematográfico?"
      ],
-     "image": "https://i.blogs.es/840526/john-cassavetes-judy-garland-angeles-sin-paraiso/1024_2000.jpeg",
-     "image_credit": "Espinof",
-     "ai": false
-    },
-    {
-     "title": "Hace ya 35 años esta película de ciencia ficción se situó como el tercer mayor éxito de taquilla de todos los tiempos: puedes verla hoy en Prime Video",
-     "summary": "El día que James Cameron reventó el cine: por qué esta película sigue siendo un milagro insuperable",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "SensaCine",
-       "url": "https://www.sensacine.com/noticias/cine/noticia-1000229069/"
-      }
-     ],
-     "image": "https://es.web.img2.acsta.net/img/9b/99/9b99918a06ae7672bb33071ede8577a2.jpg",
-     "image_credit": "SensaCine",
-     "ai": false
-    },
-    {
-     "title": "Meses después de su estreno en cines, llega a streaming una inquietante película de terror sencillamente ideal para Halloween",
-     "summary": "No es que falten adaptaciones de Stephen King en el cine de terror para tirar por ahí en caso de que ese sea el plan preferido para Halloween . No obstante, la obra del autor de Maine es tan influyente que casi es más sugerente dejarse llevar por obras marcadas por dicha marca. ‘ Hokum ’ sería un ejemplo estupendo . Las leyes del hotel Un cuento os",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "Espinof",
-       "url": "https://www.espinof.com/en-digital/meses-despues-funcionar-salas-cine-se-estrena-streaming-inquietante-pelicula-terror-perfecta-para-halloween"
-      }
-     ],
-     "image": "https://i.blogs.es/e2ff36/hokum-2026-damian-mccarthy/1024_2000.jpeg",
-     "image_credit": "Espinof",
-     "ai": false
-    },
-    {
-     "title": "25 estrenos en Prime Video, Disney+, HBO Max, Movistar Plus y Filmin: Esta semana una nueva 'Off Campus' y el regreso de la serie peor valorada de 2025",
-     "summary": "Del 2 al 8 de noviembre, también destacan otros estrenos como la temporada 4 de 'La edad dorada' o 'El más grande'",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "SensaCine",
-       "url": "https://www.sensacine.com/noticias/cine/noticia-1000230011/"
-      }
-     ],
-     "image": "https://es.web.img2.acsta.net/img/af/e3/afe3f2093f9af74d46297896f886133c.jpg",
-     "image_credit": "SensaCine",
-     "ai": false
+     "highlight": "El futuro siempre parece una locura hasta que alguien lo convierte en nuestra cotidianidad."
     }
    ],
    "headlines": [
@@ -573,16 +789,16 @@
      "image": "https://es.web.img2.acsta.net/img/9b/99/9b99918a06ae7672bb33071ede8577a2.jpg"
     },
     {
-     "title": "25 estrenos en Prime Video, Disney+, HBO Max, Movistar Plus y Filmin: Esta semana una nueva 'Off Campus' y el regreso de la serie peor valorada de 2025",
+     "title": "\"Me despidieron tras una semana y con razón\": la película de la que echaron a Martin Scorsese por ser demasiado lento",
      "source": "SensaCine",
-     "url": "https://www.sensacine.com/noticias/cine/noticia-1000230011/",
-     "image": "https://es.web.img2.acsta.net/img/af/e3/afe3f2093f9af74d46297896f886133c.jpg"
+     "url": "https://www.sensacine.com/noticias/cine/noticia-1000230098/",
+     "image": "https://es.web.img2.acsta.net/img/42/57/42579e3d06da4c048da804666cf8b3c7.png"
     },
     {
-     "title": "\"Áspero, incómodo y feo\": La primera película de Javier Giner tras el éxito de 'Yo, adicto', cine social naturalista nada complaciente con el espectador",
+     "title": "\"La precuela de 'Viernes 13'\": La serie en HBO Max que aspiraba a ser el plan perfecto para Halloween, pero prefiere desvelar misterios que disfrutar del mito de Jason",
      "source": "Fotogramas",
-     "url": "https://www.fotogramas.es/peliculas-criticas/a74244389/esta-soledad-critica-pelicula-drama-oriol-pla/",
-     "image": "https://hips.hearstapps.com/hmg-prod/images/0fdd7428-4b42-42d9-b164-2873b6b12c3c.jpg"
+     "url": "https://www.fotogramas.es/series-tv-noticias/a74282904/crystal-lake-serie-hbo-critica-opinion-viernes-13/",
+     "image": "https://hips.hearstapps.com/hmg-prod/images/f67ac624-57a4-49c9-b22f-cc40fedbe337.jpeg"
     },
     {
      "title": "\"Nadie se espera esto\": La nueva película de Paul Thomas Anderson tras ganar 6 Oscar con 'Una batalla tras otra' es algo excepcional",
@@ -707,24 +923,14 @@
    ],
    "tv": [
     {
-     "title": "Dexter: Resurrección",
-     "overview": "Dexter Morgan despierta de un coma de diez semanas y, mientras comienza una dolorosa recuperación, se entera de que su hijo Harrison Morgan ha huido a Nueva York. Tanto el padre como el hijo se sienten más cerca de…",
-     "score": 8.5,
-     "votes": 721,
-     "date": "2025-07-13",
-     "image": "https://image.tmdb.org/t/p/w342/lZyvtYfG6RMJm3B6sjfJvcTVtFw.jpg",
-     "url": "https://www.themoviedb.org/tv/259909",
-     "popularity": 129.2044
-    },
-    {
-     "title": "VisionQuest",
-     "overview": "Tras reiniciarse, Visión ha estado huyendo de quienes pretenden convertirlo en un arma y ahora se encuentra escondido. Buscando un nuevo propósito, pide consejo a las distintas IA que están integradas en su…",
-     "score": 8.6,
-     "votes": 237,
-     "date": "2026-10-13",
-     "image": "https://image.tmdb.org/t/p/w342/hXlvDq98VMg3WJWTDzwcPeMk39A.jpg",
-     "url": "https://www.themoviedb.org/tv/213375",
-     "popularity": 261.0515
+     "title": "Un trabajo maldito",
+     "overview": "Un joven ahogado por las deudas acepta trabajos temporales de una agencia misteriosa... hasta que su búsqueda de dinero se vuelve una pesadilla.",
+     "score": 7.6,
+     "votes": 24,
+     "date": "2026-10-30",
+     "image": "https://image.tmdb.org/t/p/w342/vxXNPQjCZkdTWmXZEkgxVVrftex.jpg",
+     "url": "https://www.themoviedb.org/tv/289517",
+     "popularity": 130.7353
     },
     {
      "title": "Lupin",
@@ -737,6 +943,26 @@
      "popularity": 165.4893
     },
     {
+     "title": "VisionQuest",
+     "overview": "Tras reiniciarse, Visión ha estado huyendo de quienes pretenden convertirlo en un arma y ahora se encuentra escondido. Buscando un nuevo propósito, pide consejo a las distintas IA que están integradas en su…",
+     "score": 8.6,
+     "votes": 238,
+     "date": "2026-10-13",
+     "image": "https://image.tmdb.org/t/p/w342/hXlvDq98VMg3WJWTDzwcPeMk39A.jpg",
+     "url": "https://www.themoviedb.org/tv/213375",
+     "popularity": 261.0515
+    },
+    {
+     "title": "Dexter: Resurrección",
+     "overview": "Dexter Morgan despierta de un coma de diez semanas y, mientras comienza una dolorosa recuperación, se entera de que su hijo Harrison Morgan ha huido a Nueva York. Tanto el padre como el hijo se sienten más cerca de…",
+     "score": 8.5,
+     "votes": 721,
+     "date": "2025-07-13",
+     "image": "https://image.tmdb.org/t/p/w342/lZyvtYfG6RMJm3B6sjfJvcTVtFw.jpg",
+     "url": "https://www.themoviedb.org/tv/259909",
+     "popularity": 129.2044
+    },
+    {
      "title": "Nocturno",
      "overview": "Cuando una víctima del famoso asesino en serie Jurek Walter reaparece viva de manera inesperada, el inspector Jonah Lynn inicia una carrera contrarreloj para encontrar a la única persona que sigue desaparecida, mientras…",
      "score": 7.6,
@@ -745,6 +971,16 @@
      "image": "https://image.tmdb.org/t/p/w342/hLjJbSkmEVXeEjwncDRShZOR4ok.jpg",
      "url": "https://www.themoviedb.org/tv/292741",
      "popularity": 100.559
+    },
+    {
+     "title": "Crystal Lake",
+     "overview": "Cuando dos desconocidos llegan a la puerta de Pam indagando en su pasado, se desencadenan inquietantes acontecimientos que lleva a los habitantes de Crystal Lake a preguntarse: ¿Quién es realmente Pam Voorhees?",
+     "score": 8.7,
+     "votes": 312,
+     "date": "2026-10-15",
+     "image": "https://image.tmdb.org/t/p/w342/3ENhExiD2fcjk5FX0AcAXcvLu9N.jpg",
+     "url": "https://www.themoviedb.org/tv/213562",
+     "popularity": 117.4737
     },
     {
      "title": "Tierra de mafiosos",
@@ -757,16 +993,6 @@
      "popularity": 330.1742
     },
     {
-     "title": "Un trabajo maldito",
-     "overview": "Un joven ahogado por las deudas acepta trabajos temporales de una agencia misteriosa... hasta que su búsqueda de dinero se vuelve una pesadilla.",
-     "score": 7.7,
-     "votes": 23,
-     "date": "2026-10-30",
-     "image": "https://image.tmdb.org/t/p/w342/vxXNPQjCZkdTWmXZEkgxVVrftex.jpg",
-     "url": "https://www.themoviedb.org/tv/289517",
-     "popularity": 130.7353
-    },
-    {
      "title": "Bleach",
      "overview": "La serie narra las aventuras de Ichigo Kurosaki, un adolescente que tiene la facultad de interactuar con los espíritus. Una noche, Ichigo se encuentra con una shinigami —personificación japonesa del Dios de la muerte—…",
      "score": 8.4,
@@ -777,14 +1003,14 @@
      "popularity": 194.512
     },
     {
-     "title": "Carrie",
-     "overview": "Tras la repentina y prematura muerte de su padre, Carrie se ve arrojada al despiadado ecosistema del instituto público. Tiene que enfrentarse a un escándalo de ciberacoso que sacude a toda la comunidad, la presión…",
-     "score": 8.3,
-     "votes": 535,
-     "date": "2026-10-07",
-     "image": "https://image.tmdb.org/t/p/w342/6mUMquPQBFJGqTACS3Azkwwrx8d.jpg",
-     "url": "https://www.themoviedb.org/tv/288673",
-     "popularity": 104.4027
+     "title": "LA LISTA FINAL",
+     "overview": "El comandante James Reece quiere venganza, mientras investiga las misteriosas fuerzas que hay tras la muerte de todo su pelotón. Ya lejos de la estructura jerárquica del ejército, Reece aplica las lecciones que aprendió…",
+     "score": 8.0,
+     "votes": 1319,
+     "date": "2022-06-30",
+     "image": "https://image.tmdb.org/t/p/w342/mrdpavkKMA5tySLaYk1UplTvQQp.jpg",
+     "url": "https://www.themoviedb.org/tv/120911",
+     "popularity": 186.9508
     },
     {
      "title": "Materia oscura",
@@ -795,20 +1021,10 @@
      "image": "https://image.tmdb.org/t/p/w342/2JWIUUGf8AfEYNtCjxwMS79JUqw.jpg",
      "url": "https://www.themoviedb.org/tv/196322",
      "popularity": 76.4081
-    },
-    {
-     "title": "LA LISTA FINAL",
-     "overview": "El comandante James Reece quiere venganza, mientras investiga las misteriosas fuerzas que hay tras la muerte de todo su pelotón. Ya lejos de la estructura jerárquica del ejército, Reece aplica las lecciones que aprendió…",
-     "score": 8.0,
-     "votes": 1319,
-     "date": "2022-06-30",
-     "image": "https://image.tmdb.org/t/p/w342/mrdpavkKMA5tySLaYk1UplTvQQp.jpg",
-     "url": "https://www.themoviedb.org/tv/120911",
-     "popularity": 186.9508
     }
    ]
   }
  },
- "headline": "",
- "intro": ""
+ "headline": "De Rosalía al Emo: el arte de reinventar lo que amamos",
+ "intro": "Esta semana en VIBRA navegamos entre la nostalgia y la vanguardia. Desde la elegancia teatral de Rosalía hasta el legado eterno de My Chemical Romance, exploramos cómo el pasado redefine nuestro presente. Analizamos la reinvención del armario, la evolución del cine y las luchas necesarias en la industria. Es momento de cuestionar qué es tendencia y qué, simplemente, ha dejado una huella imborrable en nuestra cultura."
 }
