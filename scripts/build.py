@@ -252,11 +252,39 @@ def diverse_pick(ranked, n, per_source=2, overlap=3):
 # ---------------------------------------------------------------- IA (Gemini, opcional)
 GEMINI_GAP = 13  # segundos entre llamadas: el plan gratuito limita las peticiones por minuto
 _last_call = [0.0]
+_available_models = {}
+
+
+def gemini_models(key, configured):
+    """Devuelve modelos activos para esta API key y evita nombres retirados."""
+    cache_key = key[-12:]
+    if cache_key in _available_models:
+        return _available_models[cache_key]
+    try:
+        response = requests.get(
+            "https://generativelanguage.googleapis.com/v1beta/models",
+            headers={"x-goog-api-key": key}, timeout=30)
+        response.raise_for_status()
+        available = {
+            item.get("name", "").removeprefix("models/")
+            for item in response.json().get("models", [])
+            if "generateContent" in item.get("supportedGenerationMethods", [])
+        }
+        selected = [model for model in configured if model in available]
+        if not selected:
+            preferred = [model for model in sorted(available) if "flash" in model.lower()]
+            selected = preferred[:2] or sorted(available)[:2]
+        _available_models[cache_key] = selected
+        log(f"  · Modelos Gemini activos: {', '.join(selected) or 'ninguno'}")
+        return selected
+    except Exception as exc:
+        log(f"  ! No se pudo consultar la lista de modelos Gemini: {exc}")
+        return configured
 
 
 def parse_gemini_json(text):
-    cleaned = re.sub(r"^```(?:json)?\\s*|\\s*```$", "", (text or "").strip(), flags=re.I | re.S)
-    match = re.search(r"\\{.*\\}", cleaned, re.S)
+    cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", (text or "").strip(), flags=re.I | re.S)
+    match = re.search(r"\{.*\}", cleaned, re.S)
     if match:
         cleaned = match.group(0)
     if not cleaned:
@@ -269,7 +297,10 @@ def gemini(prompt, key, models, schema=None):
     if schema:
         config["responseSchema"] = schema
     body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": config}
-    for model in models:
+    active_models = gemini_models(key, models)
+    if not active_models:
+        return None
+    for model in active_models:
         for attempt in range(3):
             time.sleep(max(0, GEMINI_GAP - (time.time() - _last_call[0])))
             _last_call[0] = time.time()
