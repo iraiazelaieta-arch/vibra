@@ -31,6 +31,15 @@ jobs:
       - run: pip install -r requirements.txt
       - id: pages
         uses: actions/configure-pages@v5
+      - name: Comprobar clave de Gemini
+        if: github.event_name != 'push'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::Falta el secreto GEMINI_API_KEY en GitHub Actions"
+            exit 1
+          fi
       - name: Crear la edición de la semana
         if: github.event_name != 'push'
         env:
