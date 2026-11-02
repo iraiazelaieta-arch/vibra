@@ -39,7 +39,16 @@ def log(*a):
     print(*a, file=sys.stderr, flush=True)
 
 
-BOILERPLATE = re.compile(r"(La entrada .{0,300}? se public[oó] primero en .*$|The post .{0,300}? appeared first on .*$|Leer m[aá]s.*$|Read more.*$|Continue reading.*$)", re.I | re.M)
+BOILERPLATE = re.compile(
+    r"(?:"
+    r"La entrada .{0,300}? se public[oó] primero en .*"
+    r"|The post .{0,300}? appeared first on .*"
+    r"|Leer m[aá]s.*"
+    r"|Read more.*"
+    r"|Continue reading.*"
+    r")$",
+    re.I | re.M,
+)
 
 
 def clean_text(raw, limit=None):
@@ -254,6 +263,16 @@ GEMINI_GAP = 13  # segundos entre llamadas: el plan gratuito limita las peticion
 _last_call = [0.0]
 
 
+def parse_gemini_json(text):
+    cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", (text or "").strip(), flags=re.I | re.S)
+    if not cleaned:
+        raise ValueError("Gemini devolvió respuesta vacía")
+    match = re.search(r"\{.*\}", cleaned, re.S)
+    if match:
+        cleaned = match.group(0)
+    return json.loads(cleaned)
+
+
 def gemini(prompt, key, models, schema=None):
     config = {"responseMimeType": "application/json", "temperature": 0.7, "maxOutputTokens": 32768}
     if schema:
@@ -276,21 +295,19 @@ def gemini(prompt, key, models, schema=None):
                     time.sleep(20 * (attempt + 1))
                     continue
                 if r.status_code == 404:
-                    log(f"  ! Gemini {model}: modelo no encontrado")
                     break
                 r.raise_for_status()
                 payload = r.json()
                 candidates = payload.get("candidates") or []
                 if not candidates:
-                    log(f"  ! Gemini {model}: respuesta sin candidatos: {r.text[:500]}")
-                    break
-                parts = candidates[0].get("content", {}).get("parts", [])
-                text = "".join(p.get("text", "") for p in parts if p.get("text") and not p.get("thought"))
+                    log(f"  ! Gemini {model}: respuesta sin candidates: {payload}")
+                    return None
+                parts = (candidates[0].get("content") or {}).get("parts") or []
+                text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
                 if not text:
-                    log(f"  ! Gemini {model}: respuesta sin texto JSON")
-                    break
-                text = re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()
-                return json.loads(text)
+                    log(f"  ! Gemini {model}: sin texto en candidates[0] {payload}")
+                    return None
+                return parse_gemini_json(text)
             except Exception as exc:
                 log(f"  ! Gemini {model}: {exc}")
                 break
@@ -308,7 +325,7 @@ Para cada una escribe con tus propias palabras, con una opinión editorial clara
 - "fuentes": lista de números [n] de las noticias en las que se basa (una o varias)
 No inventes datos que no estén en las noticias.
 Devuelve SOLO JSON: {{"historias": [{{"titulo": "", "resumen": "", "clave": "", "compra": "", "fuentes": [0]}}]}}
- 
+  
 NOTICIAS:
 {items}"""
 
@@ -318,7 +335,7 @@ Con estos titulares de la semana, escribe:
 - "titular": un titular de portada para la edición (máx. 70 caracteres)
 - "intro": un párrafo de presentación editorial de 50-70 palabras con tono cercano, inteligente y con crítica y opinión
 No inventes nada que no esté en los titulares. Devuelve SOLO JSON: {{"titular": "", "intro": ""}}
- 
+  
 TITULARES:
 {items}"""
 
@@ -347,7 +364,7 @@ def ai_section(name, candidates, n, key, models):
 
 ARTICLE_PROMPT = """Eres redactora jefa de VIBRA, una revista digital en español de moda, música y cine para un público joven (18-35 años).
 Escribe un artículo propio, largo y atractivo, sobre cada una de las historias de la sección "{section}" que tienes abajo.
- 
+  
 Cómo tiene que ser cada artículo:
 - Entre 600 y 900 palabras, en español de España, con tono cercano, vivo y periodístico, como en Vogue, Rolling Stone o Fotogramas.
 - Empieza con un primer párrafo gancho que atrape desde la primera frase.
@@ -356,14 +373,14 @@ Cómo tiene que ser cada artículo:
 - Añade una opinión editorial clara, no solo describir: explica qué significa, por qué encaja en la conversación cultural, y qué efecto puede tener.
 - Termina con un párrafo de cierre que invite a opinar o a seguir la historia.
 - "destacado": una frase potente del propio artículo para destacar (máx. 25 palabras). No pongas citas entre comillas atribuidas a nadie.
- 
+  
 Reglas de rigor:
 - Los hechos concretos (fechas, cifras, nombres, declaraciones) solo pueden salir del material de referencia.
 - No inventes citas. Escribe con tus propias palabras: no copies ni traduzcas literalmente frases del material.
 - Puedes atribuir información al medio original (p. ej., "según Variety").
 - Haz que el texto se sienta como una pieza editorial, no como una copia de prensa.
 - Sin markdown ni emojis.
- 
+  
 HISTORIAS:
 {items}"""
 
@@ -453,8 +470,6 @@ def make_edition(cfg):
     }
     gkey = os.environ.get("GEMINI_API_KEY", "").strip()
     tkey = os.environ.get("TMDB_API_KEY", "").strip()
-    if not gkey:
-        raise RuntimeError("Falta GEMINI_API_KEY: no se pueden crear titulares ni artículos propios")
     n = cfg["ai"]["items_per_section"]
     country = cfg["charts"]["country"]
 
@@ -469,7 +484,6 @@ def make_edition(cfg):
                 log("  ! Gemini no devolvió historias válidas: uso modo sin IA")
             stories = plain_section(candidates, n)
         elif gkey:
-            # Genera el artículo de cada historia aunque Gemini devuelva menos de las solicitadas.
             ai_articles(sec["title"], stories, gkey, cfg["ai"]["models"])
         for s in stories:
             s.pop("_ctx", None)
@@ -538,7 +552,7 @@ def render(cfg):
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html", "xml", "webmanifest"]))
     env.filters["date"] = nice_date
     env.globals.update(site=cfg["site"], money=money, light=light, base_url=base_url,
-                       year=dt.date.today().year, quote=quote_plus)
+                        year=dt.date.today().year, quote=quote_plus)
 
     if OUT.exists():
         shutil.rmtree(OUT)
