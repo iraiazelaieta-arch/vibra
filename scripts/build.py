@@ -253,6 +253,20 @@ def diverse_pick(ranked, n, per_source=2, overlap=3):
 GEMINI_GAP = 13  # segundos entre llamadas: el plan gratuito limita las peticiones por minuto
 _last_call = [0.0]
 _available_models = {}
+DEFAULT_GEMINI_MODELS = [
+    "gemini-2.0-flash",
+    "gemini-2.0-flash-lite",
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-8b",
+]
+
+
+def normalize_model_name(name):
+    text = (name or "").strip().lower().replace("_", "-")
+    for prefix in ("models/", "publishers/google/models/", "publishers/google/"):
+        if text.startswith(prefix):
+            text = text[len(prefix):]
+    return text
 
 
 def gemini_models(key, configured):
@@ -266,20 +280,27 @@ def gemini_models(key, configured):
             headers={"x-goog-api-key": key}, timeout=30)
         response.raise_for_status()
         available = {
-            item.get("name", "").removeprefix("models/")
+            normalize_model_name(item.get("name", ""))
             for item in response.json().get("models", [])
             if "generateContent" in item.get("supportedGenerationMethods", [])
         }
-        selected = [model for model in configured if model in available]
-        if not selected:
+        configured_norm = [normalize_model_name(m) for m in configured if m]
+        preferred = [model for model in configured_norm if model in available]
+        if not preferred:
             preferred = [model for model in sorted(available) if "flash" in model.lower()]
-            selected = preferred[:2] or sorted(available)[:2]
+        if not preferred:
+            preferred = [model for model in DEFAULT_GEMINI_MODELS if model in available]
+        if not preferred:
+            preferred = sorted(available)[:2] or DEFAULT_GEMINI_MODELS[:2]
+        selected = preferred[:2]
         _available_models[cache_key] = selected
         log(f"  · Modelos Gemini activos: {', '.join(selected) or 'ninguno'}")
         return selected
     except Exception as exc:
         log(f"  ! No se pudo consultar la lista de modelos Gemini: {exc}")
-        return configured
+        configured_norm = [normalize_model_name(m) for m in configured if m]
+        fallback = [m for m in configured_norm if m in DEFAULT_GEMINI_MODELS] or DEFAULT_GEMINI_MODELS[:2]
+        return fallback
 
 
 def parse_gemini_json(text):
@@ -359,7 +380,7 @@ Con estos titulares de la semana, escribe:
 - "titular": un titular de portada para la edición (máx. 70 caracteres)
 - "intro": un párrafo de presentación editorial de 50-70 palabras con tono cercano, inteligente y con crítica y opinión
 No inventes nada que no esté en los titulares. Devuelve SOLO JSON: {{"titular": "", "intro": ""}}
- 
+  
 TITULARES:
 {items}"""
 
@@ -413,7 +434,7 @@ def ai_section(name, candidates, n, key, models):
 
 ARTICLE_PROMPT = """Eres redactora jefa de VIBRA, una revista digital en español de moda, música y cine para un público joven (18-35 años).
 Escribe un artículo propio, largo y atractivo, sobre cada una de las historias de la sección "{section}" que tienes abajo.
- 
+  
 Cómo tiene que ser cada artículo:
 - Entre 600 y 900 palabras, en español de España, con tono cercano, vivo y periodístico, como en Vogue, Rolling Stone o Fotogramas.
 - Empieza con un primer párrafo gancho que atrape desde la primera frase.
@@ -422,14 +443,14 @@ Cómo tiene que ser cada artículo:
 - Añade una opinión editorial clara, no solo describir: explica qué significa, por qué encaja en la conversación cultural, y qué efecto puede tener.
 - Termina con un párrafo de cierre que invite a opinar o a seguir la historia.
 - "destacado": una frase potente del propio artículo para destacar (máx. 25 palabras). No pongas citas entre comillas atribuidas a nadie.
- 
+  
 Reglas de rigor:
 - Los hechos concretos (fechas, cifras, nombres, declaraciones) solo pueden salir del material de referencia.
 - No inventes citas. Escribe con tus propias palabras: no copies ni traduzcas literalmente frases del material.
 - Puedes atribuir información al medio original (p. ej., "según Variety").
 - Haz que el texto se sienta como una pieza editorial, no como una copia de prensa.
 - Sin markdown ni emojis.
- 
+  
 HISTORIAS:
 {items}"""
 
