@@ -3,7 +3,7 @@
  "week": 45,
  "year": 2026,
  "date": "2026-11-02",
- "generated_at": "2026-11-02T07:11:23+00:00",
+ "generated_at": "2026-11-02T07:18:57+00:00",
  "sections": {
   "moda": {
    "title": "Moda",
@@ -523,21 +523,6 @@
      "ai": false
     },
     {
-     "title": "25 estrenos en Prime Video, Disney+, HBO Max, Movistar Plus y Filmin: Esta semana una nueva 'Off Campus' y el regreso de la serie peor valorada de 2025",
-     "summary": "Del 2 al 8 de noviembre, también destacan otros estrenos como la temporada 4 de 'La edad dorada' o 'El más grande'",
-     "why": "Noticia destacada de la semana.",
-     "shop": "",
-     "sources": [
-      {
-       "name": "SensaCine",
-       "url": "https://www.sensacine.com/noticias/cine/noticia-1000230011/"
-      }
-     ],
-     "image": "https://es.web.img2.acsta.net/img/af/e3/afe3f2093f9af74d46297896f886133c.jpg",
-     "image_credit": "SensaCine",
-     "ai": false
-    },
-    {
      "title": "Meses después de su estreno en cines, llega a streaming una inquietante película de terror sencillamente ideal para Halloween",
      "summary": "No es que falten adaptaciones de Stephen King en el cine de terror para tirar por ahí en caso de que ese sea el plan preferido para Halloween . No obstante, la obra del autor de Maine es tan influyente que casi es más sugerente dejarse llevar por obras marcadas por dicha marca. ‘ Hokum ’ sería un ejemplo estupendo . Las leyes del hotel Un cuento os",
      "why": "Noticia destacada de la semana.",
@@ -550,6 +535,21 @@
      ],
      "image": "https://i.blogs.es/e2ff36/hokum-2026-damian-mccarthy/1024_2000.jpeg",
      "image_credit": "Espinof",
+     "ai": false
+    },
+    {
+     "title": "25 estrenos en Prime Video, Disney+, HBO Max, Movistar Plus y Filmin: Esta semana una nueva 'Off Campus' y el regreso de la serie peor valorada de 2025",
+     "summary": "Del 2 al 8 de noviembre, también destacan otros estrenos como la temporada 4 de 'La edad dorada' o 'El más grande'",
+     "why": "Noticia destacada de la semana.",
+     "shop": "",
+     "sources": [
+      {
+       "name": "SensaCine",
+       "url": "https://www.sensacine.com/noticias/cine/noticia-1000230011/"
+      }
+     ],
+     "image": "https://es.web.img2.acsta.net/img/af/e3/afe3f2093f9af74d46297896f886133c.jpg",
+     "image_credit": "SensaCine",
      "ai": false
     }
    ],
