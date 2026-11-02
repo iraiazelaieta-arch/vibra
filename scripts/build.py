@@ -251,14 +251,24 @@ def diverse_pick(ranked, n, per_source=2, overlap=3):
 
 # ---------------------------------------------------------------- IA (Gemini, opcional)
 GEMINI_GAP = 13  # segundos entre llamadas: el plan gratuito limita las peticiones por minuto
+MAX_MODELS = 4   # cuántos modelos distintos se prueban, como máximo, antes de rendirse
 _last_call = [0.0]
 _available_models = {}
+
+# Modelos de texto recomendados, por orden de preferencia (se usan solo si tu clave los tiene activos).
 DEFAULT_GEMINI_MODELS = [
-    "gemini-2.0-flash",
-    "gemini-2.0-flash-lite",
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-8b",
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-3-flash-preview",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
 ]
+# Modelos que NO sirven para escribir texto/JSON (imagen, voz, tiempo real, embeddings...).
+# Antes el script elegía por error "gemini-2.5-flash-image", que no tiene cuota gratuita (429).
+NOT_TEXT_MODELS = re.compile(
+    r"image|imagen|tts|audio|live|embed|veo|robotics|computer-use|aqa|gemma|learnlm|"
+    r"vision|nano|banana|translate|dialog|search|deep-research|customtools", re.I)
 
 
 def normalize_model_name(name):
@@ -269,38 +279,55 @@ def normalize_model_name(name):
     return text
 
 
+def is_text_model(name):
+    return name.startswith("gemini") and not NOT_TEXT_MODELS.search(name)
+
+
 def gemini_models(key, configured):
-    """Devuelve modelos activos para esta API key y evita nombres retirados."""
+    """Devuelve los modelos de TEXTO activos para esta API key, por orden de preferencia."""
     cache_key = key[-12:]
     if cache_key in _available_models:
         return _available_models[cache_key]
+    configured_norm = [normalize_model_name(m) for m in configured if m]
     try:
-        response = requests.get(
-            "https://generativelanguage.googleapis.com/v1beta/models",
-            headers={"x-goog-api-key": key}, timeout=30)
-        response.raise_for_status()
-        available = {
-            normalize_model_name(item.get("name", ""))
-            for item in response.json().get("models", [])
-            if "generateContent" in item.get("supportedGenerationMethods", [])
-        }
-        configured_norm = [normalize_model_name(m) for m in configured if m]
-        preferred = [model for model in configured_norm if model in available]
-        if not preferred:
-            preferred = [model for model in sorted(available) if "flash" in model.lower()]
-        if not preferred:
-            preferred = [model for model in DEFAULT_GEMINI_MODELS if model in available]
-        if not preferred:
-            preferred = sorted(available)[:2] or DEFAULT_GEMINI_MODELS[:2]
-        selected = preferred[:2]
+        available, token = set(), None
+        while True:
+            params = {"pageSize": 1000}
+            if token:
+                params["pageToken"] = token
+            response = requests.get(
+                "https://generativelanguage.googleapis.com/v1beta/models",
+                headers={"x-goog-api-key": key}, params=params, timeout=30)
+            response.raise_for_status()
+            data = response.json()
+            available |= {
+                normalize_model_name(item.get("name", ""))
+                for item in data.get("models", [])
+                if "generateContent" in item.get("supportedGenerationMethods", [])
+            }
+            token = data.get("nextPageToken")
+            if not token:
+                break
+        text_models = {m for m in available if is_text_model(m)}
+        ordered = []
+        # 1) los de config.yaml, 2) los recomendados, 3) cualquier otro "flash" de texto (estables antes que preview)
+        for m in configured_norm + DEFAULT_GEMINI_MODELS:
+            if m in text_models and m not in ordered:
+                ordered.append(m)
+        extras = sorted((m for m in text_models if "flash" in m and m not in ordered),
+                        key=lambda m: ("preview" in m or "exp" in m, "lite" in m, m))
+        ordered += extras
+        selected = ordered[:MAX_MODELS]
+        if not selected:
+            log(f"  ! Tu clave no tiene modelos de texto disponibles. Modelos vistos: {', '.join(sorted(available)) or 'ninguno'}")
+        else:
+            log(f"  · Modelos Gemini que se usarán: {', '.join(selected)}")
         _available_models[cache_key] = selected
-        log(f"  · Modelos Gemini activos: {', '.join(selected) or 'ninguno'}")
         return selected
     except Exception as exc:
         log(f"  ! No se pudo consultar la lista de modelos Gemini: {exc}")
-        configured_norm = [normalize_model_name(m) for m in configured if m]
-        fallback = [m for m in configured_norm if m in DEFAULT_GEMINI_MODELS] or DEFAULT_GEMINI_MODELS[:2]
-        return fallback
+        fallback = [m for m in configured_norm if is_text_model(m)] or DEFAULT_GEMINI_MODELS[:3]
+        return fallback[:MAX_MODELS]
 
 
 def parse_gemini_json(text):
@@ -313,15 +340,25 @@ def parse_gemini_json(text):
     return json.loads(cleaned)
 
 
+def quota_info(resp):
+    """Extrae de un error 429 qué cuotas se han agotado y cuánto hay que esperar."""
+    quotas = list(dict.fromkeys(re.findall(r'"quotaId":\s*"([^"]+)"', resp.text)))
+    delay = re.search(r'"retryDelay":\s*"(\d+(?:\.\d+)?)s"', resp.text)
+    return quotas, float(delay.group(1)) if delay else None
+
+
 def gemini(prompt, key, models, schema=None):
     config = {"responseMimeType": "application/json", "temperature": 0.7, "maxOutputTokens": 32768}
     if schema:
         config["responseSchema"] = schema
-    body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": config}
     active_models = gemini_models(key, models)
     if not active_models:
         return None
     for model in active_models:
+        cfg = dict(config)
+        if model.startswith("gemini-2.5-flash"):
+            cfg["thinkingConfig"] = {"thinkingBudget": 0}  # sin "pensar": todo el presupuesto va al texto
+        body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": cfg}
         for attempt in range(3):
             time.sleep(max(0, GEMINI_GAP - (time.time() - _last_call[0])))
             _last_call[0] = time.time()
@@ -330,17 +367,24 @@ def gemini(prompt, key, models, schema=None):
                     f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                     headers={"x-goog-api-key": key, "Content-Type": "application/json"},
                     json=body, timeout=240)
-                if r.status_code == 429 or r.status_code >= 500:
-                    quota = re.findall(r'"quotaId":\s*"([^"]+)"', r.text)
-                    log(f"  ! Gemini {model}: HTTP {r.status_code} {', '.join(dict.fromkeys(quota)) or r.text[:300]!r}")
-                    if "PerDay" in r.text:
+                if r.status_code == 429:
+                    quotas, delay = quota_info(r)
+                    log(f"  ! Gemini {model}: HTTP 429 {', '.join(quotas) or r.text[:300]!r}")
+                    # Cuota diaria agotada (o sin cuota gratuita para ese modelo): probar con el siguiente modelo.
+                    if any("PerDay" in q for q in quotas) or (not quotas and "PerDay" in r.text):
                         break
+                    time.sleep(min(90, (delay or 20 * (attempt + 1)) + 2))
+                    continue
+                if r.status_code >= 500:
+                    log(f"  ! Gemini {model}: HTTP {r.status_code} {r.text[:200]!r}")
                     time.sleep(20 * (attempt + 1))
                     continue
                 if r.status_code == 404:
                     log(f"  ! Gemini {model}: modelo no encontrado")
                     break
-                r.raise_for_status()
+                if r.status_code >= 400:
+                    log(f"  ! Gemini {model}: HTTP {r.status_code} {r.text[:400]!r}")
+                    break
                 payload = r.json()
                 candidates = payload.get("candidates") or []
                 if not candidates:
@@ -349,9 +393,12 @@ def gemini(prompt, key, models, schema=None):
                 parts = candidates[0].get("content", {}).get("parts", [])
                 text = "".join(p.get("text", "") for p in parts if p.get("text") and not p.get("thought"))
                 if not text:
-                    log(f"  ! Gemini {model}: respuesta sin texto JSON")
+                    log(f"  ! Gemini {model}: respuesta sin texto JSON (finishReason={candidates[0].get('finishReason')})")
                     break
                 return parse_gemini_json(text)
+            except (json.JSONDecodeError, ValueError) as exc:
+                log(f"  ! Gemini {model}: JSON no válido ({exc}); reintento")
+                continue
             except Exception as exc:
                 log(f"  ! Gemini {model}: {exc}")
                 break
@@ -387,9 +434,14 @@ TITULARES:
 
 def ai_section(name, candidates, n, key, models):
     listing = "\n".join(f"[{i}] ({c['source']}) {c['title']} — {c['summary'][:280]}" for i, c in enumerate(candidates))
-    data = gemini(SECTION_PROMPT.format(section=name, n=n, items=listing), key, models)
+    prompt = SECTION_PROMPT.format(section=name, n=n, items=listing)
+    data = None
+    for _ in range(2):  # un segundo intento si la respuesta llega vacía o mal formada
+        data = gemini(prompt, key, models)
+        if isinstance(data, dict) and data.get("historias"):
+            break
     stories = []
-    raw_stories = (data or {}).get("historias", [])
+    raw_stories = (data or {}).get("historias", []) if isinstance(data, dict) else []
     if not isinstance(raw_stories, list):
         log(f"  ! Gemini {name}: 'historias' no es una lista")
         return []
@@ -419,8 +471,8 @@ def ai_section(name, candidates, n, key, models):
         if not title or not summary:
             continue
         stories.append({
-            "title": s["titulo"].strip(),
-            "summary": s["resumen"].strip(),
+            "title": title,
+            "summary": summary,
             "why": (s.get("clave") or "").strip(),
             "shop": (s.get("compra") or "").strip()[:60],
             "sources": [{"name": candidates[i]["source"], "url": candidates[i]["link"]} for i in dict.fromkeys(idxs)],
