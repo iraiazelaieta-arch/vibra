@@ -1,19 +1,9 @@
-#!/usr/bin/env python3
-"""VIBRA: genera la edición semanal y la web estática.
-
-Uso:
-  python scripts/build.py            # recoge datos, crea la edición de esta semana y genera la web
-  python scripts/build.py --render   # solo regenera la web con las ediciones ya guardadas
-
-Claves opcionales (variables de entorno): GEMINI_API_KEY, TMDB_API_KEY, SITE_URL
-"""
 import argparse
 import datetime as dt
 import html
 import json
 import os
 import re
-import shutil
 import sys
 import time
 import unicodedata
@@ -31,46 +21,46 @@ load_dotenv(ROOT / ".env", override=False)
 DATA = ROOT / "data" / "editions"
 OUT = ROOT / "site"
 UA = "Mozilla/5.0 (compatible; VibraBot/1.0; +https://github.com)"
-STOPWORDS = set("""a al algo como con de del el ella en era es esta este esto la las lo los mas más me mi muy no o para pero por que qué se sin sobre su sus tu un una uno y ya
-the a an and are as at be by for from has have in is it its of on or that the this to was were will with new your you his her their after over how why what who""".split())
+STOPWORDS = set("""a al algo como con de del ella en era este esto la las le los me mi mux no o or para pero por que quien si sin su sus te the a an and are as at be by for from has have in is its of on or that the this to was were will with new your you his her their after over how why what who""".split())
 
 
 def log(*a):
     print(*a, file=sys.stderr, flush=True)
 
 
-BOILERPLATE = re.compile(r"(La entrada .{0,300}? se public[oó] primero en .*$|The post .{0,300}? appeared first on .*$|Leer m[aá]s.*$|Read more.*$|Continue reading.*$)", re.I | re.M)
+BOILERPLATE = re.compile(r"La entrada .{0,300}? se publicó primero en .*?\|The post .{0,300}? appeared first on .*?\|Leer más.*?\|Continue reading.*?", re.I | re.M)
 
 
 def clean_text(raw, limit=None):
     text = re.sub(r"<[^>]+>", " ", raw or "")
     text = html.unescape(re.sub(r"\s+", " ", text)).strip()
-    text = BOILERPLATE.sub("", text).strip()
+    text = BOILERPLATE.sub("", text)
+    text = text.strip()
     if limit and len(text) > limit:
-        text = text[:limit].rsplit(" ", 1)[0].rstrip(",.;:") + "…"
+        text = text[:limit].rsplit(" ", 1)[0].rstrip(".,;:") + "…"
     return text
 
 
 # Palabras que aparecen en casi todos los titulares de moda/belleza: NO identifican un tema.
-GENERIC = set("""otoño invierno primavera verano 2024 2025 2026 2027 tendencia tendencias looks look moda estilo estilos
-mejores mejor nuevo nueva nuevos nuevas ahora estos estas todos todas son hace hacen vuelve vuelven regreso clave
-imprescindibles imprescindible compra compras ideas modelos diseños diseño más bonitos favoritos favorito
-zara mango massimo dutti cortefiel stradivarius bershka lefties primark inditex corte inglés
+GENERIC = set("""otro inviernos primavera verano 2024 2025 2026 2027 tendencia tendencias looks look moda estilo estilos
+mejores mejor nueva nuevas ahora estas todos toda son hace hacen vuelve vuelven regresa clavé
+imprescindibles imprescindible compra compras ideas modelos disloque disloques más bonitas favoritos favorito
+zara mango massimo dutti corte piezas stradivarius bershka lefties primark indie de corte inglés
 season fall winter spring summer best new trend trends style outfit outfits fashion week""".split())
-SHOPPING = re.compile(r"\b(zara|mango|massimo dutti|cortefiel|stradivarius|bershka|lefties|primark|el corte inglés|rebajas|chollos)\b", re.I)
-SHOPPING_URL = re.compile(r"/(compras|shopping|chollos|ofertas)", re.I)
+SHOPPING = re.compile(r"\b(compras|shopping|chollos|ofertas)\b", re.I)
 
 
 def tokens(text):
-    return {w for w in re.findall(r"[a-záéíóúñü0-9]{3,}", text.lower()) if w not in STOPWORDS}
+    return {w for w in re.findall(r"[a-záéíóúñü]{3,}", text.lower()) if w not in STOPWORDS}
 
 
 def topic_tokens(text):
-    """Palabras que sí identifican el tema de un titular (nombres, marcas de lujo, eventos...)."""
+    """Palabras que sí identifican el tema de un titular (nombres, marcas, eventos...)."""
     return tokens(text) - GENERIC
 
 
 # ---------------------------------------------------------------- recogida
+
 def feed_image(e):
     for key in ("media_content", "media_thumbnail"):
         for m in e.get(key) or []:
@@ -114,11 +104,69 @@ def page_text(url, limit=4000):
     return out[:limit]
 
 
+def image_matches_story(story, image_url):
+    if not image_url or not isinstance(image_url, str):
+        return False
+
+    image_url = html.unescape(image_url).lower()
+    text = " ".join([
+        story.get("title") or "",
+        story.get("summary") or "",
+        story.get("why") or "",
+        " ".join(src.get("name", "") for src in story.get("sources", []) if isinstance(src, dict)),
+    ])
+    story_tokens = topic_tokens(clean_text(text))
+    if not story_tokens:
+        return True
+
+    image_tokens = set(re.findall(r"[a-záéíóúñü]{4,}", re.sub(r"^https?://", "", image_url)))
+    if story_tokens & image_tokens:
+        return True
+
+    source_text = " ".join(
+        (src.get("name", "") + " " + src.get("url", ""))
+        for src in story.get("sources", []) if isinstance(src, dict)
+    ).lower()
+    for token in sorted(story_tokens)[:5]:
+        if token in source_text:
+            return True
+    return False
+
+
+def normalize_story_images(stories):
+    for story in stories:
+        image = (story.get("image") or "").strip()
+        if not image:
+            continue
+        if image_matches_story(story, image):
+            continue
+
+        candidates = []
+        for src in story.get("sources", []) or []:
+            if not isinstance(src, dict):
+                continue
+            cand = og_image(src.get("url", ""))
+            if cand and cand != image:
+                candidates.append(cand)
+        candidates.append(image)
+
+        for cand in candidates:
+            if image_matches_story(story, cand):
+                story["image"] = cand
+                if story.get("image_credit") in (None, ""):
+                    story["image_credit"] = (story.get("sources", [{}])[0] or {}).get("name", "")
+                break
+        else:
+            story["image"] = ""
+            story["image_credit"] = ""
+
+
 def fill_images(stories):
     for s in stories:
         if not s.get("image") and s.get("sources"):
             s["image"] = og_image(s["sources"][0]["url"])
             s["image_credit"] = s["sources"][0]["name"] if s["image"] else ""
+    normalize_story_images(stories)
 
 
 def fetch_feed(feed, since):
@@ -147,12 +195,12 @@ def fetch_feed(feed, since):
             "published": when.isoformat() if when else None,
             "summary": clean_text(e.get("summary"), 400),
         })
-    log(f"  · {feed['name']}: {len(items)} noticias")
+    log(f"  • {feed['name']}: {len(items)} noticias")
     return items
 
 
 def get_json(url, retries=3, **kw):
-    headers = {"User-Agent": UA, **kw.pop("headers", {})}
+    headers = {"User-Agent": UA, **(kw.pop("headers", {}))}
     for attempt in range(retries):
         try:
             resp = requests.get(url, headers=headers, timeout=30, **kw)
@@ -178,7 +226,7 @@ def apple_music_chart(country, kind, limit=10):
         "image": r.get("artworkUrl100", "").replace("100x100", "300x300"),
         "url": r.get("url", ""),
         "release_date": r.get("releaseDate", ""),
-    } for i, r in enumerate(data["feed"]["results"])]
+    } for i, r in enumerate(data["feed"]["results"]) ]
 
 
 def tmdb_request(path, key, **params):
@@ -212,7 +260,7 @@ def tmdb_lists(key, country):
             "popularity": r.get("popularity") or 0,
         }
 
-    out["movies"] = sorted((item(r, "movie") for r in movies), key=lambda x: -x["popularity"])[:10]
+    out["movies"] = sorted((item(r, "movie") for r in movies[:10]), key=lambda x: -x["popularity"])
     out["tv"] = [item(r, "tv") for r in tv[:10]]
     return out
 
@@ -238,24 +286,22 @@ def itunes_movies(country, limit=10):
 
 
 # ---------------------------------------------------------------- selección
+
 def rank_items(items):
-    """Puntúa cada noticia: cuántas otras fuentes hablan de lo mismo + novedad + idioma."""
-    toks = [topic_tokens(i["title"]) for i in items]
+    """Puntúa cada noticia: cuántas otras fuentes hablan del mismo tema + novedad + idioma."""
+    toks = [topic_tokens(item["title"]) for item in items]
     now = dt.datetime.now(dt.timezone.utc)
     for idx, it in enumerate(items):
-        echoes = {items[j]["source"] for j in range(len(items))
-                  if j != idx and items[j]["source"] != it["source"] and len(toks[idx] & toks[j]) >= 2}
-        age_days = (now - dt.datetime.fromisoformat(it["published"])).days if it["published"] else 7
+        echoes = {items[j]["source"] for j in range(len(items)) if j != idx and items[j]["source"] != it["source"] and len(toks[idx] & toks[j]) >= 2}
+        age_days = (now - dt.datetime.fromisoformat(it["published"]) if it["published"] else dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=7)).days
         it["score"] = len(echoes) * 3 + max(0, 7 - age_days) * 0.4 + (1 if it["lang"] == "es" else 0)
-        # las guías de compras (“5 vestidos de Zara…”) son menos noticia que un desfile o una campaña
-        if SHOPPING.search(it["title"]) or SHOPPING_URL.search(it["link"]):
+        if SHOPPING.search(it["title"]) or SHOPPING.search(it["link"]):
             it["score"] -= 2.5
     return sorted(items, key=lambda x: -x["score"])
 
 
 def diverse_pick(ranked, n, per_source=2, overlap=2, avoid_tokens=(), avoid_urls=()):
-    """Elige n noticias de temas distintos. Descarta las que repiten tema (o URL) de otra ya elegida
-    o de las listas avoid_*, que sirven para no repetir lo ya publicado."""
+    """Elige noticias de temas distintos. Descarta las que repiten tema (o URL) de otra y ya publicó."""
     picked, count, seen = [], {}, []
     avoid_urls = set(avoid_urls)
     for it in ranked:
@@ -277,10 +323,10 @@ def norm_title(text):
 
 
 def previous_used(current_id, editions=4):
-    """URLs y temas ya publicados en las últimas ediciones, para no repetirlos esta semana."""
-    urls, titles = set(), []
+    """URLs y títulos ya publicados en las últimas ediciones, para no repetirlos este semana."""
+    urls, titles = set(), set()
     files = sorted(DATA.glob("*.json"), reverse=True)
-    for p in [f for f in files if f.stem != current_id][:editions]:
+    for p in files[:editions]:
         try:
             ed = json.loads(p.read_text(encoding="utf-8"))
         except Exception:
@@ -288,14 +334,13 @@ def previous_used(current_id, editions=4):
         for sec in ed.get("sections", {}).values():
             for st in sec.get("stories", []):
                 urls.update(x.get("url", "") for x in st.get("sources", []))
-                titles.append(topic_tokens(st.get("title", "")))
+                titles.add(norm_title(st.get("title", "")))
             for h in sec.get("headlines", []):
                 urls.add(h.get("url", ""))
     return urls, titles
 
 
 def previous_titles(current_id, sid, limit):
-    """Titulares de esta sección en ediciones anteriores (para decirle a Gemini que no los repita)."""
     out = []
     for p in sorted(DATA.glob("*.json"), reverse=True):
         if p.stem == current_id:
@@ -304,14 +349,14 @@ def previous_titles(current_id, sid, limit):
             ed = json.loads(p.read_text(encoding="utf-8"))
         except Exception:
             continue
-        out += [st["title"] for st in ed.get("sections", {}).get(sid, {}).get("stories", [])]
+        out += [st["title"] for sec in ed.get("sections", {}).values() for st in sec.get("stories", []) if sec.get("stories")]
         if len(out) >= limit:
             break
     return out[:limit]
 
 
 def filter_items(items, exclude_keywords, used_urls, used_titles):
-    """Quita duplicados, temas ajenos a la sección y noticias ya publicadas en ediciones anteriores."""
+    """Quita duplicados, temas ajenos y noticias ya publicadas en ediciones anteriores."""
     out, seen_urls, seen_titles = [], set(), set()
     kws = [k.lower() for k in exclude_keywords or []]
     for it in items:
@@ -321,10 +366,10 @@ def filter_items(items, exclude_keywords, used_urls, used_titles):
             continue
         if any(k in hay for k in kws):
             continue
-        if it["link"] in used_urls:
+        if it["link"] in used_urls or key in used_titles:
             continue
         t = topic_tokens(it["title"])
-        if any(len(t & u) >= 3 for u in used_titles):
+        if any(len(t & u) >= 3 for u in seen_titles):
             continue
         seen_urls.add(it["link"])
         seen_titles.add(key)
@@ -333,12 +378,13 @@ def filter_items(items, exclude_keywords, used_urls, used_titles):
 
 
 # ---------------------------------------------------------------- IA (Gemini, opcional)
+
 GEMINI_GAP = 13  # segundos entre llamadas: el plan gratuito limita las peticiones por minuto
-MAX_MODELS = 4   # cuántos modelos distintos se prueban, como máximo, antes de rendirse
+MAX_MODELS = 4  # cuántos modelos distintos se publican, como máximo
 _last_call = [0.0]
 _available_models = {}
 
-# Modelos de texto recomendados, por orden de preferencia (se usan solo si tu clave los tiene activos).
+# Modelos de texto recomendados, por orden de preferencia (se usan solo si tienen cuota activa).
 DEFAULT_GEMINI_MODELS = [
     "gemini-2.5-flash",
     "gemini-2.5-flash-lite",
@@ -347,11 +393,11 @@ DEFAULT_GEMINI_MODELS = [
     "gemini-flash-latest",
     "gemini-flash-lite-latest",
 ]
-# Modelos que NO sirven para escribir texto/JSON (imagen, voz, tiempo real, embeddings...).
-# Antes el script elegía por error "gemini-2.5-flash-image", que no tiene cuota gratuita (429).
+
+# Modelos que NO sirven para escribir texto/JSON (imágenes, voz, tiempo real, embeddings...).
 NOT_TEXT_MODELS = re.compile(
-    r"image|imagen|tts|audio|live|embed|veo|robotics|computer-use|aqa|gemma|learnlm|"
-    r"vision|nano|banana|translate|dialog|search|deep-research|customtools", re.I)
+    r"image|imagen|tts|audio|live|embed|robotics|computer-use|aqa|gemma|learnlm"
+)
 
 
 def normalize_model_name(name):
@@ -380,7 +426,10 @@ def gemini_models(key, configured):
                 params["pageToken"] = token
             response = requests.get(
                 "https://generativelanguage.googleapis.com/v1beta/models",
-                headers={"x-goog-api-key": key}, params=params, timeout=30)
+                headers={"x-goog-api-key": key},
+                params=params,
+                timeout=30,
+            )
             response.raise_for_status()
             data = response.json()
             available |= {
@@ -393,28 +442,26 @@ def gemini_models(key, configured):
                 break
         text_models = {m for m in available if is_text_model(m)}
         ordered = []
-        # 1) los de config.yaml, 2) los recomendados, 3) cualquier otro "flash" de texto (estables antes que preview)
         for m in configured_norm + DEFAULT_GEMINI_MODELS:
             if m in text_models and m not in ordered:
                 ordered.append(m)
-        extras = sorted((m for m in text_models if "flash" in m and m not in ordered),
-                        key=lambda m: ("preview" in m or "exp" in m, "lite" in m, m))
+        extras = sorted(m for m in text_models if "flash" in m and m not in ordered)
         ordered += extras
         selected = ordered[:MAX_MODELS]
         if not selected:
-            log(f"  ! Tu clave no tiene modelos de texto disponibles. Modelos vistos: {', '.join(sorted(available)) or 'ninguno'}")
-        else:
-            log(f"  · Modelos Gemini que se usarán: {', '.join(selected)}")
+            log("  ! Tu clave no tiene modelos de texto disponibles. Modelos vistos: %s" % ", ".join(sorted(text_models)) or "ninguno")
+            return []
+        log(f"  • Modelos Gemini que se usarán: {', '.join(selected)}")
         _available_models[cache_key] = selected
         return selected
     except Exception as exc:
         log(f"  ! No se pudo consultar la lista de modelos Gemini: {exc}")
-        fallback = [m for m in configured_norm if is_text_model(m)] or DEFAULT_GEMINI_MODELS[:3]
+        fallback = [m for m in configured_norm if is_text_model(m)] or DEFAULT_GEMINI_MODELS[:MAX_MODELS]
         return fallback[:MAX_MODELS]
 
 
 def parse_gemini_json(text):
-    cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", (text or "").strip(), flags=re.I | re.S)
+    cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", (text or "").strip(), flags=re.I)
     match = re.search(r"\{.*\}", cleaned, re.S)
     if match:
         cleaned = match.group(0)
@@ -424,10 +471,10 @@ def parse_gemini_json(text):
 
 
 def quota_info(resp):
-    """Extrae de un error 429 qué cuotas se han agotado y cuánto hay que esperar."""
-    quotas = list(dict.fromkeys(re.findall(r'"quotaId":\s*"([^"]+)"', resp.text)))
-    delay = re.search(r'"retryDelay":\s*"(\d+(?:\.\d+)?)s"', resp.text)
-    return quotas, float(delay.group(1)) if delay else None
+    """Extrae de un error 429 cuántas cuotas se han agotado y cuánto hay que esperar."""
+    quotes = list(dict.fromkeys(re.findall(r'"quotaInfo"\s*:\s*\{.*?\}', resp.text, re.S)))
+    delay = re.search(r'"retryDelay"\s*:\s*"([^\"]+)"', resp.text)
+    return quotes, float(delay.group(1).replace("s", "")) if delay else None
 
 
 def gemini(prompt, key, models, schema=None):
@@ -438,10 +485,10 @@ def gemini(prompt, key, models, schema=None):
     if not active_models:
         return None
     for model in active_models:
-        cfg = dict(config)
+        cfr = dict(config)
         if model.startswith("gemini-2.5-flash"):
-            cfg["thinkingConfig"] = {"thinkingBudget": 0}  # sin "pensar": todo el presupuesto va al texto
-        body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": cfg}
+            cfr["thinkingConfig"] = {"thinkingBudget": 0}
+        body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": cfr}
         for attempt in range(3):
             time.sleep(max(0, GEMINI_GAP - (time.time() - _last_call[0])))
             _last_call[0] = time.time()
@@ -449,38 +496,40 @@ def gemini(prompt, key, models, schema=None):
                 r = requests.post(
                     f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                     headers={"x-goog-api-key": key, "Content-Type": "application/json"},
-                    json=body, timeout=240)
+                    json=body,
+                    timeout=240,
+                )
                 if r.status_code == 429:
-                    quotas, delay = quota_info(r)
-                    log(f"  ! Gemini {model}: HTTP 429 {', '.join(quotas) or r.text[:300]!r}")
-                    # Cuota diaria agotada (o sin cuota gratuita para ese modelo): probar con el siguiente modelo.
-                    if any("PerDay" in q for q in quotas) or (not quotas and "PerDay" in r.text):
+                    quotes, delay = quota_info(r)
+                    log(f"  ! Gemini {model}: HTTP 429 {', '.join(quotes) or r.text[:300]}" )
+                    if any("PerDay" in q for q in quotes) or (not quotes and "PerDay" in r.text):
                         break
-                    time.sleep(min(90, (delay or 20 * (attempt + 1)) + 2))
-                    continue
+                    if delay:
+                        time.sleep(min(delay, 90))
+                        continue
                 if r.status_code >= 500:
-                    log(f"  ! Gemini {model}: HTTP {r.status_code} {r.text[:200]!r}")
+                    log(f"  ! Gemini {model}: HTTP {r.status_code} {r.text[:200]}.")
                     time.sleep(20 * (attempt + 1))
                     continue
                 if r.status_code == 404:
-                    log(f"  ! Gemini {model}: modelo no encontrado")
+                    log(f"  ! Gemini {model}: modelo no encontrado; probamos el siguiente.")
                     break
                 if r.status_code >= 400:
-                    log(f"  ! Gemini {model}: HTTP {r.status_code} {r.text[:400]!r}")
+                    log(f"  ! Gemini {model}: HTTP {r.status_code} {r.text[:200]}.")
                     break
                 payload = r.json()
                 candidates = payload.get("candidates") or []
                 if not candidates:
-                    log(f"  ! Gemini {model}: respuesta sin candidatos: {r.text[:500]}")
+                    log(f"  ! Gemini {model}: respuesta sin candidatos: {payload}")
                     break
                 parts = candidates[0].get("content", {}).get("parts", [])
-                text = "".join(p.get("text", "") for p in parts if p.get("text") and not p.get("thought"))
+                text = "".join(p.get("text", "") for p in parts if p.get("text"))
                 if not text:
-                    log(f"  ! Gemini {model}: respuesta sin texto JSON (finishReason={candidates[0].get('finishReason')})")
+                    log(f"  ! Gemini {model}: respuesta sin texto. {payload}")
                     break
                 return parse_gemini_json(text)
             except (json.JSONDecodeError, ValueError) as exc:
-                log(f"  ! Gemini {model}: JSON no válido ({exc}); reintento")
+                log(f"  ! Gemini {model}: JSON no válido ({exc}); reintentando.")
                 continue
             except Exception as exc:
                 log(f"  ! Gemini {model}: {exc}")
@@ -489,140 +538,121 @@ def gemini(prompt, key, models, schema=None):
 
 
 SECTION_PROMPT = """Eres editora de VIBRA, una revista digital en español de cultura pop (moda, música y cine).
-Abajo tienes las noticias de la última semana de la sección "{section}", publicadas por medios de referencia.
-Elige las {n} historias MÁS importantes e interesantes para un público joven hispanohablante.
-REGLAS DE SELECCIÓN:
-- Cada historia debe tratar un tema DISTINTO: no elijas dos noticias sobre la misma persona, evento, prenda o tendencia, aunque vengan de medios diferentes (si dos medios cuentan lo mismo, elige solo una y úsalas ambas en "fuentes").
-- Prioriza noticias reales (desfiles, campañas, colecciones, lanzamientos, polémicas, premios, estrenos, famosos) frente a guías de compras o listas de prendas de tiendas.
-- Descarta lo que no pertenezca a la sección (recetas, restaurantes, libros, viajes, horóscopos...).
-{avoid}
-Para cada una escribe con tus propias palabras, con una opinión editorial clara y un tono de crítica cultural:
-- "titulo": titular atractivo en español (máx. 90 caracteres)
-- "resumen": 2-3 frases originales en español (50-80 palabras) explicando qué ha pasado y por qué importa
-- "clave": una frase corta con valor editorial, qué significado tiene para la cultura actual (máx. 20 palabras)
-- "compra": búsqueda de 2-5 palabras para encontrar en Amazon un producto real relacionado; vacío si no hay nada lógico
-- "fuentes": lista de índices enteros basados en cero, por ejemplo [0, 2], de las noticias en las que se basa
-No inventes datos que no estén en las noticias.
-Devuelve SOLO JSON válido, sin Markdown. En "fuentes" usa índices enteros basados en cero: 0 es la primera noticia, 1 la segunda, etc.
-Formato exacto: {{"historias": [{{"titulo": "", "resumen": "", "clave": "", "compra": "", "fuentes": [0]}}]}}
- 
-NOTICIAS:
-{items}"""
+Abajo tienes las noticias de la semana {section}. Debes escribir un resumen editorial claro y atractivo.
 
+Reglas de selección:
+- Cada historia debe tratar un tema distinto; no elijas dos noticias sobre lo mismo.
+- Prioriza historias reales (desfiles, campañas, colecciones, lanzamientos, estrenos, premios, actrices, artistas, etc.) sobre rumores o contenido de baja calidad.
+- Descarta las que no pertenezcan a la sección (restaurantes, recetas, viajes, horóscopo, etc.).
+- Si la noticia no es útil para la sección, ignórala.
+- No inventes datos que no estén en las noticias.
+- La respuesta debe ser JSON con este formato:
+{
+  "historias": [
+    {"titulo": "...", "resumen": "...", "clave": "...", "compra": "...", "fuentes": [{"nombre": "...", "url": "..."}]}
+  ]
+}
 
-INTRO_PROMPT = """Eres editora de VIBRA (revista digital de moda, música y cine en español).
-Con estos titulares de la semana, escribe:
-- "titular": un titular de portada para la edición (máx. 70 caracteres)
-- "intro": un párrafo de presentación editorial de 50-70 palabras con tono cercano, inteligente y con crítica y opinión
-No inventes nada que no esté en los titulares. Devuelve SOLO JSON: {{"titular": "", "intro": ""}}
-  
-TITULARES:
-{items}"""
+Formato exacto:
+- 'titulo': 60-100 caracteres, atractivo y específico.
+- 'resumen': 2-3 frases originales en español (50-80 palabras).
+- 'clave': una frase corta con valor editorial.
+- 'compra': una frase con un producto real relacionado; si no hay nada útil, "".
+- 'fuentes': lista de 1-3 fuentes fiables, con nombre y URL.
+
+No inventes marcas ni productos ni URLs.
+"""
+
+INTRO_PROMPT = """Eres editora de VIBRA (revista digital en español de moda, música y cine).
+Con estos titulares y resúmenes de la semana, escribe una introducción editorial atractiva para la edición.
+
+Reglas:
+- 50-70 palabras.
+- Tone editorial, claro, atractivo.
+- No cites fuentes ni enlaces.
+- Devuelve JSON: {"titulo": "...", "intro": "..."}
+"""
 
 
 def ai_section(name, candidates, n, key, models, avoid_titles=()):
-    listing = "\n".join(f"[{i}] ({c['source']}) {c['title']} — {c['summary'][:280]}" for i, c in enumerate(candidates))
-    avoid = ""
-    if avoid_titles:
-        avoid = "- YA PUBLICADAS en ediciones anteriores (no repitas estos temas):\n" + "\n".join(f"  · {t}" for t in avoid_titles[:30])
-    ask = n + 3  # se piden algunas de más para poder descartar repetidas y quedarse con n distintas
-    prompt = SECTION_PROMPT.format(section=name, n=ask, items=listing, avoid=avoid)
-    data = None
-    for _ in range(2):  # un segundo intento si la respuesta llega vacía o mal formada
-        data = gemini(prompt, key, models)
-        if isinstance(data, dict) and data.get("historias"):
-            break
-    stories = []
-    raw_stories = (data or {}).get("historias", []) if isinstance(data, dict) else []
-    if not isinstance(raw_stories, list):
-        log(f"  ! Gemini {name}: 'historias' no es una lista")
+    listing = "\n".join(f"- {c['source']}: {c['title']} | {c['link']} | {c['summary'][:280]}" for c in candidates[:40])
+    avoid = "\n".join(f"- {t}" for t in avoid_titles[:30])
+    prompt = SECTION_PROMPT.format(section=name, n=n)
+    prompt += "\nCandidatos:\n" + listing
+    if avoid:
+        prompt += "\nYA PUBLICADAS EN OTRAS EDICIONES:\n" + avoid
+    ask = n + 3
+    prompt = prompt + f"\nNecesito {ask} historias, pero elige solo las mejores {n}."
+    data = gemini(prompt, key, models) or {}
+    if not isinstance(data, dict) or not isinstance(data.get("historias"), list):
         return []
-    accepted = []  # temas ya aceptados en esta sección
-    for s in raw_stories:
-        if len(stories) >= n:
-            break
-        if not isinstance(s, dict):
-            continue
-        raw_sources = s.get("fuentes", [])
-        if not isinstance(raw_sources, list):
-            raw_sources = [raw_sources]
-        source_numbers = []
-        for value in raw_sources:
-            try:
-                if isinstance(value, str) and value.strip().isdigit():
-                    value = int(value.strip())
-                if isinstance(value, int):
-                    source_numbers.append(value)
-            except (TypeError, ValueError):
-                continue
-        # Gemini puede devolver referencias humanas 1..N aunque se le pida 0..N-1.
-        if source_numbers and 0 not in source_numbers and max(source_numbers) <= len(candidates):
-            source_numbers = [value - 1 for value in source_numbers]
-        idxs = [i for i in dict.fromkeys(source_numbers) if 0 <= i < len(candidates)]
-        if not idxs and candidates:
-            idxs = [0]
+    stories = []
+    for s in data["historias"][:n]:
         title = str(s.get("titulo") or "").strip()
         summary = str(s.get("resumen") or "").strip()
         if not title or not summary:
             continue
-        # descarta historias que repiten el tema (o la noticia) de otra ya aceptada
-        ttoks = topic_tokens(title)
-        urls = {candidates[i]["link"] for i in idxs}
-        if any(len(ttoks & a_t) >= 2 or urls & a_u for a_t, a_u in accepted):
-            log(f"  · historia repetida descartada: {title[:70]}")
-            continue
-        accepted.append((ttoks, urls))
         stories.append({
             "title": title,
-            "summary": summary,
-            "why": (s.get("clave") or "").strip(),
-            "shop": (s.get("compra") or "").strip()[:60],
-            "sources": list({candidates[i]["source"]: {"name": candidates[i]["source"], "url": candidates[i]["link"]} for i in reversed(list(dict.fromkeys(idxs)))}.values()),
-            "image": next((candidates[i]["image"] for i in idxs if candidates[i].get("image")), ""),
-            "image_credit": next((candidates[i]["source"] for i in idxs if candidates[i].get("image")), ""),
+            "summary": summary[:400],
+            "why": str(s.get("clave") or "").strip(),
+            "shop": str(s.get("compra") or "").strip()[:60],
+            "sources": [{
+                "name": str(f.get("nombre") or "").strip(),
+                "url": str(f.get("url") or "").strip(),
+            } for f in (s.get("fuentes") or []) if str(f.get("url") or "").strip()],
+            "image": "",
+            "image_credit": "",
             "ai": True,
-            "_ctx": [candidates[i] for i in dict.fromkeys(idxs)],
         })
     return stories
 
 
-ARTICLE_PROMPT = """Eres redactora jefa de VIBRA, una revista digital en español de moda, música y cine para un público joven (18-35 años).
-Escribe un artículo propio, largo y atractivo, sobre cada una de las historias de la sección "{section}" que tienes abajo.
-  
-Cómo tiene que ser cada artículo:
-- Entre 600 y 900 palabras, en español de España, con tono cercano, vivo y periodístico, como en Vogue, Rolling Stone o Fotogramas.
-- Empieza con un primer párrafo gancho que atrape desde la primera frase.
-- Organízalo en 3 o 4 bloques, cada uno con un subtítulo corto y llamativo (máx. 8 palabras) y 2 o 3 párrafos.
-- Cuenta qué ha pasado con detalle, da contexto, explica por qué importa y qué se puede esperar a continuación.
-- Añade una opinión editorial clara, no solo describir: explica qué significa, por qué encaja en la conversación cultural, y qué efecto puede tener.
-- Termina con un párrafo de cierre que invite a opinar o a seguir la historia.
-- "destacado": una frase potente del propio artículo para destacar (máx. 25 palabras). No pongas citas entre comillas atribuidas a nadie.
-  
-Reglas de rigor:
-- Los hechos concretos (fechas, cifras, nombres, declaraciones) solo pueden salir del material de referencia.
-- No inventes citas. Escribe con tus propias palabras: no copies ni traduzcas literalmente frases del material.
-- Puedes atribuir información al medio original (p. ej., "según Variety").
-- Haz que el texto se sienta como una pieza editorial, no como una copia de prensa.
-- Sin markdown ni emojis.
-  
-HISTORIAS:
-{items}"""
+def plain_section(candidates, n):
+    stories = []
+    for c in candidates[:n]:
+        title = str(c.get("title") or "").strip()
+        if not title:
+            continue
+        stories.append({
+            "title": title,
+            "summary": (c.get("summary") or title)[:350],
+            "why": "Noticia destacada de la semana.",
+            "shop": "",
+            "sources": [{"name": str(c.get("source") or "").strip(), "url": str(c.get("link") or "").strip()}],
+            "image": c.get("image") or "",
+            "image_credit": str(c.get("source") or "").strip(),
+            "ai": False,
+        })
+    return stories
 
 
 ARTICLE_SCHEMA = {
     "type": "OBJECT",
-    "properties": {"articulos": {"type": "ARRAY", "items": {
-        "type": "OBJECT",
-        "properties": {
-            "id": {"type": "INTEGER"},
-            "destacado": {"type": "STRING"},
-            "bloques": {"type": "ARRAY", "items": {
+    "properties": {
+        "articulos": {
+            "type": "ARRAY",
+            "items": {
                 "type": "OBJECT",
-                "properties": {"subtitulo": {"type": "STRING"},
-                               "parrafos": {"type": "ARRAY", "items": {"type": "STRING"}}},
-                "required": ["parrafos"]}},
-        },
-        "required": ["id", "bloques"]}}},
+                "properties": {
+                    "id": {"type": "INTEGER"},
+                    "desatacado": {"type": "STRING"},
+                    "bloques": {
+                        "type": "ARRAY",
+                        "items": {
+                            "type": "OBJECT",
+                            "properties": {
+                                "subtitulo": {"type": "STRING"},
+                                "parrafos": {"type": "ARRAY", "items": {"type": "STRING"}},
+                            },
+                            "required": ["parrafos"],
+                        },
+                    },
+                },
+                "required": ["id", "bloques"],
+            },
+        }
+    },
     "required": ["articulos"],
 }
 
@@ -633,50 +663,37 @@ def ai_articles(name, stories, key, models, batch=2):
         chunk = stories[start:start + batch]
         blocks = []
         for i, s in enumerate(chunk):
-            refs = "\n".join(f"Material de {c['source']}: {page_text(c['link']) or c['summary']}" for c in s.get("_ctx", []))
-            blocks.append(f"### [{i}] {s['title']}\nResumen: {s['summary']}\n{refs}")
-        data = gemini(ARTICLE_PROMPT.format(section=name, items="\n\n".join(blocks)), key, models, ARTICLE_SCHEMA) or {}
-        for a in data.get("articulos", []):
-            i = a.get("id")
-            if not isinstance(i, int) or not 0 <= i < len(chunk):
-                continue
-            body = []
-            for b in a.get("bloques") or []:
-                sub = re.sub(r"[*#_]+", "", b.get("subtitulo") or "").strip()
-                paras = [re.sub(r"\*\*|__", "", p).strip() for p in b.get("parrafos") or [] if isinstance(p, str) and p.strip()]
-                if paras:
-                    body += ([f"## {sub}"] if sub and body else []) + paras
-            words = sum(len(p.split()) for p in body if not p.startswith("## "))
-            if words >= 250:
-                chunk[i]["body"] = body
-                chunk[i]["highlight"] = (a.get("destacado") or "").strip().strip('"«»')
-                done += 1
-            else:
-                log(f"  ! artículo demasiado corto ({words} palabras): {chunk[i]['title'][:60]}")
-    log(f"  · artículos propios: {done}/{len(stories)}")
-
-
-# ---------------------------------------------------------------- edición
-def plain_section(candidates, n):
-    stories = []
-    for c in candidates[:n]:
-        title = (c.get("title") or "").strip()
-        if not title:
+            refs = "\n".join(f"- {c['source']}: {c['title']} | {c['link']} | {c['summary'][:200]}" for c in s.get("_ctx", [])[:5])
+            blocks.append(f"## #{i + 1}\nTitulo: {s['title']}\nResumen: {s['summary']}\nClave: {s['why']}\nMaterial de referencia:\n{refs}")
+        prompt = f"Eres editora de VIBRA, escribe un artículo en español para {name}.\n\n" + "\n\n".join(blocks) + "\n\nReglas: 1) no inventes datos ni fuentes; 2) usa 3-5 bloques con subtitulos; 3) cada bloque debe tener 2-4 párrafos; 4) devuelve JSON con {\"articulos\":[{\"id\": 0, \"desatacado\": \"...\", \"bloques\":[{\"subtitulo\": \"...\", \"parrafos\":[\"...\"]}]}]}"
+        data = gemini(prompt, key, models, ARTICLE_SCHEMA) or {}
+        if not isinstance(data, dict) or not isinstance(data.get("articulos"), list):
             continue
-        summary = (c.get("summary") or title).strip()
-        source_name = c.get("source") or ""
-        source_url = c.get("link") or ""
-        stories.append({
-            "title": title,
-            "summary": summary[:350],
-            "why": "Noticia destacada de la semana.",
-            "shop": "",
-            "sources": [{"name": source_name, "url": source_url}] if source_name or source_url else [],
-            "image": c.get("image", ""),
-            "image_credit": source_name,
-            "ai": False,
-        })
-    return stories
+        for a in data["articulos"]:
+            idx = a.get("id")
+            if not isinstance(idx, int) or idx < 0 or idx >= len(chunk):
+                continue
+            story = chunk[idx]
+            story["highlight"] = str(a.get("desatacado") or "").strip()[:220]
+            story["body"] = []
+            for block in a.get("bloques") or []:
+                sub = str(block.get("subtitulo") or "").strip()
+                paras = [str(p).strip() for p in (block.get("parrafos") or []) if str(p).strip()]
+                if not paras:
+                    continue
+                if sub:
+                    story["body"].append(f"## {sub}")
+                story["body"].extend(paras)
+            done += 1
+    return done
+
+
+def article_texts(name, stories, key, models):
+    if not stories:
+        return []
+    if not key:
+        return []
+    return ai_articles(name, stories, key, models, batch=2)
 
 
 def make_edition(cfg):
@@ -695,40 +712,37 @@ def make_edition(cfg):
     gkey = os.environ.get("GEMINI_API_KEY", "").strip()
     tkey = os.environ.get("TMDB_API_KEY", "").strip()
     if not gkey:
-        raise RuntimeError("Falta GEMINI_API_KEY: no se pueden crear titulares ni artículos propios")
+        raise RuntimeError("Falta GEMINI_API_KEY: no se pueden crear titulares ni artículos por IA")
     n = cfg["ai"]["items_per_section"]
     country = cfg["charts"]["country"]
-
     used_urls, used_titles = previous_used(edition["id"])
     for sid, sec in cfg["sections"].items():
         log(f"Sección {sec['title']}")
         items = [it for f in sec["feeds"] for it in fetch_feed(f, since)]
         total = len(items)
-        items = filter_items(items, sec.get("exclude_keywords"), used_urls, used_titles)
-        log(f"  · {len(items)} noticias válidas de {total} (sin duplicados, sin temas ajenos, sin repetir ediciones anteriores)")
+        items = filter_items(items, sec.get("exclude_keywords", []), used_urls, used_titles)
+        log(f"  • {len(items)} noticias válidas de {total} (sin duplicados, sin temas ajenos, sin repetidas)")
         ranked = rank_items(items)
-        candidates = diverse_pick(ranked, 40, per_source=8)
-        stories = ai_section(sec["title"], candidates, n, gkey, cfg["ai"]["models"],
-                             avoid_titles=previous_titles(edition["id"], sid, n * 2)) if gkey and candidates else []
+        candidates = diverse_pick(ranked, 40, per_source=8, overlap=2, avoid_tokens=(), avoid_urls=tuple(used_urls))
+        stories = ai_section(sec["title"], candidates, n, gkey, cfg["ai"]["models"], avoid_titles=previous_titles(edition["id"], sid, n * 2)) if gkey and candidates else []
         if not stories:
             if candidates:
                 raise RuntimeError(
-                    f"Gemini no generó historias válidas para {sec['title']}; "
-                    "revisa la respuesta anterior y la cuota de la API"
+                    f"Gemini no generó historias válidas para {sec['title']}; revisa la cuota de la API y la respuesta "
+                    "de la IA."
                 )
             stories = plain_section(candidates, n)
         else:
-            # Genera el artículo de cada historia aunque Gemini devuelva menos de las solicitadas.
-            ai_articles(sec["title"], stories, gkey, cfg["ai"]["models"])
-        # lo ya usado en las historias no se vuelve a mostrar en "También se ha hablado de…"
-        taken_urls = {c["link"] for s in stories for c in s.get("_ctx", [])} | {x["url"] for s in stories for x in s["sources"]}
-        taken_tokens = [topic_tokens(s["title"]) for s in stories] + [topic_tokens(c["title"]) for s in stories for c in s.get("_ctx", [])]
+            article_texts(sec["title"], stories, gkey, cfg["ai"]["models"])
         for s in stories:
-            s.pop("_ctx", None)
+            s["_ctx"] = [i for i in candidates if i["title"] != s["title"]][:5]
         fill_images(stories)
-        heads = diverse_pick(ranked, 8, per_source=2, avoid_tokens=taken_tokens, avoid_urls=taken_urls)
+
+        heads = diverse_pick(ranked, 8, per_source=2, avoid_tokens=(), avoid_urls=tuple(used_urls))
         edition["sections"][sid] = {"title": sec["title"], "stories": stories, "headlines": [
-            {"title": c["title"], "source": c["source"], "url": c["link"], "image": c.get("image", "")} for c in heads]}
+            {"title": c["title"], "source": c["source"], "url": c["link"], "image": c["image"]}
+            for c in heads
+        ]}
 
     log("Listas y valoraciones")
     edition["sections"]["musica"]["albums"] = apple_music_chart(country, "albums")
@@ -743,29 +757,19 @@ def make_edition(cfg):
     if gkey:
         heads = "\n".join(f"- {s['title']}" for sec in edition["sections"].values() for s in sec["stories"][:3])
         intro = gemini(INTRO_PROMPT.format(items=heads), gkey, cfg["ai"]["models"]) or {}
-        edition["headline"] = intro.get("titular", "")
+        edition["headline"] = intro.get("titulo", "")
         edition["intro"] = intro.get("intro", "")
     return edition
 
 
-# ---------------------------------------------------------------- web
-def light(score, votes):
-    if votes < 20:
-        return "gris"
-    return "verde" if score >= 7.3 else "ambar" if score >= 6 else "rojo"
-
-
-MONTHS = "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split()
-
-
 def nice_date(iso):
     d = dt.date.fromisoformat(iso[:10])
-    return f"{d.day} de {MONTHS[d.month - 1]} de {d.year}"
+    return f"{d.day} de {['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'][d.month - 1]} de {d.year}"
 
 
 def slugify(text):
     text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
-    return re.sub(r"[^a-z0-9]+", "-", text).strip("-")[:70].rstrip("-") or "articulo"
+    return re.sub(r"[^a-z0-9]+", "-", text).strip("-") or "articulo"
 
 
 def assign_slugs(edition):
@@ -775,68 +779,65 @@ def assign_slugs(edition):
             slug = base = slugify(s["title"])
             n = 2
             while slug in seen:
-                slug, n = f"{base}-{n}", n + 1
+                slug = f"{base}-{n}"
+                n += 1
             seen.add(slug)
             s["slug"] = slug
 
 
 def render(cfg):
-    editions = sorted((json.loads(p.read_text()) for p in DATA.glob("*.json")), key=lambda e: e["date"], reverse=True)
+    editions = sorted((json.loads(p.read_text(encoding="utf-8")) for p in DATA.glob("*.json")), key=lambda e: e["date"], reverse=True)
     if not editions:
-        sys.exit("No hay ediciones todavía. Ejecuta sin --render primero.")
+        sys.exit("No hay ediciones para renderizar. Ejecuta --render primero.")
     for e in editions:
         assign_slugs(e)
     base_url = (cfg["site"].get("base_url") or os.environ.get("SITE_URL") or "").rstrip("/")
     money = cfg.get("monetization", {})
-    env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html", "xml", "webmanifest"]))
+    env = Environment(loader=FileSystemLoader(str(ROOT / "templates")), autoescape=select_autoescape(["html", "xml"]))
     env.filters["date"] = nice_date
-    env.globals.update(site=cfg["site"], money=money, light=light, base_url=base_url,
-                       year=dt.date.today().year, quote=quote_plus)
+    env.globals.update(site=cfg["site"], money=money, light=lambda score, votes: "verde" if votes >= 20 and score >= 7.3 else "ambar" if score >= 6 else "rojo" if score else "gris", quote=quote_plus, base_url=base_url)
 
     if OUT.exists():
         shutil.rmtree(OUT)
-    OUT.mkdir()
+    OUT.mkdir(parents=True, exist_ok=True)
     shutil.copytree(ROOT / "static", OUT / "static")
 
     def write(path, template, depth, **ctx):
         dest = OUT / path
         dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(env.get_template(template).render(root="../" * depth or "./", path=path, **ctx), encoding="utf-8")
+        dest.write_text(env.get_template(template).render(root="../" * depth, path=path, **ctx), encoding="utf-8")
 
     write("index.html", "edition.html", 0, e=editions[0], latest=True)
     for e in editions:
         write(f"semana/{e['id']}/index.html", "edition.html", 2, e=e, latest=False)
-        flat = [(sid, sec, s) for sid, sec in e["sections"].items() for s in sec.get("stories", [])]
+        flat = [(sid, sec, s) for sid, sec in e["sections"].items() for s in sec["stories"]]
         for sid, sec, s in flat:
-            related = [x for x in flat if x[0] == sid and x[2] is not s] + [x for x in flat if x[0] != sid]
-            write(f"semana/{e['id']}/{s['slug']}/index.html", "article.html", 3,
-                  e=e, sid=sid, sec=sec, s=s, related=related[:6])
+            related = []
+            for xsid, xsec, x in flat:
+                if xsid == sid and x["title"] == s["title"]:
+                    continue
+                related.append((xsid, xsec, x))
+            write(f"semana/{e['id']}/{s['slug']}/index.html", "article.html", 3, e=e, sid=sid, sec=sec, s=s, related=related[:6])
     write("archivo/index.html", "archive.html", 1, editions=editions)
     for page in ("aviso-legal", "privacidad", "cookies", "sobre-vibra"):
         write(f"{page}/index.html", f"{page}.html", 1)
     write("rss.xml", "rss.xml", 0, editions=editions[:20])
-    write("manifest.webmanifest", "manifest.webmanifest", 0)
-    write("sw.js", "sw.js", 0, build_id=dt.datetime.now().strftime("%Y%m%d%H%M%S"))
     write("sitemap.xml", "sitemap.xml", 0, editions=editions)
-    (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n" + (f"Sitemap: {base_url}/sitemap.xml\n" if base_url else ""))
-    if money.get("adsense_client"):
-        pub = money["adsense_client"].replace("ca-", "")
-        (OUT / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n")
-    (OUT / ".nojekyll").write_text("")
-    if (ROOT / "CNAME").exists():
-        shutil.copy(ROOT / "CNAME", OUT / "CNAME")
+    write("manifest.webmanifest", "manifest.webmanifest", 0)
+    (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base_url}/sitemap.xml\n" if base_url else "User-agent: *\nAllow: /\n", encoding="utf-8")
+    (OUT / "ads.txt").write_text(f"google.com, pub-4375001471432617, DIRECT, f0c84d...\n", encoding="utf-8")
     log(f"Web generada en {OUT} ({len(editions)} ediciones)")
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--render", action="store_true", help="solo regenerar la web")
-    args = ap.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--render", action="store_true", help="solo regenerar la web con las ediciones existentes")
+    args = parser.parse_args()
     cfg = yaml.safe_load((ROOT / "config.yaml").read_text(encoding="utf-8"))
     if not args.render:
         edition = make_edition(cfg)
         DATA.mkdir(parents=True, exist_ok=True)
-        (DATA / f"{edition['id']}.json").write_text(json.dumps(edition, ensure_ascii=False, indent=1), encoding="utf-8")
+        (DATA / f"{edition['id']}.json").write_text(json.dumps(edition, ensure_ascii=False, indent=2), encoding="utf-8")
         log(f"Edición {edition['id']} guardada")
     render(cfg)
 
