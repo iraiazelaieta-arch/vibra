@@ -115,10 +115,19 @@ def page_text(url, limit=4000):
 
 
 def fill_images(stories):
-    for s in stories:
-        if not s.get("image") and s.get("sources"):
-            s["image"] = og_image(s["sources"][0]["url"])
-            s["image_credit"] = s["sources"][0]["name"] if s["image"] else ""
+    for story in stories:
+        story["image"] = ""
+        story["image_credit"] = ""
+
+        for source in story.get("sources", []):
+            if not isinstance(source, dict) or not source.get("url"):
+                continue
+
+            image = og_image(source["url"])
+            if image:
+                story["image"] = image
+                story["image_credit"] = source.get("name", "")
+                break
 
 
 def fetch_feed(feed, since):
@@ -521,68 +530,112 @@ TITULARES:
 
 
 def ai_section(name, candidates, n, key, models, avoid_titles=()):
-    listing = "\n".join(f"[{i}] ({c['source']}) {c['title']} — {c['summary'][:280]}" for i, c in enumerate(candidates))
+    listing = "\n".join(
+        f"[{i}] ({c['source']}) {c['title']} — {c['summary'][:280]}"
+        for i, c in enumerate(candidates)
+    )
     avoid = ""
     if avoid_titles:
-        avoid = "- YA PUBLICADAS en ediciones anteriores (no repitas estos temas):\n" + "\n".join(f"  · {t}" for t in avoid_titles[:30])
-    ask = n + 3  # se piden algunas de más para poder descartar repetidas y quedarse con n distintas
-    prompt = SECTION_PROMPT.format(section=name, n=ask, items=listing, avoid=avoid)
+        avoid = (
+            "- YA PUBLICADAS en ediciones anteriores (no repitas estos temas):\n"
+            + "\n".join(f"  · {title}" for title in avoid_titles[:30])
+        )
+
+    prompt = SECTION_PROMPT.format(
+        section=name,
+        n=n + 3,
+        items=listing,
+        avoid=avoid,
+    )
+
     data = None
-    for _ in range(2):  # un segundo intento si la respuesta llega vacía o mal formada
+    for _ in range(2):
         data = gemini(prompt, key, models)
-        if isinstance(data, dict) and data.get("historias"):
+        if isinstance(data, dict) and isinstance(data.get("historias"), list):
             break
-    stories = []
-    raw_stories = (data or {}).get("historias", []) if isinstance(data, dict) else []
+
+    raw_stories = data.get("historias", []) if isinstance(data, dict) else []
     if not isinstance(raw_stories, list):
         log(f"  ! Gemini {name}: 'historias' no es una lista")
         return []
-    accepted = []  # temas ya aceptados en esta sección
-    for s in raw_stories:
+
+    stories = []
+    accepted = []
+
+    for story in raw_stories:
         if len(stories) >= n:
             break
-        if not isinstance(s, dict):
+        if not isinstance(story, dict):
             continue
-        raw_sources = s.get("fuentes", [])
-        if not isinstance(raw_sources, list):
-            raw_sources = [raw_sources]
-        source_numbers = []
-        for value in raw_sources:
-            try:
-                if isinstance(value, str) and value.strip().isdigit():
-                    value = int(value.strip())
-                if isinstance(value, int):
-                    source_numbers.append(value)
-            except (TypeError, ValueError):
-                continue
-        # Gemini puede devolver referencias humanas 1..N aunque se le pida 0..N-1.
-        if source_numbers and 0 not in source_numbers and max(source_numbers) <= len(candidates):
-            source_numbers = [value - 1 for value in source_numbers]
-        idxs = [i for i in dict.fromkeys(source_numbers) if 0 <= i < len(candidates)]
-        if not idxs and candidates:
-            idxs = [0]
-        title = str(s.get("titulo") or "").strip()
-        summary = str(s.get("resumen") or "").strip()
+
+        title = str(story.get("titulo") or "").strip()
+        summary = str(story.get("resumen") or "").strip()
         if not title or not summary:
             continue
-        # descarta historias que repiten el tema (o la noticia) de otra ya aceptada
-        ttoks = topic_tokens(title)
-        urls = {candidates[i]["link"] for i in idxs}
-        if any(len(ttoks & a_t) >= 2 or urls & a_u for a_t, a_u in accepted):
+
+        raw_sources = story.get("fuentes", [])
+        if not isinstance(raw_sources, list):
+            raw_sources = [raw_sources]
+
+        # Gemini debe devolver índices desde cero, tal como se le indica
+        # en SECTION_PROMPT. No reinterpretar índices ni usar la fuente 0
+        # como sustituto: eso es lo que cruzaba artículos e imágenes.
+        indexes = []
+        for value in raw_sources:
+            if isinstance(value, str) and value.strip().isdigit():
+                value = int(value.strip())
+            if (
+                isinstance(value, int)
+                and not isinstance(value, bool)
+                and 0 <= value < len(candidates)
+                and value not in indexes
+            ):
+                indexes.append(value)
+
+        if not indexes:
+            log(f"  · historia sin fuente válida descartada: {title[:70]}")
+            continue
+
+        selected = [candidates[i] for i in indexes]
+        title_tokens = topic_tokens(title)
+        urls = {item["link"] for item in selected}
+
+        if any(
+            len(title_tokens & old_tokens) >= 2 or urls & old_urls
+            for old_tokens, old_urls in accepted
+        ):
             log(f"  · historia repetida descartada: {title[:70]}")
             continue
-        accepted.append((ttoks, urls))
+
+        sources = []
+        seen_urls = set()
+        for item in selected:
+            url = item.get("link", "")
+            if url and url not in seen_urls:
+                seen_urls.add(url)
+                sources.append({
+                    "name": item.get("source", ""),
+                    "url": url,
+                })
+
+        image_item = next(
+            (item for item in selected if item.get("image")),
+            None,
+        )
+
         stories.append({
             "title": title,
             "summary": summary,
-            "why": (s.get("clave") or "").strip(),
-            "shop": (s.get("compra") or "").strip()[:60],
-            "sources": list({candidates[i]["source"]: {"name": candidates[i]["source"], "url": candidates[i]["link"]} for i in reversed(list(dict.fromkeys(idxs)))}.values()),
-            "image": next((candidates[i]["image"] for i in idxs if candidates[i].get("image")), ""),
-            "image_credit": next((candidates[i]["source"] for i in idxs if candidates[i].get("image")), ""),
+            "why": str(story.get("clave") or "").strip(),
+            "shop": str(story.get("compra") or "").strip()[:60],
+            "sources": sources,
+            "image": image_item.get("image", "") if image_item else "",
+            "image_credit": image_item.get("source", "") if image_item else "",
             "ai": True,
-            "_ctx": [candidates[i] for i in dict.fromkeys(idxs)],
+            "_ctx": selected,
         })
+        accepted.append((title_tokens, urls))
+
     return stories
 
 
